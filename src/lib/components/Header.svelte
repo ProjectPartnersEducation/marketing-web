@@ -1,4 +1,6 @@
 <script>
+	import { base, assets } from '$app/paths';
+
 	const menuItems = [
 		{
 			name: 'About',
@@ -26,9 +28,9 @@
 <header class="absolute inset-x-0 top-0 z-50 group">
 	<nav class="flex items-center justify-between p-6 mx-auto max-w-7xl lg:px-8" aria-label="Global">
 		<div class="flex lg:flex-1">
-			<a href="/" class="-m-1.5 p-1.5">
+			<a href={base} class="-m-1.5 p-1.5">
 				<span class="sr-only">Project Partners</span>
-				<img class="w-auto h-14" src="/logo.png" alt="Project Partners Logo" />
+				<img class="w-auto h-14" src="{assets}/logo.png" alt="Project Partners Logo" />
 			</a>
 		</div>
 		<div class="flex lg:hidden">
@@ -56,7 +58,7 @@
 		<div class="hidden lg:flex lg:gap-x-12">
 			{#each menuItems as item}
 				<a
-					href={item.href}
+					href={`${base}/${item.href}`}
 					class="text-lg font-semibold leading-6 text-gray-900 {item.current
 						? 'text-indigo-600'
 						: ''}">{item.name}</a
@@ -325,7 +327,7 @@
 			<div class="flex items-center justify-between">
 				<a href="#" class="-m-1.5 p-1.5">
 					<span class="sr-only">Project Partners</span>
-					<img class="w-auto h-8" src="/logo.png" alt="Project Partners Logo" />
+					<img class="w-auto h-8" src="{assets}/logo.png" alt="Project Partners Logo" />
 				</a>
 				<button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
 					<span class="sr-only">Close menu</span>
