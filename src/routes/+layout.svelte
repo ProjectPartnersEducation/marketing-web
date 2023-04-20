@@ -4,8 +4,6 @@
 	import Header from '$lib/header.svelte';
 </script>
 
-export const prerender = true;
-
 <Header />
 <slot />
 <Footer />
