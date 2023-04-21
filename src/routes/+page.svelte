@@ -1,5 +1,8 @@
 <script>
+	import Hero from '$lib/components/Hero.svelte';
 	import Timeline from '$lib/components/Timeline.svelte';
+	import Philosophy from '$lib/components/Philosophy.svelte';
+	import BigButton from '$lib/components/BigButton.svelte';
 
 	const headlineContent1 = 'Redefining success in education';
 	const headlineContent2 =
@@ -7,165 +10,20 @@
 </script>
 
 <main class="isolate">
-	<!-- Hero section -->
-	<div class="relative overflow-hidden isolate -z-10 bg-gradient-to-b from-indigo-100/20 pt-14">
-		<div
-			class="absolute inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:-mr-80 lg:-mr-96"
-			aria-hidden="true"
-		/>
-		<div class="px-6 py-32 mx-auto max-w-7xl sm:py-40 lg:px-8">
-			<div
-				class="max-w-2xl mx-auto lg:mx-0 lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:gap-y-6 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8"
-			>
-				<h1
-					class="max-w-2xl text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl lg:col-span-2 xl:col-auto"
-				>
-					{headlineContent1}
-				</h1>
-				<div class="max-w-xl mt-6 lg:mt-0 xl:col-end-1 xl:row-start-1">
-					<p class="text-lg leading-8 text-gray-600">
-						{headlineContent2}
-					</p>
-					<div class="flex items-center mt-10 gap-x-6">
-						<a
-							href="#"
-							class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-							>Get in touch</a
-						>
-						<a href="#" class="text-sm font-semibold leading-6 text-gray-900"
-							>Learn more <span aria-hidden="true">→</span></a
-						>
-					</div>
-				</div>
-				<img
-					src="https://images.unsplash.com/photo-1567532900872-f4e906cbf06a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1280&q=80"
-					alt=""
-					class="mt-10 aspect-[6/5] w-full max-w-lg rounded-2xl object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36"
-				/>
-			</div>
-		</div>
-		<div class="absolute inset-x-0 bottom-0 h-24 -z-10 bg-gradient-to-t from-white sm:h-32" />
-	</div>
-
-	<!-- Timeline -->
+	<Hero
+		{headlineContent1}
+		{headlineContent2}
+		cta1Text="Get in touch"
+		cta1Link="#"
+		cta2Text="Learn more"
+		cta2Link="#"
+	/>
 	<Timeline />
-
-	<!-- Logo cloud -->
-	<div class="mx-auto mt-32 max-w-7xl sm:mt-40 sm:px-6 lg:px-8">
-		<div
-			class="relative px-6 py-24 overflow-hidden text-center bg-gray-900 shadow-2xl isolate sm:rounded-3xl sm:px-16"
-		>
-			<h2 class="max-w-2xl mx-auto text-3xl font-bold tracking-tight text-white sm:text-4xl">
-				Project Partners x UNESCO Ghana Commission
-			</h2>
-			<p class="max-w-xl mx-auto mt-6 text-lg leading-8 text-gray-300">
-				We are proud to be working with the following partners to bring our mission to life. Find
-				out more...
-			</p>
-			<div
-				class="grid items-center max-w-lg grid-cols-4 mx-auto mt-20 gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:max-w-4xl lg:grid-cols-5"
-			>
-				<img
-					class="object-contain w-full col-span-2 max-h-12 lg:col-span-1"
-					src="https://tailwindui.com/img/logos/158x48/transistor-logo-white.svg"
-					alt="Transistor"
-					width="158"
-					height="48"
-				/>
-				<img
-					class="object-contain w-full col-span-2 max-h-12 lg:col-span-1"
-					src="https://tailwindui.com/img/logos/158x48/reform-logo-white.svg"
-					alt="Reform"
-					width="158"
-					height="48"
-				/>
-				<img
-					class="object-contain w-full col-span-2 max-h-12 lg:col-span-1"
-					src="https://tailwindui.com/img/logos/158x48/tuple-logo-white.svg"
-					alt="Tuple"
-					width="158"
-					height="48"
-				/>
-				<img
-					class="object-contain w-full col-span-2 max-h-12 sm:col-start-2 lg:col-span-1"
-					src="https://tailwindui.com/img/logos/158x48/savvycal-logo-white.svg"
-					alt="SavvyCal"
-					width="158"
-					height="48"
-				/>
-				<img
-					class="object-contain w-full col-span-2 col-start-2 max-h-12 sm:col-start-auto lg:col-span-1"
-					src="https://tailwindui.com/img/logos/158x48/statamic-logo-white.svg"
-					alt="Statamic"
-					width="158"
-					height="48"
-				/>
-			</div>
-			<div class="absolute right-0 -top-24 -z-10 transform-gpu blur-3xl" aria-hidden="true">
-				<div
-					class="aspect-[1404/767] w-[87.75rem] bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-25"
-					style="clip-path: polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)"
-				/>
-			</div>
-		</div>
-	</div>
-
-	<!-- Content section -->
-	<div class="mt-32 overflow-hidden sm:mt-40">
-		<div class="px-6 mx-auto max-w-7xl lg:flex lg:px-8">
-			<div
-				class="grid max-w-2xl grid-cols-1 mx-auto gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8"
-			>
-				<div class="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
-					<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our people</h2>
-					<p class="mt-6 text-xl leading-8 text-gray-600">
-						Quasi est quaerat. Sit molestiae et. Provident ad dolorem occaecati eos iste. Soluta
-						rerum quidem minus ut molestiae velit error quod. Excepturi quidem expedita molestias
-						quas.
-					</p>
-					<p class="mt-6 text-base leading-7 text-gray-600">
-						Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat
-						commodo. Elit sunt amet fugiat veniam occaecat fugiat. Quasi aperiam sit non sit neque
-						reprehenderit.
-					</p>
-				</div>
-				<div class="flex flex-wrap items-start justify-end gap-6 sm:gap-8 lg:contents">
-					<div class="flex-auto w-0 lg:ml-auto lg:w-auto lg:flex-none lg:self-end">
-						<img
-							src="https://images.unsplash.com/photo-1670272502246-768d249768ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1152&q=80"
-							alt=""
-							class="aspect-[7/5] w-[37rem] max-w-none rounded-2xl bg-gray-50 object-cover"
-						/>
-					</div>
-					<div
-						class="contents lg:col-span-2 lg:col-end-2 lg:ml-auto lg:flex lg:w-[37rem] lg:items-start lg:justify-end lg:gap-x-8"
-					>
-						<div class="flex self-end justify-end flex-none order-first w-64 lg:w-auto">
-							<img
-								src="https://images.unsplash.com/photo-1605656816944-971cd5c1407f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=768&h=604&q=80"
-								alt=""
-								class="aspect-[4/3] w-[24rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover"
-							/>
-						</div>
-						<div class="flex justify-end flex-auto w-96 lg:w-auto lg:flex-none">
-							<img
-								src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1152&h=842&q=80"
-								alt=""
-								class="aspect-[7/5] w-[37rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover"
-							/>
-						</div>
-						<div class="hidden sm:block sm:w-0 sm:flex-auto lg:w-auto lg:flex-none">
-							<img
-								src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=768&h=604&q=80"
-								alt=""
-								class="aspect-[4/3] w-[24rem] max-w-none rounded-2xl bg-gray-50 object-cover"
-							/>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	<BigButton
+		title="Project Partners x UNESCO Ghana Commission"
+		subtitle="We are proud to be working with the following partners to bring our mission to life. Find out more..."
+	/>
+	<Philosophy />
 
 	<!-- Stats -->
 	<div class="px-6 mx-auto mt-32 max-w-7xl sm:mt-40 lg:px-8">

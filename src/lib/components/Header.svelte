@@ -1,4 +1,5 @@
 <script>
+	import Icon from '@iconify/svelte';
 	import { base, assets } from '$app/paths';
 
 	const menuItems = [
@@ -19,15 +20,58 @@
 		}
 	];
 
+	const extendedMenuItems = [
+		{
+			heading: 'About',
+			items: [
+				{
+					title: 'Objectives',
+					href: '#',
+					icon: 'solar:crown-star-linear'
+				},
+				{
+					title: 'Team',
+					href: '#',
+					icon: 'solar:user-hand-up-broken'
+				}
+			]
+		},
+		{
+			heading: 'Resources',
+			items: [
+				{
+					title: 'Learning Resources',
+					href: '#',
+					icon: 'solar:backpack-linear'
+				},
+				{
+					title: 'Teaching Resources',
+					href: '#',
+					icon: 'solar:square-academic-cap-linear'
+				},
+				{
+					title: 'Publications',
+					href: '#',
+					icon: 'solar:notebook-minimalistic-linear'
+				}
+			]
+		}
+	];
+
 	const callToAction = {
 		name: 'Support Us',
 		href: '#'
 	};
+
+	let mobileMenuOpen = false;
 </script>
 
-<header class="absolute inset-x-0 top-0 z-50 group">
-	<nav class="flex items-center justify-between p-6 mx-auto max-w-7xl lg:px-8" aria-label="Global">
-		<div class="flex lg:flex-1">
+<header class="absolute inset-x-0 top-0 z-50">
+	<nav
+		class="relative flex items-center justify-between p-6 mx-auto max-w-7xl lg:px-8 group"
+		aria-label="Global"
+	>
+		<div class="flex lg:flex-1 s">
 			<a href={base} class="-m-1.5 p-1.5">
 				<span class="sr-only">Project Partners</span>
 				<img class="w-auto h-14" src="{assets}/logo.png" alt="Project Partners Logo" />
@@ -37,6 +81,7 @@
 			<button
 				type="button"
 				class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+				on:click={() => (mobileMenuOpen = !mobileMenuOpen)}
 			>
 				<span class="sr-only">Open main menu</span>
 				<svg
@@ -71,13 +116,33 @@
 			>
 		</div>
 		<div
-			class="absolute inset-x-0 top-0 pt-16 transition duration-200 -translate-y-1 bg-white shadow-lg opacity-0 -z-10 ring-1 ring-gray-900/5 group-hover:block ease group-hover:opacity-100 group-hover:translate-y-0"
+			class="absolute inset-x-0 top-0 pt-16 transition-opacity duration-200 transform scale-0 -translate-y-1 bg-white shadow-lg opacity-0 -z-10 ring-1 ring-gray-900/5 group-hover:scale-100 ease group-hover:opacity-100 group-hover:translate-y-0"
 		>
 			<div
 				class="grid grid-cols-1 px-6 py-10 mx-auto max-w-7xl gap-x-8 gap-y-10 lg:grid-cols-2 lg:px-8"
 			>
 				<div class="grid grid-cols-2 gap-x-6 sm:gap-x-8">
-					<div>
+					{#each extendedMenuItems as extendedMenuItem}
+						<div>
+							<h3 class="text-sm font-medium leading-6 text-gray-500">
+								{extendedMenuItem.heading}
+							</h3>
+							<div class="flow-root mt-6">
+								<div class="-my-2">
+									{#each extendedMenuItem.items as item}
+										<a
+											href={`${base}/${item.href}`}
+											class="flex py-2 text-sm font-semibold leading-6 text-gray-900 gap-x-4"
+										>
+											<Icon icon={item.icon} class="flex-none w-6 h-6 text-gray-400" />
+											{item.title}
+										</a>
+									{/each}
+								</div>
+							</div>
+						</div>
+					{/each}
+					<!-- <div>
 						<h3 class="text-sm font-medium leading-6 text-gray-500">Engagement</h3>
 						<div class="flow-root mt-6">
 							<div class="-my-2">
@@ -242,7 +307,7 @@
 								</a>
 							</div>
 						</div>
-					</div>
+					</div> -->
 				</div>
 				<div class="grid grid-cols-1 gap-10 sm:gap-8 lg:grid-cols-2">
 					<h3 class="sr-only">Recent posts</h3>
@@ -317,52 +382,60 @@
 			</div>
 		</div>
 	</nav>
-	<!-- Mobile menu, show/hide based on menu open state. -->
-	<div class="lg:hidden" role="dialog" aria-modal="true">
-		<!-- Background backdrop, show/hide based on slide-over state. -->
-		<div class="fixed inset-0 z-50" />
-		<div
-			class="fixed inset-y-0 right-0 z-50 w-full px-6 py-6 overflow-y-auto bg-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
-		>
-			<div class="flex items-center justify-between">
-				<a href="#" class="-m-1.5 p-1.5">
-					<span class="sr-only">Project Partners</span>
-					<img class="w-auto h-8" src="{assets}/logo.png" alt="Project Partners Logo" />
-				</a>
-				<button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
-					<span class="sr-only">Close menu</span>
-					<svg
-						class="w-6 h-6"
-						fill="none"
-						viewBox="0 0 24 24"
-						stroke-width="1.5"
-						stroke="currentColor"
-						aria-hidden="true"
+
+	{#if mobileMenuOpen}
+		<div class="lg:hidden" role="dialog" aria-modal="true">
+			<!-- Background backdrop, show/hide based on slide-over state. -->
+			<div class="fixed inset-0 z-50" />
+			<div
+				class="fixed inset-y-0 right-0 z-50 w-full px-6 py-6 overflow-y-auto bg-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+			>
+				<div class="flex items-center justify-between">
+					<a href="#" class="-m-1.5 p-1.5">
+						<span class="sr-only">Project Partners</span>
+						<img class="w-auto h-8" src="{assets}/logo.png" alt="Project Partners Logo" />
+					</a>
+					<button
+						type="button"
+						class="-m-2.5 rounded-md p-2.5 text-gray-700"
+						on:click={() => {
+							mobileMenuOpen = false;
+						}}
 					>
-						<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-					</svg>
-				</button>
-			</div>
-			<div class="flow-root mt-6">
-				<div class="-my-6 divide-y divide-gray-500/10">
-					<div class="py-6 space-y-2">
-						{#each menuItems as item}
-							<a
-								href={item.href}
-								class="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-900 rounded-lg hover:bg-gray-50"
-								>{item.name}</a
-							>
-						{/each}
-					</div>
-					<div class="py-6">
-						<a
-							href={callToAction.href}
-							class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-							>{callToAction.name}</a
+						<span class="sr-only">Close menu</span>
+						<svg
+							class="w-6 h-6"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							aria-hidden="true"
 						>
+							<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+						</svg>
+					</button>
+				</div>
+				<div class="flow-root mt-6">
+					<div class="-my-6 divide-y divide-gray-500/10">
+						<div class="py-6 space-y-2">
+							{#each menuItems as item}
+								<a
+									href={item.href}
+									class="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-900 rounded-lg hover:bg-gray-50"
+									>{item.name}</a
+								>
+							{/each}
+						</div>
+						<div class="py-6">
+							<a
+								href={callToAction.href}
+								class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+								>{callToAction.name}</a
+							>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	{/if}
 </header>
