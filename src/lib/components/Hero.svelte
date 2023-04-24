@@ -13,7 +13,7 @@
 		class="absolute inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:-mr-80 lg:-mr-96"
 		aria-hidden="true"
 	/>
-	<div class="px-6 py-32 mx-auto max-w-7xl sm:py-40 lg:px-8">
+	<div class="px-6 pt-32 pb-16 mx-auto max-w-7xl sm:pt-40 lg:px-8 sm:pb-20">
 		<div
 			class="max-w-2xl mx-auto lg:mx-0 lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:gap-y-6 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8"
 		>
@@ -44,5 +44,5 @@
 			/>
 		</div>
 	</div>
-	<div class="absolute inset-x-0 bottom-0 h-24 -z-10 bg-gradient-to-t from-white sm:h-32" />
+	<!-- <div class="absolute inset-x-0 bottom-0 h-24 -z-10 bg-gradient-to-t from-white sm:h-32" /> -->
 </div>

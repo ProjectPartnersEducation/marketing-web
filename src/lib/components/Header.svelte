@@ -40,17 +40,22 @@
 			heading: 'Resources',
 			items: [
 				{
-					title: 'Learning Resources',
+					title: 'For Learners',
 					href: '#',
 					icon: 'solar:backpack-linear'
 				},
 				{
-					title: 'Teaching Resources',
+					title: 'For Teachers',
 					href: '#',
 					icon: 'solar:square-academic-cap-linear'
 				},
 				{
-					title: 'Publications',
+					title: 'For Parents & Guardians',
+					href: '#',
+					icon: 'solar:square-academic-cap-linear'
+				},
+				{
+					title: 'For Leaders',
 					href: '#',
 					icon: 'solar:notebook-minimalistic-linear'
 				}
@@ -66,7 +71,7 @@
 	let mobileMenuOpen = false;
 </script>
 
-<header class="absolute inset-x-0 top-0 z-50">
+<header class="relative inset-x-0 top-0 z-50">
 	<nav
 		class="relative flex items-center justify-between p-6 mx-auto max-w-7xl lg:px-8 group"
 		aria-label="Global"
