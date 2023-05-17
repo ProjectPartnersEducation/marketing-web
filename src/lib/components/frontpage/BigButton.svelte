@@ -1,5 +1,5 @@
 <script>
-	export const title = 'Our Initiatives';
+	export const title = 'Initiatives';
 	export const mainItemTitle = 'Project Partners x UNESCO Ghana Commission';
 	export const mainItemSubtitle =
 		'We are proud to be working with the following partners to bring our mission to life. Find out more...';

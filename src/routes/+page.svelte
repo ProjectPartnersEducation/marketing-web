@@ -1,13 +1,13 @@
 <script>
-	import Hero from '$lib/components/Hero.svelte';
-	import Timeline from '$lib/components/Timeline.svelte';
-	import Philosophy from '$lib/components/Philosophy.svelte';
-	import BigButton from '$lib/components/BigButton.svelte';
-	import Mission from '$lib/components/Mission.svelte';
+	import Hero from '$lib/components/frontpage/Hero.svelte';
+	import Timeline from '$lib/components/frontpage/Timeline.svelte';
+	import Philosophy from '$lib/components/frontpage/Philosophy.svelte';
+	import BigButton from '$lib/components/frontpage/BigButton.svelte';
+	import Mission from '$lib/components/frontpage/Mission.svelte';
 
 	const headlineContent1 = 'Redefining success in education';
 	const headlineContent2 =
-		'We are on a mission to recentre learning around engagement, individuality, and collaboration. Through our network of research partners, collaborators, and schools, we are working with young people across the planet to unlock the next generation of learning.';
+		'We are on a mission to recentre learning around engagement, individuality, and collaboration. Through our network of partners, collaborators, and schools, we are working with young people across the planet to support the next generation of learning.';
 </script>
 
 <main class="isolate">
@@ -19,10 +19,7 @@
 		cta2Text="Become a supporter"
 		cta2Link="#"
 	/>
-	<BigButton
-		title="Project Partners x UNESCO Ghana Commission"
-		subtitle="We are proud to be working with the following partners to bring our mission to life. Find out more..."
-	/>
+	<BigButton />
 	<Philosophy />
 	<Mission />
 	<Timeline />

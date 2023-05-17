@@ -1,86 +1,73 @@
+<script>
+	export const linksBlocks = [
+		[
+			{
+				heading: 'Our Work',
+				items: [
+					{ name: 'Initiatives', href: '#' },
+					{ name: 'Partners Network', href: '#' },
+					{ name: 'Conference', href: '#' },
+					{ name: 'Research', href: '#' }
+				]
+			},
+			{
+				heading: 'Resources',
+				items: [
+					{ name: 'For Learners', href: '#' },
+					{ name: 'For Teachers', href: '#' },
+					{ name: 'For Parents & Guardians', href: '#' },
+					{ name: 'For Leaders', href: '#' }
+				]
+			}
+		],
+		[
+			{
+				heading: 'Charity',
+				items: [
+					{ name: 'About', href: '#' },
+					{ name: 'Team', href: '#' },
+					{ name: 'Schools', href: '#' },
+					{ name: 'Volunteer', href: '#' },
+					{ name: 'Donate', href: '#' }
+				]
+			},
+			{
+				heading: 'Legal',
+				items: [
+					{ name: 'Policies', href: '#' },
+					{ name: 'Safeguarding', href: '#' },
+					{ name: 'Annual Reports', href: '#' },
+					{ name: 'Governance', href: '#' }
+				]
+			}
+		]
+	];
+</script>
+
 <footer class="bg-white" aria-labelledby="footer-heading">
 	<h2 id="footer-heading" class="sr-only">Footer</h2>
 	<div class="px-6 pt-20 pb-8 mx-auto max-w-7xl sm:pt-24 lg:px-8 lg:pt-32">
 		<div class="xl:grid xl:grid-cols-3 xl:gap-8">
 			<div class="grid grid-cols-2 gap-8 xl:col-span-2">
-				<div class="md:grid md:grid-cols-2 md:gap-8">
-					<div>
-						<h3 class="text-sm font-semibold leading-6 text-gray-900">Solutions</h3>
-						<ul role="list" class="mt-6 space-y-4">
-							<li>
-								<a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Marketing</a
-								>
-							</li>
-							<li>
-								<a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Analytics</a
-								>
-							</li>
-							<li>
-								<a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Commerce</a>
-							</li>
-							<li>
-								<a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Insights</a>
-							</li>
-						</ul>
+				{#each linksBlocks as linksBlock}
+					<div class="md:grid md:grid-cols-2 md:gap-8">
+						{#each linksBlock as link}
+							<div>
+								<h3 class="text-sm font-semibold leading-6 text-gray-900">{link.heading}</h3>
+								<ul role="list" class="mt-6 space-y-4">
+									{#each link.items as item}
+										<li>
+											<a
+												href={item.href}
+												class="text-sm leading-6 text-gray-600 hover:text-gray-900">{item.name}</a
+											>
+										</li>
+									{/each}
+								</ul>
+							</div>
+						{/each}
 					</div>
-					<div class="mt-10 md:mt-0">
-						<h3 class="text-sm font-semibold leading-6 text-gray-900">Support</h3>
-						<ul role="list" class="mt-6 space-y-4">
-							<li>
-								<a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Pricing</a>
-							</li>
-							<li>
-								<a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900"
-									>Documentation</a
-								>
-							</li>
-							<li>
-								<a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Guides</a>
-							</li>
-							<li>
-								<a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900"
-									>API Status</a
-								>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="md:grid md:grid-cols-2 md:gap-8">
-					<div>
-						<h3 class="text-sm font-semibold leading-6 text-gray-900">Company</h3>
-						<ul role="list" class="mt-6 space-y-4">
-							<li>
-								<a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">About</a>
-							</li>
-							<li>
-								<a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Blog</a>
-							</li>
-							<li>
-								<a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Jobs</a>
-							</li>
-							<li>
-								<a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Press</a>
-							</li>
-							<li>
-								<a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Partners</a>
-							</li>
-						</ul>
-					</div>
-					<div class="mt-10 md:mt-0">
-						<h3 class="text-sm font-semibold leading-6 text-gray-900">Legal</h3>
-						<ul role="list" class="mt-6 space-y-4">
-							<li>
-								<a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Claim</a>
-							</li>
-							<li>
-								<a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Privacy</a>
-							</li>
-							<li>
-								<a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Terms</a>
-							</li>
-						</ul>
-					</div>
-				</div>
+				{/each}
 			</div>
 			<div class="mt-10 xl:mt-0">
 				<h3 class="text-sm font-semibold leading-6 text-gray-900">Subscribe to our newsletter</h3>
@@ -162,7 +149,8 @@
 				</a>
 			</div>
 			<p class="mt-8 text-xs leading-5 text-gray-500 md:order-1 md:mt-0">
-				&copy; 2020 Your Company, Inc. All rights reserved.
+				&copy; {new Date().getFullYear()} Project Partners Education CIO. Registered Charity in England
+				& Wales No. 1189396.
 			</p>
 		</div>
 	</div>

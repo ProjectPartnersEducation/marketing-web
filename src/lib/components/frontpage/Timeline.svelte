@@ -1,26 +1,26 @@
 <script>
 	export const timelineData = [
 		{
-			date: '2021-08',
-			title: 'Founded company',
+			date: '2019-08',
+			title: 'First two Ghana programmes launched',
 			description:
 				'Nihil aut nam. Dignissimos a pariatur et quos omnis. Aspernatur asperiores et dolorem dolorem optio voluptate repudiandae.'
 		},
 		{
-			date: '2021-12',
-			title: 'Secured $63m in funding',
-			description:
-				'Nihil aut nam. Dignissimos a pariatur et quos omnis. Aspernatur asperiores et dolorem dolorem optio voluptate repudiandae.'
-		},
-		{
-			date: '2022-01',
-			title: 'Launched product',
+			date: '2020-05',
+			title: 'Founded charity',
 			description:
 				'Nihil aut nam. Dignissimos a pariatur et quos omnis. Aspernatur asperiores et dolorem dolorem optio voluptate repudiandae.'
 		},
 		{
 			date: '2022-03',
-			title: 'Raised $100m in funding',
+			title: 'Partnership with Ghana Commission for UNESCO',
+			description:
+				'Nihil aut nam. Dignissimos a pariatur et quos omnis. Aspernatur asperiores et dolorem dolorem optio voluptate repudiandae.'
+		},
+		{
+			date: '2023-06',
+			title: 'Launch third programme in Ghana',
 			description:
 				'Nihil aut nam. Dignissimos a pariatur et quos omnis. Aspernatur asperiores et dolorem dolorem optio voluptate repudiandae.'
 		}
