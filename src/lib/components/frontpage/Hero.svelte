@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { assets } from '$app/paths';
+
 	export let headlineContent1: string;
 	export let headlineContent2: string;
 	export let cta1Text: string;
@@ -20,7 +22,12 @@
 			<h1
 				class="max-w-2xl text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl lg:col-span-2 xl:col-auto"
 			>
-				{headlineContent1}
+				<span class="inline-block mx-auto"> We bring </span>
+				<br /> <span class="text-white">and </span><span class="text-indigo-400"
+					>life to learning</span
+				><br />
+				<span class="text-gray-800">and</span>
+				<span class="text-indigo-700">learning to life</span>
 			</h1>
 			<div class="max-w-xl mt-6 lg:mt-0 xl:col-end-1 xl:row-start-1">
 				<p class="text-lg leading-8 text-gray-600">
@@ -29,16 +36,16 @@
 				<div class="flex items-center mt-10 gap-x-6">
 					<a
 						href={cta1Link}
-						class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+						class="rounded-md bg-indigo-600 px-5 py-2.5 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
 						>{cta1Text}</a
 					>
-					<a href={cta2Link} class="text-sm font-semibold leading-6 text-gray-900"
+					<a href={cta2Link} class="font-semibold leading-6 text-gray-900"
 						>{cta2Text} <span aria-hidden="true">→</span></a
 					>
 				</div>
 			</div>
 			<img
-				src="https://images.unsplash.com/photo-1567532900872-f4e906cbf06a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1280&q=80"
+				src="{assets}/images/Classroom 3.JPG"
 				alt=""
 				class="mt-10 aspect-[6/5] w-full max-w-lg rounded-2xl object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36"
 			/>

@@ -1,17 +1,18 @@
 <script>
 	import Icon from '@iconify/svelte';
 	import { base, assets } from '$app/paths';
+	import { page } from '$app/stores';
+
+	console.log($page.route.id);
 
 	const menuItems = [
 		{
 			name: 'About',
-			href: 'about',
-			current: false
+			href: 'about'
 		},
 		{
 			name: 'Resources',
-			href: 'resources',
-			current: false
+			href: 'resources'
 		}
 	];
 
@@ -23,25 +24,29 @@
 					title: 'Framework',
 					href: 'framework',
 					icon: 'solar:stars-linear',
-					color: 'text-gray-400'
+					color: 'text-gray-400',
+					hoverColor: 'text-gold-500'
 				},
 				{
 					title: 'Publications',
 					href: 'publications',
 					icon: 'solar:clipboard-list-linear',
-					color: 'text-gray-400'
+					color: 'text-gray-400',
+					hoverColor: 'text-gold-500'
 				},
 				{
 					title: 'Initiatives',
 					href: 'initiatives',
 					icon: 'solar:benzene-ring-linear',
-					color: 'text-gray-400'
+					color: 'text-gray-400',
+					hoverColor: 'text-gold-500'
 				},
 				{
 					title: 'Team',
 					href: 'team',
 					icon: 'solar:user-hand-up-broken',
-					color: 'text-gray-400'
+					color: 'text-gray-400',
+					hoverColor: 'text-gold-500'
 				}
 			]
 		},
@@ -52,19 +57,22 @@
 					title: 'Projects',
 					href: 'projects',
 					icon: 'solar:backpack-linear',
-					color: 'text-gray-400'
+					color: 'text-gray-400',
+					hoverColor: 'text-gold-500'
 				},
 				{
 					title: 'Skills',
 					href: 'skills',
 					icon: 'solar:bolt-linear',
-					color: 'text-gray-400'
+					color: 'text-gray-400',
+					hoverColor: 'text-gold-500'
 				},
 				{
 					title: 'Support',
 					href: 'support',
 					icon: 'solar:meditation-linear',
-					color: 'text-gray-400'
+					color: 'text-gray-400',
+					hoverColor: 'text-gold-500'
 				}
 			]
 		},
@@ -75,25 +83,29 @@
 					title: 'Training',
 					href: 'training',
 					icon: 'solar:presentation-graph-linear',
-					color: 'text-gray-400'
+					color: 'text-gray-400',
+					hoverColor: 'text-gold-500'
 				},
 				{
 					title: 'Lesson Plans',
 					href: 'lesson-plans',
 					icon: 'solar:file-check-linear',
-					color: 'text-gray-400'
+					color: 'text-gray-400',
+					hoverColor: 'text-gold-500'
 				},
 				{
 					title: 'Parents & Guardians',
 					href: 'parents-and-guardians',
 					icon: 'solar:user-heart-linear',
-					color: 'text-gray-400'
+					color: 'text-gray-400',
+					hoverColor: 'text-gold-500'
 				},
 				{
 					title: 'Schools',
 					href: 'schools',
 					icon: 'solar:square-academic-cap-linear',
-					color: 'text-gray-400'
+					color: 'text-gray-400',
+					hoverColor: 'text-gold-500'
 				}
 			]
 		},
@@ -104,25 +116,29 @@
 					title: 'Partnerships',
 					href: 'partnerships',
 					icon: 'solar:filters-linear',
-					color: 'text-blue-400'
+					color: 'text-blue-400',
+					hoverColor: 'text-blue-500'
 				},
 				{
 					title: 'Volunteer',
 					href: 'volunteer',
 					icon: 'solar:heart-shine-linear',
-					color: 'text-red-400'
+					color: 'text-red-400',
+					hoverColor: 'text-red-500'
 				},
 				{
 					title: 'Donate',
 					href: 'donate',
 					icon: 'solar:confetti-linear',
-					color: 'text-green-400'
+					color: 'text-green-400',
+					hoverColor: 'text-green-500'
 				},
 				{
 					title: 'Events',
 					href: 'events',
 					icon: 'solar:bell-linear',
-					color: 'text-yellow-400'
+					color: 'text-yellow-400',
+					hoverColor: 'text-yellow-500'
 				}
 			]
 		}
@@ -176,9 +192,8 @@
 			{#each menuItems as item}
 				<a
 					href={`${base}/${item.href}`}
-					class="text-lg font-semibold leading-6 text-gray-900 {item.current
-						? 'text-indigo-600'
-						: ''}">{item.name}</a
+					class="text-lg font-semibold leading-6 text-gray-900 hover:text-indigo-400"
+					class:text-indigo-600={$page.route.id === `/${item.href}`}>{item.name}</a
 				>
 			{/each}
 		</div>
@@ -204,7 +219,7 @@
 									{#each extendedMenuItem.items as item}
 										<a
 											href={`${base}/${item.href}`}
-											class="flex py-2 text-sm font-semibold leading-6 text-gray-900 gap-x-4"
+											class="flex py-2 text-sm font-semibold leading-6 text-gray-900 rounded-sm gap-x-4 hover:bg-gray-50"
 										>
 											<Icon icon={item.icon} class="flex-none w-6 h-6 {item.color}" />
 											{item.title}

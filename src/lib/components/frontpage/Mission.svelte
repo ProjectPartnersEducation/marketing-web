@@ -1,22 +1,22 @@
 <script>
 	import Icon from '@iconify/svelte';
 
-	export const title = 'Mission';
+	export const title = 'Mission 2026';
 	export const text = `
 Our mission is to instill a love for learning that extends beyond the classroom, fosters global awareness, and prepares our students for an interconnected world.
 We are committed to achieving the following goals by 2026:`;
 
 	export const stats = [
 		{
-			title: '+50%',
+			title: '95%',
 			subtitle: 'Student engagement'
 		},
 		{
-			title: '+30%',
+			title: '95%',
 			subtitle: 'Teacher satisfaction'
 		},
 		{
-			title: '100,000',
+			title: '1,000,000',
 			subtitle: 'Students reached'
 		},
 		{
@@ -53,9 +53,30 @@ We are committed to achieving the following goals by 2026:`;
 								</span>
 							</h3>
 							<p class="mt-2">
-								Increase learner engagement in our partners schools by 50%, as measured by
-								self-reported interest and time spent on academic activities outside of the school
-								environment.
+								Achieve 95% learner engagement in our partners schools, as measured by self-reported
+								interest and time spent on academic activities outside of the school environment.
+							</p>
+						</li>
+						<li class="max-w-xl mt-4 text-base leading-7 text-gray-700">
+							<h3 class="text-xl font-semibold tracking-tight text-gray-900">
+								Teacher Support
+								<span
+									class="inline-flex align-middle items-center gap-x-1.5 rounded-full bg-sky-100 px-2 py-1 ml-1 text-xs font-medium text-sky-600"
+								>
+									<!-- <svg class="h-1.5 w-1.5 fill-sky-400" viewBox="0 0 6 6" aria-hidden="true">
+										<circle cx="3" cy="3" r="3" />
+									</svg> -->
+									<Icon
+										icon="solar:graph-up-bold-duotone"
+										class="flex-none w-6 h-6 fill-emerald-400"
+									/>
+									On Track
+								</span>
+							</h3>
+							<p class="mt-2">
+								Achieve 95% teacher satisfaction in our partners schools, as assessed by yearly
+								surveys, reflecting the positive impact of our pedagogical approach on professional
+								development and teaching satisfaction.
 							</p>
 						</li>
 						<li class="max-w-xl mt-4 text-base leading-7 text-gray-700">
@@ -76,30 +97,8 @@ We are committed to achieving the following goals by 2026:`;
 							</h3>
 							<p class="mt-2">
 								Expand our network of partner schools to at least 5 more countries, thereby
-								providing our distinctive educational approach to over 100,000 more students across
-								the globe.
-							</p>
-						</li>
-						<li class="max-w-xl mt-4 text-base leading-7 text-gray-700">
-							<h3 class="text-xl font-semibold tracking-tight text-gray-900">
-								Teacher Support
-								<span
-									class="inline-flex align-middle items-center gap-x-1.5 rounded-full bg-sky-100 px-2 py-1 ml-1 text-xs font-medium text-sky-600"
-								>
-									<!-- <svg class="h-1.5 w-1.5 fill-sky-400" viewBox="0 0 6 6" aria-hidden="true">
-										<circle cx="3" cy="3" r="3" />
-									</svg> -->
-									<Icon
-										icon="solar:graph-up-bold-duotone"
-										class="flex-none w-6 h-6 fill-emerald-400"
-									/>
-									On Track
-								</span>
-							</h3>
-							<p class="mt-2">
-								Improve teacher satisfaction in our partners schools by 30%, as assessed by yearly
-								surveys, reflecting the positive impact of our pedagogical approach on professional
-								development and teaching satisfaction.
+								providing our distinctive educational approach to over 1,000,000 more students
+								across the globe.
 							</p>
 						</li>
 						<li class="max-w-xl mt-4 text-base leading-7 text-gray-700">

@@ -8,6 +8,8 @@
 <div class="bg-white">
 	<TopBanner />
 	<Header />
-	<slot />
+	<div class="container max-w-5xl mx-auto sm:px-6 lg:px-8">
+		<slot />
+	</div>
 	<Footer />
 </div>
