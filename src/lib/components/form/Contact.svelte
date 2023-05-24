@@ -1,6 +1,15 @@
 <script lang="ts">
+	import TextInput from '$lib/components/form/elements/TextInput.svelte';
+	import TextAreaInput from '$lib/components/form/elements/TextAreaInput.svelte';
+
 	let agreement = false;
 	let mailingList = false;
+
+	let firstName = '';
+	let lastName = '';
+	let organisation = '';
+	let email = '';
+	let message = '';
 
 	const accessKey = '3149ae28-80f8-4473-a6da-8677d4807356';
 
@@ -34,72 +43,45 @@
 	<input type="hidden" name="access_key" value={accessKey} />
 	<input type="checkbox" name="botcheck" id="" style="display: none;" />
 	<div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-		<div>
-			<label for="first-name" class="block text-sm font-semibold leading-6 text-gray-900"
-				>First name*</label
-			>
-			<div class="mt-2.5">
-				<input
-					type="text"
-					name="first-name"
-					id="first-name"
-					autocomplete="given-name"
-					class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-				/>
-			</div>
-		</div>
-		<div>
-			<label for="last-name" class="block text-sm font-semibold leading-6 text-gray-900"
-				>Last name</label
-			>
-			<div class="mt-2.5">
-				<input
-					type="text"
-					name="last-name"
-					id="last-name"
-					autocomplete="family-name"
-					class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-				/>
-			</div>
+		<TextInput
+			label="First name*"
+			name="first-name"
+			autocomplete="given-name"
+			required
+			bind:value={firstName}
+		/>
+		<TextInput
+			label="Last name"
+			name="last-name"
+			autocomplete="family-name"
+			bind:value={lastName}
+		/>
+		<div class="sm:col-span-2">
+			<TextInput
+				label="Organisation"
+				name="organisation"
+				autocomplete="organization"
+				bind:value={organisation}
+			/>
 		</div>
 		<div class="sm:col-span-2">
-			<label for="organisation" class="block text-sm font-semibold leading-6 text-gray-900"
-				>Organisation</label
-			>
-			<div class="mt-2.5">
-				<input
-					type="text"
-					name="organisation"
-					id="organisation"
-					autocomplete="organization"
-					class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-				/>
-			</div>
+			<TextInput
+				label="Email*"
+				name="email"
+				autocomplete="email"
+				bind:value={email}
+				type="email"
+				required
+			/>
 		</div>
 		<div class="sm:col-span-2">
-			<label for="email" class="block text-sm font-semibold leading-6 text-gray-900">Email*</label>
-			<div class="mt-2.5">
-				<input
-					type="email"
-					name="email"
-					id="email"
-					autocomplete="email"
-					class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-				/>
-			</div>
-		</div>
-		<div class="sm:col-span-2">
-			<label for="message" class="block text-sm font-semibold leading-6 text-gray-900"
-				>Hi! I am messaging because...*</label
-			>
-			<div class="mt-2.5">
-				<textarea
-					name="message"
-					id="message"
-					rows="4"
-					class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-				/>
-			</div>
+			<TextAreaInput
+				label="Your message*"
+				name="message"
+				bind:value={message}
+				required
+				placeholder="Hi! I am messaging because...*"
+			/>
 		</div>
 		<div class="flex gap-x-4 sm:col-span-2">
 			<div class="flex items-center h-6">

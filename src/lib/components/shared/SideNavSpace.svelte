@@ -1,13 +1,13 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
 	import { createEventDispatcher } from 'svelte';
+	import { slide } from 'svelte/transition';
 
 	const dispatch = createEventDispatcher();
 
 	export let tabs: any[] = [];
 	export let activeTab: string = '';
-
-	export let open: bool = false;
+	export let open: boolean = false;
 </script>
 
 <div class="overflow-hidden bg-white divide-y divide-gray-200 rounded-lg shadow">
@@ -78,7 +78,7 @@
 				<h2
 					class="mt-2 text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight"
 				>
-					Project Partners Ghana
+					Project Partners Ghana 🇬🇭
 				</h2>
 				<div class="flex flex-col mt-1 sm:mt-0 sm:flex-row sm:flex-wrap sm:space-x-6">
 					<div class="flex items-center mt-2 text-sm text-gray-500">
@@ -95,7 +95,7 @@
 					<span class="hidden sm:block">
 						<button
 							type="button"
-							class="inline-flex items-center px-2 py-2 text-sm font-semibold text-red-300 bg-white bg-red-500 rounded-md shadow-sm ring-1 ring-inset ring-red-400 hover:bg-red-600"
+							class="inline-flex items-center px-2 py-2 text-sm font-semibold text-red-300 bg-red-500 rounded-md shadow-sm ring-1 ring-inset ring-red-400 hover:bg-red-600"
 							on:click={() => (open = false)}
 						>
 							<Icon icon="solar:close-circle-linear" class="w-5 h-5 text-red-900" />
@@ -200,24 +200,21 @@
 					</div>
 				</div>
 			{:else}
-				<span class="sm:ml-3">
+				<span class="relative sm:ml-3">
 					<button
 						type="button"
-						class="inline-flex items-center px-3 py-2 text-sm font-semibold text-white bg-green-700 rounded-md shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
+						class="inline-flex items-center px-3 py-2 text-sm font-semibold text-white bg-indigo-600 rounded-md shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 ring-4"
 						on:click={() => (open = true)}
 					>
-						<Icon
-							icon="solar:square-double-alt-arrow-down-outline"
-							class="-ml-0.5 mr-1.5 h-5 w-5 text-white"
-						/>
-						Expand
+						<Icon icon="solar:alt-arrow-down-outline" class="-ml-0.5 mr-1.5 h-5 w-5 text-white" />
+						View
 					</button>
 				</span>
 			{/if}
 		</div>
 	</div>
 	{#if open}
-		<div class="flex flex-row px-4 py-5 sm:p-6">
+		<div class="flex flex-row px-4 py-5 sm:p-6" transition:slide|local>
 			<div class="p-4 pr-8 basis-1/3">
 				<nav class="flex flex-col flex-1" aria-label="Sidebar">
 					<ul role="list" class="-mx-2 space-y-1">
@@ -232,9 +229,11 @@
 										class:hover:text-indigo-600={tab.name !== activeTab}
 										class:hover:bg-gray-50={tab.name !== activeTab}
 										on:click={() => {
+											if (tab.name === activeTab) return;
 											dispatch('tabChange', tab.name);
 										}}
 										on:keypress={() => {
+											if (tab.name === activeTab) return;
 											dispatch('tabChange', tab.name);
 										}}
 									>
