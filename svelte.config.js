@@ -25,7 +25,7 @@ const config = {
 		},
 		csp: {
 			directives: {
-				'script-src': ['strict-dynamic', 'self'],
+				'script-src': ['strict-dynamic', 'self', 'projectpartners.org'],
 				'object-src': ['none'],
 				'base-uri': ['none']
 			}
