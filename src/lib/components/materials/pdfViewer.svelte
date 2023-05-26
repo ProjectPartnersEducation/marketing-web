@@ -20,7 +20,7 @@
 
 	const showPDFFileFromURL = (fileURL: string, fileName: string) => {
 		const adobeDCView = new AdobeDC.View({
-			clientId: '6827082a606e48ea9f498ce7b3b211e0',
+			clientId: 'ed819f5dfb20426fb0103dda2079b499',
 			divId: 'adobe-dc-view'
 		});
 
