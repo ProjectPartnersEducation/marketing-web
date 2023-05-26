@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
 	import { base } from '$app/paths';
@@ -86,8 +87,12 @@
 		}
 	];
 
-	let activeTab = $page.url.searchParams.get('project') || tabs[0].name;
+	let activeTab = tabs[0].name;
 	let contentLoading = false;
+
+	onMount(() => {
+		activeTab = $page.url.searchParams.get('project') ?? tabs[0].name;
+	});
 </script>
 
 <div>
@@ -193,7 +198,7 @@
 						to become a partner, where we can support you with printed materials.
 					</p>
 					<p class="mt-4">
-						<a href="{base}/partners" class="text-sm font-semibold leading-6 text-indigo-600"
+						<a href="{base}/partnerships" class="text-sm font-semibold leading-6 text-indigo-600"
 							>Partner with us<Icon icon="solar:arrow-right-linear" class="inline w-4 h-4 ml-1" />
 						</a>
 					</p>

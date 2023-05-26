@@ -3,7 +3,6 @@
 </script>
 
 <script lang="ts">
-	import Icon from '@iconify/svelte';
 	import { onMount } from 'svelte';
 
 	export let url: string;
