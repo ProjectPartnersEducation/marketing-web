@@ -22,6 +22,13 @@ const config = {
 		adapter: adapter(),
 		paths: {
 			base: dev ? '' : process.env.BASE_PATH,
+		},
+		csp: {
+			directives: {
+				'script-src': ['strict-dynamic', 'self'],
+				'object-src': ['none'],
+				'base-uri': ['none']
+			}
 		}
 	}
 };
