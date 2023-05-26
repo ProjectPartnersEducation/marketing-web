@@ -7,6 +7,7 @@
 	export let autocomplete = 'off';
 	export let error = '';
 	export let type = 'text';
+	export let disabled = false;
 
 	function typeAction(node: HTMLInputElement) {
 		node.type = type;
@@ -26,7 +27,7 @@
 			{placeholder}
 			{required}
 			{autocomplete}
-			class=" w-full rounded-md border-0 px-3.5 py-2 pr-10 ring-1 ring-inset focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6 placeholder:text-gray-400"
+			class="w-full rounded-md border-0 px-3.5 py-2 pr-10 ring-1 ring-inset focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6 placeholder:text-gray-400 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 disabled:ring-gray-200"
 			class:pr-10={error}
 			class:text-red-900={error}
 			class:text-gray-900={!error}
@@ -37,6 +38,7 @@
 			class:focus:ring-red-500={error}
 			class:focus:ring-indigo-500={!error}
 			bind:value
+			{disabled}
 			on:blur
 			on:focus
 			on:input

@@ -5,6 +5,7 @@
 	export let value = '';
 	export let required = false;
 	export let error = '';
+	export let disabled = false;
 
 	// Generate a random ID
 	const id = Math.random().toString(36).substring(2);
@@ -18,12 +19,12 @@
 			{id}
 			{placeholder}
 			{required}
-			class=" w-full rounded-md border-0 px-3.5 py-2 ring-1 ring-inset focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6 placeholder:text-gray-400"
+			{disabled}
+			class=" w-full rounded-md border-0 px-3.5 py-2 ring-1 ring-inset focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6 placeholder:text-gray-400 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 disabled:ring-gray-200"
 			class:text-red-900={error}
 			class:text-gray-900={!error}
 			class:ring-red-300={error}
 			class:ring-gray-300={!error}
-			class:placeholder:text-red-300={error}
 			class:placeholder:text-gray-300={!error}
 			class:focus:ring-red-500={error}
 			class:focus:ring-indigo-500={!error}

@@ -1,66 +1,69 @@
-<script>
+<script lang="ts">
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
+	import Icon from '@iconify/svelte';
+
 	import SideNavSpace from '$lib/components/shared/SideNavSpace.svelte';
 	import PageHeading from '$lib/components/shared/PageHeading.svelte';
 	import PageIntroSummary from '$lib/components/shared/PageIntroSummary.svelte';
 	import SectionHeading from '$lib/components/shared/SectionHeading.svelte';
-	import Icon from '@iconify/svelte';
+	import PdfViewer from '$lib/components/materials/pdfViewer.svelte';
 
 	const projects = [
 		{
 			name: 'Introduction',
-			url: 'https://drive.google.com/file/d/1A9b2qydmyPgkBWRaXqtJkIDufmoxSv4B/preview',
+			url: 'https://storage.googleapis.com/pp-public-resources/project-packs/maths-ghana-2019/Project%20Pack%20-%202019%20-%20Introduction.pdf',
 			icon: null
 		},
 		{
 			name: 'Project 1: The Trotro Mate',
-			url: 'https://drive.google.com/file/d/1HD1pab7WO5HBZPXQYx_fco3YKcxaQRwa/preview',
+			url: 'https://storage.googleapis.com/pp-public-resources/project-packs/maths-ghana-2019/Project%20Pack%20-%202019%20-%20Project%201.pdf',
 			icon: null
 		},
 		{
 			name: 'Project 2: Coconut Seller',
-			url: 'https://drive.google.com/file/d/16XkcVcLlG710W7VM-2AdEZPjRnVwCDN9/preview',
+			url: 'https://storage.googleapis.com/pp-public-resources/project-packs/maths-ghana-2019/Project%20Pack%20-%202019%20-%20Project%202.pdf',
 			icon: null
 		},
 		{
 			name: 'Project 3: Corn Farming',
-			url: 'https://drive.google.com/file/d/1hEG2LP99EaaoofKvUgYeMx_gnevrWWM8/preview',
+			url: 'https://storage.googleapis.com/pp-public-resources/project-packs/maths-ghana-2019/Project%20Pack%20-%202019%20-%20Project%203.pdf',
 			icon: null
 		},
 		{
 			name: "Project 4: The Architect's Office",
-			url: 'https://drive.google.com/file/d/1s8c3MCr1KmESjI-nR0Uz-Sy_wlq6psbh/preview',
+			url: 'https://storage.googleapis.com/pp-public-resources/project-packs/maths-ghana-2019/Project%20Pack%20-%202019%20-%20Project%204.pdf',
 			icon: null
 		},
 		{
 			name: 'Project 5: Engineer',
-			url: 'https://drive.google.com/file/d/1mvXxvZRy89dPSAb_OtTq4paNKyZMazav/preview',
+			url: 'https://storage.googleapis.com/pp-public-resources/project-packs/maths-ghana-2019/Project%20Pack%20-%202019%20-%20Project%205.pdf',
 			icon: null
 		},
 		{
 			name: 'Project 6: Chop Bar',
-			url: 'https://drive.google.com/file/d/1XAiakRCljn-rbD8LDHHxogk2117OuC4E/preview',
+			url: 'https://storage.googleapis.com/pp-public-resources/project-packs/maths-ghana-2019/Project%20Pack%20-%202019%20-%20Project%206.pdf',
 			icon: null
 		},
 		{
 			name: 'Project 7: Football Manager',
-			url: 'https://drive.google.com/file/d/169ABH54xssW2DFPqMFVl23gR_t8sgtHQ/preview',
+			url: 'https://storage.googleapis.com/pp-public-resources/project-packs/maths-ghana-2019/Project%20Pack%20-%202019%20-%20Project%207.pdf',
 			icon: null
 		},
 		{
 			name: 'Project 8: Retail Business',
-			url: 'https://drive.google.com/file/d/1_d_bW6-buyXtITASyj8sZkVEbcyKlC6-/preview',
+			url: 'https://storage.googleapis.com/pp-public-resources/project-packs/maths-ghana-2019/Project%20Pack%20-%202019%20-%20Project%208.pdf',
 			icon: null
 		},
 		{
 			name: 'Project 9: Property Manager',
-			url: 'https://drive.google.com/file/d/1O3uIzu4Vr1Ji3G7_Rp0WBhP0ziAAhQNj/preview',
+			url: 'https://storage.googleapis.com/pp-public-resources/project-packs/maths-ghana-2019/Project%20Pack%20-%202019%20-%20Project%209.pdf',
 			icon: null
 		},
 		{
 			name: 'Project 10: The Investor',
-			url: 'https://drive.google.com/file/d/1UjFFUDghksiEECEwXT_uzLNx_rq569jv/preview',
+			url: 'https://storage.googleapis.com/pp-public-resources/project-packs/maths-ghana-2019/Project%20Pack%20-%202019%20-%20Project%2010.pdf',
 			icon: null
 		}
 	];
@@ -73,7 +76,7 @@
 		{},
 		{
 			name: 'Complete Pack',
-			url: 'https://drive.google.com/file/d/1a9UZYsRL9yYCq4XZDdtSkE3kHMr9pr-S/preview',
+			url: 'https://storage.googleapis.com/pp-public-resources/project-packs/maths-ghana-2019/Project%20Pack%20-%202019.pdf',
 			icon: null
 		},
 		{
@@ -83,8 +86,8 @@
 		}
 	];
 
-	let activeTab = tabs[0].name;
-	let contentLoading = true;
+	let activeTab = $page.url.searchParams.get('project') || tabs[0].name;
+	let contentLoading = false;
 </script>
 
 <div>
@@ -94,38 +97,7 @@
 				They are designed to be used in a variety of contexts, including in the classroom, at home,
 				or in an after-school club."
 		aboveHeadingText="All of our materials are free forever"
-	>
-		<!-- <div class="p-4 mt-4 rounded-md bg-blue-50" slot="below-heading">
-			<div class="flex">
-				<div class="flex-shrink-0">
-					<svg
-						class="w-5 h-5 text-blue-400"
-						viewBox="0 0 20 20"
-						fill="currentColor"
-						aria-hidden="true"
-					>
-						<path
-							fill-rule="evenodd"
-							d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z"
-							clip-rule="evenodd"
-						/>
-					</svg>
-				</div>
-				<div class="flex-1 ml-3 md:flex md:justify-between">
-					<p class="text-sm text-blue-700">
-						Our materials are also accessible in other formats that are more suitable for
-						low-internet regions
-					</p>
-					<p class="mt-3 text-sm md:ml-6 md:mt-0">
-						<a href="#" class="font-medium text-blue-700 whitespace-nowrap hover:text-blue-600">
-							Find out more
-							<span aria-hidden="true"> &rarr;</span>
-						</a>
-					</p>
-				</div>
-			</div>
-		</div> -->
-	</PageHeading>
+	/>
 
 	<PageIntroSummary
 		subtitle="
@@ -168,23 +140,9 @@
 		}}
 	>
 		<div slot="content" class:bg-gray-100={contentLoading}>
-			{#if contentLoading}
-				<div
-					class="flex items-center justify-center w-full border-none h-screen lg:h-[calc(100vh-12rem)] animate-pulse"
-				>
-					Loading...
-					<Icon icon="solar:wi-fi-router-minimalistic-linear" class="w-6 h-6 ml-2" />
-				</div>
-			{/if}
-			<iframe
-				src={projects.find((project) => project.name === activeTab)?.url || projects[0].url}
-				class="w-full border-none h-screen lg:h-[calc(100vh-12rem)]"
-				class:hidden={contentLoading}
-				allow="autoplay"
-				title="PDF Viewer"
-				on:load={() => {
-					contentLoading = false;
-				}}
+			<PdfViewer
+				url={projects.find((project) => project.name === activeTab)?.url || projects[0].url}
+				name={activeTab || projects[0].name}
 			/>
 		</div>
 	</SideNavSpace>
@@ -235,7 +193,7 @@
 						to become a partner, where we can support you with printed materials.
 					</p>
 					<p class="mt-4">
-						<a href="/partners" class="text-sm font-semibold leading-6 text-indigo-600"
+						<a href="{base}/partners" class="text-sm font-semibold leading-6 text-indigo-600"
 							>Partner with us<Icon icon="solar:arrow-right-linear" class="inline w-4 h-4 ml-1" />
 						</a>
 					</p>
@@ -251,7 +209,7 @@
 						For any other enquiries, please contact us and we will do our best to help you.
 					</p>
 					<p class="mt-4">
-						<a href="/partners" class="text-sm font-semibold leading-6 text-indigo-600"
+						<a href="{base}/contact" class="text-sm font-semibold leading-6 text-indigo-600"
 							>Send us a message<Icon icon="solar:arrow-right-linear" class="inline w-4 h-4 ml-1" />
 						</a>
 					</p>
