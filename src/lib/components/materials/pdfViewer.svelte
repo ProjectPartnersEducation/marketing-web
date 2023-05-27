@@ -4,9 +4,12 @@
 
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { PUBLIC_ADOBE_API_KEY } from '$env/static/public';
 
 	export let url: string;
 	export let name: string;
+
+	console.log(PUBLIC_ADOBE_API_KEY);
 
 	const loadAdobeDCView = () => {
 		const script = document.createElement('script');

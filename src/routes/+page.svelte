@@ -12,6 +12,10 @@
 		'Project Partners is on a mission to recentre education on engagement, creativity, and teamwork. Through our network of partners, collaborators, and schools, we are working with young people across the planet to support the next generation of learning.';
 </script>
 
+<svelte:head>
+	<title>Project Partners Education</title>
+</svelte:head>
+
 <main class="isolate">
 	<Hero
 		{headlineContent1}
