@@ -1,4 +1,6 @@
 <script>
+	import { base } from '$app/paths';
+
 	export const linksBlocks = [
 		[
 			{
@@ -58,7 +60,7 @@
 									{#each link.items as item}
 										<li>
 											<a
-												href={item.href}
+												href={`${base}/${item.href}`}
 												class="text-sm leading-6 text-gray-600 hover:text-gray-900">{item.name}</a
 											>
 										</li>

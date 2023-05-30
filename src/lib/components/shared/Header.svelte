@@ -206,7 +206,7 @@
 			{/each}
 		</div>
 		<div class="hidden lg:flex lg:flex-1 lg:justify-end">
-			<a href={callToAction.href} class="text-lg font-semibold leading-6 text-gray-900"
+			<a href={`${base}/${callToAction.href}`} class="text-lg font-semibold leading-6 text-gray-900"
 				>{callToAction.name} <span aria-hidden="true">&rarr;</span></a
 			>
 		</div>

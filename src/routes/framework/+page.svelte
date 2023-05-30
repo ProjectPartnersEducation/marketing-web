@@ -17,19 +17,19 @@
 			title: 'Our Principles',
 			desc: 'Five key principles guide all our operations and initiatives. They represent our philosophy of education, which we support our partners to adopt.',
 			linkText: 'Read more',
-			href: '/framework/principles'
+			href: '#principles'
 		},
 		{
 			title: 'How We Implement Them',
 			desc: 'Find out how we implement our philosophy in our curriculum and teaching methods, creating an engaging and culturally inclusive learning environment.',
 			linkText: 'Read more',
-			href: '/framework/implementation'
+			href: '#implementation'
 		},
 		{
 			title: 'FAQs',
 			desc: "Here you'll find answers to common questions about our pedagogical framework and how to implement it.",
 			linkText: 'Read more',
-			href: '/framework/faqs'
+			href: '#faqs'
 		}
 	]}
 />
@@ -37,11 +37,13 @@
 <SectionHeading
 	title="Our pedagogical principles"
 	subtitle="Our pedagogical principles are the foundation of our work. They are the guiding principles that inform our curriculum, teaching methods, and assessment practices."
+	id="principles"
 />
 
 <SectionHeading
 	title="How we implement them"
 	subtitle="We measure ourselves by our actions, not our words. Here, we illustrate how we bring our principles life through our educational approach and practices."
+	id="implementation"
 />
 
-<SectionHeading title="Frequently asked questions" />
+<SectionHeading title="Frequently asked questions" id="faqs" />
