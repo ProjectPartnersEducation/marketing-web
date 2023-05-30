@@ -8,6 +8,7 @@
 	export let error = '';
 	export let type = 'text';
 	export let disabled = false;
+	export let additionalClasses = '';
 
 	function typeAction(node: HTMLInputElement) {
 		node.type = type;
@@ -17,7 +18,7 @@
 	const id = Math.random().toString(36).substring(2);
 </script>
 
-<div>
+<div class={additionalClasses}>
 	<label for={id} class="block text-sm font-semibold leading-6 text-gray-900">{label}</label>
 	<div class="relative mt-2 rounded-md shadow-sm">
 		<input

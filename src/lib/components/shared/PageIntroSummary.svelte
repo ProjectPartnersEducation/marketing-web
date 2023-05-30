@@ -8,13 +8,14 @@
 		href: string | null;
 	}
 
+	export let title: string = 'On this page';
 	export let subtitle: string;
 	export let menuItems: MenuItem[] = [];
 </script>
 
-<div class="lg:grid lg:grid-cols-12 lg:gap-8">
+<div class="pt-24 lg:grid lg:grid-cols-12 lg:gap-8 lg:pt-36">
 	<div class="lg:col-span-5">
-		<h2 class="text-2xl font-bold leading-10 tracking-tight text-gray-900">On this page</h2>
+		<h2 class="text-2xl font-bold leading-10 tracking-tight text-gray-900">{title}</h2>
 		<p class="mt-4 text-base leading-7 text-gray-600">
 			{subtitle}
 		</p>

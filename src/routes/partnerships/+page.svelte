@@ -32,7 +32,7 @@
                 contact form.
             `,
 			linkText: 'Message us',
-			href: '#'
+			href: '#send-us-a-message'
 		},
 		{
 			title: 'Requirements and expectations',
@@ -46,14 +46,13 @@
 	]}
 />
 
-<div id="book-a-meeting">
-	<SectionHeading
-		title="Book a meeting with us"
-		subtitle="We are a small team and we are always happy to meet with our partners and
+<SectionHeading
+	title="Book a meeting with us"
+	subtitle="We are a small team and we are always happy to meet with our partners and
 potential partners. We hold regular drop-in sessions where you can meet with us to discuss your
 project or ask any questions you may have."
-	/>
-</div>
+	id="book-a-meeting"
+/>
 <iframe
 	src="https://koalendar.com/e/drop-in-with-project-partners?embed=true"
 	width="100%"
@@ -62,15 +61,13 @@ project or ask any questions you may have."
 	title="Drop in with Project Partners"
 />
 
-<div id="send-us-a-message">
-	<SectionHeading title="Send us a message">
-		<span slot="subtitle">
-			If you have a question or would like to get in touch, you can send us a message using our
-			contact form. You can also email us at <a
-				href="mailto:hello@projectpartners.org"
-				class="text-indigo-600">hello@projectpartners.org</a
-			>.
-		</span>
-	</SectionHeading>
-</div>
+<SectionHeading title="Send us a message" id="send-us-a-message">
+	<span slot="subtitle">
+		If you have a question or would like to get in touch, you can send us a message using our
+		contact form. You can also email us at <a
+			href="mailto:hello@projectpartners.org"
+			class="text-indigo-600">hello@projectpartners.org</a
+		>.
+	</span>
+</SectionHeading>
 <ContactForm />

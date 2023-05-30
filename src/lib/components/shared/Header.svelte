@@ -3,7 +3,13 @@
 	import { base, assets } from '$app/paths';
 	import { page } from '$app/stores';
 
-	console.log($page.route.id);
+	let justClicked = false;
+	const registerClick = () => {
+		justClicked = true;
+		setTimeout(() => {
+			justClicked = false;
+		}, 1);
+	};
 
 	const menuItems = [
 		{
@@ -101,7 +107,7 @@
 					hoverColor: 'text-gold-500'
 				},
 				{
-					title: 'Schools',
+					title: 'Schools & Clubs',
 					href: 'schools',
 					icon: 'solar:square-academic-cap-linear',
 					color: 'text-gray-400',
@@ -158,6 +164,8 @@
 	<nav
 		class="relative flex items-center justify-between p-6 mx-auto max-w-7xl lg:px-8 group"
 		aria-label="Global"
+		on:click={registerClick}
+		on:keypress={registerClick}
 	>
 		<div class="flex lg:flex-1 s">
 			<a href="{base}/" class="-m-1.5 p-1.5">
@@ -202,36 +210,38 @@
 				>{callToAction.name} <span aria-hidden="true">&rarr;</span></a
 			>
 		</div>
-		<div
-			class="absolute inset-x-0 top-0 pt-16 transition-opacity duration-200 transform scale-0 -translate-y-1 bg-white shadow-lg opacity-0 -z-10 ring-1 ring-gray-900/5 group-hover:scale-100 ease group-hover:opacity-100 group-hover:translate-y-0"
-		>
+		{#if !justClicked}
 			<div
-				class="grid grid-cols-1 px-6 py-10 mx-auto max-w-7xl gap-x-8 gap-y-10 lg:grid-cols-1 lg:px-8"
+				class="absolute inset-x-0 top-0 pt-16 transition-opacity duration-200 transform scale-0 -translate-y-1 bg-white shadow-lg opacity-0 -z-10 ring-1 ring-gray-900/5 group-hover:scale-100 ease group-hover:opacity-100 group-hover:translate-y-0"
 			>
-				<div class="grid grid-cols-4 gap-x-6 sm:gap-x-8">
-					{#each extendedMenuItems as extendedMenuItem}
-						<div>
-							<h3 class="text-sm font-medium leading-6 text-gray-500">
-								{extendedMenuItem.heading}
-							</h3>
-							<div class="flow-root mt-6">
-								<div class="-my-2">
-									{#each extendedMenuItem.items as item}
-										<a
-											href={`${base}/${item.href}`}
-											class="flex py-2 text-sm font-semibold leading-6 text-gray-900 rounded-sm gap-x-4 hover:bg-gray-50"
-										>
-											<Icon icon={item.icon} class="flex-none w-6 h-6 {item.color}" />
-											{item.title}
-										</a>
-									{/each}
+				<div
+					class="grid grid-cols-1 px-6 py-10 mx-auto max-w-7xl gap-x-8 gap-y-10 lg:grid-cols-1 lg:px-8"
+				>
+					<div class="grid grid-cols-4 gap-x-6 sm:gap-x-8">
+						{#each extendedMenuItems as extendedMenuItem}
+							<div>
+								<h3 class="text-sm font-medium leading-6 text-gray-500">
+									{extendedMenuItem.heading}
+								</h3>
+								<div class="flow-root mt-6">
+									<div class="-my-2">
+										{#each extendedMenuItem.items as item}
+											<a
+												href={`${base}/${item.href}`}
+												class="flex py-2 text-sm font-semibold leading-6 text-gray-900 rounded-sm gap-x-4 hover:bg-indigo-50"
+											>
+												<Icon icon={item.icon} class="flex-none w-6 h-6 ml-2 {item.color}" />
+												{item.title}
+											</a>
+										{/each}
+									</div>
 								</div>
 							</div>
-						</div>
-					{/each}
+						{/each}
+					</div>
 				</div>
 			</div>
-		</div>
+		{/if}
 	</nav>
 
 	{#if mobileMenuOpen}

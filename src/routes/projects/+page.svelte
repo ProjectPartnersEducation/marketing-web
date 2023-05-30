@@ -124,43 +124,43 @@
 		]}
 	/>
 
-	<div id="project-viewer">
-		<SectionHeading
-			title="Projects"
-			subtitle="Browse all of our learning materials here. You can also download everything for free."
-		/>
+	<SectionHeading
+		title="Projects"
+		subtitle="Browse all of our learning materials here. You can also download everything for free."
+		id="project-viewer"
+	/>
+	<div class="p-5 bg-indigo-200 rounded-md">
+		<SideNavSpace
+			{tabs}
+			{activeTab}
+			on:tabChange={(e) => {
+				activeTab = e.detail;
+				contentLoading = true;
+				$page.url.searchParams.set('project', activeTab || '');
+				goto(`?${$page.url.searchParams.toString()}`, {
+					noScroll: true,
+					keepFocus: true
+				});
+			}}
+		>
+			<div slot="content" class:bg-gray-100={contentLoading}>
+				<PdfViewer
+					url={projects.find((project) => project.name === activeTab)?.url || projects[0].url}
+					name={activeTab || projects[0].name}
+				/>
+			</div>
+		</SideNavSpace>
 	</div>
-	<br />
-	<SideNavSpace
-		{tabs}
-		{activeTab}
-		on:tabChange={(e) => {
-			activeTab = e.detail;
-			contentLoading = true;
-			$page.url.searchParams.set('project', activeTab || '');
-			goto(`?${$page.url.searchParams.toString()}`, {
-				noScroll: true,
-				keepFocus: true
-			});
-		}}
-	>
-		<div slot="content" class:bg-gray-100={contentLoading}>
-			<PdfViewer
-				url={projects.find((project) => project.name === activeTab)?.url || projects[0].url}
-				name={activeTab || projects[0].name}
-			/>
-		</div>
-	</SideNavSpace>
-	<div id="get-access">
-		<SectionHeading
-			title="Other ways to access our materials"
-			subtitle="
+
+	<SectionHeading
+		title="Other ways to access our materials"
+		subtitle="
 				Are you have trouble accessing our materials? Do you know someone who would benefit from
 				accessing our materials in a different way? We have a number of alternative formats
 				available, as part of our commitment to making our materials accessible to everyone.
 			"
-		/>
-	</div>
+		id="get-access"
+	/>
 
 	<div class="px-6 py-12 bg-white isolate sm:py-18 lg:px-8">
 		<div class="max-w-lg mx-auto mt-20 space-y-16">
