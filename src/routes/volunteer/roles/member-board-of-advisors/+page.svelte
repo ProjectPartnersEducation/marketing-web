@@ -1,4 +1,6 @@
 <script>
+	import { base } from '$app/paths';
+
 	import PageHeading from '$lib/components/shared/PageHeading.svelte';
 	import SectionHeading from '$lib/components/shared/SectionHeading.svelte';
 </script>
@@ -9,10 +11,9 @@
 >
 	<div slot="below-heading">
 		<div class="w-full mt-6 text-center">
-			<button
-				type="button"
+			<a
 				class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-				>Apply now</button
+				href="{base}/volunteer/apply">Apply now</a
 			>
 		</div>
 	</div>
@@ -263,9 +264,8 @@
 </div>
 
 <div class="w-full mt-6 text-center">
-	<button
-		type="button"
+	<a
 		class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-		>Apply now</button
+		href="{base}/volunteer/apply">Apply now</a
 	>
 </div>
