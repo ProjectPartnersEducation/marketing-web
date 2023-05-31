@@ -9,8 +9,6 @@
 	export let url: string;
 	export let name: string;
 
-	console.log(PUBLIC_ADOBE_API_KEY);
-
 	const loadAdobeDCView = () => {
 		const script = document.createElement('script');
 		script.src = 'https://documentcloud.adobe.com/view-sdk/main.js';
@@ -23,7 +21,7 @@
 
 	const showPDFFileFromURL = (fileURL: string, fileName: string) => {
 		const adobeDCView = new AdobeDC.View({
-			clientId: 'ed819f5dfb20426fb0103dda2079b499',
+			clientId: PUBLIC_ADOBE_API_KEY,
 			divId: 'adobe-dc-view'
 		});
 
