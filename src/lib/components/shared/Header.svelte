@@ -1,7 +1,16 @@
-<script>
+<script lang="ts">
 	import Icon from '@iconify/svelte';
 	import { base, assets } from '$app/paths';
 	import { page } from '$app/stores';
+
+	type MenuItem = {
+		name: string;
+		href: string;
+		icon: string;
+		color: string;
+		hoverColor: string;
+		comingSoon?: boolean;
+	};
 
 	let justClicked = false;
 	const registerClick = () => {
@@ -52,7 +61,8 @@
 					href: 'team',
 					icon: 'solar:user-hand-up-broken',
 					color: 'text-gray-400',
-					hoverColor: 'text-gold-500'
+					hoverColor: 'text-gold-500',
+					comingSoon: true
 				}
 			]
 		},
@@ -71,7 +81,8 @@
 					href: 'skills',
 					icon: 'solar:bolt-linear',
 					color: 'text-gray-400',
-					hoverColor: 'text-gold-500'
+					hoverColor: 'text-gold-500',
+					comingSoon: true
 				},
 				{
 					title: 'Support',
@@ -90,14 +101,16 @@
 					href: 'training',
 					icon: 'solar:presentation-graph-linear',
 					color: 'text-gray-400',
-					hoverColor: 'text-gold-500'
+					hoverColor: 'text-gold-500',
+					comingSoon: true
 				},
 				{
 					title: 'Lesson Plans',
 					href: 'lesson-plans',
 					icon: 'solar:file-check-linear',
 					color: 'text-gray-400',
-					hoverColor: 'text-gold-500'
+					hoverColor: 'text-gold-500',
+					comingSoon: true
 				},
 				{
 					title: 'Parents & Guardians',
@@ -144,7 +157,8 @@
 					href: 'events',
 					icon: 'solar:bell-linear',
 					color: 'text-yellow-400',
-					hoverColor: 'text-yellow-500'
+					hoverColor: 'text-yellow-500',
+					comingSoon: true
 				}
 			]
 		}
@@ -232,6 +246,12 @@
 											>
 												<Icon icon={item.icon} class="flex-none w-6 h-6 ml-2 {item.color}" />
 												{item.title}
+												{#if item.comingSoon}
+													<span
+														class="inline-flex items-center px-2 py-1 text-xs font-medium text-purple-700 rounded-full bg-purple-50 ring-1 ring-inset ring-purple-700/10"
+														>Coming soon</span
+													>
+												{/if}
 											</a>
 										{/each}
 									</div>

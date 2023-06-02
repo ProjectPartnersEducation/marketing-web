@@ -10,6 +10,7 @@
 	import PageIntroSummary from '$lib/components/shared/PageIntroSummary.svelte';
 	import SectionHeading from '$lib/components/shared/SectionHeading.svelte';
 	import PdfViewer from '$lib/components/materials/pdfViewer.svelte';
+	import ActionLinkList from '$lib/components/content/ActionLinkList.svelte';
 
 	const projects = [
 		{
@@ -90,6 +91,34 @@
 	let activeTab = tabs[0].name;
 	let contentLoading = false;
 
+	const actionLinks = [
+		{
+			title: "We're on WhatsApp",
+			description:
+				"We can send you any of our materials in PDF format via WhatsApp. Just send us a message and we'll get back to you as soon as we can.",
+			icon: 'mdi:whatsapp',
+			href: 'https://wa.me/447914054095',
+			linkText: 'Start conversation (+44 7914 054095)',
+			iconAdditionalClasses: 'bg-green-600'
+		},
+		{
+			title: 'Printed Materials',
+			description:
+				'If you are an organisation such as a school or community group, please consider applying to become a partner, where we can support you with printed materials.',
+			icon: 'solar:book-linear',
+			href: `${base}/partnerships`,
+			linkText: 'Partner with us'
+		},
+		{
+			title: 'Contact Us',
+			description:
+				'For any other enquiries, please contact us and we will do our best to help you.',
+			icon: 'solar:chat-round-like-outline',
+			href: `${base}/contact`,
+			linkText: 'Send us a message'
+		}
+	];
+
 	onMount(() => {
 		activeTab = $page.url.searchParams.get('project') ?? tabs[0].name;
 	});
@@ -98,10 +127,10 @@
 <div>
 	<PageHeading
 		title="Projects for learners"
-		description="Our projects are designed to be used by learners independently, with minimal supervision.
-				They are designed to be used in a variety of contexts, including in the classroom, at home,
+		description="The projects on this page are designed to be used by learners independently, with minimal supervision.
+				They are can be used in a variety of contexts, including at home, in the classroom, 
 				or in an after-school club."
-		aboveHeadingText="All of our materials are free forever"
+		aboveHeadingText="Our free materials for everyone"
 	/>
 
 	<PageIntroSummary
@@ -129,7 +158,7 @@
 		subtitle="Browse all of our learning materials here. You can also download everything for free."
 		id="project-viewer"
 	/>
-	<div class="p-5 bg-indigo-200 rounded-md">
+	<div class="p-5 mt-8 bg-indigo-200 rounded-md">
 		<SideNavSpace
 			{tabs}
 			{activeTab}
@@ -162,64 +191,5 @@
 		id="get-access"
 	/>
 
-	<div class="px-6 py-12 bg-white isolate sm:py-18 lg:px-8">
-		<div class="max-w-lg mx-auto mt-20 space-y-16">
-			<div class="flex gap-x-6">
-				<div class="flex items-center justify-center w-10 h-10 bg-green-600 rounded-lg shrink-0">
-					<Icon icon="mdi:whatsapp" class="w-6 h-6 text-white" />
-				</div>
-				<div>
-					<h3 class="text-base font-semibold leading-7 text-gray-900">We're on WhatsApp</h3>
-					<p class="mt-2 leading-7 text-gray-600">
-						We can send you any of our materials in PDF format via WhatsApp. Just send us a message
-						and we'll get back to you as soon as we can.
-					</p>
-					<p class="mt-4">
-						<a
-							href="https://wa.me/447914054095"
-							target="_blank"
-							class="text-sm font-semibold leading-6 text-indigo-600"
-							>Start conversation (+44 7914 054095)<Icon
-								icon="solar:arrow-right-linear"
-								class="inline w-4 h-4 ml-1"
-							/>
-						</a>
-					</p>
-				</div>
-			</div>
-			<div class="flex gap-x-6">
-				<div class="flex items-center justify-center w-10 h-10 bg-indigo-600 rounded-lg shrink-0">
-					<Icon icon="solar:book-linear" class="w-6 h-6 text-white" />
-				</div>
-				<div>
-					<h3 class="text-base font-semibold leading-7 text-gray-900">Printed Materials</h3>
-					<p class="mt-2 leading-7 text-gray-600">
-						If you are an organisation such as a school or community group, please consider applying
-						to become a partner, where we can support you with printed materials.
-					</p>
-					<p class="mt-4">
-						<a href="{base}/partnerships" class="text-sm font-semibold leading-6 text-indigo-600"
-							>Partner with us<Icon icon="solar:arrow-right-linear" class="inline w-4 h-4 ml-1" />
-						</a>
-					</p>
-				</div>
-			</div>
-			<div class="flex gap-x-6">
-				<div class="flex items-center justify-center w-10 h-10 bg-indigo-600 rounded-lg shrink-0">
-					<Icon icon="solar:chat-round-like-outline" class="w-6 h-6 text-white" />
-				</div>
-				<div>
-					<h3 class="text-base font-semibold leading-7 text-gray-900">Contact Us</h3>
-					<p class="mt-2 leading-7 text-gray-600">
-						For any other enquiries, please contact us and we will do our best to help you.
-					</p>
-					<p class="mt-4">
-						<a href="{base}/contact" class="text-sm font-semibold leading-6 text-indigo-600"
-							>Send us a message<Icon icon="solar:arrow-right-linear" class="inline w-4 h-4 ml-1" />
-						</a>
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
+	<ActionLinkList items={actionLinks} />
 </div>
