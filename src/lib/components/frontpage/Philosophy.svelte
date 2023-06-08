@@ -57,7 +57,7 @@
 			class="grid max-w-2xl grid-cols-1 mx-auto gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8"
 		>
 			<div class="lg:col-end-1 lg:w-full lg:max-w-xl lg:pb-8">
-				<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{title}</h2>
+				<h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">{title}</h2>
 				<p class="mt-6 text-xl leading-8 text-gray-600">
 					{text1}
 				</p>

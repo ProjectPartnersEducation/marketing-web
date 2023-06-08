@@ -15,9 +15,7 @@
 		<div
 			class="max-w-2xl mx-auto lg:mx-0 lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:gap-y-6 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8"
 		>
-			<h1
-				class="max-w-2xl text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl lg:col-span-2 xl:col-auto"
-			>
+			<h1 class="max-w-2xl text-4xl font-bold text-gray-900 sm:text-6xl lg:col-span-2 xl:col-auto">
 				<span class="inline-block mx-auto"> We bring </span>
 				<br /> <span class="text-white">and </span><span class="text-indigo-400"
 					>life to learning</span

@@ -12,6 +12,21 @@
 		comingSoon?: boolean;
 	};
 
+	export let sticky = false;
+	let previousY: number;
+	let currentY: number;
+	let clientHeight: number;
+
+	const calculateScroll = (y: number) => {
+		const direction = !previousY || previousY < currentY ? 'down' : 'up';
+		previousY = y;
+
+		return direction;
+	};
+
+	$: scrollDirection = calculateScroll(currentY);
+	$: offscreen = scrollDirection === 'down' && currentY > clientHeight * 4;
+
 	let justClicked = false;
 	const registerClick = () => {
 		justClicked = true;
@@ -85,9 +100,9 @@
 					comingSoon: true
 				},
 				{
-					title: 'Support',
-					href: 'support',
-					icon: 'solar:meditation-linear',
+					title: 'Discuss',
+					href: 'discuss',
+					icon: 'solar:chat-round-line-linear',
 					color: 'text-gray-400',
 					hoverColor: 'text-gold-500'
 				}
@@ -174,7 +189,15 @@
 	let mobileMenuOpen = false;
 </script>
 
-<header class="relative inset-x-0 top-0 z-50">
+<svelte:window bind:scrollY={currentY} />
+
+<header
+	class="inset-x-0 top-0 z-50 transition-transform duration-300 ease-in-out backdrop-blur-sm transform-gpu"
+	class:relative={!sticky}
+	class:fixed={sticky}
+	class:-translate-y-full={sticky && offscreen}
+	bind:clientHeight
+>
 	<nav
 		class="relative flex items-center justify-between p-6 mx-auto max-w-7xl lg:px-8 group"
 		aria-label="Global"

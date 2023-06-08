@@ -17,7 +17,7 @@
 		'3': 'text-sm leading-6'
 	};
 
-	const headingBaseClasses = 'font-bold tracking-tight text-gray-900';
+	const headingBaseClasses = 'font-bold  text-gray-900 ';
 	const subheadingBaseClasses = 'text-gray-600';
 
 	const headingMargin = withMargin ? 'mt-12 lg:mt-24' : '';

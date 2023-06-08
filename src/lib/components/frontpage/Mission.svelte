@@ -29,7 +29,7 @@ We are committed to achieving the following goals by 2026:`;
 <div class="py-32 bg-white">
 	<div class="px-6 mx-auto max-w-7xl lg:px-8">
 		<div class="max-w-2xl mx-auto lg:mx-0 lg:max-w-none">
-			<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{title}</h2>
+			<h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">{title}</h2>
 			<div class="flex flex-col mt-6 gap-x-8 gap-y-20 lg:flex-row">
 				<div class="lg:w-full lg:max-w-2xl lg:flex-auto">
 					<p class="text-xl leading-8 text-gray-600">
@@ -37,7 +37,7 @@ We are committed to achieving the following goals by 2026:`;
 					</p>
 					<ol>
 						<li class="max-w-xl mt-4 text-base leading-7 text-gray-700">
-							<h3 class="text-xl font-semibold tracking-tight text-gray-900">
+							<h3 class="text-xl font-semibold text-gray-900">
 								Learner Engagement
 								<span
 									class="inline-flex align-middle items-center gap-x-1.5 rounded-full bg-sky-100 px-2 py-1 ml-1 text-xs font-medium text-sky-600"
@@ -58,7 +58,7 @@ We are committed to achieving the following goals by 2026:`;
 							</p>
 						</li>
 						<li class="max-w-xl mt-4 text-base leading-7 text-gray-700">
-							<h3 class="text-xl font-semibold tracking-tight text-gray-900">
+							<h3 class="text-xl font-semibold text-gray-900">
 								Teacher Support
 								<span
 									class="inline-flex align-middle items-center gap-x-1.5 rounded-full bg-sky-100 px-2 py-1 ml-1 text-xs font-medium text-sky-600"
@@ -80,7 +80,7 @@ We are committed to achieving the following goals by 2026:`;
 							</p>
 						</li>
 						<li class="max-w-xl mt-4 text-base leading-7 text-gray-700">
-							<h3 class="text-xl font-semibold tracking-tight text-gray-900">
+							<h3 class="text-xl font-semibold text-gray-900">
 								A Global Network
 								<span
 									class="inline-flex align-middle items-center gap-x-1.5 rounded-full bg-sky-100 px-2 py-1 ml-1 text-xs font-medium text-sky-600"
@@ -102,7 +102,7 @@ We are committed to achieving the following goals by 2026:`;
 							</p>
 						</li>
 						<li class="max-w-xl mt-4 text-base leading-7 text-gray-700">
-							<h3 class="text-xl font-semibold tracking-tight text-gray-900">
+							<h3 class="text-xl font-semibold text-gray-900">
 								Zero-cost Access
 								<span
 									class="inline-flex align-middle items-center gap-x-1.5 rounded-full bg-emerald-100 px-2 py-1 ml-1 text-sm font-medium text-emerald-600"
@@ -129,7 +129,7 @@ We are committed to achieving the following goals by 2026:`;
 						{#each stats as stat}
 							<div class="flex flex-col-reverse gap-y-4">
 								<dt class="text-base leading-7 text-gray-600">{stat.subtitle}</dt>
-								<dd class="text-5xl font-semibold tracking-tight text-gray-900">{stat.title}</dd>
+								<dd class="text-5xl font-semibold text-gray-900">{stat.title}</dd>
 							</div>
 						{/each}
 					</dl>

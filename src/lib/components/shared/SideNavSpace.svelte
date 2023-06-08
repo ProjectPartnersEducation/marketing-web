@@ -75,9 +75,7 @@
 						</li>
 					</ol>
 				</nav>
-				<h2
-					class="mt-2 text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight"
-				>
+				<h2 class="mt-2 text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:">
 					Project Partners Ghana 🇬🇭
 				</h2>
 				<div class="flex flex-col mt-1 sm:mt-0 sm:flex-row sm:flex-wrap sm:space-x-6">

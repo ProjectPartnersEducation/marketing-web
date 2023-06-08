@@ -11,11 +11,11 @@
 				{aboveHeadingText}
 			</p>
 		{/if}
-		<h2 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+		<h2 class="mt-2 text-4xl font-bold text-gray-900 sm:text-6xl font-title">
 			{title}
 		</h2>
 		{#if description}
-			<p class="mt-6 text-lg leading-8 text-gray-600">
+			<p class="mt-6 text-lg leading-8 text-gray-600 font-body">
 				{description}
 			</p>
 		{/if}

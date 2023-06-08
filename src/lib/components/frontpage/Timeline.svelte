@@ -49,7 +49,7 @@
 						aria-hidden="true"
 					/>
 				</time>
-				<p class="mt-6 text-lg font-semibold leading-8 tracking-tight text-gray-900">
+				<p class="mt-6 text-lg font-semibold leading-8 text-gray-900">
 					{title}
 				</p>
 				<p class="mt-1 text-base leading-7 text-gray-600">
