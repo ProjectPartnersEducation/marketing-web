@@ -237,13 +237,13 @@
 			{#each menuItems as item}
 				<a
 					href={`${base}/${item.href}`}
-					class="text-lg font-semibold leading-6 text-gray-900 hover:text-indigo-400"
+					class="text-lg leading-6 text-gray-900 hover:text-indigo-400"
 					class:text-indigo-600={$page.route.id === `/${item.href}`}>{item.name}</a
 				>
 			{/each}
 		</div>
 		<div class="hidden lg:flex lg:flex-1 lg:justify-end">
-			<a href={`${base}/${callToAction.href}`} class="text-lg font-semibold leading-6 text-gray-900"
+			<a href={`${base}/${callToAction.href}`} class="text-lg leading-6 text-gray-900"
 				>{callToAction.name} <span aria-hidden="true">&rarr;</span></a
 			>
 		</div>
@@ -265,7 +265,7 @@
 										{#each extendedMenuItem.items as item}
 											<a
 												href={`${base}/${item.href}`}
-												class="flex py-2 text-sm font-semibold leading-6 text-gray-900 rounded-sm gap-x-4 hover:bg-indigo-50"
+												class="flex py-2 text-sm leading-6 text-gray-900 rounded-sm gap-x-4 hover:bg-indigo-50"
 											>
 												<Icon icon={item.icon} class="flex-none w-6 h-6 ml-2 {item.color}" />
 												{item.title}
@@ -324,7 +324,7 @@
 						<div class="py-6 space-y-2">
 							{#each extendedMenuItems as itemGroup}
 								<h3
-									class="block px-3 py-2 -mx-3 font-semibold leading-7 text-gray-900 rounded-lg hover:bg-gray-50"
+									class="block px-3 py-2 -mx-3 leading-7 text-gray-900 rounded-lg hover:bg-gray-50"
 								>
 									{itemGroup.heading}
 								</h3>
@@ -342,7 +342,7 @@
 						<div class="py-6">
 							<a
 								href={callToAction.href}
-								class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+								class="-mx-3 block rounded-lg px-3 py-2.5 text-base leading-7 text-gray-900 hover:bg-gray-50"
 								>{callToAction.name}</a
 							>
 						</div>

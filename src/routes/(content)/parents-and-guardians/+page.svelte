@@ -70,7 +70,7 @@
 		<b class="font-bold">Learning for Everyone</b>: We want everyone to be able to learn with us.
 		That's why we provide our materials in different formats, like digital and printed versions, and
 		try to make sure they work without relying too much on technology. We call this the principle of
-		"scalability and accessibility".
+		"scalable accessibility".
 	</ListItem>
 	<ListItem>
 		<b class="font-bold">Learning and Growing</b>: We believe that learning isn't just about getting
