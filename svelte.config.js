@@ -27,7 +27,7 @@ const config = {
 		},
 		csp: {
 			directives: {
-				'script-src': ['strict-dynamic', 'self', 'projectpartners.org', 'beta.projectpartners.org', 'res.cloudinary.com', 'api.iconify.design'],
+				'script-src': ['strict-dynamic', 'self', 'https://projectpartners.org', 'https://beta.projectpartners.org', 'https://res.cloudinary.com', 'https://api.iconify.design'],
 				'object-src': ['none'],
 				'base-uri': ['none']
 			}
