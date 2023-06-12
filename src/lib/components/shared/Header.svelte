@@ -192,7 +192,7 @@
 <svelte:window bind:scrollY={currentY} />
 
 <header
-	class="inset-x-0 top-0 z-50 transition-transform duration-300 ease-in-out backdrop-blur-sm transform-gpu"
+	class="inset-x-0 top-0 z-50 transition-transform duration-300 ease-in-out lg:backdrop-blur-sm lg:transform-gpu"
 	class:relative={!sticky}
 	class:fixed={sticky}
 	class:-translate-y-full={sticky && offscreen}
@@ -249,7 +249,7 @@
 		</div>
 		{#if !justClicked}
 			<div
-				class="absolute inset-x-0 top-0 pt-16 transition-opacity duration-200 transform scale-0 -translate-y-1 bg-white shadow-lg opacity-0 -z-10 ring-1 ring-gray-900/5 group-hover:scale-100 ease group-hover:opacity-100 group-hover:translate-y-0"
+				class="absolute inset-x-0 top-0 hidden pt-16 transition-opacity duration-200 transform scale-0 -translate-y-1 bg-white shadow-lg opacity-0 lg:block -z-10 ring-1 ring-gray-900/5 group-hover:scale-100 ease group-hover:opacity-100 group-hover:translate-y-0"
 			>
 				<div
 					class="grid grid-cols-1 px-6 py-10 mx-auto max-w-7xl gap-x-8 gap-y-10 lg:grid-cols-1 lg:px-8"
@@ -290,12 +290,12 @@
 	{#if mobileMenuOpen}
 		<div class="lg:hidden" role="dialog" aria-modal="true">
 			<!-- Background backdrop, show/hide based on slide-over state. -->
-			<div class="fixed inset-0 z-50" />
+			<div class="fixed inset-0 z-50 h-full" />
 			<div
 				class="fixed inset-y-0 right-0 z-50 w-full px-6 py-6 overflow-y-auto bg-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
 			>
 				<div class="flex items-center justify-between">
-					<a href="#" class="-m-1.5 p-1.5">
+					<a href="{base}/" class="-m-1.5 p-1.5 sm:hidden">
 						<span class="sr-only">Project Partners</span>
 						<img class="w-auto h-8" src="{assets}/logo.png" alt="Project Partners Logo" />
 					</a>
@@ -319,32 +319,49 @@
 						</svg>
 					</button>
 				</div>
-				<div class="flow-root mt-6">
+				<div
+					class="flow-root mt-6"
+					on:click={() => {
+						mobileMenuOpen = false;
+					}}
+					on:keypress={() => {
+						mobileMenuOpen = false;
+					}}
+				>
 					<div class="-my-6 divide-y divide-gray-500/10">
+						<div class="py-6 space-y-2">
+							{#each menuItems as item}
+								<a
+									href={`${base}/${item.href}`}
+									class="block px-3 py-2 -mx-3 text-xl leading-7 text-gray-900 rounded-lg hover:bg-gray-50"
+								>
+									{item.name}
+								</a>
+							{/each}
+							<a
+								href={callToAction.href}
+								class="block px-3 py-2 -mx-3 text-xl leading-7 text-gray-900 rounded-lg bg-indigo-50 hover:bg-indigo-100"
+								>{callToAction.name}
+								<Icon icon="solar:arrow-right-linear" class="inline-block w-6 h-6" /></a
+							>
+						</div>
 						<div class="py-6 space-y-2">
 							{#each extendedMenuItems as itemGroup}
 								<h3
-									class="block px-3 py-2 -mx-3 leading-7 text-gray-900 rounded-lg hover:bg-gray-50"
+									class="block px-3 py-2 -mx-3 text-lg italic leading-7 text-gray-400 rounded-lg cursor"
 								>
 									{itemGroup.heading}
 								</h3>
 								{#each itemGroup.items as item}
 									<a
 										href={`${base}/${item.href}`}
-										class="flex px-3 py-2 -mx-3 text-base leading-6 text-gray-900 rounded-lg hover:bg-gray-50"
+										class="flex px-3 py-2 -mx-3 text-lg leading-6 text-gray-900 rounded-lg hover:bg-gray-50"
 									>
 										<Icon icon={item.icon} class="flex-none w-6 h-6 pr-2 {item.color}" />
 										{item.title}
 									</a>
 								{/each}
 							{/each}
-						</div>
-						<div class="py-6">
-							<a
-								href={callToAction.href}
-								class="-mx-3 block rounded-lg px-3 py-2.5 text-base leading-7 text-gray-900 hover:bg-gray-50"
-								>{callToAction.name}</a
-							>
 						</div>
 					</div>
 				</div>
