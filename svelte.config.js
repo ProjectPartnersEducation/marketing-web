@@ -27,7 +27,7 @@ const config = {
 		},
 		csp: {
 			directives: {
-				'script-src': ['strict-dynamic', 'self', 'projectpartners.org', 'beta.projectpartners.org'],
+				'script-src': ['strict-dynamic', 'self', 'projectpartners.org', 'beta.projectpartners.org', 'res.cloudinary.com/dywyr2kco/'],
 				'object-src': ['none'],
 				'base-uri': ['none']
 			}

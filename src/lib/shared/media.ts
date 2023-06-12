@@ -14,9 +14,6 @@ const getMediaURL = (publicId: string, width: number | null = null, height: numb
         }
     });
 
-    console.log('publicId', publicId);
-
-
     // Instantiate a CloudinaryImage object for the image with the public ID, 'front_face'.
     // const media = cld.image('elephants');
     const media = cld.video(publicId);
