@@ -136,7 +136,7 @@
 				},
 				{
 					title: 'Schools & Clubs',
-					href: 'schools',
+					href: 'schools-and-clubs',
 					icon: 'solar:square-academic-cap-linear',
 					color: 'text-gray-400',
 					hoverColor: 'text-gold-500'
