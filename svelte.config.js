@@ -38,7 +38,12 @@ const config = {
 					'https://donorbox.org',
 				],
 				'object-src': ["'none'"],
-				'style-src': ["'self'", "'unsafe-inline'"],
+				'style-src': [
+					"'self'",
+					"'unsafe-inline'",
+					"https://fonts.googleapis.com",
+					"https://c.disquscdn.com"
+				],
 				'base-uri': ["'self'"],
 				'child-src': ["'self'", "https://koalendar.com", "https://donorbox.org"],
 				'frame-src': [
