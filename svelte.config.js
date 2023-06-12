@@ -27,9 +27,11 @@ const config = {
 		},
 		csp: {
 			directives: {
-				'script-src': ['strict-dynamic', 'self', 'https://projectpartners.org', 'https://beta.projectpartners.org', 'https://res.cloudinary.com', 'https://api.iconify.design'],
-				'object-src': ['none'],
-				'base-uri': ['none']
+				'script-src': ["'self'", 'https://projectpartners.org', 'https://beta.projectpartners.org', 'https://res.cloudinary.com', 'https://api.iconify.design'],
+				'object-src': ["'none'"],
+				'style-src': ["'self'", "'unsafe-inline'"],
+				'base-uri': ["'self'"],
+				'child-src': ["'self'"],
 			}
 		}
 	}
