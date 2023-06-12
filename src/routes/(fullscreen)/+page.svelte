@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { base, assets } from '$app/paths';
 	import { getMediaURL } from '$lib/shared/media';
+	import Icon from '@iconify/svelte';
+
 	let screenSize: number = -1;
 </script>
 
@@ -67,7 +69,7 @@
 			education.
 		</p>
 		<p class="mt-12 text-2xl leading-9 text-center text-white underline">
-			<a href="{base}/resources" class="px-12 py-6 border hover:bg-[#f3c558]">Read about us</a>
+			<a href="{base}/about" class="px-12 py-6 border hover:bg-[#f3c558]">Read about us</a>
 		</p>
 	</div>
 </section>
@@ -76,10 +78,10 @@
 		<h2 class="text-5xl font-title">A space for everyone.</h2>
 		<p class="mt-4 text-2xl leading-9">
 			We stand proudly with learners, parents, teachers, and leaders around the world.<br />
-			For a shared vision for the future of education.
+			For a shared vision of the future of education.
 		</p>
 		<p class="mt-12 text-2xl leading-9 text-center text-white underline">
-			<a href="{base}/resources" class="px-12 py-6 border hover:bg-[#1bb2e4]"
+			<a href="{base}/support-us" class="px-12 py-6 border hover:bg-[#1bb2e4]"
 				>Be part of the story</a
 			>
 		</p>
@@ -92,12 +94,42 @@
 		/>
 	</div>
 </section>
-<section class="flex flex-row items-center justify-center h-[50vh]">
-	<div class="p-10 text-center border border-black border-1 basis">
-		<h2 class="text-5xl font-title">We are Project Partners.</h2>
-		<p class="mt-4 text-2xl leading-9">
-			We're bringing together diverse voices to transform the learning landscape.<br />
-			Join our movement and help us reimagine a future of engaging education.
-		</p>
-	</div>
+<section
+	class="flex flex-row items-center justify-center h-[50vh] p-20 text-center text-white bg-indigo-900 basis"
+>
+	<p class="mt-4 text-2xl leading-9 text-left basis-1/3">
+		We're bringing together diverse voices to transform the learning landscape.<br />Join our
+		movement and help us reimagine a future of engaging education.
+	</p>
+	<h2 class="text-5xl font-title basis-1/3">We are Project Partners.</h2>
+	<ul class="ml-20 text-2xl leading-9 text-left underline basis-1/3">
+		<li>
+			<a href="{base}/projects">
+				Learners<Icon icon="solar:arrow-right-linear" class="inline-block w-6 h-6 ml-4" />
+			</a>
+		</li>
+		<li>
+			<a href="{base}/parents-and-guardians">
+				Parents & Guardians<Icon
+					icon="solar:arrow-right-linear"
+					class="inline-block w-6 h-6 ml-4"
+				/>
+			</a>
+		</li>
+		<li>
+			<a href="{base}/lesson-plans">
+				Teachers<Icon icon="solar:arrow-right-linear" class="inline-block w-6 h-6 ml-4" />
+			</a>
+		</li>
+		<li>
+			<a href="{base}/schools-and-clubs">
+				Schools & Clubs<Icon icon="solar:arrow-right-linear" class="inline-block w-6 h-6 ml-4" />
+			</a>
+		</li>
+		<li>
+			<a href="{base}/support-us">
+				Everyone<Icon icon="solar:arrow-right-linear" class="inline-block w-6 h-6 ml-4" />
+			</a>
+		</li>
+	</ul>
 </section>
