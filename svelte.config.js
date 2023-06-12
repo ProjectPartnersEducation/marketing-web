@@ -43,6 +43,10 @@ const config = {
 				'child-src': ["'self'", "https://koalendar.com", "https://donorbox.org"],
 				'frame-src': [
 					"'self'",
+					"https://donorbox.org",
+					"https://koalendar.com",
+					"https://disqus.com",
+					"https://documentcloud.adobe.com"
 				],
 			}
 		}
