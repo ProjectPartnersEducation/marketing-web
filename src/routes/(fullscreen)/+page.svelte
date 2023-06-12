@@ -25,28 +25,30 @@
 			<source src={getMediaURL('v1686225469/samples/elephants.mp4', screenSize)} type="video/mp4" />
 		</video>
 	{/if}
-	<h1 class="max-w-xl text-white text-9xl font-title">
-		<span>The</span><br />
-		<span class="underline decoration-[#cf1111]">engaging</span><br />
-		<span class="underline decoration-[#f49d5c]">education</span><br />
-		<span class="underline decoration-[#1483a9]">charity</span>
+	<h1
+		class="flex flex-col w-screen max-w-sm mx-auto text-6xl text-white sm:max-w-xl sm:text-7xl md:text-8xl lg:text-9xl font-title"
+	>
+		<span class="flex-initial my-3">The</span>
+		<span class="underline decoration-[#cf1111] my-3">engaging</span>
+		<span class="underline decoration-[#f49d5c] my-3">education</span>
+		<span class="underline decoration-[#1483a9] my-3">charity</span>
 	</h1>
 </section>
 
-<section class="flex flex-row items-center justify-center min-h-[50vh] bg-[#cf1111]">
-	<div class="mx-10 text-white">
+<section class="flex md:flex-row flex-col items-center justify-center min-h-[50vh] bg-[#cf1111]">
+	<div class="mx-10 my-10 text-white">
 		<h2 class="text-5xl font-title">When life comes to learning, learning comes to life.</h2>
 		<p class="mt-4 text-2xl leading-9">
 			We've been sharing captivating stories for thousands of years.<br />
 			Our story is a learning experience.
 		</p>
 		<p class="mt-12 text-2xl leading-9 text-center text-white underline">
-			<a href="{base}/resources" class="px-12 py-6 border hover:bg-[#f04242]"
+			<a href="{base}/resources" class="block py-6 border hover:bg-[#f04242]"
 				>Discover our resources</a
 			>
 		</p>
 	</div>
-	<div class="">
+	<div class="hidden md:block">
 		<img
 			src="{assets}/images/Classroom 1.jpeg"
 			class="object-cover w-full h-full"
@@ -54,7 +56,7 @@
 		/>
 	</div>
 </section>
-<section class="flex flex-row items-center justify-center min-h-[50vh] bg-[#eeae14]">
+<section class="flex md:flex-row flex-col items-center justify-center min-h-[50vh] bg-[#eeae14]">
 	<div class="">
 		<img
 			src="{assets}/images/Classroom 3.JPG"
@@ -62,31 +64,31 @@
 			alt="A happy student listening intently to their teacher"
 		/>
 	</div>
-	<div class="mx-10 text-white">
+	<div class="mx-10 my-10 text-white">
 		<h2 class="text-5xl font-title">Curiosity is future-proof.</h2>
 		<p class="mt-4 text-2xl leading-9">
 			In our world, inspiration stands the test of time.<br />Discover how we're fuelling it in
 			education.
 		</p>
 		<p class="mt-12 text-2xl leading-9 text-center text-white underline">
-			<a href="{base}/about" class="px-12 py-6 border hover:bg-[#f3c558]">Read about us</a>
+			<a href="{base}/about" class="py-6 block border hover:bg-[#f3c558]">Read about us</a>
 		</p>
 	</div>
 </section>
-<section class="flex flex-row items-center justify-center min-h-[50vh] bg-[#1483a9]">
-	<div class="mx-10 text-white">
+<section class="flex md:flex-row flex-col items-center justify-center min-h-[50vh] bg-[#1483a9]">
+	<div class="order-2 mx-10 my-10 text-white md:order-1">
 		<h2 class="text-5xl font-title">A space for everyone.</h2>
 		<p class="mt-4 text-2xl leading-9">
 			We stand proudly with learners, parents, teachers, and leaders around the world.<br />
 			For a shared vision of the future of education.
 		</p>
 		<p class="mt-12 text-2xl leading-9 text-center text-white underline">
-			<a href="{base}/support-us" class="px-12 py-6 border hover:bg-[#1bb2e4]"
+			<a href="{base}/support-us" class="block py-6 border hover:bg-[#1bb2e4]"
 				>Be part of the story</a
 			>
 		</p>
 	</div>
-	<div class="">
+	<div class="order-1 md:order-2">
 		<img
 			src="{assets}/images/focusgroup2-scale-2_00x.jpg"
 			class="object-cover w-full h-full"
@@ -95,14 +97,14 @@
 	</div>
 </section>
 <section
-	class="flex flex-row items-center justify-center h-[50vh] p-20 text-center text-white bg-indigo-900 basis"
+	class="flex lg:flex-row flex-col items-center justify-center min-h-[50vh] py-20 sm:px-20 px-10 text-center text-white bg-indigo-900 basis"
 >
-	<p class="mt-4 text-2xl leading-9 text-left basis-1/3">
+	<p class="order-2 py-4 mt-4 text-2xl leading-9 text-left basis-1/3 lg:pr-10 lg:order-1">
 		We're bringing together diverse voices to transform the learning landscape.<br />Join our
 		movement and help us reimagine a future of engaging education.
 	</p>
-	<h2 class="text-5xl font-title basis-1/3">We are Project Partners.</h2>
-	<ul class="ml-20 text-2xl leading-9 text-left underline basis-1/3">
+	<h2 class="order-1 py-4 text-5xl font-title basis-1/3 lg:order-2">We are Project Partners.</h2>
+	<ul class="order-3 py-4 text-2xl leading-9 text-left underline lg:pl-10 basis-1/3">
 		<li>
 			<a href="{base}/projects">
 				Learners<Icon icon="solar:arrow-right-linear" class="inline-block w-6 h-6 ml-4" />

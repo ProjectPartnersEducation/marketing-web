@@ -55,13 +55,15 @@
 					<div class="md:grid md:grid-cols-2 md:gap-8">
 						{#each linksBlock as link}
 							<div>
-								<h3 class="text-sm font-semibold leading-6 text-gray-900">{link.heading}</h3>
+								<h3 class="mt-8 font-semibold leading-6 text-gray-900 md:mt-0 text-md">
+									{link.heading}
+								</h3>
 								<ul role="list" class="mt-6 space-y-4">
 									{#each link.items as item}
 										<li>
 											<a
 												href={`${base}/${item.href}`}
-												class="text-sm leading-6 text-gray-600 hover:text-gray-900">{item.name}</a
+												class="leading-6 text-gray-600 text-md hover:text-gray-900">{item.name}</a
 											>
 										</li>
 									{/each}
@@ -100,7 +102,7 @@
 		<div
 			class="pt-8 mt-16 border-t border-gray-900/10 sm:mt-20 md:flex md:items-center md:justify-between lg:mt-24"
 		>
-			<div class="flex space-x-6 md:order-2">
+			<!-- <div class="flex space-x-6 md:order-2">
 				<a href="#" class="text-gray-400 hover:text-gray-500">
 					<span class="sr-only">Facebook</span>
 					<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -149,7 +151,7 @@
 						/>
 					</svg>
 				</a>
-			</div>
+			</div> -->
 			<p class="mt-8 text-xs leading-5 text-gray-500 md:order-1 md:mt-0">
 				&copy; {new Date().getFullYear()} Project Partners Education CIO. Registered Charity in England
 				& Wales No. 1189396.
