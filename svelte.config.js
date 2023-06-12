@@ -27,11 +27,23 @@ const config = {
 		},
 		csp: {
 			directives: {
-				'script-src': ["'self'", 'https://projectpartners.org', 'https://beta.projectpartners.org', 'https://res.cloudinary.com', 'https://api.iconify.design'],
+				'script-src': [
+					"'self'",
+					'https://projectpartners.org',
+					'https://beta.projectpartners.org',
+					'https://res.cloudinary.com',
+					'https://api.iconify.design',
+					'https://documentcloud.adobe.com',
+					'https://projectpartners.disqus.com',
+					'https://donorbox.org',
+				],
 				'object-src': ["'none'"],
 				'style-src': ["'self'", "'unsafe-inline'"],
 				'base-uri': ["'self'"],
-				'child-src': ["'self'"],
+				'child-src': ["'self'", "https://koalendar.com", "https://donorbox.org"],
+				'frame-src': [
+					"'self'",
+				],
 			}
 		}
 	}
