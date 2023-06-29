@@ -39,6 +39,11 @@
 	subtitle="Discover how we are currently working with our partner schools and organisations to improve our educational model."
 	id="current-initiatives"
 />
+<div class="overflow-hidden bg-white rounded-lg shadow">
+	<div class="px-4 py-5 sm:p-6">
+		<!-- Content goes here -->
+	</div>
+</div>
 
 <SectionHeading
 	title="Past Initiatives"

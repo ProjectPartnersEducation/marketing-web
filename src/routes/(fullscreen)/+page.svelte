@@ -22,11 +22,18 @@
 			disablepictureinpicture
 			class="absolute object-cover w-full h-full -z-10 brightness-130"
 		>
-			<source src={getMediaURL('v1686225469/samples/elephants.mp4', screenSize)} type="video/mp4" />
+			<!-- <source
+				src={getMediaURL('v1687961406/so_0/ProjPartnersGhana2022_Basic_iwdubh.mp4', screenSize)}
+				type="video/mp4"
+			/> -->
+			<source
+				src={getMediaURL('v1687961406/ProjPartnersGhana2022_Basic_iwdubh.mp4', screenSize)}
+				type="video/mp4"
+			/>
 		</video>
 	{/if}
 	<h1
-		class="flex flex-col w-screen max-w-sm mx-auto text-6xl text-white sm:max-w-xl sm:text-7xl md:text-8xl lg:text-9xl font-title"
+		class="flex flex-col w-screen max-w-sm mx-auto text-6xl text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] sm:max-w-xl sm:text-7xl md:text-8xl lg:text-9xl font-title"
 	>
 		<span class="flex-initial my-3">The</span>
 		<span class="underline decoration-[#cf1111] my-3">engaging</span>
