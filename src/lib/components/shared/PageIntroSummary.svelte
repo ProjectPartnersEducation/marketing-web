@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
+	import Link from '$lib/components/shared/Link.svelte';
 
 	interface MenuItem {
 		title: string;
@@ -29,9 +30,7 @@
 						{item.desc}
 					</dd>
 					{#if item.linkText && item.href}
-						<a href={item.href} class="mt-4 text-base leading-10 text-indigo-600"
-							>{item.linkText} <Icon icon="solar:arrow-right-linear" class="inline-block w-4 h-4" />
-						</a>
+						<Link text={item.linkText} href={item.href} />
 					{/if}
 				</div>
 			{/each}

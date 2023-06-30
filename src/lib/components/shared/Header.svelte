@@ -76,8 +76,7 @@
 					href: 'team',
 					icon: 'solar:user-hand-up-broken',
 					color: 'text-gray-400',
-					hoverColor: 'text-gold-500',
-					comingSoon: true
+					hoverColor: 'text-gold-500'
 				}
 			]
 		},
