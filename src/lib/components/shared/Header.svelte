@@ -51,6 +51,13 @@
 			heading: 'About',
 			items: [
 				{
+					title: 'Manifesto',
+					href: 'manifesto',
+					icon: 'solar:flag-linear',
+					color: 'text-gray-400',
+					hoverColor: 'text-gold-500'
+				},
+				{
 					title: 'Framework',
 					href: 'framework',
 					icon: 'solar:stars-linear',

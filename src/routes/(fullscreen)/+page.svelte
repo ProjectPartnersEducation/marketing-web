@@ -137,7 +137,7 @@
 		</li>
 		<li>
 			<a href="{base}/support-us">
-				Everyone<Icon icon="solar:arrow-right-linear" class="inline-block w-6 h-6 ml-4" />
+				Supporters<Icon icon="solar:arrow-right-linear" class="inline-block w-6 h-6 ml-4" />
 			</a>
 		</li>
 	</ul>
