@@ -153,11 +153,19 @@
 			heading: 'Get Involved',
 			items: [
 				{
-					title: 'Partnerships',
-					href: 'partnerships',
-					icon: 'solar:filters-linear',
-					color: 'text-blue-400',
-					hoverColor: 'text-blue-500'
+					title: 'Shop',
+					href: 'shop',
+					icon: 'solar:bag-heart-linear',
+					color: 'text-pink-400',
+					hoverColor: 'text-pink-500',
+					comingSoon: true
+				},
+				{
+					title: 'Donate',
+					href: 'donate',
+					icon: 'solar:confetti-linear',
+					color: 'text-green-400',
+					hoverColor: 'text-green-500'
 				},
 				{
 					title: 'Volunteer',
@@ -167,11 +175,11 @@
 					hoverColor: 'text-red-500'
 				},
 				{
-					title: 'Donate',
-					href: 'donate',
-					icon: 'solar:confetti-linear',
-					color: 'text-green-400',
-					hoverColor: 'text-green-500'
+					title: 'Partnerships',
+					href: 'partnerships',
+					icon: 'solar:filters-linear',
+					color: 'text-blue-400',
+					hoverColor: 'text-blue-500'
 				},
 				{
 					title: 'Events',
