@@ -51,30 +51,23 @@
 			heading: 'About',
 			items: [
 				{
-					title: 'Manifesto',
-					href: 'manifesto',
-					icon: 'solar:flag-linear',
+					title: 'Mission',
+					href: 'mission',
+					icon: 'solar:star-fall-2-linear',
 					color: 'text-gray-400',
 					hoverColor: 'text-gold-500'
 				},
 				{
 					title: 'Framework',
 					href: 'framework',
-					icon: 'solar:stars-linear',
-					color: 'text-gray-400',
-					hoverColor: 'text-gold-500'
-				},
-				{
-					title: 'Publications',
-					href: 'publications',
-					icon: 'solar:clipboard-list-linear',
+					icon: 'solar:filters-linear',
 					color: 'text-gray-400',
 					hoverColor: 'text-gold-500'
 				},
 				{
 					title: 'Initiatives',
 					href: 'initiatives',
-					icon: 'solar:benzene-ring-linear',
+					icon: 'solar:black-hole-3-linear',
 					color: 'text-gray-400',
 					hoverColor: 'text-gold-500'
 				},
@@ -88,69 +81,41 @@
 			]
 		},
 		{
-			heading: 'For Learners',
+			heading: 'Resources',
 			items: [
 				{
-					title: 'Projects',
+					title: 'Learning Materials',
 					href: 'projects',
 					icon: 'solar:backpack-linear',
 					color: 'text-gray-400',
 					hoverColor: 'text-gold-500'
 				},
 				{
-					title: 'Skills',
-					href: 'skills',
-					icon: 'solar:bolt-linear',
-					color: 'text-gray-400',
-					hoverColor: 'text-gold-500',
-					comingSoon: true
-				},
-				{
-					title: 'Discuss',
-					href: 'discuss',
-					icon: 'solar:chat-round-line-linear',
-					color: 'text-gray-400',
-					hoverColor: 'text-gold-500'
-				}
-			]
-		},
-		{
-			heading: 'For Leaders',
-			items: [
-				{
-					title: 'Training',
+					title: 'Teacher Support',
 					href: 'training',
-					icon: 'solar:presentation-graph-linear',
-					color: 'text-gray-400',
-					hoverColor: 'text-gold-500',
-					comingSoon: true
-				},
-				{
-					title: 'Lesson Plans',
-					href: 'lesson-plans',
-					icon: 'solar:file-check-linear',
-					color: 'text-gray-400',
-					hoverColor: 'text-gold-500',
-					comingSoon: true
-				},
-				{
-					title: 'Parents & Guardians',
-					href: 'parents-and-guardians',
-					icon: 'solar:user-heart-linear',
-					color: 'text-gray-400',
-					hoverColor: 'text-gold-500'
-				},
-				{
-					title: 'Schools & Clubs',
-					href: 'schools-and-clubs',
 					icon: 'solar:square-academic-cap-linear',
 					color: 'text-gray-400',
+					hoverColor: 'text-gold-500',
+					comingSoon: true
+				},
+				{
+					title: "Leaders' Network",
+					href: 'partnerships',
+					icon: 'solar:meditation-round-linear',
+					color: 'text-gray-400',
+					hoverColor: 'text-gold-500'
+				},
+				{
+					title: 'Publications',
+					href: 'publications',
+					icon: 'solar:notebook-bookmark-linear',
+					color: 'text-gray-400',
 					hoverColor: 'text-gold-500'
 				}
 			]
 		},
 		{
-			heading: 'Get Involved',
+			heading: 'Support Us',
 			items: [
 				{
 					title: 'Shop',
@@ -173,13 +138,6 @@
 					icon: 'solar:heart-shine-linear',
 					color: 'text-red-400',
 					hoverColor: 'text-red-500'
-				},
-				{
-					title: 'Partnerships',
-					href: 'partnerships',
-					icon: 'solar:filters-linear',
-					color: 'text-blue-400',
-					hoverColor: 'text-blue-500'
 				},
 				{
 					title: 'Events',
@@ -268,10 +226,10 @@
 				<div
 					class="grid grid-cols-1 px-6 py-10 mx-auto max-w-7xl gap-x-8 gap-y-10 lg:grid-cols-1 lg:px-8"
 				>
-					<div class="grid grid-cols-4 gap-x-6 sm:gap-x-8">
+					<div class="grid grid-cols-3 gap-x-6 sm:gap-x-8">
 						{#each extendedMenuItems as extendedMenuItem}
 							<div>
-								<h3 class="text-sm font-medium leading-6 text-gray-500">
+								<h3 class="text-lg font-medium leading-6 text-gray-500">
 									{extendedMenuItem.heading}
 								</h3>
 								<div class="flow-root mt-6">
@@ -279,13 +237,13 @@
 										{#each extendedMenuItem.items as item}
 											<a
 												href={`${base}/${item.href}`}
-												class="flex py-2 text-sm leading-6 text-gray-900 rounded-sm gap-x-4 hover:bg-indigo-50"
+												class="flex py-2 text-lg leading-10 text-gray-900 rounded-sm gap-x-4 hover:bg-indigo-50"
 											>
-												<Icon icon={item.icon} class="flex-none w-6 h-6 ml-2 {item.color}" />
+												<Icon icon={item.icon} class="flex-none w-8 h-8 ml-2 mt-1 {item.color}" />
 												{item.title}
 												{#if item.comingSoon}
 													<span
-														class="inline-flex items-center px-2 py-1 text-xs font-medium text-purple-700 rounded-full bg-purple-50 ring-1 ring-inset ring-purple-700/10"
+														class="inline-flex items-center px-4 py-1 text-lg font-medium text-purple-700 rounded-full bg-purple-50 ring-1 ring-inset ring-purple-700/10"
 														>Coming soon</span
 													>
 												{/if}
@@ -295,6 +253,31 @@
 								</div>
 							</div>
 						{/each}
+					</div>
+					<div
+						class="grid grid-cols-1 gap-8 mx-auto mt-6 text-center auto-rows-fr lg:mx-0 lg:max-w-none lg:grid-cols-3"
+					>
+						<a href="{base}/manifesto">
+							<article
+								class="relative flex flex-col justify-end px-8 py-4 overflow-hidden bg-indigo-100 isolate rounded-2xl hover:bg-indigo-200"
+							>
+								<h3 class="text-lg font-semibold leading-6 text-indigo-900">Our manifesto</h3>
+							</article>
+						</a>
+						<a href="{base}/parents-and-guardians">
+							<article
+								class="relative flex flex-col justify-end px-8 py-4 overflow-hidden bg-indigo-100 isolate rounded-2xl hover:bg-indigo-200"
+							>
+								<h3 class="text-lg font-semibold leading-6 text-indigo-900">Parents & Guardians</h3>
+							</article>
+						</a>
+						<a href="{base}/schools-and-clubs">
+							<article
+								class="relative flex flex-col justify-end px-8 py-4 overflow-hidden bg-indigo-100 isolate rounded-2xl hover:bg-indigo-200"
+							>
+								<h3 class="text-lg font-semibold leading-6 text-indigo-900">Schools & Clubs</h3>
+							</article>
+						</a>
 					</div>
 				</div>
 			</div>

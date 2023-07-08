@@ -6,19 +6,19 @@
 			{
 				heading: 'Our Work',
 				items: [
-					{ name: 'Initiatives', href: '#' },
-					{ name: 'Partners Network', href: '#' },
-					{ name: 'Conference', href: '#' },
-					{ name: 'Research', href: '#' }
+					{ name: 'Initiatives', href: 'initiatives' },
+					{ name: "Leaders' Network", href: 'partnerships' },
+					{ name: 'Events', href: 'events' },
+					{ name: 'Publications', href: 'publications' }
 				]
 			},
 			{
 				heading: 'Resources',
 				items: [
-					{ name: 'For Learners', href: '#' },
-					{ name: 'For Teachers', href: '#' },
-					{ name: 'For Parents & Guardians', href: '#' },
-					{ name: 'For Leaders', href: '#' }
+					{ name: 'For Learners', href: 'projects' },
+					{ name: 'For Teachers', href: 'training' },
+					{ name: 'For Parents & Guardians', href: 'parents-and-guardians' },
+					{ name: 'For Schools & Clubs', href: 'schools-and-clubs' }
 				]
 			}
 		],
@@ -26,20 +26,18 @@
 			{
 				heading: 'Charity',
 				items: [
-					{ name: 'About', href: '#' },
-					{ name: 'Team', href: '#' },
-					{ name: 'Schools', href: '#' },
-					{ name: 'Volunteer', href: '#' },
-					{ name: 'Donate', href: '#' }
+					{ name: 'About', href: 'about' },
+					{ name: 'Team', href: 'team' },
+					{ name: 'Volunteer', href: 'volunteer' },
+					{ name: 'Donate', href: 'donate' }
 				]
 			},
 			{
 				heading: 'Legal',
 				items: [
-					{ name: 'Policies', href: '#' },
-					{ name: 'Safeguarding', href: '#' },
-					{ name: 'Annual Reports', href: '#' },
-					{ name: 'Governance', href: '#' }
+					{ name: 'Policies', href: 'policies' },
+					{ name: 'Annual Reports', href: 'annual-reports' },
+					{ name: 'Governance', href: 'governance' }
 				]
 			}
 		]

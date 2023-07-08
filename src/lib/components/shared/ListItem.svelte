@@ -2,10 +2,10 @@
 	export let showIcon = true;
 </script>
 
-<li class="flex gap-x-3">
+<li class="flex items-center gap-x-3">
 	{#if showIcon}
 		<svg
-			class="flex-none w-5 h-5 mt-1 text-indigo-600"
+			class="flex-none w-5 h-5 text-indigo-600 align-bottom"
 			viewBox="0 0 20 20"
 			fill="currentColor"
 			aria-hidden="true"
