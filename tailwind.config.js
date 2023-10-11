@@ -1,11 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./src/**/*.{html,js,svelte,ts}'],
+  content: ['./src/**/*.{html,js,svelte,ts,svg}'],
   theme: {
-    fontFamily: {
-      title: ['Gasoek One', 'sans-serif'],
-      body: ['Assistant', 'sans-serif'],
-      sans: ['Assistant', 'sans-serif'],
+    fontWeight: {
+      'normal': 200,
+      'black': 800,
     },
     extend: {},
   },
