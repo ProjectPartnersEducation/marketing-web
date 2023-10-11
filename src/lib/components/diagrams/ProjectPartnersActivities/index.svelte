@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount, tick } from 'svelte';
+	import IntersectionObserver from 'svelte-intersection-observer';
 
 	import Diagram from './diagram.svelte';
 	import Text from './text.svelte';
@@ -12,6 +13,8 @@
 		| 'Teachers'
 		| 'EducationalLeaders'
 		| 'GovernmentAndNGOs' = '';
+
+	let el: HTMLElement;
 
 	let elements: ActiveElement[] = [
 		'',
@@ -70,25 +73,25 @@
 	};
 
 	onMount(() => {
-		startProgressBar();
-
 		return () => clearInterval(intervalId);
 	});
 </script>
 
-<div class="flex flex-wrap">
-	<div class="w-full p-4 md:w-1/2">
-		<Diagram {activeElement} on:setactivegroup={handleSetActiveElement} />
+<IntersectionObserver element={el} on:intersect={startProgressBar}>
+	<div class="flex flex-wrap" bind:this={el}>
+		<div class="w-full p-4 md:w-1/2">
+			<Diagram {activeElement} on:setactivegroup={handleSetActiveElement} />
+		</div>
+		<div class="w-full p-4 md:w-1/2">
+			<Text
+				{activeElement}
+				progress={progressBarWidth}
+				{showProgressBar}
+				intervalPeriod={intervalPeriod * 0.96}
+				on:hoverentertextbox={onEnterHover}
+				on:hoverexittextbox={onExitHover}
+				on:setactivegroup={handleSetActiveElement}
+			/>
+		</div>
 	</div>
-	<div class="w-full p-4 md:w-1/2">
-		<Text
-			{activeElement}
-			progress={progressBarWidth}
-			{showProgressBar}
-			intervalPeriod={intervalPeriod * 0.96}
-			on:hoverentertextbox={onEnterHover}
-			on:hoverexittextbox={onExitHover}
-			on:setactivegroup={handleSetActiveElement}
-		/>
-	</div>
-</div>
+</IntersectionObserver>

@@ -44,7 +44,7 @@
 		gap: 0.75rem;
 		background-color: var(--clr);
 		color: #fff;
-		border-radius: 10rem;
+		border-radius: 0.625rem;
 		font-weight: 600;
 		padding: 0.75rem 1.5rem;
 		padding-left: 20px;

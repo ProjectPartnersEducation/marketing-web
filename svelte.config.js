@@ -25,37 +25,37 @@ const config = {
 		paths: {
 			base: dev ? '' : process.env.BASE_PATH,
 		},
-		// 	csp: {
-		// 		directives: {
-		// 			'script-src': [
-		// 				"'self'",
-		// 				'https://projectpartners.org',
-		// 				'https://beta.projectpartners.org',
-		// 				'https://res.cloudinary.com',
-		// 				'https://api.iconify.design',
-		// 				'https://documentcloud.adobe.com',
-		// 				'https://projectpartners.disqus.com',
-		// 				'https://donorbox.org',
-		// 				'localhost:*',
-		// 			],
-		// 			'object-src': ["'none'"],
-		// 			'style-src': [
-		// 				"'self'",
-		// 				"'unsafe-inline'",
-		// 				"https://fonts.googleapis.com",
-		// 				"https://c.disquscdn.com"
-		// 			],
-		// 			'base-uri': ["'self'"],
-		// 			'child-src': ["'self'", "https://koalendar.com", "https://donorbox.org"],
-		// 			'frame-src': [
-		// 				"'self'",
-		// 				"https://donorbox.org",
-		// 				"https://koalendar.com",
-		// 				"https://disqus.com",
-		// 				"https://documentcloud.adobe.com"
-		// 			],
-		// 		}
-		// 	}
+		csp: dev ? {} : {
+			directives: {
+				'script-src': [
+					"'self'",
+					'https://projectpartners.org',
+					'https://beta.projectpartners.org',
+					'https://res.cloudinary.com',
+					'https://api.iconify.design',
+					'https://documentcloud.adobe.com',
+					'https://projectpartners.disqus.com',
+					'https://donorbox.org',
+					'localhost:*',
+				],
+				'object-src': ["'none'"],
+				'style-src': [
+					"'self'",
+					"'unsafe-inline'",
+					"https://fonts.googleapis.com",
+					"https://c.disquscdn.com"
+				],
+				'base-uri': ["'self'"],
+				'child-src': ["'self'", "https://koalendar.com", "https://donorbox.org"],
+				'frame-src': [
+					"'self'",
+					"https://donorbox.org",
+					"https://koalendar.com",
+					"https://disqus.com",
+					"https://documentcloud.adobe.com"
+				],
+			}
+		}
 	}
 };
 
