@@ -46,7 +46,8 @@
 	</div>
 	<div
 		class="px-5 py-3 rounded-md"
-		on:mouseenter={() => hoverEnterTextBox('')}
+		on:mouseover={() => hoverEnterTextBox('')}
+		on:focus={() => hoverEnterTextBox('')}
 		on:mouseleave={() => hoverExitTextBox('')}
 	>
 		<h2
@@ -63,7 +64,15 @@
 		</h2>
 		{#if activeElement === ''}
 			<div transition:slide>
-				<p>As a charity, we work at every level</p>
+				<p>
+					As a charity, we work at every level of the education system to ensure that we engage as
+					many people as possible in our mission to improve education.
+				</p>
+				<p class="mt-4">
+					This allows us to have the greatest impact on the lives of learners, teachers, and
+					educational leaders. We also work with governments and NGOs to ensure that our work is
+					sustainable and scalable.
+				</p>
 			</div>
 		{/if}
 	</div>
@@ -75,7 +84,8 @@
 	</div>
 	<div
 		class="px-5 py-3 rounded-md"
-		on:mouseenter={() => hoverEnterTextBox('Learners')}
+		on:mouseover={() => hoverEnterTextBox('Learners')}
+		on:focus={() => hoverEnterTextBox('Learners')}
 		on:mouseleave={() => hoverExitTextBox('Learners')}
 	>
 		<h2
@@ -92,9 +102,17 @@
 		</h2>
 		{#if activeElement === 'Learners'}
 			<div transition:slide>
-				<p>Our learning materials are good</p>
+				<p>
+					We develop learning materials for learners of all ages. Central to our work with learners
+					are our Project Packs, with our flagship Maths programme our current focus.
+				</p>
+				<p class="mt-4">
+					All of our learning materials are free to download and use via our website or on WhatsApp.
+					Furthermore, we are currently working on a new online platform to make our learning
+					materials even more accessible and engaging.
+				</p>
 				<div class="mt-6 text-center">
-					<Button text="Try our learning materials" href="/learning-materials" />
+					<Button text="Go to our Learning Portal" href="/learning-materials" />
 				</div>
 			</div>
 		{/if}
@@ -107,7 +125,8 @@
 	</div>
 	<div
 		class="px-5 py-3 rounded-md"
-		on:mouseenter={() => hoverEnterTextBox('Teachers')}
+		on:mouseover={() => hoverEnterTextBox('Teachers')}
+		on:focus={() => hoverEnterTextBox('Teachers')}
 		on:mouseleave={() => hoverExitTextBox('Teachers')}
 	>
 		<h2
@@ -124,7 +143,15 @@
 		</h2>
 		{#if activeElement === 'Teachers'}
 			<div transition:slide>
-				<p>We do teacher training</p>
+				<p>
+					We support teachers' development through our learning materials and teacher training
+					programmes. Our teacher training programmes are designed to be as accessible as possible
+					and are free to attend.
+				</p>
+				<p class="mt-4">
+					We also provide teachers with a range of resources to support their professional
+					development, including our Teacher Toolkit and our Teacher Community.
+				</p>
 				<div class="mt-6 text-center">
 					<Button text="Find out about our teacher training" href="/learning-materials" />
 				</div>
@@ -139,7 +166,8 @@
 	</div>
 	<div
 		class="px-5 py-3 rounded-md"
-		on:mouseenter={() => hoverEnterTextBox('EducationalLeaders')}
+		on:mouseover={() => hoverEnterTextBox('EducationalLeaders')}
+		on:focus={() => hoverEnterTextBox('EducationalLeaders')}
 		on:mouseleave={() => hoverExitTextBox('EducationalLeaders')}
 	>
 		<h2
@@ -158,7 +186,7 @@
 			<div transition:slide>
 				<p>Our community for educational leaders is also good</p>
 				<div class="mt-6 text-center">
-					<Button text="Join the community" href="/learning-materials" />
+					<Button text="Join our leaders' community" href="/learning-materials" />
 				</div>
 			</div>
 		{/if}
@@ -171,7 +199,8 @@
 	</div>
 	<div
 		class="px-5 py-3 rounded-md"
-		on:mouseenter={() => hoverEnterTextBox('GovernmentAndNGOs')}
+		on:mouseover={() => hoverEnterTextBox('GovernmentAndNGOs')}
+		on:focus={() => hoverEnterTextBox('GovernmentAndNGOs')}
 		on:mouseleave={() => hoverExitTextBox('GovernmentAndNGOs')}
 	>
 		<h2

@@ -1,4 +1,4 @@
-import { mdsvex } from 'mdsvex'
+// import { mdsvex } from 'mdsvex'
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 
@@ -12,9 +12,9 @@ const config = {
 	// for more information about preprocessors
 	preprocess: [
 		vitePreprocess(),
-		mdsvex({
-			extensions: ['.md']
-		})
+		// mdsvex({
+		// 	extensions: ['.md']
+		// })
 	],
 
 	kit: {

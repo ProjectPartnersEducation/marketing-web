@@ -25,7 +25,7 @@
 	];
 
 	let currentElementIdx = 0;
-	let msPerSegment = 8000;
+	let msPerSegment = 20000;
 	let msInCurrentSegment = 0;
 
 	let intervalPeriod = 300;
@@ -51,17 +51,18 @@
 	};
 
 	const startProgressBar = () => {
+		return;
 		msInCurrentSegment += intervalPeriod;
 		clearInterval(intervalId);
 		intervalId = setInterval(updateProgressBar, intervalPeriod);
 	};
 
 	const onEnterHover = () => {
-		clearInterval(intervalId);
+		// clearInterval(intervalId);
 	};
 
 	const onExitHover = () => {
-		startProgressBar();
+		// startProgressBar();
 	};
 
 	const handleSetActiveElement = (e: CustomEvent<{ id: string }>) => {
@@ -73,7 +74,7 @@
 	};
 
 	onMount(() => {
-		return () => clearInterval(intervalId);
+		// return () => clearInterval(intervalId);
 	});
 </script>
 

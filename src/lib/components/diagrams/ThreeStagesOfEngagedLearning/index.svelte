@@ -5,7 +5,7 @@
 	export let stepIndex: number = 0;
 </script>
 
-<section class="grid grid-cols-[60%,40%] place-items-center">
+<section class="grid grid-cols-[60%,40%] place-items-center p-10">
 	<div>
 		<Text
 			on:setstep={(e) => {

@@ -1,10 +1,12 @@
 <script lang="ts">
 	export let text: string;
 	export let href: string;
-	export let color: string = '#7808d0';
+	export let target: string = '';
+	export let color: string = '#1e87ab';
+	export let textColor: string = '#ffffff';
 </script>
 
-<a style="--clr: {color}" class="button" {href}>
+<a style="--clr: {color}; --textclr: {textColor}" class="button" {href} {target}>
 	<span class="button__icon-wrapper">
 		<svg
 			width="10"
@@ -43,9 +45,9 @@
 		align-items: center;
 		gap: 0.75rem;
 		background-color: var(--clr);
-		color: #fff;
+		color: var(--textclr);
 		border-radius: 0.625rem;
-		font-weight: 600;
+		font-size: 1.25rem;
 		padding: 0.75rem 1.5rem;
 		padding-left: 20px;
 		white-space: nowrap;
