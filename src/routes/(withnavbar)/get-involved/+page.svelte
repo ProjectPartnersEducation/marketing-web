@@ -8,9 +8,17 @@
 <section class="px-64 mt-8 bg-slate-100">
 	<h1 class="relative mb-40 text-center">
 		<img src={assets + '/images/four-students-looking-down.jpg'} class="w-full" />
-		
-		<h1 class="absolute top-0 left-0 inline-block px-4 py-2 text-6xl font-black text-center text-white bg-black border-4 border-white font-handwriting">Get Involved</h1>
-<h1 class="absolute bottom-0 right-0 inline-block px-4 py-2 text-6xl font-black text-center text-white bg-black border-4 border-white font-handwriting">Get Involved</h1>
+
+		<h1
+			class="absolute top-0 left-0 inline-block px-4 py-2 text-6xl font-black text-center text-white bg-black border-4 border-white font-handwriting"
+		>
+			Get Involved
+		</h1>
+		<h1
+			class="absolute bottom-0 right-0 inline-block px-4 py-2 text-6xl font-black text-center text-white bg-black border-4 border-white font-handwriting"
+		>
+			Get Involved
+		</h1>
 	</h1>
 	<div class="">
 		<div class="relative pb-12 border-l-2 border-l-black">
@@ -46,7 +54,9 @@
 			</div>
 			<div class="flex flex-col">
 				<div>
-					<VideoPlayer videoSrc={`${assets}/videos/Project Partners_Final_Short Version 4k.mp4`} />
+					<VideoPlayer
+						videoSrc="https://storage.googleapis.com/pp-marketing-web-public/videos/Project%20Partners_Final_Short%20Version%204k.mp4"
+					/>
 				</div>
 				<h1 class="mt-8 text-3xl font-black">Your donation's impact</h1>
 				<p class="mt-4 text-xl">

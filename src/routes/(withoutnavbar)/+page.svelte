@@ -3,8 +3,7 @@
 
 	import VideoPlayer from '$lib/components/elements/video/index.svelte';
 	import Button from '$lib/components/elements/button.svelte';
-	import AltButton from '$lib/components/elements/button2.svelte';
-	import Button2 from '$lib/components/elements/button2.svelte';
+	import Navbar from '$lib/components/ui/navbar/index.svelte';
 </script>
 
 <img
@@ -15,13 +14,14 @@
 
 <div class="relative bg-slate-200">
 	<VideoPlayer
-		videoSrc={`${assets}/videos/Project Partners_Doc_temp.mp4`}
+		videoSrc="https://storage.googleapis.com/pp-marketing-web-public/videos/Project%20Partners_Doc_temp.mp4"
 		plyrOptions={{ autoplay: true, mute: true }}
 	/>
 	<div class="absolute mx-auto -translate-x-1/2 left-1/2 bottom-8">
 		<Button text="Watch the whole video (3:47)" href="" color="#d01c1c" />
 	</div>
 </div>
+<Navbar />
 
 <div class="my-48 px-36">
 	<div class="w-full text-center">

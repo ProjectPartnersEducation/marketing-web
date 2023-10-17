@@ -8,16 +8,16 @@ export default defineConfig({
 			[
 				{
 					directories: 'src/assets/diagrams',
-					attributes: {},
-				},
+					attributes: {}
+				}
 			],
 			{
-				inlineSrcAttributeName: 'inline-src',
-			},
+				inlineSrcAttributeName: 'inline-src'
+			}
 		),
-		sveltekit(),
+		sveltekit()
 	],
 	build: {
-		emptyOutDir: true,
-	},
+		emptyOutDir: true
+	}
 });

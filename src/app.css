@@ -5,10 +5,10 @@
 @tailwind utilities;
 
 * {
-    font-family: 'Nunito Sans', sans-serif;
-    font-weight: 200;
+	font-family: 'Nunito Sans', sans-serif;
+	font-weight: 200;
 }
 
 body {
-    background-color: #fff;
+	background-color: #fff;
 }

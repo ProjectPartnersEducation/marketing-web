@@ -1,10 +1,13 @@
 <script lang="ts">
 	import { assets } from '$app/paths';
 	import { onMount, tick } from 'svelte';
+	import { fade } from 'svelte/transition';
 
 	let scrollY: number;
 	let windowHeight: number;
 	let documentHeight: number;
+
+	let fullscreenMenuVisible = false;
 
 	const calculateScrollValue = (y: number) => {
 		if (documentHeight === undefined || windowHeight === undefined || y === undefined) {
@@ -18,6 +21,14 @@
 
 	$: scrollValue = calculateScrollValue(scrollY);
 
+	const showFullscreenMenu = () => {
+		fullscreenMenuVisible = true;
+	};
+
+	const hideFullscreenMenu = () => {
+		fullscreenMenuVisible = false;
+	};
+
 	onMount(() => {
 		documentHeight = document.body.scrollHeight;
 	});
@@ -25,27 +36,33 @@
 
 <svelte:window bind:scrollY bind:innerHeight={windowHeight} />
 
-<nav class="sticky top-0 z-50 bg-white">
-	<div class="grid grid-cols-[20%,60%,20%] p-3 mx-64 align-middle border-b-8 border-gray-800 items-center">
-		<div>
-			Hi
-		</div>
-		<a href="/">
-			<img src={assets + '/logo.svg'} alt="logo" class="max-h-16" />
-		</a>
-		<div
-			class="text-xl"
-		>
-			<!-- <div class="font-black">About</div>
-			<div class="font-black">Resources</div> -->
-			<div>
-				<a class="text-xl fancy" href="/get-involved">
-					<span class="top-key" />
-					<span class="font-black text">Get Involved</span>
-					<span class="bottom-key-1" />
-					<span class="bottom-key-2" />
-				</a>
+<nav class="sticky top-0 z-40 bg-white">
+	<div
+		class="flex items-center justify-between p-4 mx-64 align-middle border-b-8 border-l-2 border-r-2 border-gray-800"
+	>
+		<div class="flex items-center">
+			<div class="w-12 h-12 mr-4">
+				<div
+					on:click={showFullscreenMenu}
+					class="transition-all duration-300 toggle grayscale hover:grayscale-0"
+					id="checkbox"
+				>
+					<div class="bars" id="bar1"></div>
+					<div class="bars" id="bar2"></div>
+					<div class="bars" id="bar3"></div>
+				</div>
 			</div>
+			<a href="/">
+				<img src={assets + '/logo.svg'} alt="logo" class="w-full h-16" />
+			</a>
+		</div>
+		<div>
+			<a class="text-xl fancy" href="/get-involved">
+				<span class="top-key" />
+				<span class="font-black text">Get Involved</span>
+				<span class="bottom-key-1" />
+				<span class="bottom-key-2" />
+			</a>
 		</div>
 	</div>
 	<div class="w-auto h-1 mx-64 border-b border-gray-200">
@@ -55,10 +72,80 @@
 		/>
 	</div>
 </nav>
+{#if fullscreenMenuVisible}
+	<div
+		transition:fade={{ duration: 400 }}
+		class="fixed top-0 bottom-0 left-0 right-0 z-50 w-screen h-screen overflow-y-scroll bg-white inset-4 overscroll-contain"
+	>
+		<div class="grid items-center max-w-5xl grid-cols-2 py-24 mx-auto gap-x-16 gap-y-8">
+			<div class="">
+				<!-- <img
+						src="{assets}/images/cross.svg"
+						class="w-24 h-24 text-black transition-all duration-100 cursor-pointer fill-black"
+						on:click={() => {
+							fullscreenMenuVisible = false;
+						}}
+					/> -->
+				<svg
+					inline-src="cross"
+					class="w-16 h-16 cursor-pointer"
+					on:click={() => {
+						fullscreenMenuVisible = false;
+					}}
+				/>
+			</div>
+			<a href="/" on:click={hideFullscreenMenu}>
+				<img src={assets + '/logo.svg'} alt="logo" class="w-full h-24" />
+			</a>
+			<a
+				href="/about"
+				on:click={hideFullscreenMenu}
+				class="text-6xl font-black hover:text-[#eeb019] font-handwriting bg-black text-white text-right px-8 py-4"
+			>
+				About
+			</a>
+			<div class="grid grid-cols-1 gap-8">
+				<div class="text-3xl link-text">
+					<a href="/about#pedagogy"> What is engaged learning? </a>
+				</div>
+				<div class="text-3xl link-text">
+					<a href="/about#work"> What we do </a>
+				</div>
+				<div class="text-3xl link-text"><a href="/about/team">Meet the team</a></div>
+			</div>
+			<div class="w-full col-span-2 border-4 border-b border-black"></div>
+			<a
+				href="/resources"
+				class="text-6xl font-black hover:text-[#f3a061] font-handwriting bg-black text-white text-right px-8 py-4"
+			>
+				Resources
+			</a>
+			<div class="grid grid-cols-1 gap-8">
+				<div class="text-3xl link-text"><a href="/resources#learners">For learners</a></div>
+				<div class="text-3xl link-text"><a href="/resources#teachers">For teachers</a></div>
+				<div class="text-3xl link-text"><a href="/resources#leaders">For leaders</a></div>
+			</div>
+			<div class="w-full col-span-2 border-4 border-b border-black"></div>
+			<a
+				href="/get-involved"
+				class="text-6xl font-black hover:text-[#d01c1c] font-handwriting bg-black text-white text-right px-8 py-4"
+			>
+				Get Involved
+			</a>
+			<div class="grid grid-cols-1 gap-8">
+				<div class="text-3xl link-text"><a href="/get-involved#donate">Donate to us</a></div>
+				<div class="text-3xl link-text">
+					<a href="/get-involved#volunteer">Volunteer with us</a>
+				</div>
+				<div class="text-3xl link-text"><a href="/get-involved#contact-us">Contact us</a></div>
+			</div>
+		</div>
+	</div>
+{/if}
 
 <style>
 	.fancy {
-		background-color: transparent;
+		background-color: #000;
 		border: 2px solid #000;
 		border-radius: 0;
 		box-sizing: border-box;
@@ -82,13 +169,15 @@
 		content: ' ';
 		width: 1.5625rem;
 		height: 2px;
-		background: black;
+		background: white;
 		top: 50%;
 		left: 1.5em;
 		position: absolute;
 		transform: translateY(-50%);
 		transform-origin: center;
-		transition: background 0.3s linear, width 0.3s linear;
+		transition:
+			background 0.3s linear,
+			width 0.3s linear;
 	}
 
 	.fancy .text {
@@ -98,7 +187,7 @@
 		text-align: left;
 		transition: all 0.3s ease-in-out;
 		text-decoration: none;
-		color: black;
+		color: white;
 	}
 
 	.fancy .top-key {
@@ -107,8 +196,10 @@
 		top: -2px;
 		left: 0.625rem;
 		position: absolute;
-		background: #e8e8e8;
-		transition: width 0.5s ease-out, left 0.3s ease-out;
+		background: #fff;
+		transition:
+			width 0.5s ease-out,
+			left 0.3s ease-out;
 	}
 
 	.fancy .bottom-key-1 {
@@ -117,8 +208,10 @@
 		right: 1.875rem;
 		bottom: -2px;
 		position: absolute;
-		background: #e8e8e8;
-		transition: width 0.5s ease-out, right 0.3s ease-out;
+		background: #fff;
+		transition:
+			width 0.5s ease-out,
+			right 0.3s ease-out;
 	}
 
 	.fancy .bottom-key-2 {
@@ -127,13 +220,15 @@
 		right: 0.625rem;
 		bottom: -2px;
 		position: absolute;
-		background: #e8e8e8;
-		transition: width 0.5s ease-out, right 0.3s ease-out;
+		background: #fff;
+		transition:
+			width 0.5s ease-out,
+			right 0.3s ease-out;
 	}
 
 	.fancy:hover {
 		color: white;
-		background: black;
+		background: #d01c1c;
 	}
 
 	.fancy:hover::before {
@@ -155,5 +250,51 @@
 	.fancy:hover .bottom-key-2 {
 		right: 0;
 		width: 0;
+	}
+
+	.toggle {
+		position: relative;
+		width: 40px;
+		height: 40px;
+		cursor: pointer;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+		transition-duration: 0.5s;
+	}
+
+	.bars {
+		width: 100%;
+		height: 4px;
+		background-color: #d01c1c;
+		border-radius: 4px;
+	}
+
+	#bar1,
+	#bar3 {
+		width: 70%;
+	}
+
+	/* Link styles */
+	.link-text > a {
+		display: inline;
+		position: relative;
+	}
+	.link-text > a:after {
+		content: '';
+		display: block;
+		position: absolute;
+		width: 1em;
+		bottom: 0;
+		height: 3px;
+		margin: -5px 0;
+		left: 0;
+		background-color: black;
+		transition: all 0.1s ease-in-out 0s;
+	}
+	.link-text > a:hover:after {
+		width: 100%;
 	}
 </style>
