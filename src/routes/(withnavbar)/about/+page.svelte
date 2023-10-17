@@ -3,6 +3,10 @@
 	import ThreeStagesOfEngagedLearningDiagram from '$lib/components/diagrams/ThreeStagesOfEngagedLearning/index.svelte';
 </script>
 
+<div id="pedagogy"></div>
+<div id="work"></div>
+<div id="partners"></div>
+
 <div class="w-3/4 mx-auto">
 	<h1 class="mt-8 mb-40 text-5xl font-black text-left">Our pedagogy</h1>
 	<ThreeStagesOfEngagedLearningDiagram />

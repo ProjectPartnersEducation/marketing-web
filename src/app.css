@@ -12,3 +12,16 @@
 body {
 	background-color: #fff;
 }
+
+@layer base {
+	html {
+		scroll-snap-type: y mandatory;
+		scroll-snap-type: x none;
+	}
+
+	body {
+		overflow: scroll;
+		scroll-snap-type: y mandatory;
+		scroll-snap-type: x none;
+	}
+}

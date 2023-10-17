@@ -10,6 +10,10 @@
 
 	onMount(() => {
 		player = new Plyr(`#${id}`, plyrOptions);
+
+		return () => {
+			player.destroy();
+		};
 	});
 </script>
 

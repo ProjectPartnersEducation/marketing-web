@@ -1,12 +1,13 @@
 <script lang="ts">
 	export let text: string;
-	export let href: string;
+	export let href: string = '#';
 	export let target: string = '';
 	export let color: string = '#1e87ab';
 	export let textColor: string = '#ffffff';
+	export let action: () => void = () => {};
 </script>
 
-<a style="--clr: {color}; --textclr: {textColor}" class="button" {href} {target}>
+<a style="--clr: {color}; --textclr: {textColor}" class="button" {href} {target} on:click={action}>
 	<span class="button__icon-wrapper">
 		<svg
 			width="10"

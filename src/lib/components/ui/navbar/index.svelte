@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { assets } from '$app/paths';
 	import { onMount, tick } from 'svelte';
-	import { fade } from 'svelte/transition';
+	import { fly, fade, slide } from 'svelte/transition';
 
 	let scrollY: number;
 	let windowHeight: number;
@@ -41,10 +41,10 @@
 		class="flex items-center justify-between p-4 mx-64 align-middle border-b-8 border-l-2 border-r-2 border-gray-800"
 	>
 		<div class="flex items-center">
-			<div class="w-12 h-12 mr-4">
+			<div class="w-12 h-12 ml-4 mr-6">
 				<div
 					on:click={showFullscreenMenu}
-					class="transition-all duration-300 toggle grayscale hover:grayscale-0"
+					class="transition-all duration-100 toggle grayscale hover:grayscale-0"
 					id="checkbox"
 				>
 					<div class="bars" id="bar1"></div>
@@ -74,10 +74,10 @@
 </nav>
 {#if fullscreenMenuVisible}
 	<div
-		transition:fade={{ duration: 400 }}
+		transition:fade={{ duration: 200 }}
 		class="fixed top-0 bottom-0 left-0 right-0 z-50 w-screen h-screen overflow-y-scroll bg-white inset-4 overscroll-contain"
 	>
-		<div class="grid items-center max-w-5xl grid-cols-2 py-24 mx-auto gap-x-16 gap-y-8">
+		<div out:slide class="grid items-center max-w-5xl grid-cols-2 py-24 mx-auto gap-x-16 gap-y-8">
 			<div class="">
 				<!-- <img
 						src="{assets}/images/cross.svg"
@@ -86,13 +86,7 @@
 							fullscreenMenuVisible = false;
 						}}
 					/> -->
-				<svg
-					inline-src="cross"
-					class="w-16 h-16 cursor-pointer"
-					on:click={() => {
-						fullscreenMenuVisible = false;
-					}}
-				/>
+				<svg inline-src="cross" class="w-16 h-16 cursor-pointer" on:click={hideFullscreenMenu} />
 			</div>
 			<a href="/" on:click={hideFullscreenMenu}>
 				<img src={assets + '/logo.svg'} alt="logo" class="w-full h-24" />
@@ -105,39 +99,53 @@
 				About
 			</a>
 			<div class="grid grid-cols-1 gap-8">
-				<div class="text-3xl link-text">
-					<a href="/about#pedagogy"> What is engaged learning? </a>
+				<div class="text-3xl link-text" in:fly={{ duration: 200, y: -10 }}>
+					<a href="/about#pedagogy" on:click={hideFullscreenMenu}> What is engaged learning? </a>
 				</div>
-				<div class="text-3xl link-text">
-					<a href="/about#work"> What we do </a>
+				<div class="text-3xl link-text" in:fly={{ duration: 200, y: -10, delay: 30 }}>
+					<a href="/about#work" on:click={hideFullscreenMenu}> What we do </a>
 				</div>
-				<div class="text-3xl link-text"><a href="/about/team">Meet the team</a></div>
+				<div class="text-3xl link-text" in:fly={{ duration: 200, y: -10, delay: 60 }}>
+					<a href="/about/team" on:click={hideFullscreenMenu}> Meet the team </a>
+				</div>
 			</div>
 			<div class="w-full col-span-2 border-4 border-b border-black"></div>
 			<a
 				href="/resources"
 				class="text-6xl font-black hover:text-[#f3a061] font-handwriting bg-black text-white text-right px-8 py-4"
+				on:click={hideFullscreenMenu}
 			>
 				Resources
 			</a>
-			<div class="grid grid-cols-1 gap-8">
-				<div class="text-3xl link-text"><a href="/resources#learners">For learners</a></div>
-				<div class="text-3xl link-text"><a href="/resources#teachers">For teachers</a></div>
-				<div class="text-3xl link-text"><a href="/resources#leaders">For leaders</a></div>
+			<div transition:fly class="grid grid-cols-1 gap-8">
+				<div class="text-3xl link-text" transition:fly={{ duration: 200, y: -10, delay: 90 }}>
+					<a href="/resources#learners" on:click={hideFullscreenMenu}> For learners </a>
+				</div>
+				<div class="text-3xl link-text" transition:fly={{ duration: 200, y: -10, delay: 120 }}>
+					<a href="/resources#teachers" on:click={hideFullscreenMenu}> For teachers </a>
+				</div>
+				<div class="text-3xl link-text" transition:fly={{ duration: 200, y: -10, delay: 150 }}>
+					<a href="/resources#leaders" on:click={hideFullscreenMenu}> For leaders </a>
+				</div>
 			</div>
 			<div class="w-full col-span-2 border-4 border-b border-black"></div>
 			<a
 				href="/get-involved"
 				class="text-6xl font-black hover:text-[#d01c1c] font-handwriting bg-black text-white text-right px-8 py-4"
+				on:click={hideFullscreenMenu}
 			>
 				Get Involved
 			</a>
-			<div class="grid grid-cols-1 gap-8">
-				<div class="text-3xl link-text"><a href="/get-involved#donate">Donate to us</a></div>
-				<div class="text-3xl link-text">
-					<a href="/get-involved#volunteer">Volunteer with us</a>
+			<div transition:fly class="grid grid-cols-1 gap-8">
+				<div class="text-3xl link-text" transition:fly={{ duration: 200, y: -10, delay: 180 }}>
+					<a href="/get-involved#donate" on:click={hideFullscreenMenu}> Donate to us </a>
 				</div>
-				<div class="text-3xl link-text"><a href="/get-involved#contact-us">Contact us</a></div>
+				<div class="text-3xl link-text" transition:fly={{ duration: 200, y: -10, delay: 210 }}>
+					<a href="/get-involved#volunteer" on:click={hideFullscreenMenu}> Volunteer with us </a>
+				</div>
+				<div class="text-3xl link-text" transition:fly={{ duration: 200, y: -10, delay: 240 }}>
+					<a href="/get-involved#contact-us" on:click={hideFullscreenMenu}> Contact us </a>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -262,7 +270,7 @@
 		align-items: center;
 		justify-content: center;
 		gap: 10px;
-		transition-duration: 0.5s;
+		transition-duration: 0.2s;
 	}
 
 	.bars {
