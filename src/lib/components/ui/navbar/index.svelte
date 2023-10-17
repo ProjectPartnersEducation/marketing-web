@@ -9,6 +9,8 @@
 
 	let fullscreenMenuVisible = false;
 
+	let svg: SVGElement;
+
 	const calculateScrollValue = (y: number) => {
 		if (documentHeight === undefined || windowHeight === undefined || y === undefined) {
 			return 0;
@@ -78,72 +80,81 @@
 		class="fixed top-0 bottom-0 left-0 right-0 z-50 w-screen h-screen overflow-y-scroll bg-white inset-4 overscroll-contain"
 	>
 		<div out:slide class="grid items-center max-w-5xl grid-cols-2 py-24 mx-auto gap-x-16 gap-y-8">
-			<div class="">
-				<!-- <img
-						src="{assets}/images/cross.svg"
-						class="w-24 h-24 text-black transition-all duration-100 cursor-pointer fill-black"
-						on:click={() => {
-							fullscreenMenuVisible = false;
-						}}
-					/> -->
-				<svg inline-src="cross" class="w-16 h-16 cursor-pointer" on:click={hideFullscreenMenu} />
+			<div>
+				<svg
+					inline-src="cross"
+					class="w-24 h-24 transition-all cursor-pointer"
+					on:click={hideFullscreenMenu}
+					on:keypress={hideFullscreenMenu}
+					on:mouseenter={() => {
+						svg.style.fill = '#d01c1c';
+					}}
+					on:mouseleave={() => {
+						svg.style.fill = '#000';
+					}}
+					bind:this={svg}
+				/>
 			</div>
 			<a href="/" on:click={hideFullscreenMenu}>
-				<img src={assets + '/logo.svg'} alt="logo" class="w-full h-24" />
+				<img
+					src={assets + '/logo.svg'}
+					alt="logo"
+					class="w-full h-20 transition-all hover:scale-105"
+				/>
 			</a>
 			<a
 				href="/about"
 				on:click={hideFullscreenMenu}
-				class="text-6xl font-black hover:text-[#eeb019] font-handwriting bg-black text-white text-right px-8 py-4"
+				class="text-6xl font-black hover:text-[#eeb019] font-handwriting bg-black text-white text-right px-8 py-4 transition-colors"
 			>
 				About
 			</a>
 			<div class="grid grid-cols-1 gap-8">
-				<div class="text-3xl link-text" in:fly={{ duration: 200, y: -10 }}>
+				<div class="text-3xl link-text" in:fly={{ duration: 400, y: -10 }}>
 					<a href="/about#pedagogy" on:click={hideFullscreenMenu}> What is engaged learning? </a>
 				</div>
-				<div class="text-3xl link-text" in:fly={{ duration: 200, y: -10, delay: 30 }}>
+				<div class="text-3xl link-text" in:fly={{ duration: 400, y: -10, delay: 30 }}>
 					<a href="/about#work" on:click={hideFullscreenMenu}> What we do </a>
 				</div>
-				<div class="text-3xl link-text" in:fly={{ duration: 200, y: -10, delay: 60 }}>
+				<div class="text-3xl link-text" in:fly={{ duration: 400, y: -10, delay: 60 }}>
 					<a href="/about/team" on:click={hideFullscreenMenu}> Meet the team </a>
 				</div>
 			</div>
 			<div class="w-full col-span-2 border-4 border-b border-black"></div>
 			<a
 				href="/resources"
-				class="text-6xl font-black hover:text-[#f3a061] font-handwriting bg-black text-white text-right px-8 py-4"
+				class="text-6xl font-black hover:text-[#f3a061] font-handwriting bg-black text-white text-right px-8 py-4 transition-colors"
 				on:click={hideFullscreenMenu}
 			>
 				Resources
 			</a>
 			<div transition:fly class="grid grid-cols-1 gap-8">
-				<div class="text-3xl link-text" transition:fly={{ duration: 200, y: -10, delay: 90 }}>
+				<div class="text-3xl link-text" transition:fly={{ duration: 400, y: -10, delay: 90 }}>
 					<a href="/resources#learners" on:click={hideFullscreenMenu}> For learners </a>
 				</div>
-				<div class="text-3xl link-text" transition:fly={{ duration: 200, y: -10, delay: 120 }}>
+				<div class="text-3xl link-text" transition:fly={{ duration: 400, y: -10, delay: 120 }}>
 					<a href="/resources#teachers" on:click={hideFullscreenMenu}> For teachers </a>
 				</div>
-				<div class="text-3xl link-text" transition:fly={{ duration: 200, y: -10, delay: 150 }}>
+				<div class="text-3xl link-text" transition:fly={{ duration: 400, y: -10, delay: 150 }}>
 					<a href="/resources#leaders" on:click={hideFullscreenMenu}> For leaders </a>
 				</div>
 			</div>
 			<div class="w-full col-span-2 border-4 border-b border-black"></div>
 			<a
 				href="/get-involved"
-				class="text-6xl font-black hover:text-[#d01c1c] font-handwriting bg-black text-white text-right px-8 py-4"
+				class="text-6xl font-black hover:text-[#d01c1c] font-handwriting bg-black text-white text-right px-8 py-4 transition-colors"
 				on:click={hideFullscreenMenu}
 			>
 				Get Involved
 			</a>
 			<div transition:fly class="grid grid-cols-1 gap-8">
-				<div class="text-3xl link-text" transition:fly={{ duration: 200, y: -10, delay: 180 }}>
+				<div class="text-3xl link-text" transition:fly={{ duration: 400, y: -10, delay: 180 }}>
 					<a href="/get-involved#donate" on:click={hideFullscreenMenu}> Donate to us </a>
 				</div>
-				<div class="text-3xl link-text" transition:fly={{ duration: 200, y: -10, delay: 210 }}>
+				<div class="text-3xl link-text" transition:fly={{ duration: 400, y: -10, delay: 210 }}>
 					<a href="/get-involved#volunteer" on:click={hideFullscreenMenu}> Volunteer with us </a>
 				</div>
-				<div class="text-3xl link-text" transition:fly={{ duration: 200, y: -10, delay: 240 }}>
+				<div class="text-3xl link-text" transition:fly={{ duration: 400, y: -10, delay: 240 }}>
 					<a href="/get-involved#contact-us" on:click={hideFullscreenMenu}> Contact us </a>
 				</div>
 			</div>

@@ -7,13 +7,13 @@
 <div id="work"></div>
 <div id="partners"></div>
 
-<div class="w-3/4 mx-auto">
-	<h1 class="mt-8 mb-40 text-5xl font-black text-left">Our pedagogy</h1>
+<div class="mx-64 mt-32">
+	<h2 class="mt-8 mb-20 text-5xl text-left font-handwriting">Our pedagogy</h2>
 	<ThreeStagesOfEngagedLearningDiagram />
 </div>
 <hr class="my-24 mx-[25%]" />
-<h1 class="mb-40 text-5xl font-black text-center">The way we work</h1>
-<div class="w-3/4 mx-auto">
+<div class="mx-64">
+	<h2 class="mt-8 mb-20 text-5xl text-left font-handwriting">The way we work</h2>
 	<ProjectPartnersActivitiesDiagram />
 </div>
 <hr class="my-24" />
