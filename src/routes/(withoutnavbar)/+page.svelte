@@ -41,7 +41,7 @@
 					<aside class="mt-8 text-2xl">
 						Proudly partnered with the Ghana Commission for UNESCO since 2022
 						<img
-							src={assets + '/images/unesco_ghana_logo.png'}
+							src={assets + '/images/supporters/unesco_ghana_logo.png'}
 							alt="Logo of UNESCO Ghana"
 							class="h-24 mx-auto mt-4"
 						/>

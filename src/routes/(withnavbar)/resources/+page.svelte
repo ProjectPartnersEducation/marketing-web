@@ -59,9 +59,9 @@
 <div class="px-64 pt-48" id="learners">
 	<h2 class="text-5xl font-handwriting">Learn with Project Partners</h2>
 	<p class="mt-8 text-2xl leading-loose">
-		It doesn't matter if you prefer to learn at home or at school, you can <span class="font-black"
-			>learn with Project Partners</span
-		>. Or, if you're a grown up with a child in your life, you can learn together!
+		We want to build the world's best library of free learning resources for young people. Our
+		project packs will help you develop your skills and gain confidence applying your knowledge to
+		exciting, real-world problems.
 	</p>
 </div>
 <div class="px-48 mt-16 border-black">

@@ -76,10 +76,8 @@
 					<li class="mt-2">Our global education leadership programmes</li>
 					<li class="mt-2">Our public work to influence education policy</li>
 				</ol>
-				<h3 class="pt-4 mt-4 text-xl font-black text-center border-t">Or learn more about</h3>
-				<div class="grid grid-cols-2 gap-2 pb-6 mt-4 border-b">
-					<Button text="Our Methods" href="/about" />
-					<Button text="Our Resources" href="/resources" />
+				<div class="grid grid-cols-1 gap-2 pb-6 mt-4 border-b">
+					<Button text="Institutional Donors & Partnerships" href="/get-involved/institutions" />
 				</div>
 			</div>
 		</div>
