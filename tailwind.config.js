@@ -7,7 +7,9 @@ export default {
 			black: 800
 		},
 		fontFamily: {
-			handwriting: ['Permanent Marker', 'ui-sans-serif', 'system-ui']
+			handwriting: ['Love Ya Like A Sister', 'Permanent Marker', 'ui-sans-serif', 'system-ui'],
+			pptext: ['Satisfy', 'ui-sans-serif', 'system-ui'],
+			mono: ['VT323', 'ui-monospace', 'SFMono-Regular'],
 		},
 		extend: {}
 	},

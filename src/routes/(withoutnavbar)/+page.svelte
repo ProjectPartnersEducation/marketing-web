@@ -79,6 +79,17 @@
 				<div class="mt-8">
 					<Button text="What is engaged learning?" href="/about" color="#93b195" />
 				</div>
+				<div class="inline-block pt-8 mt-8 border-t">
+					<span class="inline-block align-middle"
+						>[1]: <a
+							href="https://issuu.com/projectpartnersedu"
+							target="_blank"
+							class="underline hover:text-slate-500"
+							>"Project Partners: Towards Fully-Engaged Learning", 2023</a
+						></span
+					>
+					<svg inline-src="open-in-new" class="inline-block h-4 align-middle" />
+				</div>
 			</div>
 		</div>
 		<div class="relative w-full h-48 border-b border-r rounded-br-lg">
@@ -109,7 +120,7 @@
 			</div>
 			<div>
 				<img
-					src="{assets}/images/two-student-holding-books.jpg"
+					src="{assets}/images/three-students-looking-over-shoulder.jpg"
 					class="transition-all border-8 border-black cursor-pointer hover:scale-105"
 				/>
 			</div>

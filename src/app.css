@@ -1,5 +1,5 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Nunito&family=Archivo+Black&family=Ultra&family=Gabarito:wght@400;900&family=Assistant&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Nunito+Sans:opsz,wght@6..12,200;6..12,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Love+Ya+Like+A+Sister&family=VT323&family=Satisfy&family=Nunito+Sans:opsz,wght@6..12,200;6..12,800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,6 +7,10 @@
 * {
 	font-family: 'Nunito Sans', sans-serif;
 	font-weight: 200;
+}
+
+html {
+	scroll-behavior: smooth;
 }
 
 body {

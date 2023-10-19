@@ -68,7 +68,7 @@
 	</div>
 	<div class="">
 		<img src={assets + '/logo.svg'} alt="logo" class="w-full" />
-		<h4 class="px-2 pb-1 mt-4 text-white bg-black text-md font-handwriting">
+		<h4 class="px-2 mt-4 text-center text-white bg-black text-md font-handwriting">
 			The Engaging Education Charity
 		</h4>
 		<ul class="mt-4">

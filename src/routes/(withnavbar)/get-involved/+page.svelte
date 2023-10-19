@@ -9,7 +9,7 @@
 </script>
 
 <section class="px-64 pb-12 mt-8 bg-slate-100">
-	<h1 class="relative mb-40 text-center">
+	<div class="relative mb-40 text-center">
 		<img src={assets + '/images/four-students-looking-down.jpg'} class="w-full" />
 
 		<h1
@@ -22,7 +22,7 @@
 		>
 			Get Involved
 		</h1>
-	</h1>
+	</div>
 	<div id="donate">
 		<div class="relative pb-12 border-l-2 border-l-black">
 			<div class="absolute -translate-x-1/2 translate-y-1">

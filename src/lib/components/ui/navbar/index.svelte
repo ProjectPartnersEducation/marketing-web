@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { assets } from '$app/paths';
-	import { onMount, tick } from 'svelte';
+	import { onMount } from 'svelte';
 	import { fly, fade, slide } from 'svelte/transition';
 
 	let scrollY: number;
@@ -46,6 +46,7 @@
 			<div class="w-12 h-12 ml-4 mr-6">
 				<div
 					on:click={showFullscreenMenu}
+					on:keypress={showFullscreenMenu}
 					class="transition-all duration-100 toggle grayscale hover:grayscale-0"
 					id="checkbox"
 				>
@@ -114,10 +115,10 @@
 					<a href="/about#pedagogy" on:click={hideFullscreenMenu}> What is engaged learning? </a>
 				</div>
 				<div class="text-3xl link-text" in:fly={{ duration: 400, y: -10, delay: 30 }}>
-					<a href="/about#work" on:click={hideFullscreenMenu}> What we do </a>
+					<a href="/about#work" on:click={hideFullscreenMenu}> What do we do? </a>
 				</div>
 				<div class="text-3xl link-text" in:fly={{ duration: 400, y: -10, delay: 60 }}>
-					<a href="/about/team" on:click={hideFullscreenMenu}> Meet the team </a>
+					<a href="/about/team" on:click={hideFullscreenMenu}> Who are we? </a>
 				</div>
 			</div>
 			<div class="w-full col-span-2 border-4 border-b border-black"></div>
