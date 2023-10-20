@@ -2,6 +2,70 @@
 	import { assets } from '$app/paths';
 
 	import Button from '$lib/components/elements/button.svelte';
+	import ContactForm from '$lib/components/elements/contact/index.svelte';
+
+	let firstName = '';
+	let email = '';
+	let status = '';
+	let error = '';
+
+	const subscribe = async () => {
+		try {
+			await subscribeUser('5738426', 'YdChNgNnCmnRW7F6-0e8Bg', firstName, email);
+			status = 'You have been successfully added';
+		} catch (e) {
+			if (e.message.includes('Invalid') || e.message.includes('Missing required parameters')) {
+				error = 'There was an issue with your input';
+			} else {
+				error = 'There was an issue with the server or you are offline';
+			}
+		}
+	};
+
+	async function subscribeUser(formId, apiKey, firstName, email) {
+		// Validate input
+		if (!formId || !apiKey || !email) {
+			throw new Error('Missing required parameters');
+		}
+		if (email && !/.+@.+\..+/.test(email)) {
+			throw new Error('Invalid email address');
+		}
+
+		// Prepare payload
+		const payload = {
+			api_key: apiKey,
+			email: email
+		};
+		if (firstName) {
+			payload.first_name = firstName;
+		}
+
+		// Send request
+		try {
+			const response = await fetch(`https://api.convertkit.com/v3/forms/${formId}/subscribe`, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json; charset=utf-8'
+				},
+				body: JSON.stringify(payload)
+			})
+				.then((res) => res.json())
+				.then((res) => {
+					console.log(res);
+
+					return res;
+				});
+
+			// Check for errors
+			if (!response.ok) {
+				throw new Error(`Server error: ${response.status}`);
+			}
+
+			return await response.json();
+		} catch (error) {
+			throw new Error(`Network error: ${error.message}`);
+		}
+	}
 </script>
 
 <div class="px-48">
@@ -124,58 +188,113 @@
 		professional development of teachers and educators - because the future of education starts with
 		you.
 	</p>
-</div>
-<div class="px-48 mt-16 border-black">
-	<div
-		class="grid grid-cols-[70%,30%] gap-x-8 border-4 border-black rounded-lg px-32 py-16 shadow-xl bg-[#fffffc]"
+	<h3 class="mt-16 text-3xl font-black">Our Professional Certifications</h3>
+	<p class="mt-4 text-2xl leading-loose text-justify">
+		We are currently working with the National Teaching Council of Ghana to develop a series of
+		professional certifications for teachers and educators. These certifications will count towards
+		your annual teaching license renewal and are designed to help you develop your skills as an
+		engaging educator.
+	</p>
+	<div class="grid grid-cols-2 gap-8 mt-8 place-items-center">
+		<div>
+			<h4 class="text-2xl font-black">What are the benefits?</h4>
+			<ul class="mt-4 text-2xl leading-loose text-justify list-disc list-inside">
+				<li>Develop your skills as an engaging educator</li>
+				<li>Gain recognition for your professional development</li>
+				<li>Count towards your annual teaching license renewal</li>
+				<li>Learn from local and international experts</li>
+				<li>Understand how to use our learning resources</li>
+				<li>Gain access to our global network of education leaders</li>
+			</ul>
+		</div>
+		<img src="{assets}/images/teacher-with-students-happy.jpg" class="border-4 border-black" />
+	</div>
+	<div class="mx-32 my-16 border-b"></div>
+	<p class="text-2xl leading-loose text-justify">
+		We are still developing our professional certifications for teachers. If you would like to be
+		notified when they are ready, or involved in its design, please register your interest below and
+		we will be in touch.
+	</p>
+	<form
+		class="flex flex-1 w-full gap-4 mt-8 place-items-center"
+		on:submit|preventDefault={subscribe}
 	>
-		<div>
-			<div class="grid grid-cols-[75%,25%] grid-rows-3 gap-y-2 gap-x-8">
-				<h2 class="self-end row-span-3 text-black border-r-2">
-					<svg inline-src="logo" class="inline-block h-16 mr-3" />
-					<span class="text-4xl font-pptext"> Goes to Ghana </span>
-				</h2>
-				<div>
-					<span class="font-mono text-2xl text-black"> PP:002 </span>
-				</div>
-				<div>
-					<span class="px-2 text-xl italic font-black text-white bg-[#1e87ab] border border-black">
-						Ages 13+
-					</span>
-				</div>
-				<div>
-					<span class="px-2 text-xl italic font-black text-white bg-[#cea0b5] border border-black">
-						Mathematics
-					</span>
-				</div>
+		<input
+			type="text"
+			placeholder="First Name*"
+			required
+			class="w-full p-4 border-2 border-black text-xl placeholder:text-xl focus:border-[#1e87ab] rounded-md"
+			bind:value={firstName}
+		/>
+		<input
+			type="email"
+			placeholder="Email Address*"
+			required
+			class="w-full p-4 border-2 border-black text-xl placeholder:text-xl focus:border-[#1e87ab] rounded-md"
+			bind:value={email}
+		/>
+		<button type="submit">
+			<Button text="Register interest" />
+		</button>
+	</form>
+	<div class="col-span-2">
+		{#if status}
+			<div class="text-green-500">
+				{status}
 			</div>
-			<p class="mt-8 text-3xl leading-loose text-justify text-black">
-				Join Emmanuella in your role as a mathematics expert and help the people of Ghana grow their
-				businesses into a thriving community!
-			</p>
-			<div class="mt-8 text-center">
-				<Button text="Let's go!" href="https://learn.projectpartners.org" color="#d01c1c" />
+		{/if}
+		{#if error}
+			<div class="text-red-500">
+				{error}
 			</div>
-		</div>
-		<div>
-			<img
-				src="{assets}/images/three-standing-children-discussing.jpg"
-				class="w-full border-2 border-black"
-			/>
-		</div>
+		{/if}
+	</div>
+	<div class="mt-8">
+		If you register your interest with the above form, we will only use your email address to
+		contact you about our professional certifications. For more information, please see our <a
+			href="#"
+			class="font-black">Privacy Policy</a
+		>.
+	</div>
+	<div class="mx-32 my-16 border-b"></div>
+	<div class="text-4xl font-black text-center">Teaching with our project packs?</div>
+	<div class="mt-4 text-2xl text-center">
+		Find all of our teaching resources (and more!) on our <a
+			href="https://learn.projectpartners.org/teachers"
+			class="font-handwriting"
+			target="_blank">Learning Portal</a
+		><svg inline-src="open-in-new" class="inline-block h-8 ml-2 -translate-y-1" />
 	</div>
 </div>
 
 <div class="px-64 pt-48" id="leaders">
 	<h2 class="text-5xl font-handwriting">Lead with Project Partners</h2>
 	<p class="mt-8 text-2xl leading-loose text-justify">
-		If you are a school or community leader, apply today to become a Project Partners partner school
-		and receive free access to our leadership resources, which are designed to support our
-		professional development workshops for your teachers and our project packs for your learners.
+		If you are a school or community leader, you are warmly invited to join our global network of
+		education leaders. We are committed to supporting you in your work to transform your school or
+		community into a space where curiosity, creativity, and collaboration are the number one
+		priority.
 	</p>
 	<p class="mt-8 text-2xl leading-loose text-justify">
-		Or, if you work for a non-profit organisation, NGO, or government agency, <a
-			href="/get-involved#contact-us">get in touch</a
-		> to find out how we can work together to bring the new era of education to life.
+		If you are a non-profit organisation, NGO, or government agency, please visit our <a
+			href="/get-involved/institutions"
+		>
+			Institutional Supporters
+		</a> page to discover how we can work together.
 	</p>
+	<div class="grid grid-cols-2 gap-8 mt-8 place-items-center">
+		<img src="{assets}/images/teacher-with-students-happy.jpg" class="border-4 border-black" />
+		<div>
+			<h4 class="text-2xl font-black">What are the benefits?</h4>
+			<ul class="mt-4 text-2xl leading-loose text-justify list-disc list-inside">
+				<li>Get support improving student and staff well-being</li>
+				<li>Support in developing your school or community</li>
+				<li>Access to our professional development workshops</li>
+				<li>Access to our learning resources</li>
+				<li>Access to our global network of education leaders</li>
+			</ul>
+		</div>
+	</div>
+	<div class="mx-32 my-16 border-b"></div>
+	<ContactForm />
 </div>

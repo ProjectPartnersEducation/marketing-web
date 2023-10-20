@@ -148,7 +148,11 @@
 					impactful for all.
 				</p>
 				<div class="mt-8">
-					<Button text="Read about our partnerships" href="/about#partners" color="#1e87ab" />
+					<Button
+						text="Read about our partnerships"
+						href="/get-involved/institutions"
+						color="#1e87ab"
+					/>
 				</div>
 			</div>
 		</div>
