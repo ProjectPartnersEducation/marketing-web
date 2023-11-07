@@ -6,6 +6,9 @@
 </script>
 
 <section class="grid grid-cols-[60%,40%] place-items-center p-10">
+	<div class="w-full col-span-2 text-5xl text-left font-handwriting">
+		The Engaged Learning Model
+	</div>
 	<div>
 		<Text
 			on:setstep={(e) => {

@@ -49,17 +49,17 @@
 		on:mouseover={() => hoverEnterTextBox('')}
 		on:focus={() => hoverEnterTextBox('')}
 		on:mouseleave={() => hoverExitTextBox('')}
+		class:bg-slate-300={activeElement === ''}
+		class:bg-slate-200={activeElement !== ''}
+		class:cursor-pointer={activeElement !== ''}
+		on:click={() => {
+			setActiveGroup('');
+		}}
+		on:keypress={() => {
+			setActiveGroup('');
+		}}
 	>
-		<h2
-			class="mb-6 text-2xl cursor-pointer"
-			class:font-black={activeElement === ''}
-			on:click={() => {
-				setActiveGroup('');
-			}}
-			on:keypress={() => {
-				setActiveGroup('');
-			}}
-		>
+		<h2 class="my-3 text-2xl" class:font-black={activeElement === ''}>
 			We're engaged at every level
 		</h2>
 		{#if activeElement === ''}
@@ -87,9 +87,18 @@
 		on:mouseover={() => hoverEnterTextBox('Learners')}
 		on:focus={() => hoverEnterTextBox('Learners')}
 		on:mouseleave={() => hoverExitTextBox('Learners')}
+		class:bg-slate-300={activeElement === 'Learners'}
+		class:bg-slate-200={activeElement !== 'Learners'}
+		class:cursor-pointer={activeElement !== 'Learners'}
+		on:click={() => {
+			setActiveGroup('Learners');
+		}}
+		on:keypress={() => {
+			setActiveGroup('Learners');
+		}}
 	>
 		<h2
-			class="mb-6 text-2xl cursor-pointer"
+			class="my-3 text-2xl cursor-pointer"
 			class:font-black={activeElement === 'Learners'}
 			on:click={() => {
 				setActiveGroup('Learners');
@@ -128,9 +137,18 @@
 		on:mouseover={() => hoverEnterTextBox('Teachers')}
 		on:focus={() => hoverEnterTextBox('Teachers')}
 		on:mouseleave={() => hoverExitTextBox('Teachers')}
+		class:bg-slate-300={activeElement === 'Teachers'}
+		class:bg-slate-200={activeElement !== 'Teachers'}
+		class:cursor-pointer={activeElement !== 'Teachers'}
+		on:click={() => {
+			setActiveGroup('Teachers');
+		}}
+		on:keypress={() => {
+			setActiveGroup('Teachers');
+		}}
 	>
 		<h2
-			class="mb-6 text-2xl cursor-pointer"
+			class="my-3 text-2xl cursor-pointer"
 			class:font-black={activeElement === 'Teachers'}
 			on:click={() => {
 				setActiveGroup('Teachers');
@@ -169,9 +187,18 @@
 		on:mouseover={() => hoverEnterTextBox('EducationalLeaders')}
 		on:focus={() => hoverEnterTextBox('EducationalLeaders')}
 		on:mouseleave={() => hoverExitTextBox('EducationalLeaders')}
+		class:bg-slate-300={activeElement === 'EducationalLeaders'}
+		class:bg-slate-200={activeElement !== 'EducationalLeaders'}
+		class:cursor-pointer={activeElement !== 'EducationalLeaders'}
+		on:click={() => {
+			setActiveGroup('EducationalLeaders');
+		}}
+		on:keypress={() => {
+			setActiveGroup('EducationalLeaders');
+		}}
 	>
 		<h2
-			class="mb-6 text-2xl cursor-pointer"
+			class="my-3 text-2xl cursor-pointer"
 			class:font-black={activeElement === 'EducationalLeaders'}
 			on:click={() => {
 				setActiveGroup('EducationalLeaders');
@@ -202,9 +229,18 @@
 		on:mouseover={() => hoverEnterTextBox('GovernmentAndNGOs')}
 		on:focus={() => hoverEnterTextBox('GovernmentAndNGOs')}
 		on:mouseleave={() => hoverExitTextBox('GovernmentAndNGOs')}
+		class:bg-slate-300={activeElement === 'GovernmentAndNGOs'}
+		class:bg-slate-200={activeElement !== 'GovernmentAndNGOs'}
+		class:cursor-pointer={activeElement !== 'GovernmentAndNGOs'}
+		on:click={() => {
+			setActiveGroup('GovernmentAndNGOs');
+		}}
+		on:keypress={() => {
+			setActiveGroup('GovernmentAndNGOs');
+		}}
 	>
 		<h2
-			class="mb-6 text-2xl cursor-pointer"
+			class="my-3 text-2xl cursor-pointer"
 			class:font-black={activeElement === 'GovernmentAndNGOs'}
 			on:click={() => {
 				setActiveGroup('GovernmentAndNGOs');

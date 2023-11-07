@@ -12,13 +12,13 @@
 		</h4>
 		<ul class="mt-4">
 			<li class="mt-4 text-lg cursor-pointer hover:underline">
-				<a href="/about#pedagogy">What is engaging education?</a>
+				<a href="/about#pedagogy">Our principles</a>
 			</li>
 			<li class="mt-4 text-lg cursor-pointer hover:underline">
-				<a href="/about#work">Our work</a>
+				<a href="/about#work">Our activities</a>
 			</li>
 			<li class="mt-4 text-lg cursor-pointer hover:underline">
-				<a href="/about/team">Meet the team</a>
+				<a href="/about/team">Our team</a>
 			</li>
 		</ul>
 	</div>

@@ -4,6 +4,10 @@
 	import ContactForm from '$lib/components/elements/contact/index.svelte';
 </script>
 
+<svelte:head>
+	<title>Institutional Supporters | Project Partners Education</title>
+</svelte:head>
+
 <div class="grid grid-cols-3 px-64">
 	<div class="col-span-2 py-16 border-b-2 border-r-2 rounded-br-lg"></div>
 </div>
@@ -29,7 +33,7 @@
 		</div>
 	</div>
 	<div class="px-16 py-48 border-b-2 border-r-2 rounded-br-lg">
-		<h2 class="py-2 text-4xl text-center text-white bg-black rounded-md font-handwriting">
+		<h2 class="py-2 text-4xl text-center text-white bg-black font-handwriting">
 			We are proudly supported by
 		</h2>
 		<h3 class="mt-16 text-2xl font-black">Our Government Partners</h3>
@@ -39,7 +43,7 @@
 			<img class=" max-h-24" src="{assets}/images/supporters/nacca-logo.png" />
 			<img class=" max-h-24" src="{assets}/images/supporters/ntc-logo.jpg" />
 		</div>
-		<h3 class="mt-16 text-2xl font-black">Our Strategic Partners</h3>
+		<h3 class="mt-16 text-2xl font-black">Our NGO Partners</h3>
 		<div class="grid grid-cols-3 gap-4 mt-6 place-items-center">
 			<img class=" max-h-24" src="{assets}/images/supporters/brightside-logo.png" />
 			<img class=" max-h-24" src="{assets}/images/supporters/rotary-club-logo.png" />

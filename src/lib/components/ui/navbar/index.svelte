@@ -40,25 +40,27 @@
 
 <nav class="sticky top-0 z-40 bg-white">
 	<div
-		class="flex items-center justify-between p-4 mx-64 align-middle border-b-8 border-l-2 border-r-2 border-gray-800"
+		class="grid items-center grid-cols-3 p-4 mx-64 align-middle border-b-8 border-l-2 border-r-2 border-gray-800"
 	>
-		<div class="flex items-center">
-			<div class="w-12 h-12 ml-4 mr-6">
-				<div
-					on:click={showFullscreenMenu}
-					on:keypress={showFullscreenMenu}
-					class="transition-all duration-100 toggle grayscale hover:grayscale-0"
-					id="checkbox"
-				>
-					<div class="bars" id="bar1"></div>
-					<div class="bars" id="bar2"></div>
-					<div class="bars" id="bar3"></div>
-				</div>
+		<div class="w-12 h-12 ml-4 mr-6">
+			<div
+				on:click={showFullscreenMenu}
+				on:keypress={showFullscreenMenu}
+				class="toggle grayscale hover:grayscale-0"
+				id="checkbox"
+			>
+				<div class="bars" id="bar1"></div>
+				<div class="bars" id="bar2"></div>
+				<div class="bars" id="bar3"></div>
 			</div>
-			<a href="/">
-				<img src={assets + '/logo.svg'} alt="logo" class="w-full h-16" />
-			</a>
 		</div>
+		<a href="/">
+			<img
+				src={assets + '/logo.svg'}
+				alt="logo"
+				class="w-full h-16 transition-transform hover:scale-105"
+			/>
+		</a>
 		<div>
 			<a class="text-xl fancy" href="/get-involved">
 				<span class="top-key" />
@@ -108,17 +110,17 @@
 				on:click={hideFullscreenMenu}
 				class="text-6xl font-black hover:text-[#eeb019] font-handwriting bg-black text-white text-right px-8 py-4 transition-colors"
 			>
-				About
+				About...
 			</a>
 			<div class="grid grid-cols-1 gap-8">
 				<div class="text-3xl link-text" in:fly={{ duration: 400, y: -10 }}>
-					<a href="/about#pedagogy" on:click={hideFullscreenMenu}> What is engaged learning? </a>
+					<a href="/about#principles" on:click={hideFullscreenMenu}> Our principles </a>
 				</div>
 				<div class="text-3xl link-text" in:fly={{ duration: 400, y: -10, delay: 30 }}>
-					<a href="/about#work" on:click={hideFullscreenMenu}> What do we do? </a>
+					<a href="/about#work" on:click={hideFullscreenMenu}> Our activities </a>
 				</div>
 				<div class="text-3xl link-text" in:fly={{ duration: 400, y: -10, delay: 60 }}>
-					<a href="/about/team" on:click={hideFullscreenMenu}> Who are we? </a>
+					<a href="/about/team" on:click={hideFullscreenMenu}> Our team </a>
 				</div>
 			</div>
 			<div class="w-full col-span-2 border-4 border-b border-black"></div>
@@ -127,7 +129,7 @@
 				class="text-6xl font-black hover:text-[#f3a061] font-handwriting bg-black text-white text-right px-8 py-4 transition-colors"
 				on:click={hideFullscreenMenu}
 			>
-				Resources
+				Resources...
 			</a>
 			<div transition:fly class="grid grid-cols-1 gap-8">
 				<div class="text-3xl link-text" transition:fly={{ duration: 400, y: -10, delay: 90 }}>
@@ -146,14 +148,14 @@
 				class="text-6xl font-black hover:text-[#d01c1c] font-handwriting bg-black text-white text-right px-8 py-4 transition-colors"
 				on:click={hideFullscreenMenu}
 			>
-				Get Involved
+				Get Involved...
 			</a>
 			<div transition:fly class="grid grid-cols-1 gap-8">
 				<div class="text-3xl link-text" transition:fly={{ duration: 400, y: -10, delay: 180 }}>
-					<a href="/get-involved#donate" on:click={hideFullscreenMenu}> Donate to us </a>
+					<a href="/get-involved#donate" on:click={hideFullscreenMenu}> Donate </a>
 				</div>
 				<div class="text-3xl link-text" transition:fly={{ duration: 400, y: -10, delay: 210 }}>
-					<a href="/get-involved#volunteer" on:click={hideFullscreenMenu}> Volunteer with us </a>
+					<a href="/get-involved#volunteer" on:click={hideFullscreenMenu}> Volunteer </a>
 				</div>
 				<div class="text-3xl link-text" transition:fly={{ duration: 400, y: -10, delay: 240 }}>
 					<a href="/get-involved#contact-us" on:click={hideFullscreenMenu}> Contact us </a>
@@ -290,11 +292,19 @@
 		height: 4px;
 		background-color: #d01c1c;
 		border-radius: 4px;
+		transition: all 0.2s ease-in-out;
 	}
 
-	#bar1,
-	#bar3 {
-		width: 70%;
+	.toggle:hover #bar1 {
+		width: 110%;
+	}
+
+	.toggle:hover #bar2 {
+		width: 60%;
+	}
+
+	.toggle:hover #bar3 {
+		width: 30%;
 	}
 
 	/* Link styles */

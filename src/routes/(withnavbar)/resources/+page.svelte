@@ -68,6 +68,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Our Resources | Project Partners Education</title>
+</svelte:head>
+
 <div class="px-48">
 	<h1 class="relative mb-40 text-center">
 		<img src={assets + '/images/class-with-hands-up.jpg'} class="w-full" />
