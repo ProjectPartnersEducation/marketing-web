@@ -26,10 +26,9 @@
 		</h1>
 	</h1>
 </div>
-<div id="principles"></div>
 <div id="team"></div>
 
-<div class="mx-64 mt-32">
+<div class="mx-64 mt-32" id="principles">
 	<h2 class="mt-8 mb-20 text-5xl text-left font-handwriting">Our Principles</h2>
 	<p class="mt-8 text-2xl leading-loose">
 		Let's start with some important bits. <br />First off, we're a <em>charity</em>. That means that

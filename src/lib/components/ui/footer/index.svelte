@@ -12,7 +12,7 @@
 		</h4>
 		<ul class="mt-4">
 			<li class="mt-4 text-lg cursor-pointer hover:underline">
-				<a href="/about#pedagogy">Our principles</a>
+				<a href="/about#principles">Our principles</a>
 			</li>
 			<li class="mt-4 text-lg cursor-pointer hover:underline">
 				<a href="/about#work">Our activities</a>
