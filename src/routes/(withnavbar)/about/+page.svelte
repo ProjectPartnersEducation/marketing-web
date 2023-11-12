@@ -31,17 +31,7 @@
 <div class="mx-64 mt-32" id="principles">
 	<h2 class="mt-8 mb-20 text-5xl text-left font-handwriting">Our Principles</h2>
 	<p class="mt-8 text-2xl leading-loose">
-		Let's start with some important bits. <br />First off, we're a <em>charity</em>. That means that
-		we measure our success by the amount of good we do, not the number of academic papers we
-		publish.
-		<br />We're also a <em>non-profit</em>, which means that everything we can make free for
-		everyone, we do.
-		<br />We're also a
-		<em>non-governmental organisation</em>, which means that we're not affiliated with any
-		government, and we're not trying to push any government's agenda. <br />Finally, we will always
-		choose <em>experience over theory</em>. While it can be tempting to try and solve problems with
-		a new theory, we believe that the best way to solve problems is to learn from people who have
-		already solved them.
+		Some preamble text here which introduces us in a personal way.
 	</p>
 	<ThreeStagesOfEngagedLearningDiagram />
 </div>
