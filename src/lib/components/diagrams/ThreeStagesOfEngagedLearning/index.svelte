@@ -5,7 +5,7 @@
 	export let stepIndex: number = 0;
 </script>
 
-<section class="grid grid-cols-[60%,40%] place-items-center p-10">
+<section class="grid grid-cols-[60%,40%] place-items-center">
 	<div class="w-full col-span-2 text-5xl text-left font-handwriting">
 		The Engaged Learning Model
 	</div>

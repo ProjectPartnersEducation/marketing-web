@@ -48,7 +48,6 @@
 </div>
 <hr class="my-24 mx-[25%]" />
 <div class="mx-64">
-	<h2 class="mt-8 mb-20 text-5xl text-left font-handwriting" id="work">Our Activities</h2>
 	<FourFormsOfEngagement />
 </div>
 <hr class="my-24 mx-[25%]" />
@@ -99,7 +98,44 @@
 	</div>
 </div>
 <hr class="my-24" />
-<div class="grid grid-cols-2 mx-64">
-	<div>Go to our resources</div>
-	<div>Case Study: Project Partners in Ghana</div>
+<div class="grid grid-cols-2 gap-8 mx-64">
+	<div class="relative grid grid-cols-2 bg-black border-4 border-black cursor-pointer">
+		<div>
+			<img src="{assets}/images/IMG_0034.jpg" class="w-full h-auto" />
+			<div class="w-1/2 h-auto fade-right"></div>
+		</div>
+		<div class="flex items-center justify-center px-2">
+			<h3 class="text-6xl text-center text-white font-handwriting">See our resources</h3>
+		</div>
+	</div>
+	<div class="relative grid grid-cols-2 bg-black border-4 border-black cursor-pointer">
+		<div class="flex items-center justify-center px-2">
+			<h3 class="text-4xl text-center text-white font-handwriting">
+				Case Study: Project Partners in Ghana
+			</h3>
+		</div>
+		<div class="relative">
+			<img src="{assets}/images/IMG_0459.jpg" class="w-full h-auto" />
+			<div class="w-1/2 h-auto fade-left"></div>
+		</div>
+	</div>
 </div>
+
+<style>
+	.fade-right {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: linear-gradient(to right, transparent, transparent, rgba(0, 0, 0, 1));
+	}
+	.fade-left {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: linear-gradient(to left, transparent, transparent, rgba(0, 0, 0, 1));
+	}
+</style>
