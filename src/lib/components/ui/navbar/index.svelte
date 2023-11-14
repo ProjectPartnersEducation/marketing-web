@@ -72,7 +72,7 @@
 	</div>
 	<div class="w-auto h-1 mx-64 border-b border-gray-200">
 		<div
-			class="w-full h-full bg-[#f3a061]"
+			class="w-full h-full bg-[#eeb019]"
 			style="transform: scaleX({scrollValue}); transform-origin: 0 0;"
 		/>
 	</div>

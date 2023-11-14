@@ -45,9 +45,8 @@
 		display: inline-flex;
 		align-items: center;
 		gap: 0.75rem;
-		background-color: var(--clr);
+		background-color: #000;
 		color: var(--textclr);
-		border-radius: 0.625rem;
 		font-size: 1.25rem;
 		padding: 0.75rem 1.5rem;
 		padding-left: 20px;
@@ -71,11 +70,11 @@
 	}
 
 	.button:hover {
-		background-color: #000;
+		background-color: var(--clr);
 	}
 
 	.button:hover .button__icon-wrapper {
-		color: #000;
+		color: var(--clr);
 	}
 
 	.button__icon-svg--copy {

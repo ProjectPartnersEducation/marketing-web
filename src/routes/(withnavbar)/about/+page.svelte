@@ -35,11 +35,11 @@
 	</p>
 	<ThreeStagesOfEngagedLearningDiagram />
 </div>
-<hr class="my-24 mx-[25%]" />
+<div class="my-24 mx-[25%]" />
 <div class="mx-64">
 	<FourFormsOfEngagement />
 </div>
-<hr class="my-24 mx-[25%]" />
+<div class="my-24 mx-[25%]" />
 <div class="mx-64">
 	<h2 class="mt-8 mb-20 text-5xl text-left font-handwriting" id="work">Our Activities</h2>
 	<ProjectPartnersActivitiesDiagram />
@@ -87,10 +87,10 @@
 	</div>
 </div>
 <hr class="my-24" />
-<div class="grid grid-cols-2 gap-8 mx-64">
+<div class="grid grid-cols-2 gap-8 mx-64 auto-rows-fr">
 	<div class="relative grid grid-cols-2 bg-black border-4 border-black cursor-pointer">
 		<div>
-			<img src="{assets}/images/IMG_0034.jpg" class="w-full h-auto" />
+			<img src="{assets}/images/IMG_0459.jpg" class="w-full h-auto" />
 			<div class="w-1/2 h-auto fade-right"></div>
 		</div>
 		<div class="flex items-center justify-center px-2">
@@ -104,9 +104,14 @@
 			</h3>
 		</div>
 		<div class="relative">
-			<img src="{assets}/images/IMG_0459.jpg" class="w-full h-auto" />
+			<img src="{assets}/images/IMG_0034.jpg" class="w-full h-auto" />
 			<div class="w-1/2 h-auto fade-left"></div>
 		</div>
+	</div>
+	<div
+		class="flex items-center justify-center col-span-2 text-white bg-black font-handwriting text-8xl"
+	>
+		Get Involved
 	</div>
 </div>
 

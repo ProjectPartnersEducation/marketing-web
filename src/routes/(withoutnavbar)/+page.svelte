@@ -28,11 +28,7 @@
 	<Navbar />
 
 	<div class="mt-48 mb-12 px-36 snap-proximity">
-		<div class="w-full text-center">
-			<!-- <div class="w-full mt-4 text-center">
-				Project Partners Education CIO is a charity registered in England & Wales, 1189396
-			</div>
-			<div class="w-1/2 mx-auto my-48 border-b" /> -->
+		<!-- <div class="w-full text-center">
 			<div class="grid w-full grid-cols-[80%,20%] items-center px-10 gap-x-8">
 				<div
 					class="w-full px-20 py-16 text-center border-4 bg-slate-200 rounded-2xl border-slate-300"
@@ -61,11 +57,11 @@
 				</div>
 			</div>
 		</div>
-		<div class="w-full h-48 mt-48 border-t border-r rounded-tr-lg" />
+		<div class="w-full h-48 mt-48 border-t border-r rounded-tr-lg" /> -->
 		<div class="grid items-center w-full grid-cols-2 gap-16 border-r">
 			<div class="relative group">
 				<div
-					class="absolute top-0 left-0 w-full h-full transition-all bg-black -z-10 group-hover:scale-105 group-hover:translate-x-4 group-hover:translate-y-4"
+					class="absolute top-0 left-0 w-full h-full transition-all bg-[#cea0b5] -z-10 group-hover:scale-105 group-hover:translate-x-4 group-hover:translate-y-4"
 				></div>
 				<img
 					src="{assets}/images/IMG_0165.png"
@@ -121,7 +117,7 @@
 			</div>
 			<div class="relative group">
 				<div
-					class="absolute top-0 left-0 w-full h-full transition-all bg-black -z-10 group-hover:scale-105 group-hover:translate-x-4 group-hover:translate-y-4"
+					class="absolute top-0 left-0 w-full h-full transition-all bg-[#f3a061] -z-10 group-hover:scale-105 group-hover:translate-x-4 group-hover:translate-y-4"
 				></div>
 				<img
 					src="{assets}/images/three-students-looking-over-shoulder.jpg"
@@ -134,7 +130,7 @@
 		<div class="grid items-center w-full grid-cols-2 gap-16 border-r">
 			<div class="relative group">
 				<div
-					class="absolute top-0 left-0 w-full h-full transition-all bg-black -z-10 group-hover:scale-105 group-hover:translate-x-4 group-hover:translate-y-4"
+					class="absolute top-0 left-0 w-full h-full transition-all bg-[#93b195] -z-10 group-hover:scale-105 group-hover:translate-x-4 group-hover:translate-y-4"
 				></div>
 				<img
 					src="{assets}/images/IMG_0533.jpg"
