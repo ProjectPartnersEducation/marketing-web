@@ -5,7 +5,7 @@
 </script>
 
 <div class="grid grid-cols-5 px-48 pt-24 pb-20" class:snap-end={snap}>
-	<div class="col-span-5 mx-24 mb-8 border-b"></div>
+	<div class="col-span-5 mx-24 mb-24 border-b"></div>
 	<div class="grid grid-cols-1">
 		<h4 class="text-xl font-black cursor-pointer hover:underline">
 			<a class="font-black" href="/about">About</a>
@@ -76,7 +76,13 @@
 			<li class="text-md">A charity registered in England and Wales, 1189396</li>
 		</ul>
 	</div>
-	<div class="col-span-5 pt-8 mt-8 text-center border-t">
+	<div class="grid grid-cols-4 col-span-5 pt-16 mt-16 text-center border-t place-items-center">
+		<div></div>
+		<img src="{assets}/images/ncvo.png" class="max-h-32" />
+		<img src="{assets}/images/fraud-pledge.svg" class="max-h-32" />
+		<div></div>
+	</div>
+	<div class="col-span-5 pt-8 mt-8 text-center">
 		&copy; {new Date().getFullYear()} Project Partners Education CIO
 	</div>
 </div>

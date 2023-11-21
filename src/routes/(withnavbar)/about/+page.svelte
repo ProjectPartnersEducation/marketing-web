@@ -46,7 +46,7 @@
 </div>
 <hr class="my-24" />
 <div class="grid grid-cols-2 mx-64 gap-x-16">
-	<h2 class="col-span-2 mb-8 text-4xl text-center underline font-handwriting decoration-[#cea0b5]">
+	<h2 class="col-span-2 mb-8 text-4xl text-center underline font-handwriting decoration-pppink">
 		Project Partners for Learners
 	</h2>
 	<div class="col-span-2 mb-8 text-3xl text-center">

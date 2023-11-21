@@ -5,6 +5,17 @@
 	export let color: string = '#1e87ab';
 	export let textColor: string = '#ffffff';
 	export let action: () => void = () => {};
+
+	const PPColors = {
+		pppink: '#cea0b5',
+		ppgreen: '#93b195',
+		ppyellow: '#eeb019',
+		pporange: '#f3a061',
+		ppblue: '#1e87ab',
+		ppred: '#d01c1c'
+	};
+
+	color = PPColors[color] ?? color;
 </script>
 
 <a style="--clr: {color}; --textclr: {textColor}" class="button" {href} {target} on:click={action}>

@@ -4,6 +4,12 @@
 
 * {
 	font-weight: 200;
+	--pppink: #cea0b5;
+	--ppgreen: #93b195;
+	--ppyellow: #eeb019;
+	--pporange: #f3a061;
+	--ppblue: #1e87ab;
+	--ppred: #d01c1c;
 }
 
 html {
@@ -25,4 +31,8 @@ body {
 		scroll-snap-type: y mandatory;
 		scroll-snap-type: x none;
 	}
+}
+
+*:not(:defined) {
+	opacity: 0;
 }

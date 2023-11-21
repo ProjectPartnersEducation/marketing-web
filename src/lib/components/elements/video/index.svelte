@@ -1,48 +1,61 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import './plyr.js';
-	import './plyr.css';
+	// Import styles.
+	import 'vidstack/player/styles/default/theme.css';
+	import 'vidstack/player/styles/default/layouts/video.css';
 
-	let player;
-	export let videoSrc: string;
-	export let plyrOptions: any = {};
-	export let id = 'video';
+	// Register elements.
+	import 'vidstack/player';
+	import 'vidstack/player/layouts';
+	import 'vidstack/player/ui';
+
+	import { onMount } from 'svelte';
+
+	import type { MediaCanPlayEvent } from 'vidstack';
+	import type { MediaPlayerElement } from 'vidstack/elements';
+
+	export let src: string;
+	export let textTracks: TextTrack[] = [];
+	export let onCanPlay: (event: MediaCanPlayEvent) => void = () => {};
+
+	let player: MediaPlayerElement;
 
 	onMount(() => {
-		player = new Plyr(`#${id}`, plyrOptions);
-
-		return () => {
-			player.destroy();
-		};
+		for (const track of textTracks) player.textTracks.add(track);
 	});
 </script>
 
-<video crossorigin playsinline src={videoSrc} {id}>
-	<source size="4320" src={videoSrc} type="video/mp4" />
-	<!-- <source
-		size="720"
-		src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4"
-		type="video/mp4"
-	/>
-	<source
-		size="1080"
-		src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4"
-		type="video/mp4"
-	/> -->
-	<track
-		default
-		kind="captions"
-		label="English"
-		src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.en.vtt"
-		srclang="en"
-	/>
-	<track
-		kind="captions"
-		label="Français"
-		src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.fr.vtt"
-		srclang="fr"
-	/>
-	<a download="" href="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4">
-		Download
-	</a>
-</video>
+<div class="relative">
+	<media-player
+		class="player"
+		title="Introducing Project Partners"
+		{src}
+		crossorigin
+		playsinline
+		on:can-play={onCanPlay}
+		bind:this={player}
+	>
+		<media-provider>
+			<media-poster
+				class="vds-poster"
+				src="https://image.mux.com/VZtzUzGRv02OhRnZCxcNg49OilvolTqdnFLEqBsTwaxU/thumbnail.webp?time=268&width=1200"
+				alt="Girl walks into campfire with gnomes surrounding her friend ready for their next meal!"
+			/>
+		</media-provider>
+		<media-video-layout />
+	</media-player>
+</div>
+
+<style>
+	.player {
+		--brand-color: #f5f5f5;
+		--focus-color: #4e9cf6;
+
+		--audio-brand: var(--brand-color);
+		--audio-focus-ring-color: var(--focus-color);
+		--audio-border-radius: 2px;
+
+		--video-brand: var(--brand-color);
+		--video-focus-ring-color: var(--focus-color);
+		--video-border-radius: 2px;
+	}
+</style>

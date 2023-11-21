@@ -15,9 +15,7 @@
 	<div class="grid items-center grid-cols-2 gap-1 px-16 py-32 border-b-2 border-l-2 rounded-bl-lg">
 		<h1 class="col-span-2 mb-24 text-6xl text-center font-handwriting">Institutional Supporters</h1>
 		<img src="{assets}/images/three-smiling-children.jpg" class="w-full border-4 border-black" />
-		<div
-			class="grid grid-cols-1 px-4 py-4 text-xl leading-relaxed text-justify gap-y-4 bg-slate-50"
-		>
+		<div class="grid grid-cols-1 px-4 py-4 text-xl leading-relaxed text-justify gap-y-4 gap-x-8">
 			<p>
 				Project Partners is an ambitious and innovative new charity with a mission to transform
 				education for all school learners around the globe.
@@ -53,7 +51,7 @@
 		<div class="grid grid-cols-[66%,34%] gap-8 mt-8 place-items-center">
 			<h2 class="col-span-2 text-4xl font-handwriting">Why Project Partners?</h2>
 			<div>
-				<h3 class="text-3xl font-black">Our Impact</h3>
+				<h3 class="text-3xl font-handwriting">Our Impact</h3>
 				<ol class="grid grid-cols-1 gap-4 mt-4">
 					<li class="text-xl leading-loose text-justify">
 						In the modern world, it is vital that school leavers are armed with a balance of strong
@@ -80,7 +78,7 @@
 		<div class="grid grid-cols-[34%,66%] gap-8 mt-8 place-items-center">
 			<img src="{assets}/images/corn-image.png" class="max-h-64" />
 			<div>
-				<h3 class="text-3xl font-black">Our Values</h3>
+				<h3 class="text-3xl font-handwriting">Our Values</h3>
 				<ol class="grid grid-cols-1 gap-2 mt-4">
 					<li class="text-xl leading-loose text-justify">
 						<span class="font-black">We are ambitious</span> - we won't stop until we have achieved our

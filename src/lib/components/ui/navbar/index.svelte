@@ -72,7 +72,7 @@
 	</div>
 	<div class="w-auto h-1 mx-64 border-b border-gray-200">
 		<div
-			class="w-full h-full bg-[#eeb019]"
+			class="w-full h-full bg-ppyellow"
 			style="transform: scaleX({scrollValue}); transform-origin: 0 0;"
 		/>
 	</div>
@@ -90,7 +90,7 @@
 					on:click={hideFullscreenMenu}
 					on:keypress={hideFullscreenMenu}
 					on:mouseenter={() => {
-						svg.style.fill = '#d01c1c';
+						svg.style.fill = 'var(--ppred)';
 					}}
 					on:mouseleave={() => {
 						svg.style.fill = '#000';
@@ -108,7 +108,7 @@
 			<a
 				href="/about"
 				on:click={hideFullscreenMenu}
-				class="text-6xl font-black hover:text-[#eeb019] font-handwriting bg-black text-white text-right px-8 py-4 transition-colors"
+				class="px-8 py-4 text-6xl font-black text-right text-white transition-colors bg-black hover:text-ppyellow font-handwriting"
 			>
 				About...
 			</a>
@@ -126,7 +126,7 @@
 			<div class="w-full col-span-2 border-4 border-b border-black"></div>
 			<a
 				href="/resources"
-				class="text-6xl font-black hover:text-[#f3a061] font-handwriting bg-black text-white text-right px-8 py-4 transition-colors"
+				class="px-8 py-4 text-6xl font-black text-right text-white transition-colors bg-black hover:text-pporange font-handwriting"
 				on:click={hideFullscreenMenu}
 			>
 				Resources...
@@ -145,7 +145,7 @@
 			<div class="w-full col-span-2 border-4 border-b border-black"></div>
 			<a
 				href="/get-involved"
-				class="text-6xl font-black hover:text-[#d01c1c] font-handwriting bg-black text-white text-right px-8 py-4 transition-colors"
+				class="px-8 py-4 text-6xl font-black text-right text-white transition-colors bg-black hover:text-ppred font-handwriting"
 				on:click={hideFullscreenMenu}
 			>
 				Get Involved...
@@ -250,7 +250,7 @@
 
 	.fancy:hover {
 		color: white;
-		background: #d01c1c;
+		background: ppred;
 	}
 
 	.fancy:hover::before {
@@ -290,7 +290,7 @@
 	.bars {
 		width: 100%;
 		height: 4px;
-		background-color: #d01c1c;
+		background-color: var(--ppred);
 		border-radius: 4px;
 		transition: all 0.2s ease-in-out;
 	}

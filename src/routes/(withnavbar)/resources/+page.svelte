@@ -95,7 +95,7 @@
 			<div class="grid grid-cols-1 transition-all scale-95 cursor-pointer hover:scale-100">
 				<img src="{assets}/images/one-child-thumbs-up.jpg" class="w-full border-4 border-black" />
 				<div class="py-2 text-4xl text-center text-white bg-black font-handwriting">
-					I want to <span class="text-[#eeb019] font-handwriting">learn</span>
+					I want to <span class="text-ppyellow font-handwriting">learn</span>
 				</div>
 			</div>
 		</a>
@@ -103,7 +103,7 @@
 			<div class="grid grid-cols-1 transition-all scale-95 cursor-pointer hover:scale-100">
 				<img src="{assets}/images/teacher-amongst-class.jpg" class="w-full border-4 border-black" />
 				<div class="py-2 text-4xl text-center text-white bg-black font-handwriting">
-					I want to <span class="text-[#93b195] font-handwriting">teach</span>
+					I want to <span class="text-ppgreen font-handwriting">teach</span>
 				</div>
 			</div>
 		</a>
@@ -114,7 +114,7 @@
 					class="w-full border-4 border-black"
 				/>
 				<div class="py-2 text-4xl text-center text-white bg-black font-handwriting">
-					I want to <span class="text-[#cea0b5] font-handwriting">lead</span>
+					I want to <span class="text-pppink font-handwriting">lead</span>
 				</div>
 			</div>
 		</a>
@@ -146,12 +146,12 @@
 					<span class="font-mono text-2xl text-black"> PP:002 </span>
 				</div>
 				<div>
-					<span class="px-2 text-xl italic font-black text-white bg-[#1e87ab] border border-black">
+					<span class="px-2 text-xl italic font-black text-white border border-black bg-ppblue">
 						Ages 13+
 					</span>
 				</div>
 				<div>
-					<span class="px-2 text-xl italic font-black text-white bg-[#cea0b5] border border-black">
+					<span class="px-2 text-xl italic font-black text-white border border-black bg-pppink">
 						Mathematics
 					</span>
 				</div>
@@ -171,7 +171,7 @@
 			<Button
 				text="To the learning portal!"
 				href="https://learn.projectpartners.org"
-				color="#d01c1c"
+				color="ppred"
 			/>
 		</div>
 	</div>
@@ -237,14 +237,14 @@
 			type="text"
 			placeholder="First Name*"
 			required
-			class="w-full p-4 border-2 border-black text-xl placeholder:text-xl focus:border-[#1e87ab] rounded-md"
+			class="w-full p-4 text-xl border-2 border-black rounded-md placeholder:text-xl focus:border-ppblue"
 			bind:value={firstName}
 		/>
 		<input
 			type="email"
 			placeholder="Email Address*"
 			required
-			class="w-full p-4 border-2 border-black text-xl placeholder:text-xl focus:border-[#1e87ab] rounded-md"
+			class="w-full p-4 text-xl border-2 border-black rounded-md placeholder:text-xl focus:border-ppblue"
 			bind:value={email}
 		/>
 		<button type="submit">
@@ -310,7 +310,7 @@
 	<a href="/resources/apply" class="inline-block mt-4">
 		<Button text="Apply to join" href="/resources/apply" />
 	</a>
-	<div>
+	<!-- <div>
 		<div data-canny></div>
 		<script>
 			!(function (w, d, i, s) {
@@ -346,7 +346,7 @@
 				theme: 'light' // options: light [default], dark, auto
 			});
 		</script>
-	</div>
+	</div> -->
 	<!-- <div class="grid grid-cols-2 gap-8 mt-8 place-items-center">
 		<img src="{assets}/images/teacher-with-students-happy.jpg" class="border-4 border-black" />
 		<div>
