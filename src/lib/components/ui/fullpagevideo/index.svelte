@@ -35,13 +35,13 @@
 
 	let player: MediaPlayerElement;
 	let src =
-		// 'https://storage.googleapis.com/pp-marketing-web-public/videos/Project%20Partners_Doc_temp.mp4';
-		`${assets}/pp_local_temp.mp4`;
+		'https://storage.googleapis.com/pp-marketing-web-public/videos/Project%20Partners_Doc_temp.mp4';
+	// `${assets}/pp_local_temp.mp4`;
 
 	const startPreInitStage = (player: MediaPlayerElement) => {
-		let currentStage: VideoStage = VideoStage.PREINIT;
-		let showContinueButton: boolean = false;
-		let showVideoControls: boolean = false;
+		currentStage = VideoStage.PREINIT;
+		showContinueButton = false;
+		showVideoControls = false;
 	};
 
 	const startAutoStage = (player: MediaPlayerElement) => {
