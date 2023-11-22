@@ -1,13 +1,21 @@
 <script lang="ts">
 	import { assets } from '$app/paths';
+	import Icon from '@iconify/svelte';
 	import { onMount } from 'svelte';
 	import { fly, fade, slide } from 'svelte/transition';
+
+	enum OnlineDetectorState {
+		NONE,
+		OFFLINE,
+		ONLINE
+	}
 
 	let scrollY: number;
 	let windowHeight: number;
 	let documentHeight: number;
 
 	let fullscreenMenuVisible = false;
+	let onlineDetectorState: OnlineDetectorState = OnlineDetectorState.NONE;
 
 	let svg: SVGElement;
 
@@ -38,44 +46,61 @@
 
 <svelte:window bind:scrollY bind:innerHeight={windowHeight} />
 
-<nav class="sticky top-0 z-40 bg-white">
-	<div
-		class="grid items-center grid-cols-3 p-4 mx-64 align-middle border-b-8 border-l-2 border-r-2 border-gray-800"
-	>
-		<div class="w-12 h-12 ml-4 mr-6">
-			<div
-				on:click={showFullscreenMenu}
-				on:keypress={showFullscreenMenu}
-				class="toggle grayscale hover:grayscale-0"
-				id="checkbox"
-			>
-				<div class="bars" id="bar1"></div>
-				<div class="bars" id="bar2"></div>
-				<div class="bars" id="bar3"></div>
+<nav class="sticky top-0 z-40">
+	<div class="bg-white">
+		<div
+			class="grid items-center grid-cols-3 p-4 mx-64 align-middle border-b-8 border-l-2 border-r-2 border-gray-800"
+		>
+			<div class="w-12 h-12 ml-4 mr-6">
+				<div
+					on:click={showFullscreenMenu}
+					on:keypress={showFullscreenMenu}
+					class="toggle grayscale hover:grayscale-0"
+					id="checkbox"
+				>
+					<div class="bars" id="bar1"></div>
+					<div class="bars" id="bar2"></div>
+					<div class="bars" id="bar3"></div>
+				</div>
+			</div>
+			<a href="/">
+				<img
+					src={assets + '/logo.svg'}
+					alt="logo"
+					class="w-full h-16 transition-transform hover:scale-105"
+				/>
+			</a>
+			<div>
+				<a class="text-xl fancy" href="/get-involved">
+					<span class="top-key" />
+					<span class="font-black text">Get Involved</span>
+					<span class="bottom-key-1" />
+					<span class="bottom-key-2" />
+				</a>
 			</div>
 		</div>
-		<a href="/">
-			<img
-				src={assets + '/logo.svg'}
-				alt="logo"
-				class="w-full h-16 transition-transform hover:scale-105"
+		<div class="w-auto h-1 mx-64 border-b border-gray-200">
+			<div
+				class="w-full h-full bg-ppyellow"
+				style="transform: scaleX({scrollValue}); transform-origin: 0 0;"
 			/>
-		</a>
-		<div>
-			<a class="text-xl fancy" href="/get-involved">
-				<span class="top-key" />
-				<span class="font-black text">Get Involved</span>
-				<span class="bottom-key-1" />
-				<span class="bottom-key-2" />
-			</a>
 		</div>
 	</div>
-	<div class="w-auto h-1 mx-64 border-b border-gray-200">
-		<div
-			class="w-full h-full bg-ppyellow"
-			style="transform: scaleX({scrollValue}); transform-origin: 0 0;"
-		/>
-	</div>
+	{#if !fullscreenMenuVisible && onlineDetectorState === OnlineDetectorState.OFFLINE}
+		<div class="pt-2 mx-64 text-center">
+			<div class="inline-block px-6 py-3 text-xl text-white rounded-md bg-ppred">
+				You're offline! This website may not function properly until you're back online.
+				<Icon icon="mdi-light:warning" class="inline" />
+			</div>
+		</div>
+	{:else if !fullscreenMenuVisible && onlineDetectorState === OnlineDetectorState.ONLINE}
+		<div class="pt-2 mx-64 text-center">
+			<div class="inline-block px-6 py-3 text-xl text-white rounded-md bg-ppgreen">
+				You're back online.
+				<Icon icon="mdi-light:warning" class="inline" />
+			</div>
+		</div>
+	{/if}
 </nav>
 {#if fullscreenMenuVisible}
 	<div
@@ -120,7 +145,7 @@
 					<a href="/about#work" on:click={hideFullscreenMenu}> Our activities </a>
 				</div>
 				<div class="text-3xl link-text" in:fly={{ duration: 400, y: -10, delay: 60 }}>
-					<a href="/about/team" on:click={hideFullscreenMenu}> Our team </a>
+					<a href="/about#team" on:click={hideFullscreenMenu}> Our team </a>
 				</div>
 			</div>
 			<div class="w-full col-span-2 border-4 border-b border-black"></div>

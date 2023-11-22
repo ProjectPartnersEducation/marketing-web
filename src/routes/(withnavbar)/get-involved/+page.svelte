@@ -1,15 +1,21 @@
 <script lang="ts">
 	import { assets } from '$app/paths';
 
-	import VideoPlayer from '$lib/components/elements/video/index.svelte';
 	import Button from '$lib/components/elements/button.svelte';
 	import ContactForm from '$lib/components/elements/contact/index.svelte';
+	import StrongLinks from '$lib/components/elements/stronglinks/index.svelte';
+	import StrongBox from '$lib/components/elements/strongbox/index.svelte';
 
 	let showCopyAlert = false;
+	let showOutlineOnDonorbox = false;
 </script>
 
+<svelte:head>
+	<title>Get Involved | Project Partners Education</title>
+</svelte:head>
+
 <section class="px-32 pb-12 mt-8">
-	<div class="relative mx-32 mb-40 text-center">
+	<div class="relative mx-32 text-center">
 		<img src={assets + '/images/four-students-looking-down.jpg'} class="w-full" />
 
 		<h1
@@ -23,18 +29,27 @@
 			Get Involved
 		</h1>
 	</div>
+	<div class="w-3/4 border-b border-r pb-36 rounded-br-xl" />
+	<div class="w-3/4 pb-32 border-l" />
 	<div id="donate">
 		<div class="relative border-l">
-			<div class="mx-24">
+			<div class="mx-32">
 				<h1 class="inline text-5xl font-handwriting">Donate</h1>
-				<p class="mt-6 text-2xl leading-loose">
-					Your donation will help us to continue to develop free resources for students and
-					educators around the world.
+				<p class="mt-6 text-2xl leading-loose text-justify">
+					The world needs a new model for school learning. Together with our global partners, <span
+						class="font-black">we are building it</span
+					>.
+				</p>
+				<p class="mt-6 text-2xl leading-loose text-justify">
+					Supporting Project Partners means supporting our work to develop and deliver innovative
+					learning resources to students and educators around the world. Our resources are always
+					free to use and open-source wherever possible, and we are committed to ensuring that they
+					are accessible to all.
 				</p>
 			</div>
 		</div>
 		<div class="grid grid-cols-2 px-6 pt-24 pb-48 bg-white border-b border-l rounded-bl-lg gap-x-2">
-			<div>
+			<div id="donationbox">
 				<script src="https://donorbox.org/widget.js" paypalExpress="false"></script>
 				<iframe
 					title="Donation Form"
@@ -45,40 +60,41 @@
 					frameborder="0"
 					scrolling="no"
 					style="max-width: 1000px; min-width: 423px; max-height:none!important"
-					class="mx-auto"
+					class="mx-auto transition-transform"
+					class:shadow-lg={showOutlineOnDonorbox}
+					class:scale-105={showOutlineOnDonorbox}
 				/>
 			</div>
 			<div class="flex flex-col">
-				<div>
-					<VideoPlayer
-						src="https://storage.googleapis.com/pp-marketing-web-public/videos/Project%20Partners_Final_Short%20Version%204k.mp4"
-					/>
+				<h3 class="mt-8 text-4xl font-handwriting">Your donation's impact</h3>
+				<p class="mt-4 text-xl leading-loose text-justify">
+					Watch the video below to see our Chair of Trustees, Jonny, explain what your donation can
+					help us to achieve.
+				</p>
+				<div class="py-8">
+					{#await import('$lib/components/elements/video/index.svelte') then { default: Player }}
+						<svelte:component
+							this={Player}
+							src="https://storage.googleapis.com/pp-marketing-web-public/videos/Project%20Partners_Final_Short%20Version%204k.mp4"
+						/>
+					{/await}
 				</div>
-				<h3 class="mt-8 text-3xl font-handwriting">Your donation's impact</h3>
-				<p class="mt-4 text-xl">
-					The world needs a new model for school learning. <span class="font-black"
-						>We are building it</span
-					>.
-				</p>
-				<p class="mt-4 text-xl">
-					Supporting Project Partners means supporting our work to develop and deliver:
-				</p>
-				<ol class="mt-4 text-xl list-disc">
-					<li>Our learning materials, which are always free for everyone</li>
-					<li class="mt-2">Our teacher training workshops, run by local experts</li>
-					<li class="mt-2">Our global education leadership programmes</li>
-					<li class="mt-2">Our public work to influence education policy</li>
-				</ol>
-				<div class="mt-5 mb-4 border-b"></div>
-				<div class="grid grid-cols-1 gap-2 pb-6 mt-4">
-					<Button text="Donate Now!" action={() => {}} color="ppyellow" />
+				<div class="mb-4 border-b"></div>
+				<div class="flex justify-center gap-4 pb-6 mt-4 flex-0">
+					<Button
+						text="Donate Now!"
+						action={() => {
+							showOutlineOnDonorbox = true;
+						}}
+						color="ppyellow"
+					/>
 					<Button text="Institutional Donors & Partnerships" href="/get-involved/institutions" />
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="relative pt-64 border-r" id="volunteer">
-		<div class="mx-24">
+	<div class="relative border-r pt-36" id="volunteer">
+		<div class="mx-32">
 			<h1 class="inline text-5xl font-handwriting">Work with us</h1>
 			<p class="mt-6 ml-auto text-2xl leading-loose">
 				We are always looking for talented people to work with. If you are interested in
@@ -86,7 +102,7 @@
 			</p>
 		</div>
 	</div>
-	<div class="px-6 pb-32 bg-white border-b border-r rounded-br-xl">
+	<div class="px-6 pb-32 bg-white border-r">
 		<div class="flex flex-col text-center">
 			<div class="my-16 text-2xl">
 				<span class="font-black">We are our people.</span> We are looking for people who are passionate
@@ -101,8 +117,12 @@
 			</div>
 		</div>
 	</div>
-	<div class="relative pt-64 pb-12 border-l" id="contact-us">
-		<div class="mx-24">
+	<div class="grid grid-cols-2">
+		<div></div>
+		<div class="py-24 border-t border-l rounded-tl"></div>
+	</div>
+	<div id="contact-us">
+		<StrongBox>
 			<h1 class="inline text-5xl font-handwriting">Contact Us</h1>
 			<p class="mt-6 text-2xl leading-loose">
 				If you have any questions, comments, or feedback, please get in touch with us using the form
@@ -124,11 +144,34 @@
 					>
 				{/if}
 			</p>
-		</div>
-	</div>
-	<div class="px-6 py-10 bg-white border border-black rounded-bl-xl rounded-tr-xl rounded-br-xl">
-		<div class="flex flex-col">
-			<ContactForm />
-		</div>
+			<div class="flex flex-col">
+				<ContactForm />
+			</div>
+		</StrongBox>
 	</div>
 </section>
+
+<hr class="my-24" />
+<StrongLinks
+	link1={{
+		imgsrc: `${assets}/images/IMG_0459.jpg`,
+		imgalt: 'A smiling teacher with his arms crossed',
+		text: 'See our resources',
+		href: '',
+		hoverColor: 'ppyellow'
+	}}
+	link2={{
+		imgsrc: `${assets}/images/IMG_0034.jpg`,
+		imgalt: 'Two children looking at a book',
+		text: 'Case Study: Project Partners in Ghana',
+		href: '',
+		hoverColor: 'ppblue'
+	}}
+	bigLink={{
+		imgsrc: `${assets}/images/IMG_0034.jpg`,
+		imgalt: 'A smiling teacher with his arms crossed',
+		text: 'Get Involved',
+		href: '',
+		hoverColor: 'ppred'
+	}}
+/>

@@ -3,6 +3,7 @@
 
 	import Button from '$lib/components/elements/button.svelte';
 	import StrongImage from '$lib/components/elements/strongimage/index.svelte';
+	import StrongBox from '$lib/components/elements/strongbox/index.svelte';
 	import Navbar from '$lib/components/ui/navbar/index.svelte';
 	import Footer from '$lib/components/ui/footer/index.svelte';
 
@@ -109,10 +110,8 @@
 		</div>
 		<div class="relative w-1/2 h-48 border-b border-r rounded-br-lg left-1/2" />
 		<div class="w-1/2 h-48 border-r" />
-		<div
-			class="grid items-center w-full grid-cols-1 gap-16 py-32 border-2 rounded-lg shadow-2xl border-slate-600 bg-[#fcfcff] snap-center"
-		>
-			<div class="w-3/4 mx-auto text-center">
+		<StrongBox snap={true}>
+			<div class="grid items-center w-full grid-cols-1 gap-4 text-center">
 				<h3 class="text-2xl text-slate-500">Get Involved</h3>
 				<h2
 					class="py-2 mt-1 font-black leading-tight text-white bg-black text-7xl font-handwriting"
@@ -124,7 +123,7 @@
 					only just beginning, and we need your help to bring the new era of school learning to
 					life.
 				</p>
-				<p class="mt-8 text-2xl leading-loose text-justify indent-8">
+				<p class="mt-8 text-2xl leading-loose text-justify">
 					Whether you're an individual or already part of a wider team, your support will help us to
 					continue to develop our resources, and to reach more people. There are many ways for you
 					to get involved and we'd love to hear from you.
@@ -133,7 +132,7 @@
 					<Button text="Get involved!" href="/get-involved" color="ppred" />
 				</div>
 			</div>
-		</div>
+		</StrongBox>
 	</div>
 </div>
 

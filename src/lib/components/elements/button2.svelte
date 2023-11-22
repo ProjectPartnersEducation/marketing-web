@@ -7,7 +7,7 @@
 </script>
 
 <button
-	class="learn-more {direction}"
+	class="learn-more rounded-sm {direction}"
 	class:hidden
 	on:click={hidden ? () => {} : onClick}
 	on:keypress={hidden ? () => {} : onClick}
@@ -51,7 +51,6 @@
 		width: 3rem;
 		height: 3rem;
 		background: #282936;
-		border-radius: 0.625rem;
 		z-index: -1;
 	}
 

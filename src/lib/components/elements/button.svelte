@@ -2,24 +2,32 @@
 	export let text: string;
 	export let href: string = '#';
 	export let target: string = '';
-	export let color: string = '#1e87ab';
+	export let color: PPColors | string = '#1e87ab';
 	export let textColor: string = '#ffffff';
 	export let action: () => void = () => {};
 
-	const PPColors = {
-		pppink: '#cea0b5',
-		ppgreen: '#93b195',
-		ppyellow: '#eeb019',
-		pporange: '#f3a061',
-		ppblue: '#1e87ab',
-		ppred: '#d01c1c'
-	};
+	enum PPColors {
+		pppink = '#cea0b5',
+		ppgreen = '#93b195',
+		ppyellow = '#eeb019',
+		pporange = '#f3a061',
+		ppblue = '#1e87ab',
+		ppred = '#d01c1c'
+	}
 
-	color = PPColors[color] ?? color;
+	color = PPColors[color as keyof typeof PPColors] || color;
 </script>
 
-<a style="--clr: {color}; --textclr: {textColor}" class="button" {href} {target} on:click={action}>
-	<span class="button__icon-wrapper">
+<a
+	style="--clr: {color}; --textclr: {textColor}"
+	class="inline-flex items-center gap-3 py-3 pl-5 pr-6 overflow-hidden text-xl transition-colors bg-black rounded-sm decoration-0 button whitespace-nowrap text-ellipsis"
+	{href}
+	{target}
+	on:click={action}
+>
+	<span
+		class="relative grid w-6 h-6 overflow-hidden bg-white rounded-full button__icon-wrapper shrink-0 place-items-center"
+	>
 		<svg
 			width="10"
 			class="button__icon-svg"
@@ -51,33 +59,11 @@
 
 <style>
 	.button {
-		line-height: 1;
-		text-decoration: none;
-		display: inline-flex;
-		align-items: center;
-		gap: 0.75rem;
-		background-color: #000;
 		color: var(--textclr);
-		font-size: 1.25rem;
-		padding: 0.75rem 1.5rem;
-		padding-left: 20px;
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		transition: background-color 0.3s;
 	}
 
 	.button__icon-wrapper {
-		flex-shrink: 0;
-		width: 25px;
-		height: 25px;
-		position: relative;
 		color: var(--clr);
-		background-color: #fff;
-		border-radius: 50%;
-		display: grid;
-		place-items: center;
-		overflow: hidden;
 	}
 
 	.button:hover {

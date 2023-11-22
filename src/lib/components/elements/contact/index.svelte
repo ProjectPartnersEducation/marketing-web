@@ -169,7 +169,7 @@
 <form
 	action="https://api.web3forms.com/submit"
 	method="POST"
-	class="mx-32 mt-16 sm:mt-20"
+	class="mt-16 sm:mt-20"
 	on:submit={onSubmit}
 >
 	<input type="hidden" name="access_key" value={accessKey} />

@@ -25,7 +25,7 @@
 	];
 
 	let currentElementIdx = 0;
-	let msPerSegment = 20000;
+	let msPerSegment = 40000;
 	let msInCurrentSegment = 0;
 
 	let intervalPeriod = 300;
@@ -79,7 +79,7 @@
 
 <IntersectionObserver element={el} on:intersect={startProgressBar}>
 	<div class="flex flex-wrap" bind:this={el}>
-		<div class="w-full p-4 md:w-1/2">
+		<div class="w-full pr-4 md:w-1/2">
 			<Text
 				{activeElement}
 				progress={progressBarWidth}
@@ -90,7 +90,7 @@
 				on:setactivegroup={handleSetActiveElement}
 			/>
 		</div>
-		<div class="w-full p-4 md:w-1/2">
+		<div class="w-full pl-4 md:w-1/2">
 			<Diagram {activeElement} on:setactivegroup={handleSetActiveElement} />
 		</div>
 	</div>

@@ -2,7 +2,7 @@
 	import { assets } from '$app/paths';
 
 	import Button from '$lib/components/elements/button.svelte';
-	import ContactForm from '$lib/components/elements/contact/index.svelte';
+	import StrongLinks from '$lib/components/elements/stronglinks/index.svelte';
 
 	let firstName = '';
 	let email = '';
@@ -72,7 +72,7 @@
 	<title>Our Resources | Project Partners Education</title>
 </svelte:head>
 
-<div class="px-48">
+<div class="px-64">
 	<h1 class="relative mb-40 text-center">
 		<img src={assets + '/images/class-with-hands-up.jpg'} class="w-full" />
 
@@ -126,7 +126,7 @@
 </div>
 <div class="px-64 pt-48" id="learners">
 	<h2 class="text-5xl font-handwriting">Learn with Project Partners</h2>
-	<p class="mt-8 text-2xl leading-loose">
+	<p class="mt-8 text-2xl leading-loose text-justify">
 		We want to build the world's best library of free learning resources for young people. Our
 		project packs will help you develop your skills and gain confidence applying your knowledge to
 		exciting, real-world problems.
@@ -363,3 +363,27 @@
 	<div class="mx-32 my-16 border-b"></div>
 	<ContactForm /> -->
 </div>
+<hr class="my-24" />
+<StrongLinks
+	link1={{
+		imgsrc: `${assets}/images/IMG_0459.jpg`,
+		imgalt: 'A smiling teacher with his arms crossed',
+		text: 'Read about our work',
+		href: '/about',
+		hoverColor: 'ppyellow'
+	}}
+	link2={{
+		imgsrc: `${assets}/images/IMG_0034.jpg`,
+		imgalt: 'Two children looking at a book',
+		text: 'Case Study: Project Partners in Ghana',
+		href: '',
+		hoverColor: 'ppblue'
+	}}
+	bigLink={{
+		imgsrc: `${assets}/images/IMG_0034.jpg`,
+		imgalt: 'A smiling teacher with his arms crossed',
+		text: 'Get Involved',
+		href: '',
+		hoverColor: 'ppred'
+	}}
+/>
