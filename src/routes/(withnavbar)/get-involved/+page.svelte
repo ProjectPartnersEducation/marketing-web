@@ -1,22 +1,35 @@
 <script lang="ts">
+	import { fade } from 'svelte/transition';
 	import { assets } from '$app/paths';
 
 	import Button from '$lib/components/elements/button.svelte';
 	import ContactForm from '$lib/components/elements/contact/index.svelte';
 	import StrongLinks from '$lib/components/elements/stronglinks/index.svelte';
 	import StrongBox from '$lib/components/elements/strongbox/index.svelte';
+	import BigTopImage from '$lib/components/elements/bigtopimage/index.svelte';
 
 	let showCopyAlert = false;
 	let showOutlineOnDonorbox = false;
+	let showFadeOut = false;
 </script>
 
 <svelte:head>
 	<title>Get Involved | Project Partners Education</title>
 </svelte:head>
 
+{#if showFadeOut}
+	<div
+		class="fixed z-10 w-full h-full bg-black opacity-50"
+		transition:fade={{ duration: 150 }}
+		on:click={() => {
+			showFadeOut = false;
+			showOutlineOnDonorbox = false;
+		}}
+	/>
+{/if}
 <section class="px-32 pb-12 mt-8">
-	<div class="relative mx-32 text-center">
-		<img src={assets + '/images/four-students-looking-down.jpg'} class="w-full" />
+	<div class="mx-32">
+		<!-- <img src={assets + '/images/four-students-looking-down.jpg'} class="w-full" />
 
 		<h1
 			class="absolute inline-block px-4 py-2 font-black text-center text-white bg-black border-4 border-white top-2 left-2 text-8xl font-handwriting"
@@ -27,7 +40,8 @@
 			class="absolute inline-block px-4 py-2 font-black text-center text-white bg-black border-4 border-white bottom-2 right-2 text-8xl font-handwriting"
 		>
 			Get Involved
-		</h1>
+		</h1> -->
+		<BigTopImage imgSrc={assets + '/images/four-students-looking-down.jpg'} text="Get Involved" />
 	</div>
 	<div class="w-3/4 border-b border-r pb-36 rounded-br-xl" />
 	<div class="w-3/4 pb-32 border-l" />
@@ -49,7 +63,13 @@
 			</div>
 		</div>
 		<div class="grid grid-cols-2 px-6 pt-24 pb-48 bg-white border-b border-l rounded-bl-lg gap-x-2">
-			<div id="donationbox">
+			<div
+				id="donationbox"
+				class="z-20"
+				on:click={() => {
+					showFadeOut = false;
+				}}
+			>
 				<script src="https://donorbox.org/widget.js" paypalExpress="false"></script>
 				<iframe
 					title="Donation Form"
@@ -85,6 +105,7 @@
 						text="Donate Now!"
 						action={() => {
 							showOutlineOnDonorbox = true;
+							showFadeOut = true;
 						}}
 						color="ppyellow"
 					/>
@@ -121,7 +142,7 @@
 		<div></div>
 		<div class="py-24 border-t border-l rounded-tl"></div>
 	</div>
-	<div id="contact-us">
+	<div id="contact-us" class="px-32">
 		<StrongBox>
 			<h1 class="inline text-5xl font-handwriting">Contact Us</h1>
 			<p class="mt-6 text-2xl leading-loose">

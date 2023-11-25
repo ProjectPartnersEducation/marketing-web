@@ -9,6 +9,7 @@
 	import 'vidstack/player/ui';
 
 	import { onMount } from 'svelte';
+	import { assets } from '$app/paths';
 
 	import type { MediaCanPlayEvent } from 'vidstack';
 	import type { MediaPlayerElement } from 'vidstack/elements';
@@ -37,8 +38,8 @@
 		<media-provider>
 			<media-poster
 				class="vds-poster"
-				src="https://image.mux.com/VZtzUzGRv02OhRnZCxcNg49OilvolTqdnFLEqBsTwaxU/thumbnail.webp?time=268&width=1200"
-				alt="Girl walks into campfire with gnomes surrounding her friend ready for their next meal!"
+				src="{assets}/images/logo_spacious.png"
+				alt="The Project Partners Education logo"
 			/>
 		</media-provider>
 		<media-video-layout />

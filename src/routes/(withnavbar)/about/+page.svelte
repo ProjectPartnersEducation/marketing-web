@@ -59,7 +59,7 @@
 		</p>
 		<div class="relative w-full h-full bg-black top-4 left-4"></div>
 		<ol
-			class="px-12 py-8 mt-16 space-y-4 text-2xl leading-relaxed text-justify list-inside border-2 border-black rounded-sm max-w"
+			class="px-12 py-8 mt-16 space-y-4 text-2xl leading-relaxed text-justify text-white list-inside bg-black border-2 border-black rounded-sm max-w"
 		>
 			<h4 class="text-4xl font-handwriting">The Code</h4>
 			<li>

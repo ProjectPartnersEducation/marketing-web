@@ -99,8 +99,8 @@
 		<media-provider>
 			<media-poster
 				class="vds-poster"
-				src="https://image.mux.com/VZtzUzGRv02OhRnZCxcNg49OilvolTqdnFLEqBsTwaxU/thumbnail.webp?time=268&width=1200"
-				alt="Girl walks into campfire with gnomes surrounding her friend ready for their next meal!"
+				src="{assets}/images/logo_spacious.png"
+				alt="The Project Partners Education logo"
 			/>
 		</media-provider>
 		<media-video-layout class:hidden={!showVideoControls} />
@@ -115,7 +115,7 @@
 			/>
 			<div class="mt-24" transition:slide={{ delay: 400, duration: 400 }}>
 				<Button
-					text="Continue video"
+					text="Watch the full video"
 					href=""
 					color="ppred"
 					action={() => {

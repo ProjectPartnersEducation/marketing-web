@@ -235,8 +235,8 @@
 			<div class="flex items-center h-6">
 				<button
 					type="button"
-					class="flex flex-none w-8 p-px transition-colors duration-200 ease-in-out rounded-full cursor-pointer ring-1 ring-inset ring-gray-900/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:cursor-not-allowed disabled:opacity-50"
-					class:bg-indigo-600={formSwitches.agreement}
+					class="flex flex-none w-8 p-px transition-colors duration-200 ease-in-out rounded-full cursor-pointer ring-1 ring-inset ring-gray-900/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ppblue disabled:cursor-not-allowed disabled:opacity-50"
+					class:bg-ppblue={formSwitches.agreement}
 					class:bg-gray-200={!formSwitches.agreement}
 					class:outline={errors.agreement}
 					class:outline-red-500={errors.agreement}
@@ -267,7 +267,7 @@
 			</div>
 			<label class="text-lg leading-6 text-gray-600" id="switch-1-label" for="agreement">
 				By selecting this, you agree to our
-				<a href="{base}/policies#privacy" target="_blank" class="font-semibold text-indigo-600"
+				<a href="{base}/policies#privacy" target="_blank" class="font-semibold text-ppblue"
 					>privacy&nbsp;policy</a
 				>.
 			</label>
@@ -276,8 +276,8 @@
 			<div class="flex items-center h-6">
 				<button
 					type="button"
-					class="flex flex-none w-8 p-px transition-colors duration-200 ease-in-out rounded-full cursor-pointer ring-1 ring-inset ring-gray-900/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:cursor-not-allowed disabled:opacity-50"
-					class:bg-indigo-600={formSwitches.ageOrConsent}
+					class="flex flex-none w-8 p-px transition-colors duration-200 ease-in-out rounded-full cursor-pointer ring-1 ring-inset ring-gray-900/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ppblue disabled:cursor-not-allowed disabled:opacity-50"
+					class:bg-ppblue={formSwitches.ageOrConsent}
 					class:bg-gray-200={!formSwitches.ageOrConsent}
 					class:outline={errors.ageOrConsent}
 					class:outline-red-500={errors.ageOrConsent}
@@ -314,8 +314,8 @@
 			<div class="flex items-center h-6">
 				<button
 					type="button"
-					class="flex flex-none w-8 p-px transition-colors duration-200 ease-in-out rounded-full cursor-pointer ring-1 ring-inset ring-gray-900/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:cursor-not-allowed disabled:opacity-50"
-					class:bg-indigo-600={formSwitches.mailingList}
+					class="flex flex-none w-8 p-px transition-colors duration-200 ease-in-out rounded-full cursor-pointer ring-1 ring-inset ring-gray-900/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ppblue disabled:cursor-not-allowed disabled:opacity-50"
+					class:bg-ppblue={formSwitches.mailingList}
 					class:bg-gray-200={!formSwitches.mailingList}
 					role="switch"
 					aria-checked="false"
@@ -347,8 +347,8 @@
 		<button
 			type="submit"
 			class="
-				block w-full rounded-md px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:cursor-not-allowed"
-			class:bg-indigo-600={formIsValid && formState !== 'loading' && formState !== 'success'}
+				block w-full rounded-sm px-3.5 py-2.5 text-center text-lg font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ppblue disabled:cursor-not-allowed"
+			class:bg-ppblue={formIsValid && formState !== 'loading' && formState !== 'success'}
 			class:hover:bg-indigo-500={formIsValid && formState !== 'loading' && formState !== 'success'}
 			class:bg-indigo-300={!formIsValid || formState === 'loading' || formState === 'success'}
 			disabled={formState === 'loading' || formState === 'success'}

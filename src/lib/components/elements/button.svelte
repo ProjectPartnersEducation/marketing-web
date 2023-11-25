@@ -20,7 +20,7 @@
 
 <a
 	style="--clr: {color}; --textclr: {textColor}"
-	class="inline-flex items-center gap-3 py-3 pl-5 pr-6 overflow-hidden text-xl transition-colors bg-black rounded-sm decoration-0 button whitespace-nowrap text-ellipsis"
+	class="inline-flex items-center max-w-full gap-3 py-3 pl-5 pr-6 overflow-hidden text-xl break-words transition-colors bg-black rounded-sm decoration-0 button whitespace-nowrap text-ellipsis"
 	{href}
 	{target}
 	on:click={action}

@@ -12,7 +12,7 @@
 	export let bigLink: LinkInfo;
 </script>
 
-<div class="grid grid-cols-2 gap-8 mx-64 auto-rows-fr">
+<div class="grid grid-cols-2 gap-8 mx-8 lg:mx-64 md:mx-32 sm:mx-16 auto-rows-fr">
 	<a href={link1.href}>
 		<div
 			class="relative grid grid-cols-2 transition-transform bg-black border-4 border-black cursor-pointer group hover:scale-105"

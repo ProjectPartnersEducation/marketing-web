@@ -1,4 +1,3 @@
-// import { mdsvex } from 'mdsvex'
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 import inlineSvg from '@svelte-put/preprocess-inline-svg';
@@ -21,9 +20,6 @@ const config = {
 				directories: 'src/assets/ui',
 			},
 		])
-		// mdsvex({
-		// 	extensions: ['.md']
-		// })
 	],
 
 	kit: {

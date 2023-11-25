@@ -4,8 +4,11 @@
 	export let snap = false;
 </script>
 
-<div class="grid grid-cols-5 px-48 pt-24 pb-20" class:snap-end={snap}>
-	<div class="col-span-5 mx-24 mb-24 border-b"></div>
+<div
+	class="grid justify-around grid-cols-2 px-8 pt-24 pb-20 space-y-12 gap-x-4 md:px-16 lg:px-32 xl:px-48 lg:grid-cols-5 lg:justify-normal"
+	class:snap-end={snap}
+>
+	<div class="col-span-2 mx-24 mb-12 border-b md:mb-24 lg:col-span-5"></div>
 	<div class="grid grid-cols-1">
 		<h4 class="text-2xl font-black cursor-pointer hover:underline">
 			<a class="font-black" href="/about">About</a>
@@ -66,23 +69,27 @@
 			</li>
 		</ul>
 	</div>
-	<div class="">
-		<img src={assets + '/logo.svg'} alt="logo" class="w-full" />
-		<h4 class="px-2 mt-4 text-center text-white bg-black text-md font-handwriting">
+	<div class="col-span-2 lg:col-span-1">
+		<img src={assets + '/logo.svg'} alt="logo" class="w-full max-h-16" />
+		<h4 class="px-2 mt-4 text-center text-white bg-black rounded-sm text-md font-handwriting">
 			The Engaging Education Charity
 		</h4>
 		<ul class="mt-4 space-y-4">
-			<li class="mt-4 text-md">Project Partners Education CIO</li>
-			<li class="text-md">A charity registered in England and Wales, 1189396</li>
+			<li class="mt-4 text-md">
+				Project Partners Education CIO is a charity registered in England and Wales, 1189396.
+				Established in 2020.
+			</li>
 		</ul>
 	</div>
-	<div class="grid grid-cols-4 col-span-5 pt-16 mt-16 text-center border-t place-items-center">
+	<div
+		class="grid grid-cols-4 col-span-2 pt-16 mt-16 text-center border-t lg:col-span-5 place-items-center"
+	>
 		<div></div>
-		<img src="{assets}/images/ncvo.png" class="max-h-32" />
-		<img src="{assets}/images/fraud-pledge.svg" class="max-h-32" />
+		<img src="{assets}/images/ncvo.png" class="max-h-16 md:max-h-32" />
+		<img src="{assets}/images/fraud-pledge.svg" class="max-h-16 md:max-h-32" />
 		<div></div>
 	</div>
-	<div class="col-span-5 pt-8 mt-8 text-center">
+	<div class="col-span-2 pt-8 mt-8 text-center lg:col-span-5">
 		&copy; {new Date().getFullYear()} Project Partners Education CIO
 	</div>
 </div>

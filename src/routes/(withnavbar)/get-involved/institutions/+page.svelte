@@ -2,6 +2,7 @@
 	import { assets } from '$app/paths';
 
 	import ContactForm from '$lib/components/elements/contact/index.svelte';
+	import CopyLink from '$lib/components/elements/copylink/index.svelte';
 </script>
 
 <svelte:head>
@@ -105,18 +106,18 @@
 		<div />
 		<div class="py-16 border-r-2"></div>
 	</div>
-	<div class="pt-16 pb-32 border-2 rounded-lg">
-		<h2 class="px-32 text-4xl text-center font-handwriting">Let's make this happen.</h2>
-		<p class="px-32 mt-8 text-xl leading-loose">
+	<div class="px-32 pt-16 pb-32 border-2 rounded-lg">
+		<h2 class="text-6xl text-center font-handwriting">Let's make this happen.</h2>
+		<p class="mt-8 text-xl leading-loose">
 			Please use the contact form below to get in touch with us about institutional sponsorships,
 			partnerships, or any other way you would like to support us.
 		</p>
-		<p class="px-32 mt-8 text-xl leading-loose">
+		<p class="mt-8 text-xl leading-loose">
 			If you believe in a future where all learners are engaged and empowered, then we would love to
 			hear from you. You can also email us directly at
-			<a href="mailto:hello@projectpartners.org">hello@projectpartners.org</a>.
+			<CopyLink text="hello@projectpartners.org" additionalClasses="underline text-ppblue" />
 		</p>
-		<p class="px-32 mt-4 leading-loose text-md text-slate-500">
+		<p class="mt-4 leading-loose text-md text-slate-500">
 			If you would like to support us as an individual, please visit our <a
 				href="/get-involved"
 				class="underline cursor-pointer">Get Involved</a

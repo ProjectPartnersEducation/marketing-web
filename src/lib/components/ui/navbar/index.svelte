@@ -49,9 +49,9 @@
 <nav class="sticky top-0 z-40">
 	<div class="bg-white">
 		<div
-			class="grid items-center grid-cols-3 p-4 mx-64 align-middle border-b-8 border-l-2 border-r-2 border-gray-800"
+			class="flex flex-row items-center justify-between flex-auto grid-cols-3 p-4 align-middle border-b-8 border-l-2 border-r-2 border-gray-800 lg:mx-32 xl:mx-64"
 		>
-			<div class="w-12 h-12 ml-4 mr-6">
+			<div class="order-3 w-12 h-12 ml-4 mr-6 md:order-1">
 				<div
 					on:click={showFullscreenMenu}
 					on:keypress={showFullscreenMenu}
@@ -63,15 +63,16 @@
 					<div class="bars" id="bar3"></div>
 				</div>
 			</div>
-			<a href="/">
-				<img
+			<a href="/" class="order-2 md:order-2">
+				<!-- <img
 					src={assets + '/logo.svg'}
 					alt="logo"
 					class="w-full h-16 transition-transform hover:scale-105"
-				/>
+				/> -->
+				<svg inline-src="logo" class="w-full h-16 transition-transform hover:scale-105" />
 			</a>
-			<div>
-				<a class="text-xl fancy" href="/get-involved">
+			<div class="order-1 md:order-3">
+				<a class="hidden text-lg md:inline-block md:text-xl fancy" href="/get-involved">
 					<span class="top-key" />
 					<span class="font-black text">Get Involved</span>
 					<span class="bottom-key-1" />
@@ -107,37 +108,42 @@
 		transition:fade={{ duration: 200 }}
 		class="fixed top-0 bottom-0 left-0 right-0 z-50 w-screen h-screen overflow-y-scroll bg-white inset-4 overscroll-contain"
 	>
-		<div out:slide class="grid items-center max-w-5xl grid-cols-2 py-24 mx-auto gap-x-16 gap-y-8">
-			<div>
-				<svg
-					inline-src="cross"
-					class="w-24 h-24 transition-all cursor-pointer"
-					on:click={hideFullscreenMenu}
-					on:keypress={hideFullscreenMenu}
-					on:mouseenter={() => {
-						svg.style.fill = 'var(--ppred)';
-					}}
-					on:mouseleave={() => {
-						svg.style.fill = '#000';
-					}}
-					bind:this={svg}
-				/>
+		<div
+			out:slide
+			class="grid items-center max-w-5xl grid-cols-2 px-8 py-12 mx-auto md:py-24 gap-x-8 md:gap-x-16 gap-y-8"
+		>
+			<div class="flex flex-row justify-between col-span-2 gap-x-4 place-items-center">
+				<div class="order-2 md:order-1">
+					<svg
+						inline-src="cross"
+						class="w-16 h-16 transition-all cursor-pointer sm:w-20 sm:h-20 md:w-24 md:h-24"
+						on:click={hideFullscreenMenu}
+						on:keypress={hideFullscreenMenu}
+						on:mouseenter={() => {
+							svg.style.fill = 'var(--ppred)';
+						}}
+						on:mouseleave={() => {
+							svg.style.fill = '#000';
+						}}
+						bind:this={svg}
+					/>
+				</div>
+				<a href="/" on:click={hideFullscreenMenu} class="order-1 md:order-2">
+					<img
+						src={assets + '/logo.svg'}
+						alt="logo"
+						class="w-full h-16 transition-all sm:h-20 hover:scale-105"
+					/>
+				</a>
 			</div>
-			<a href="/" on:click={hideFullscreenMenu}>
-				<img
-					src={assets + '/logo.svg'}
-					alt="logo"
-					class="w-full h-20 transition-all hover:scale-105"
-				/>
-			</a>
 			<a
 				href="/about"
 				on:click={hideFullscreenMenu}
-				class="px-8 py-4 text-6xl font-black text-right text-white transition-colors bg-black hover:text-ppyellow font-handwriting"
+				class="col-span-2 px-8 py-4 text-4xl font-black text-right text-white transition-colors bg-black rounded-sm md:col-span-1 sm:text-5xl md:text-6xl hover:text-ppyellow font-handwriting"
 			>
 				About...
 			</a>
-			<div class="grid grid-cols-1 gap-8">
+			<div class="grid grid-cols-1 col-span-2 gap-8 text-right md:col-span-1 md:text-left">
 				<div class="text-3xl link-text" in:fly={{ duration: 400, y: -10 }}>
 					<a href="/about#principles" on:click={hideFullscreenMenu}> Our principles </a>
 				</div>
@@ -151,12 +157,15 @@
 			<div class="w-full col-span-2 border-4 border-b border-black"></div>
 			<a
 				href="/resources"
-				class="px-8 py-4 text-6xl font-black text-right text-white transition-colors bg-black hover:text-pporange font-handwriting"
+				class="col-span-2 px-8 py-4 text-4xl font-black text-right text-white transition-colors bg-black rounded-sm md:col-span-1 sm:text-5xl md:text-6xl hover:text-pporange font-handwriting"
 				on:click={hideFullscreenMenu}
 			>
 				Resources...
 			</a>
-			<div transition:fly class="grid grid-cols-1 gap-8">
+			<div
+				transition:fly
+				class="grid grid-cols-1 col-span-2 gap-8 text-right md:col-span-1 md:text-left"
+			>
 				<div class="text-3xl link-text" transition:fly={{ duration: 400, y: -10, delay: 90 }}>
 					<a href="/resources#learners" on:click={hideFullscreenMenu}> For learners </a>
 				</div>
@@ -170,12 +179,15 @@
 			<div class="w-full col-span-2 border-4 border-b border-black"></div>
 			<a
 				href="/get-involved"
-				class="px-8 py-4 text-6xl font-black text-right text-white transition-colors bg-black hover:text-ppred font-handwriting"
+				class="col-span-2 px-8 py-4 text-4xl font-black text-right text-white transition-colors bg-black rounded-sm sm:text-5xl md:text-6xl md:col-span-1 hover:text-ppred font-handwriting"
 				on:click={hideFullscreenMenu}
 			>
 				Get Involved...
 			</a>
-			<div transition:fly class="grid grid-cols-1 gap-8">
+			<div
+				transition:fly
+				class="grid grid-cols-1 col-span-2 gap-8 text-right md:col-span-1 md:text-left"
+			>
 				<div class="text-3xl link-text" transition:fly={{ duration: 400, y: -10, delay: 180 }}>
 					<a href="/get-involved#donate" on:click={hideFullscreenMenu}> Donate </a>
 				</div>
@@ -198,7 +210,6 @@
 		box-sizing: border-box;
 		color: #fff;
 		cursor: pointer;
-		display: inline-block;
 		float: right;
 		margin: 0;
 		outline: none;
