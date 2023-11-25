@@ -3,55 +3,43 @@
 
 	import StrongLinks from '$lib/components/elements/stronglinks/index.svelte';
 	import StrongBox from '$lib/components/elements/strongbox/index.svelte';
+	import BigTopImage from '$lib/components/elements/bigtopimage/index.svelte';
 
 	import ProjectPartnersActivitiesDiagram from '$lib/components/diagrams/ProjectPartnersActivities/index.svelte';
 	import ThreeStagesOfEngagedLearningDiagram from '$lib/components/diagrams/ThreeStagesOfEngagedLearning/index.svelte';
-	import FourFormsOfEngagement from '$lib/components/diagrams/FourFormsOfEngagement/index.svelte';
 </script>
 
 <svelte:head>
 	<title>About Us | Project Partners Education</title>
 </svelte:head>
 
-<div class="px-64">
-	<h1 class="relative text-center">
-		<img src={assets + '/images/class-with-hands-up.jpg'} class="w-full rounded-sm" />
-
-		<h1
-			class="absolute inline-block px-4 py-2 font-black text-center text-white bg-black border-4 border-white rounded-sm top-2 left-2 text-8xl font-handwriting"
-		>
-			About
-		</h1>
-		<h1
-			class="absolute inline-block px-4 py-2 font-black text-center text-white bg-black border-4 border-white rounded-sm bottom-2 right-2 text-8xl font-handwriting"
-		>
-			About
-		</h1>
-	</h1>
-</div>
-<div class="pt-32 ml-32 border-b border-r mr-80 rounded-br-xl"></div>
-<div class="px-32 py-24 mx-32 border-b border-l rounded-bl-xl" id="principles">
+<BigTopImage imgSrc={assets + '/images/class-with-hands-up.jpg'} text="About" />
+<div class="hidden pt-32 ml-32 border-b border-r mr-80 rounded-br-xl lg:block"></div>
+<div
+	class="px-6 py-24 lg:px-32 lg:mx-32 md:px-24 sm:px-12 lg:border-b lg:border-l rounded-bl-xl"
+	id="principles"
+>
 	<h2 class="mt-8 mb-8 text-5xl text-left font-handwriting">Our Principles</h2>
 	<p class="text-2xl leading-loose text-justify">
 		Some preamble text here which introduces us in a personal way.
 	</p>
 </div>
-<div class="px-32 mx-32 border-r py-36">
+<div class="px-6 md:px-24 sm:px-12 lg:px-32 lg:mx-32 lg:border-r py-36">
 	<ThreeStagesOfEngagedLearningDiagram />
 </div>
 <!-- <div class="mx-64">
 	<FourFormsOfEngagement />
 </div> -->
-<div class="grid grid-cols-2 mx-32">
+<div class="hidden grid-cols-2 mx-32 lg:grid">
 	<div />
 	<div class="py-24 border-t border-l" />
 </div>
-<div class="mx-48 text-center">
+<div class="mx-6 text-center lg:mx-48 md:mx-24 sm:mx-12">
 	<StrongBox>
 		<h3 class="inline-block px-4 py-2 mb-4 text-4xl text-white bg-black font-handwriting">
 			The Engaging Education Code
 		</h3>
-		<p class="text-2xl leading-relaxed text-justify">
+		<p class="text-2xl leading-relaxed text-left sm:text-justify">
 			The Engaging Education Code is a blueprint for educators, learners, and all stakeholders in
 			education to foster environments where curiosity, creativity, and collaboration flourish. This
 			Code is not just a set of ideals; it's a living guide that evolves with our collective
@@ -59,7 +47,7 @@
 		</p>
 		<div class="relative w-full h-full bg-black top-4 left-4"></div>
 		<ol
-			class="px-12 py-8 mt-16 space-y-4 text-2xl leading-relaxed text-justify text-white list-inside bg-black border-2 border-black rounded-sm max-w"
+			class="px-6 py-8 mt-16 space-y-4 text-2xl leading-relaxed text-left text-white list-inside bg-black border-2 border-black rounded-sm md:px-12 sm:text-justify max-w"
 		>
 			<h4 class="text-4xl font-handwriting">The Code</h4>
 			<li>
@@ -88,15 +76,15 @@
 		</ol>
 	</StrongBox>
 </div>
-<div class="grid grid-cols-2 mx-32">
+<div class="hidden grid-cols-2 mx-32 lg:grid">
 	<div class="py-16 border-b border-r"></div>
 </div>
-<div class="px-32 py-24 mx-32 border-b border-l rounded-bl-xl">
+<div class="px-6 py-24 lg:px-32 lg:mx-32 md:px-24 sm:px-12 lg:border-b lg:border-l rounded-bl-xl">
 	<h2 class="mt-8 mb-8 text-5xl text-left font-handwriting" id="work">Our Activities</h2>
 	<ProjectPartnersActivitiesDiagram />
 </div>
 <hr class="my-24" />
-<div class="grid grid-cols-2 mx-64 gap-x-16">
+<div class="grid grid-cols-2 px-8 lg:px-36 md:px-24 sm:px-16 gap-x-16">
 	<h2 class="col-span-2 mb-8 text-4xl text-center underline font-handwriting decoration-pppink">
 		Project Partners for Learners
 	</h2>
@@ -150,9 +138,9 @@
 	link2={{
 		imgsrc: `${assets}/images/IMG_0034.jpg`,
 		imgalt: 'Two children looking at a book',
-		text: 'Case Study: Project Partners in Ghana',
+		text: 'Case Study: Ghana',
 		href: '',
-		hoverColor: 'ppblue'
+		hoverColor: 'ppgreen'
 	}}
 	bigLink={{
 		imgsrc: `${assets}/images/IMG_0034.jpg`,

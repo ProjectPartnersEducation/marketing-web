@@ -132,7 +132,10 @@
 		startAwaitingStage(player);
 	}}
 >
-	<div class="absolute w-1 h-1 translate-y-[102vh] bg-red-600" bind:this={navAwayObserverEl} />
+	<div
+		class="absolute w-1 h-1 translate-y-[102vh] bg-transparent pointer-events-none"
+		bind:this={navAwayObserverEl}
+	/>
 </IntersectionObserver>
 
 <style>

@@ -3,16 +3,13 @@
 	export let text: string;
 </script>
 
-<div class="relative">
+<div class="relative xl:mx-64 lg:mx-32">
 	<img src={imgSrc} class="w-full rounded-sm" />
-	<h1
-		class="absolute inline-block px-4 py-2 font-black text-center text-white bg-black border-4 border-white rounded-sm top-2 left-2 text-8xl font-handwriting"
-	>
-		{text}
-	</h1>
-	<h1
-		class="absolute inline-block px-4 py-2 font-black text-center text-white bg-black border-4 border-white rounded-sm bottom-2 right-2 text-8xl font-handwriting"
-	>
-		{text}
-	</h1>
+	{#each ['md:top-2 md:left-2 top-1 left-1', 'md:bottom-2 md:right-2 bottom-1 right-1'] as position}
+		<h1
+			class="absolute inline-block px-4 py-2 font-black text-center text-white bg-black border-4 border-white rounded-sm {position} text-5xl sm:text-8xl font-handwriting"
+		>
+			{text}
+		</h1>
+	{/each}
 </div>

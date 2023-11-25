@@ -23,7 +23,7 @@
 
 <div class="max-w-screen snap-start">
 	<Navbar />
-	<div class="grid hidden w-full grid-cols-2 px-8 lg:px-36 md:px-24 sm:px-16 lg:block">
+	<div class="hidden w-full grid-cols-2 px-8 lg:px-36 md:px-24 sm:px-16 lg:grid">
 		<div></div>
 		<div class="h-24 border-b border-l rounded-bl-lg"></div>
 	</div>
@@ -41,7 +41,7 @@
 				>
 					The new era of better education
 				</h2>
-				<p class="mt-8 text-xl leading-loose text-justify sm:leading-loose sm:text-2xl">
+				<p class="mt-8 text-xl leading-loose xl:text-justify sm:leading-loose sm:text-2xl">
 					<span class="font-black">Our mission</span> is to transform the school learning environment
 					into a space where curiosity, creativity, and collaboration come first.
 				</p>
@@ -68,8 +68,8 @@
 				class="absolute bottom-6 right-12 h-36"
 			/>
 		</div>
-		<div class="w-full h-48 lg:border-l" />
-		<div class="grid items-center w-full grid-cols-1 gap-16 lg:border-l md:grid-cols-2">
+		<div class="w-full h-48 lg:border-l snap-start" />
+		<div class="grid items-center w-full grid-cols-1 gap-16 lg:border-l lg:grid-cols-2">
 			<div class="order-2 mx-auto lg:w-3/4 lg:order-1">
 				<h3 class="text-xl sm:text-2xl text-slate-500">Our Resources</h3>
 				<h2
@@ -77,7 +77,7 @@
 				>
 					Where life comes to learning
 				</h2>
-				<p class="mt-8 text-xl leading-loose text-justify sm:leading-loose sm:text-2xl">
+				<p class="mt-8 text-xl leading-loose xl:text-justify sm:leading-loose sm:text-2xl">
 					<span class="font-black">Our resources</span> are used by learners, teachers, and education
 					leaders, freely available digitally or through in-person activities
 				</p>
@@ -94,8 +94,8 @@
 			</div>
 		</div>
 		<div class="hidden w-full h-48 border-b border-l rounded-bl-lg lg:block" />
-		<div class="w-full h-48 lg:border-r" />
-		<div class="grid items-center w-full grid-cols-1 gap-16 lg:border-r md:grid-cols-2">
+		<div class="w-full h-48 lg:border-r snap-start" />
+		<div class="grid items-center w-full grid-cols-1 gap-16 lg:border-r lg:grid-cols-2">
 			<StrongImage
 				src="{assets}/images/IMG_0533.jpg"
 				bgColor="ppblue"
@@ -108,7 +108,7 @@
 				>
 					Engaging global knowledge
 				</h2>
-				<p class="mt-8 text-xl leading-loose text-justify sm:leading-loose sm:text-2xl">
+				<p class="mt-8 text-xl leading-loose xl:text-justify sm:leading-loose sm:text-2xl">
 					<span class="font-black">Our network</span> of partners is leading the way in education reform
 					and is expanding worldwide in its work to ensure a sustainable impact for all.
 				</p>
@@ -122,7 +122,7 @@
 			</div>
 		</div>
 		<div class="relative hidden w-1/2 h-48 border-b border-r rounded-br-lg left-1/2 lg:block" />
-		<div class="w-1/2 h-48 lg:border-r" />
+		<div class="w-1/2 h-48 lg:border-r snap-start" />
 		<StrongBox snap={false}>
 			<div class="grid items-center w-full grid-cols-1 gap-4 text-center">
 				<h3 class="text-xl sm:text-2xl text-slate-500">Get Involved</h3>
@@ -131,12 +131,12 @@
 				>
 					Let's make this happen
 				</h2>
-				<p class="mt-8 text-xl leading-loose text-justify sm:leading-loose sm:text-2xl">
+				<p class="mt-8 text-xl leading-loose xl:text-justify sm:leading-loose sm:text-2xl">
 					We are proud to work with people who are passionate about education reform. Our work is
 					only just beginning, and we need your help to bring the new era of school learning to
 					life.
 				</p>
-				<p class="mt-8 text-xl leading-loose text-justify sm:leading-loose sm:text-2xl">
+				<p class="mt-8 text-xl leading-loose xl:text-justify sm:leading-loose sm:text-2xl">
 					Whether you're an individual or already part of a wider team, your support will help us to
 					continue to develop our resources, and to reach more people. There are many ways for you
 					to get involved and we'd love to hear from you.
@@ -147,29 +147,29 @@
 			</div>
 		</StrongBox>
 	</div>
+	<hr class="my-24 snap-start" />
+	<StrongLinks
+		link1={{
+			imgsrc: `${assets}/images/IMG_0459.jpg`,
+			imgalt: 'A smiling teacher with his arms crossed',
+			text: 'See our resources',
+			href: '/resources',
+			hoverColor: 'ppyellow'
+		}}
+		link2={{
+			imgsrc: `${assets}/images/IMG_0034.jpg`,
+			imgalt: 'Two children looking at a book',
+			text: 'Case Study: Ghana',
+			href: '',
+			hoverColor: 'ppgreen'
+		}}
+		bigLink={{
+			imgsrc: `${assets}/images/IMG_0034.jpg`,
+			imgalt: 'A smiling teacher with his arms crossed',
+			text: 'Get Involved',
+			href: '/get-involved',
+			hoverColor: 'ppred'
+		}}
+	/>
+	<Footer snap={true} />
 </div>
-<hr class="my-24" />
-<StrongLinks
-	link1={{
-		imgsrc: `${assets}/images/IMG_0459.jpg`,
-		imgalt: 'A smiling teacher with his arms crossed',
-		text: 'See our resources',
-		href: '/resources',
-		hoverColor: 'ppyellow'
-	}}
-	link2={{
-		imgsrc: `${assets}/images/IMG_0034.jpg`,
-		imgalt: 'Two children looking at a book',
-		text: 'Case Study: Project Partners in Ghana',
-		href: '',
-		hoverColor: 'ppblue'
-	}}
-	bigLink={{
-		imgsrc: `${assets}/images/IMG_0034.jpg`,
-		imgalt: 'A smiling teacher with his arms crossed',
-		text: 'Get Involved',
-		href: '/get-involved',
-		hoverColor: 'ppred'
-	}}
-/>
-<Footer snap={false} />

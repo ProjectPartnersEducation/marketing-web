@@ -79,7 +79,7 @@
 
 <IntersectionObserver element={el} on:intersect={startProgressBar}>
 	<div class="flex flex-wrap" bind:this={el}>
-		<div class="w-full pr-4 md:w-1/2">
+		<div class="order-2 w-full pr-4 md:w-1/2 md:order-1">
 			<Text
 				{activeElement}
 				progress={progressBarWidth}
@@ -90,7 +90,10 @@
 				on:setactivegroup={handleSetActiveElement}
 			/>
 		</div>
-		<div class="w-full pl-4 md:w-1/2">
+		<div class="order-1 w-full pl-4 mb-8 md:w-1/2 md:order-2">
+			<Diagram {activeElement} on:setactivegroup={handleSetActiveElement} />
+		</div>
+		<div class="order-1 w-full pl-4 mb-8 md:w-1/2 md:order-2">
 			<Diagram {activeElement} on:setactivegroup={handleSetActiveElement} />
 		</div>
 	</div>

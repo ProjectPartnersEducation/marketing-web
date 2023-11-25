@@ -8,7 +8,7 @@
 	class="grid justify-around grid-cols-2 px-8 pt-24 pb-20 space-y-12 gap-x-4 md:px-16 lg:px-32 xl:px-48 lg:grid-cols-5 lg:justify-normal"
 	class:snap-end={snap}
 >
-	<div class="col-span-2 mx-24 mb-12 border-b md:mb-24 lg:col-span-5"></div>
+	<div class="col-span-2 mb-12 border-b lg:col-span-5"></div>
 	<div class="grid grid-cols-1">
 		<h4 class="text-2xl font-black cursor-pointer hover:underline">
 			<a class="font-black" href="/about">About</a>
@@ -69,6 +69,7 @@
 			</li>
 		</ul>
 	</div>
+	<div class="col-span-2 mb-12 border-b md:mb-24 lg:hidden"></div>
 	<div class="col-span-2 lg:col-span-1">
 		<img src={assets + '/logo.svg'} alt="logo" class="w-full max-h-16" />
 		<h4 class="px-2 mt-4 text-center text-white bg-black rounded-sm text-md font-handwriting">

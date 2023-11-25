@@ -1,1 +1,1 @@
-<section class="mx-64">Case Study: Project Partners in Ghana</section>
+<section class="mx-64">Case Study: Ghana</section>

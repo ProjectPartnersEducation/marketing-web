@@ -3,6 +3,7 @@
 
 	import Button from '$lib/components/elements/button.svelte';
 	import StrongLinks from '$lib/components/elements/stronglinks/index.svelte';
+	import BigTopImage from '$lib/components/elements/bigtopimage/index.svelte';
 
 	let firstName = '';
 	let email = '';
@@ -72,48 +73,45 @@
 	<title>Our Resources | Project Partners Education</title>
 </svelte:head>
 
-<div class="px-64">
-	<h1 class="relative mb-40 text-center">
-		<img src={assets + '/images/class-with-hands-up.jpg'} class="w-full" />
+<BigTopImage imgSrc={assets + '/images/class-with-hands-up.jpg'} text="Resources" />
 
-		<h1
-			class="absolute top-0 left-0 inline-block px-4 py-2 m-1 font-black text-center text-white bg-black border-4 border-white text-8xl font-handwriting"
-		>
-			Resources
-		</h1>
-		<h1
-			class="absolute bottom-0 right-0 inline-block px-4 py-2 m-1 font-black text-center text-white bg-black border-4 border-white text-8xl font-handwriting"
-		>
-			Resources
-		</h1>
-	</h1>
-</div>
-
-<div class="px-48">
-	<div class="grid grid-cols-3 gap-8 place-items-center">
+<div class="px-6 mt-8 xl:px-48 lg:px-32 md:px-24 sm:px-12">
+	<div class="grid gap-8 md:grid-cols-3 place-items-center">
 		<a href="#learners">
-			<div class="grid grid-cols-1 transition-all scale-95 cursor-pointer hover:scale-100">
+			<div
+				class="grid grid-cols-2 transition-all scale-95 cursor-pointer md:grid-cols-1 hover:scale-100"
+			>
 				<img src="{assets}/images/one-child-thumbs-up.jpg" class="w-full border-4 border-black" />
-				<div class="py-2 text-4xl text-center text-white bg-black font-handwriting">
+				<div
+					class="flex flex-col items-center justify-center py-2 text-4xl text-center text-white bg-black font-handwriting"
+				>
 					I want to <span class="text-ppyellow font-handwriting">learn</span>
 				</div>
 			</div>
 		</a>
 		<a href="#teachers">
-			<div class="grid grid-cols-1 transition-all scale-95 cursor-pointer hover:scale-100">
+			<div
+				class="grid grid-cols-2 transition-all scale-95 cursor-pointer md:grid-cols-1 hover:scale-100"
+			>
 				<img src="{assets}/images/teacher-amongst-class.jpg" class="w-full border-4 border-black" />
-				<div class="py-2 text-4xl text-center text-white bg-black font-handwriting">
+				<div
+					class="flex flex-col items-center justify-center py-2 text-4xl text-center text-white bg-black font-handwriting"
+				>
 					I want to <span class="text-ppgreen font-handwriting">teach</span>
 				</div>
 			</div>
 		</a>
 		<a href="#leaders">
-			<div class="grid grid-cols-1 transition-all scale-95 cursor-pointer hover:scale-100">
+			<div
+				class="grid grid-cols-2 transition-all scale-95 cursor-pointer md:grid-cols-1 hover:scale-100"
+			>
 				<img
 					src="{assets}/images/one-teacher-holding-book.jpg"
 					class="w-full border-4 border-black"
 				/>
-				<div class="py-2 text-4xl text-center text-white bg-black font-handwriting">
+				<div
+					class="flex flex-col items-center justify-center py-2 text-4xl text-center text-white bg-black font-handwriting"
+				>
 					I want to <span class="text-pppink font-handwriting">lead</span>
 				</div>
 			</div>
@@ -121,10 +119,10 @@
 	</div>
 </div>
 
-<div class="px-32">
+<div class="hidden px-32 lg:block">
 	<div class="h-24 border-b border-l border-r shadow-sm"></div>
 </div>
-<div class="px-64 pt-48" id="learners">
+<div class="px-8 pt-48 xl:px-64 lg:px-48 md:px-24 sm:px-16" id="learners">
 	<h2 class="text-5xl font-handwriting">Learn with Project Partners</h2>
 	<p class="mt-8 text-2xl leading-loose text-justify">
 		We want to build the world's best library of free learning resources for young people. Our
@@ -132,12 +130,12 @@
 		exciting, real-world problems.
 	</p>
 </div>
-<div class="px-48 mt-16 border-black">
+<div class="px-6 mt-16 border-black xl:px-48 lg:px-32 md:px-16 sm:px-12">
 	<div
-		class="grid grid-cols-[70%,30%] gap-x-8 border-4 border-black rounded-lg px-32 py-16 shadow-xl bg-[#fffffc]"
+		class="grid grid-cols-1 md:grid-cols-[70%,30%] gap-x-8 border-4 border-black rounded-lg xl:px-32 lg:px-24 md:px-16 sm:px-12 px-6 py-16 shadow-xl bg-[#fffffc]"
 	>
-		<div>
-			<div class="grid grid-cols-[75%,25%] grid-rows-3 gap-y-2 gap-x-8">
+		<div class="w-full">
+			<div class="grid md:grid-cols-[75%,25%] grid-rows-3 gap-y-2 gap-x-8">
 				<h2 class="self-end row-span-3 text-black border-r-2">
 					<svg inline-src="logo" class="inline-block h-16 mr-3" />
 					<span class="text-4xl font-pptext"> Goes to Ghana </span>
@@ -156,18 +154,18 @@
 					</span>
 				</div>
 			</div>
-			<p class="mt-8 text-3xl leading-loose text-justify text-black">
+			<p class="mt-8 text-2xl leading-loose text-justify text-black">
 				Join Emmanuella in your new role as a mathematics expert and help the people of Ghana grow
 				their businesses into a thriving community.
 			</p>
 		</div>
-		<div>
+		<div class="w-full mt-6 md:mt-0">
 			<img
 				src="{assets}/images/three-standing-children-discussing.jpg"
 				class="w-full border-2 border-black"
 			/>
 		</div>
-		<div class="col-span-2 mt-8 text-center">
+		<div class="mt-8 text-center md:col-span-2">
 			<Button
 				text="To the learning portal!"
 				href="https://learn.projectpartners.org"
@@ -176,25 +174,27 @@
 		</div>
 	</div>
 </div>
-<div class="px-48">
+<div class="px-6 xl:px-48 lg:px-32 md:px-24 sm:px-12">
 	<div class="max-w-sm mx-auto my-24 border-b"></div>
-	<div class="text-2xl text-center align-top -translate-y-1/2 font-handwriting text-slate-500">
-		<img src="{assets}/images/emmanuella.png" class="inline-block h-32 mr-3 -scale-x-100" />
-		Stay tuned... many more project packs coming soon!
+	<div
+		class="flex flex-row flex-1 text-2xl place-content-center place-items-center font-handwriting text-slate-500"
+	>
+		<img src="{assets}/images/emmanuella.png" class="inline-block h-32 mr-3 justify-self-end" />
+		<div class="justify-self-start">Stay tuned... many more project packs coming soon!</div>
 	</div>
 </div>
 
-<div class="px-64 pt-48" id="teachers">
+<div class="px-6 pt-48 xl:px-64 lg:px-32 md:px-24 sm:px-12" id="teachers">
 	<h2 class="text-5xl font-handwriting">Teach with Project Partners</h2>
-	<p class="mt-8 text-2xl leading-loose text-justify">
+	<p class="mt-8 text-2xl leading-loose md:text-justify">
 		Expand your teaching practice with our free resources and innovative professional development
 		workshops to develop your skills as an engaging educator. We are committed to supporting the
 		professional development of teachers and educators - because the future of education starts with
 		you.
 	</p>
 	<div class="mx-32 my-16 border-b"></div>
-	<div class="text-4xl font-black text-center">Teaching with our project packs?</div>
-	<div class="mt-4 text-2xl text-center">
+	<div class="text-2xl font-black text-center">Teaching with our project packs?</div>
+	<div class="mt-4 text-2xl leading-loose text-center">
 		Find all of our teaching resources (and more!) on our <a
 			href="https://learn.projectpartners.org/teachers"
 			class="font-handwriting"
@@ -203,16 +203,16 @@
 	</div>
 	<div class="mx-32 my-16 border-b"></div>
 	<h3 class="mt-16 text-3xl font-black">Our Professional Certifications</h3>
-	<p class="mt-4 text-2xl leading-loose text-justify">
+	<p class="mt-4 text-2xl leading-loose md:text-justify">
 		We are currently working with the National Teaching Council of Ghana to develop a series of
 		professional certifications for teachers and educators. These certifications will count towards
 		your annual teaching license renewal and are designed to help you develop your skills as an
 		engaging educator.
 	</p>
-	<div class="grid grid-cols-2 gap-8 mt-8 place-items-center">
-		<div>
+	<div class="grid gap-8 mt-8 md:grid-cols-2 place-items-center">
+		<div class="order-2 md:order-1">
 			<h4 class="text-2xl font-black">What are the benefits?</h4>
-			<ul class="mt-4 text-2xl leading-loose text-justify list-disc list-inside">
+			<ul class="mt-4 text-2xl leading-loose list-disc list-inside md:text-justify">
 				<li>Develop your skills as an engaging educator</li>
 				<li>Gain recognition for your professional development</li>
 				<li>Count towards your annual teaching license renewal</li>
@@ -221,7 +221,10 @@
 				<li>Gain access to our global network of education leaders</li>
 			</ul>
 		</div>
-		<img src="{assets}/images/teacher-with-students-happy.jpg" class="border-4 border-black" />
+		<img
+			src="{assets}/images/teacher-with-students-happy.jpg"
+			class="order-1 border-4 border-black md:order-2"
+		/>
 	</div>
 	<div class="mx-32 my-16 border-b"></div>
 	<p class="text-2xl leading-loose text-justify">
@@ -230,21 +233,21 @@
 		your interest below and we will be in touch.
 	</p>
 	<form
-		class="flex flex-1 w-full gap-4 mt-8 place-items-center"
+		class="flex flex-wrap flex-1 w-full gap-4 mt-8 place-items-center"
 		on:submit|preventDefault={subscribe}
 	>
 		<input
 			type="text"
 			placeholder="First Name*"
 			required
-			class="w-full p-4 text-xl border-2 border-black rounded-md placeholder:text-xl focus:border-ppblue"
+			class="w-full max-w-sm p-4 text-xl border-2 border-black rounded-md placeholder:text-xl focus:border-ppblue"
 			bind:value={firstName}
 		/>
 		<input
 			type="email"
 			placeholder="Email Address*"
 			required
-			class="w-full p-4 text-xl border-2 border-black rounded-md placeholder:text-xl focus:border-ppblue"
+			class="w-full max-w-sm p-4 text-xl border-2 border-black rounded-md placeholder:text-xl focus:border-ppblue"
 			bind:value={email}
 		/>
 		<button type="submit">
@@ -272,7 +275,7 @@
 	</div>
 </div>
 
-<div class="px-64 pt-48" id="leaders">
+<div class="px-6 pt-48 xl:px-64 lg:px-48 md:px-24 sm:px-12" id="leaders">
 	<h2 class="text-5xl font-handwriting">Lead with Project Partners</h2>
 	<p class="mt-8 text-2xl leading-loose text-justify">
 		If you are a school or community leader, you are warmly invited to join our global Project
@@ -375,9 +378,9 @@
 	link2={{
 		imgsrc: `${assets}/images/IMG_0034.jpg`,
 		imgalt: 'Two children looking at a book',
-		text: 'Case Study: Project Partners in Ghana',
+		text: 'Case Study: Ghana',
 		href: '',
-		hoverColor: 'ppblue'
+		hoverColor: 'ppgreen'
 	}}
 	bigLink={{
 		imgsrc: `${assets}/images/IMG_0034.jpg`,

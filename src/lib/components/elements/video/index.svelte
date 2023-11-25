@@ -25,7 +25,7 @@
 	});
 </script>
 
-<div class="relative">
+<div class="relative max-w-full">
 	<media-player
 		class="player"
 		title="Introducing Project Partners"

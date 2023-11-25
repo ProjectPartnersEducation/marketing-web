@@ -6,6 +6,6 @@
 	import '@fontsource-variable/nunito-sans';
 </script>
 
-<div class="overflow-x-hidden">
+<div class="overflow-x-clip">
 	<slot />
 </div>

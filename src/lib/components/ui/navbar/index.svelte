@@ -64,11 +64,6 @@
 				</div>
 			</div>
 			<a href="/" class="order-2 md:order-2">
-				<!-- <img
-					src={assets + '/logo.svg'}
-					alt="logo"
-					class="w-full h-16 transition-transform hover:scale-105"
-				/> -->
 				<svg inline-src="logo" class="w-full h-16 transition-transform hover:scale-105" />
 			</a>
 			<div class="order-1 md:order-3">
@@ -80,7 +75,7 @@
 				</a>
 			</div>
 		</div>
-		<div class="w-auto h-1 mx-64 border-b border-gray-200">
+		<div class="w-auto h-1 border-b border-gray-200 xl:mx-64 lg:mx-32">
 			<div
 				class="w-full h-full bg-ppyellow"
 				style="transform: scaleX({scrollValue}); transform-origin: 0 0;"
@@ -88,16 +83,16 @@
 		</div>
 	</div>
 	{#if !fullscreenMenuVisible && onlineDetectorState === OnlineDetectorState.OFFLINE}
-		<div class="pt-2 mx-64 text-center">
-			<div class="inline-block px-6 py-3 text-xl text-white rounded-md bg-ppred">
+		<div class="text-center xl:mx-64 lg:mx-32">
+			<div class="inline-block px-6 py-3 text-xl text-white bg-red-600 rounded-sm">
 				You're offline! This website may not function properly until you're back online.
 				<Icon icon="mdi-light:warning" class="inline" />
 			</div>
 		</div>
 	{:else if !fullscreenMenuVisible && onlineDetectorState === OnlineDetectorState.ONLINE}
-		<div class="pt-2 mx-64 text-center">
-			<div class="inline-block px-6 py-3 text-xl text-white rounded-md bg-ppgreen">
-				You're back online.
+		<div class="text-center xl:mx-64 lg:mx-32">
+			<div class="inline-block px-6 py-3 text-xl text-white bg-green-600 rounded-sm">
+				You're back online!
 				<Icon icon="mdi-light:warning" class="inline" />
 			</div>
 		</div>

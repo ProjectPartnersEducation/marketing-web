@@ -27,9 +27,9 @@
 		}}
 	/>
 {/if}
-<section class="px-32 pb-12 mt-8">
-	<div class="mx-32">
-		<!-- <img src={assets + '/images/four-students-looking-down.jpg'} class="w-full" />
+<BigTopImage imgSrc={assets + '/images/four-students-looking-down.jpg'} text="Get Involved" />
+<section class="px-6 pb-12 mt-8 lg:px-32 md:px-24 sm:px-12">
+	<!-- <img src={assets + '/images/four-students-looking-down.jpg'} class="w-full" />
 
 		<h1
 			class="absolute inline-block px-4 py-2 font-black text-center text-white bg-black border-4 border-white top-2 left-2 text-8xl font-handwriting"
@@ -41,13 +41,11 @@
 		>
 			Get Involved
 		</h1> -->
-		<BigTopImage imgSrc={assets + '/images/four-students-looking-down.jpg'} text="Get Involved" />
-	</div>
-	<div class="w-3/4 border-b border-r pb-36 rounded-br-xl" />
-	<div class="w-3/4 pb-32 border-l" />
+	<div class="hidden w-3/4 border-b border-r pb-36 rounded-br-xl lg:block" />
+	<div class="hidden w-3/4 pb-32 border-l lg:block" />
 	<div id="donate">
-		<div class="relative border-l">
-			<div class="mx-32">
+		<div class="relative lg:border-l">
+			<div class="mx-6 lg:mx-32 md:mx-24 sm:mx-12">
 				<h1 class="inline text-5xl font-handwriting">Donate</h1>
 				<p class="mt-6 text-2xl leading-loose text-justify">
 					The world needs a new model for school learning. Together with our global partners, <span
@@ -62,7 +60,9 @@
 				</p>
 			</div>
 		</div>
-		<div class="grid grid-cols-2 px-6 pt-24 pb-48 bg-white border-b border-l rounded-bl-lg gap-x-2">
+		<div
+			class="grid px-6 pt-24 pb-48 bg-white rounded-bl-lg lg:border-b lg:border-l lg:grid-cols-2 gap-x-2"
+		>
 			<div
 				id="donationbox"
 				class="z-20"
@@ -79,13 +79,13 @@
 					seamless
 					frameborder="0"
 					scrolling="no"
-					style="max-width: 1000px; min-width: 423px; max-height:none!important"
-					class="mx-auto transition-transform"
+					style="max-height:none!important;margin:auto!important;"
+					class="max-w-full transition-transform sm:min-w-[423px]"
 					class:shadow-lg={showOutlineOnDonorbox}
 					class:scale-105={showOutlineOnDonorbox}
 				/>
 			</div>
-			<div class="flex flex-col">
+			<div class="flex flex-col max-w-full">
 				<h3 class="mt-8 text-4xl font-handwriting">Your donation's impact</h3>
 				<p class="mt-4 text-xl leading-loose text-justify">
 					Watch the video below to see our Chair of Trustees, Jonny, explain what your donation can
@@ -184,9 +184,9 @@
 	link2={{
 		imgsrc: `${assets}/images/IMG_0034.jpg`,
 		imgalt: 'Two children looking at a book',
-		text: 'Case Study: Project Partners in Ghana',
+		text: 'Case Study: Ghana',
 		href: '',
-		hoverColor: 'ppblue'
+		hoverColor: 'ppgreen'
 	}}
 	bigLink={{
 		imgsrc: `${assets}/images/IMG_0034.jpg`,
