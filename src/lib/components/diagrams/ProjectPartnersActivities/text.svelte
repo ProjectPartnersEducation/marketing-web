@@ -38,14 +38,14 @@
 	};
 </script>
 
-<div class="grid grid-cols-[4px,98%] gap-2 items-stretch">
+<div class="grid items-stretch gap-2" class:grid-cols-[4px,98%]={showProgressBar}>
 	<div class="w-full">
 		{#if showProgressBar && activeElement === ''}
 			<ProgressBar {progress} {intervalPeriod} bgColor="bg-black" />
 		{/if}
 	</div>
 	<div
-		class="px-5 py-3 border-black rounded-sm"
+		class="w-full px-4 py-3 border-black rounded-sm"
 		on:mouseover={() => hoverEnterTextBox('')}
 		on:focus={() => hoverEnterTextBox('')}
 		on:mouseleave={() => hoverExitTextBox('')}

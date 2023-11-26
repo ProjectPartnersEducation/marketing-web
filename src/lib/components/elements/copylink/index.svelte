@@ -1,17 +1,18 @@
 <script lang="ts">
 	export let additionalClasses: string = '';
 	export let text: string = '';
+	export let link: string = text;
 	let showCopyAlert: boolean = false;
 </script>
 
 <button
-	class="cursor-pointer {additionalClasses}"
+	class="cursor-pointer underline decoration-ppyellow decoration-dashed {additionalClasses}"
 	on:click={() => {
-		navigator.clipboard.writeText(text);
+		navigator.clipboard.writeText(link);
 		showCopyAlert = true;
 	}}
 	on:keypress={() => {
-		navigator.clipboard.writeText(text);
+		navigator.clipboard.writeText(link);
 		showCopyAlert = true;
 	}}>{text}</button
 ><slot name="beforemessage">.</slot>

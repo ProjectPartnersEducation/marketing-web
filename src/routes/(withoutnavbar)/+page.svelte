@@ -112,7 +112,7 @@
 					<span class="font-black">Our network</span> of partners is leading the way in education reform
 					and is expanding worldwide in its work to ensure a sustainable impact for all.
 				</p>
-				<div class="hidden mt-8 text-center lg:text-left">
+				<div class="mt-8 text-center lg:text-left">
 					<Button
 						text="Read about Project Partners in Ghana"
 						href="/get-involved/institutions"
@@ -126,17 +126,23 @@
 		<StrongBox snap={false}>
 			<div class="grid items-center w-full grid-cols-1 gap-4 text-center">
 				<h3 class="text-xl sm:text-2xl text-slate-500">Get Involved</h3>
-				<h2
-					class="py-2 mt-1 text-5xl font-black leading-tight text-white bg-black rounded-sm sm:leading-tight sm:text-6xl md:text-7xl font-handwriting"
+				<div class="w-full">
+					<h2
+						class="inline-block px-2 py-3 mt-1 text-5xl font-black leading-tight text-white bg-black rounded-sm sm:leading-tight sm:text-6xl md:text-7xl font-handwriting"
+					>
+						Let's make this happen.
+					</h2>
+				</div>
+				<p
+					class="mt-8 text-xl leading-loose text-left xl:text-justify sm:leading-loose sm:text-2xl"
 				>
-					Let's make this happen
-				</h2>
-				<p class="mt-8 text-xl leading-loose xl:text-justify sm:leading-loose sm:text-2xl">
 					We are proud to work with people who are passionate about education reform. Our work is
 					only just beginning, and we need your help to bring the new era of school learning to
 					life.
 				</p>
-				<p class="mt-8 text-xl leading-loose xl:text-justify sm:leading-loose sm:text-2xl">
+				<p
+					class="mt-8 text-xl leading-loose text-left xl:text-justify sm:leading-loose sm:text-2xl"
+				>
 					Whether you're an individual or already part of a wider team, your support will help us to
 					continue to develop our resources, and to reach more people. There are many ways for you
 					to get involved and we'd love to hear from you.

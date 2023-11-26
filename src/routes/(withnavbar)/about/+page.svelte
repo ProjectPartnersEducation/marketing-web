@@ -7,6 +7,18 @@
 
 	import ProjectPartnersActivitiesDiagram from '$lib/components/diagrams/ProjectPartnersActivities/index.svelte';
 	import ThreeStagesOfEngagedLearningDiagram from '$lib/components/diagrams/ThreeStagesOfEngagedLearning/index.svelte';
+	import Button from '$lib/components/elements/button.svelte';
+
+	const teamMembers = [
+		{ src: 'ts.jpg', name: 'Tom Shering', role: 'CEO' },
+		{ src: 'jj.jpg', name: 'Jonny Jackson', role: 'Chair, Trustee' },
+		{ src: 'su.jpg', name: 'Saiyara Uddin', role: 'Treasurer, Trustee' },
+		{ src: 'sm.jpg', name: 'Sophie Martin', role: 'Secretary, Trustee' },
+		{ src: 'rm.jpg', name: 'Renette Mbroh', role: 'Trustee' },
+		{ src: 'sd.jpg', name: 'Suhaida D', role: 'Advisor, Operations' },
+		{ src: 'nw.jpg', name: 'Nicola Whelan', role: 'Advisor, Community' },
+		{ src: 'tb.png', name: 'Tim B', role: 'Advisor, Creative' }
+	];
 </script>
 
 <svelte:head>
@@ -34,9 +46,11 @@
 	<div />
 	<div class="py-24 border-t border-l" />
 </div>
-<div class="mx-6 text-center lg:mx-48 md:mx-24 sm:mx-12">
+<div class="mx-2 text-center lg:mx-32 md:mx-16 sm:mx-8 xl:mx-48">
 	<StrongBox>
-		<h3 class="inline-block px-4 py-2 mb-4 text-4xl text-white bg-black font-handwriting">
+		<h3
+			class="inline-block px-4 py-2 mb-4 text-4xl text-white bg-black rounded-sm font-handwriting"
+		>
 			The Engaging Education Code
 		</h3>
 		<p class="text-2xl leading-relaxed text-left sm:text-justify">
@@ -79,12 +93,11 @@
 <div class="hidden grid-cols-2 mx-32 lg:grid">
 	<div class="py-16 border-b border-r"></div>
 </div>
-<div class="px-6 py-24 lg:px-32 lg:mx-32 md:px-24 sm:px-12 lg:border-b lg:border-l rounded-bl-xl">
-	<h2 class="mt-8 mb-8 text-5xl text-left font-handwriting" id="work">Our Activities</h2>
+<div class="px-2 py-32 lg:px-32 lg:mx-32 md:px-24 sm:px-12 lg:border-b lg:border-l rounded-bl-xl">
+	<h2 class="mb-8 text-5xl text-left font-handwriting" id="work">Our Activities</h2>
 	<ProjectPartnersActivitiesDiagram />
 </div>
-<hr class="my-24" />
-<div class="grid grid-cols-2 px-8 lg:px-36 md:px-24 sm:px-16 gap-x-16">
+<!-- <div class="grid grid-cols-2 px-8 lg:px-36 md:px-24 sm:px-16 gap-x-16">
 	<h2 class="col-span-2 mb-8 text-4xl text-center underline font-handwriting decoration-pppink">
 		Project Partners for Learners
 	</h2>
@@ -124,8 +137,29 @@
 			</li>
 		</ul>
 	</div>
+</div> -->
+<div
+	id="team"
+	class="px-6 py-24 lg:px-32 lg:mx-32 md:px-24 sm:px-12 lg:border-b lg:border-r rounded-br-xl"
+>
+	<h2 class="mt-8 mb-8 text-5xl text-left font-handwriting" id="work">Our Team</h2>
+	<div class="flex flex-wrap justify-around flex-none gap-16">
+		{#each teamMembers as person}
+			<div class="">
+				<img
+					src="{assets}/images/team/{person.src}"
+					alt=""
+					class="object-cover object-center w-32 h-32 rounded-full sm:w-48 sm:h-48"
+				/>
+				<h3 class="w-full mt-2 text-lg font-black text-center">{person.name}</h3>
+				<h4 class="w-full text-center">{person.role}</h4>
+			</div>
+		{/each}
+	</div>
+	<div class="mt-16 text-center">
+		<Button href="/about/team" text="Meet the team" />
+	</div>
 </div>
-<div id="team"></div>
 <hr class="my-24" />
 <StrongLinks
 	link1={{

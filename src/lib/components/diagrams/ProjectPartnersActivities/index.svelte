@@ -13,6 +13,7 @@
 		| 'Teachers'
 		| 'EducationalLeaders'
 		| 'GovernmentAndNGOs' = '';
+	export let isDynamic: boolean = true;
 
 	let el: HTMLElement;
 
@@ -30,7 +31,13 @@
 
 	let intervalPeriod = 300;
 
-	let showProgressBar = true;
+	let showProgressBar = false;
+	let progressBarIsActive = false;
+
+	let windowWidth: number;
+
+	$: progressBarIsActive = windowWidth >= 1280 && isDynamic;
+	$: showProgressBar = windowWidth >= 1280;
 
 	$: activeElement = elements[currentElementIdx];
 	$: progressBarWidth = (msPerSegment - msInCurrentSegment) / msPerSegment;
@@ -38,6 +45,10 @@
 	let intervalId: number;
 
 	const updateProgressBar = () => {
+		if (!progressBarIsActive) {
+			return;
+		}
+
 		msInCurrentSegment += intervalPeriod;
 		if (msInCurrentSegment > msPerSegment) {
 			msInCurrentSegment = 0;
@@ -51,6 +62,10 @@
 	};
 
 	const startProgressBar = () => {
+		if (!progressBarIsActive) {
+			return;
+		}
+
 		msInCurrentSegment += intervalPeriod;
 		clearInterval(intervalId);
 		intervalId = setInterval(updateProgressBar, intervalPeriod);
@@ -77,9 +92,11 @@
 	});
 </script>
 
+<svelte:window bind:innerWidth={windowWidth} />
+
 <IntersectionObserver element={el} on:intersect={startProgressBar}>
 	<div class="flex flex-wrap" bind:this={el}>
-		<div class="order-2 w-full pr-4 md:w-1/2 md:order-1">
+		<div class="order-2 w-full xl:pr-4 xl:w-1/2 xl:order-1">
 			<Text
 				{activeElement}
 				progress={progressBarWidth}
@@ -90,10 +107,7 @@
 				on:setactivegroup={handleSetActiveElement}
 			/>
 		</div>
-		<div class="order-1 w-full pl-4 mb-8 md:w-1/2 md:order-2">
-			<Diagram {activeElement} on:setactivegroup={handleSetActiveElement} />
-		</div>
-		<div class="order-1 w-full pl-4 mb-8 md:w-1/2 md:order-2">
+		<div class="order-1 w-full mb-8 xl:pl-4 xl:w-1/2 xl:order-2">
 			<Diagram {activeElement} on:setactivegroup={handleSetActiveElement} />
 		</div>
 	</div>
