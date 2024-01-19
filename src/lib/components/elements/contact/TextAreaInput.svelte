@@ -14,14 +14,14 @@
 
 <div class={additionalClasses}>
 	<label for={id} class="block text-lg font-semibold leading-6 text-gray-900">{label}</label>
-	<div class="relative mt-2 rounded-md shadow-sm">
+	<div class="relative mt-2 rounded-sm shadow-sm">
 		<textarea
 			{name}
 			{id}
 			{placeholder}
 			{required}
 			{disabled}
-			class="w-full rounded-md border-0 px-3.5 py-2.5 ring-1 ring-inset focus:ring-2 focus:ring-inset sm:text-lg sm:leading-6 placeholder:text-gray-400 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 disabled:ring-gray-200"
+			class="w-full rounded-sm border-0 px-3.5 py-2.5 ring-1 ring-inset focus:ring-2 focus:ring-inset sm:text-lg sm:leading-6 placeholder:text-gray-400 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 disabled:ring-gray-200"
 			class:text-red-900={error}
 			class:text-gray-900={!error}
 			class:ring-red-300={error}

@@ -4,6 +4,7 @@
 	export let target: string = '';
 	export let color: PPColors | string = '#1e87ab';
 	export let textColor: string = '#ffffff';
+	export let big = false;
 	export let action: () => void = () => {};
 
 	enum PPColors {
@@ -20,7 +21,9 @@
 
 <a
 	style="--clr: {color}; --textclr: {textColor}"
-	class="inline-flex items-center max-w-full gap-3 py-3 pl-5 pr-6 overflow-hidden text-xl break-words transition-colors bg-black rounded-sm decoration-0 button"
+	class="inline-flex items-center max-w-full gap-3 py-3 pl-5 pr-6 overflow-hidden font-black tracking-wide break-words transition-colors duration-300 bg-black border-8 rounded-sm decoration-0 button"
+	class:text-xl={!big}
+	class:text-3xl={big}
 	{href}
 	{target}
 	on:click={action}
@@ -60,6 +63,8 @@
 <style>
 	.button {
 		color: var(--textclr);
+		border-color: var(--clr);
+		box-sizing: border-box;
 	}
 
 	.button__icon-wrapper {

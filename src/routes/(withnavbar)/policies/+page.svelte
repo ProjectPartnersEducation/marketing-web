@@ -22,8 +22,8 @@
 </script>
 
 <StandardMargins addClass="mt-16">
-	<h1 class="text-6xl font-handwriting">Our Policies</h1>
-	<ul class="mt-16 space-y-8 text-2xl list-disc list-inside">
+	<h1 class="text-5xl font-black font-handwriting">Our Policies</h1>
+	<ul class="mt-16 space-y-8 text-2xl list-inside list-square">
 		{#each policies as policy}
 			<li id={policy.id}>
 				<a href={policy.href} class="underline decoration-ppyellow" target="_blank">{policy.text}</a

@@ -64,7 +64,7 @@
 	</a>
 	<a
 		href={bigLink.href}
-		class="flex items-center py-8 justify-center col-span-2 text-white transition-transform bg-black font-handwriting xl:text-6xl md:text-5xl text-4xl hover:scale-105 hover:text-[var(--tc)]"
+		class="flex items-center py-8 justify-center col-span-2 text-white transition-transform bg-black font-handwriting font-black xl:text-6xl md:text-5xl text-4xl hover:scale-105 hover:text-[var(--tc)]"
 		style="--tc: {bigLink.hoverColor}"
 	>
 		{bigLink.text}

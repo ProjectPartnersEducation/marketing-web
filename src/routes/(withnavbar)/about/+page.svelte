@@ -25,15 +25,27 @@
 	<title>About Us | Project Partners Education</title>
 </svelte:head>
 
-<BigTopImage imgSrc={assets + '/images/class-with-hands-up.jpg'} text="About" />
+<BigTopImage imgSrc={assets + '/images/class-with-hands-up.png'} text="About" />
 <div class="hidden pt-32 ml-32 border-b border-r mr-80 rounded-br-xl lg:block"></div>
 <div
 	class="px-6 py-24 lg:px-32 lg:mx-32 md:px-24 sm:px-12 lg:border-b lg:border-l rounded-bl-xl"
 	id="principles"
 >
-	<h2 class="mt-8 mb-8 text-5xl text-left font-handwriting">Our Principles</h2>
+	<h3 class="mt-8 mb-2 text-xl text-left font-handwriting text-ppblue">What we say</h3>
+	<h2 class="mb-8 text-5xl font-black text-left font-handwriting">Our Principles</h2>
 	<p class="text-2xl leading-loose text-justify">
-		Some preamble text here which introduces us in a personal way.
+		We believe that education allows young people to develop a fulfilled and resilient life. Our
+		work focuses on engaging school students with their learning so that they are ready for a
+		lifetime of curiosity and continuous development. In our view, learners showing interest and
+		engagement with the world around them is therefore the most important indicator of a successful
+		learning environment.
+	</p>
+	<p class="mt-8 text-2xl leading-loose text-justify">
+		To make this happen, we focus on creating innovative learning materials that not only inspire
+		students but also align with educational standards globally. We are also deeply committed to
+		empowering teachers with the skills, resources, and workplace support structures needed to
+		foster engaging and effective learning environments. In essence, our objective is to create an
+		ecosystem where continuous learning and engagement are at the heart of education for all.
 	</p>
 </div>
 <div class="px-6 md:px-24 sm:px-12 lg:px-32 lg:mx-32 lg:border-r py-36">
@@ -49,52 +61,63 @@
 <div class="mx-2 text-center lg:mx-32 md:mx-16 sm:mx-8 xl:mx-48">
 	<StrongBox>
 		<h3
-			class="inline-block px-4 py-2 mb-4 text-4xl text-white bg-black rounded-sm font-handwriting"
+			class="inline-block px-4 py-2 mb-8 text-4xl font-black text-white bg-black rounded-sm font-handwriting"
 		>
 			The Engaging Education Code
 		</h3>
 		<p class="text-2xl leading-relaxed text-left sm:text-justify">
-			The Engaging Education Code is a blueprint for educators, learners, and all stakeholders in
-			education to foster environments where curiosity, creativity, and collaboration flourish. This
-			Code is not just a set of ideals; it's a living guide that evolves with our collective
-			insights and experiences.
+			The Engaging Education Code represents our ongoing journey to define and refine our
+			educational beliefs. It's a flexible, evolving framework, reflective of our commitment to
+			open-mindedness and adaptability in the face of new evidence and perspectives.
 		</p>
 		<div class="relative w-full h-full bg-black top-4 left-4"></div>
 		<ol
-			class="px-6 py-8 mt-16 space-y-4 text-2xl leading-relaxed text-left text-white list-inside bg-black border-2 border-black rounded-sm md:px-12 sm:text-justify max-w"
+			class="pl-8 my-8 space-y-4 text-2xl leading-relaxed text-left list-inside border-l-8 border-black rounded-sm sm:text-justify max-w"
 		>
-			<h4 class="text-4xl font-handwriting">The Code</h4>
 			<li>
-				<span class="font-black">I Ignite Curiosity and Creativity:</span> In my teaching, I blend curiosity
-				with creativity, making learning an active, imaginative journey that resonates with every learner.
+				<span class="font-black">Ignite Curiosity and Creativity:</span> I integrate curiosity and creativity
+				in my teaching, transforming learning into an active, imaginative journey accessible to all learners.
 			</li>
 			<li>
-				<span class="font-black">I Foster Collaboration and Inclusivity:</span> I build communities in
-				education, where collaboration is key and every individual, regardless of background or ability,
-				is valued and supported.
+				<span class="font-black">Foster Collaboration and Inclusivity:</span> I cultivate educational
+				communities where collaboration is essential, and every person is included and valued, regardless
+				of their background or abilities.
 			</li>
 			<li>
-				<span class="font-black">I Connect Learning with Life:</span> My approach ties education to real-world
-				scenarios, ensuring that learning is relevant, engaging, and prepares learners for the challenges
-				ahead.
+				<span class="font-black">Connect Learning with Life:</span> I ensure that education is linked
+				to real-life contexts, making learning pertinent and equipping learners for future challenges.
 			</li>
 			<li>
-				<span class="font-black">I Nurture Critical and Independent Thinking:</span> I encourage learners
-				to question, analyse, and think independently, developing minds that can innovate and solve problems.
+				<span class="font-black">Nurture Critical and Independent Thinking:</span> I inspire learners
+				to question, analyse, and think for themselves, fostering minds capable of innovation and problem-solving.
 			</li>
 			<li>
-				<span class="font-black">I Embrace and Drive Change:</span> As part of a dynamic community, I
-				am committed to continuously evolving educational practices, ensuring they remain effective and
-				relevant.
+				<span class="font-black">Embrace and Drive Change:</span> As a proactive member of an evolving
+				educational community, I am dedicated to continually enhancing and updating teaching practices
+				to keep them effective and relevant.
 			</li>
 		</ol>
+		<p class="text-2xl leading-relaxed text-left sm:text-justify">
+			This Code guides how we operate as a charity and approach education, envisioned to evolve
+			democratically through our Engaging Educators Network, a collaborative platform for educators,
+			learners, and leaders. While not binding, it represents the ethos we strive to develop and
+			embody in our educational practices.
+		</p>
+		<div class="mt-8">
+			<Button
+				href="https://projectpartners.thinkific.com/products/communities/engaging-educators-network"
+				color="ppyellow"
+				text="Join our leaders' community"
+			/>
+		</div>
 	</StrongBox>
 </div>
 <div class="hidden grid-cols-2 mx-32 lg:grid">
 	<div class="py-16 border-b border-r"></div>
 </div>
 <div class="px-2 py-32 lg:px-32 lg:mx-32 md:px-24 sm:px-12 lg:border-b lg:border-l rounded-bl-xl">
-	<h2 class="mb-8 text-5xl text-left font-handwriting" id="work">Our Activities</h2>
+	<h3 class="mt-8 mb-2 text-xl text-left font-handwriting text-ppred">What we do</h3>
+	<h2 class="mb-8 text-5xl font-black text-left font-handwriting" id="work">Our Activities</h2>
 	<ProjectPartnersActivitiesDiagram />
 </div>
 <!-- <div class="grid grid-cols-2 px-8 lg:px-36 md:px-24 sm:px-16 gap-x-16">
@@ -142,7 +165,8 @@
 	id="team"
 	class="px-6 py-24 lg:px-32 lg:mx-32 md:px-24 sm:px-12 lg:border-b lg:border-r rounded-br-xl"
 >
-	<h2 class="mt-8 mb-8 text-5xl text-left font-handwriting" id="work">Our Team</h2>
+	<h3 class="mt-8 mb-2 text-xl text-left font-handwriting text-ppyellow">Who we are</h3>
+	<h2 class="mb-8 text-5xl font-black text-left font-handwriting" id="work">Our Team</h2>
 	<div class="flex flex-wrap justify-around flex-none gap-16">
 		{#each teamMembers as person}
 			<div class="">
@@ -173,7 +197,7 @@
 		imgsrc: `${assets}/images/IMG_0034.jpg`,
 		imgalt: 'Two children looking at a book',
 		text: 'Case Study: Ghana',
-		href: '',
+		href: '/about/ghana-case-study',
 		hoverColor: 'ppgreen'
 	}}
 	bigLink={{

@@ -45,14 +45,10 @@
 		{/if}
 	</div>
 	<div
-		class="w-full px-4 py-3 border-black rounded-sm"
+		class="w-full px-4 py-3 border-4 border-black rounded-sm"
 		on:mouseover={() => hoverEnterTextBox('')}
 		on:focus={() => hoverEnterTextBox('')}
 		on:mouseleave={() => hoverExitTextBox('')}
-		class:bg-white={activeElement === ''}
-		class:border-4={activeElement === ''}
-		class:bg-black={activeElement !== ''}
-		class:text-white={activeElement !== ''}
 		class:cursor-pointer={activeElement !== ''}
 		on:click={() => {
 			setActiveGroup('');
@@ -65,13 +61,12 @@
 		{#if activeElement === ''}
 			<div transition:slide class="mb-3 space-y-4">
 				<p class="text-xl leading-relaxed text-justify">
-					As a charity, we work at every level of the education system to ensure that we engage as
-					many people as possible in our mission to improve education.
+					We operate across the education spectrum, focusing on improving education by engaging
+					learners, educators, and leaders.
 				</p>
 				<p class="text-xl leading-relaxed text-justify">
-					This allows us to have the greatest impact on the lives of learners, teachers, and
-					educational leaders. We also work with governments and NGOs to ensure that our work is
-					sustainable and scalable.
+					We strive for impactful, sustainable change, collaborating with educational institutions,
+					governments, and NGOs.
 				</p>
 			</div>
 		{/if}
@@ -83,14 +78,10 @@
 		{/if}
 	</div>
 	<div
-		class="px-5 py-3 border-black rounded-sm"
+		class="px-5 py-3 border-4 border-black rounded-sm"
 		on:mouseover={() => hoverEnterTextBox('Learners')}
 		on:focus={() => hoverEnterTextBox('Learners')}
 		on:mouseleave={() => hoverExitTextBox('Learners')}
-		class:bg-white={activeElement === 'Learners'}
-		class:border-4={activeElement === 'Learners'}
-		class:bg-black={activeElement !== 'Learners'}
-		class:text-white={activeElement !== 'Learners'}
 		class:cursor-pointer={activeElement !== 'Learners'}
 		on:click={() => {
 			setActiveGroup('Learners');
@@ -113,16 +104,14 @@
 		{#if activeElement === 'Learners'}
 			<div transition:slide class="mb-3 space-y-4">
 				<p class="text-xl leading-relaxed text-justify">
-					We develop learning materials for learners of all ages. Central to our work with learners
-					are our Project Packs, with our flagship Maths programme our current focus.
+					Our learning materials, including the flagship Project:Maths project packs, are designed
+					for learners of all ages. These resources foster active, creative learning experiences.
 				</p>
 				<p class="text-xl leading-relaxed text-justify">
-					All of our learning materials are free to download and use via our website or on WhatsApp.
-					Furthermore, we are currently working on a new online platform to make our learning
-					materials even more accessible and engaging.
+					All of our materials are accessible for free download on our website, forever.
 				</p>
 				<div class="text-xl leading-relaxed text-center">
-					<Button text="Go to our Learning Portal" href="/learning-materials" color="pporange" />
+					<Button text="Go to our Learning Portal" href="/resources#learners" color="pporange" />
 				</div>
 			</div>
 		{/if}
@@ -134,14 +123,10 @@
 		{/if}
 	</div>
 	<div
-		class="px-5 py-3 border-black rounded-sm"
+		class="px-5 py-3 border-4 border-black rounded-sm"
 		on:mouseover={() => hoverEnterTextBox('Teachers')}
 		on:focus={() => hoverEnterTextBox('Teachers')}
 		on:mouseleave={() => hoverExitTextBox('Teachers')}
-		class:bg-white={activeElement === 'Teachers'}
-		class:border-4={activeElement === 'Teachers'}
-		class:bg-black={activeElement !== 'Teachers'}
-		class:text-white={activeElement !== 'Teachers'}
 		class:cursor-pointer={activeElement !== 'Teachers'}
 		on:click={() => {
 			setActiveGroup('Teachers');
@@ -164,18 +149,17 @@
 		{#if activeElement === 'Teachers'}
 			<div transition:slide class="mb-3 space-y-4">
 				<p class="text-xl leading-relaxed text-justify">
-					We support teachers' development through our learning materials and teacher training
-					programmes. Our teacher training programmes are designed to be as accessible as possible
-					and are free to attend.
+					Our teacher support extends beyond learning materials to include accessible, free training
+					programmes, enhancing pedagogical skills and methodologies.
 				</p>
 				<p class="text-xl leading-relaxed text-justify">
-					We also provide teachers with a range of resources to support their professional
-					development, including our Teacher Toolkit and our Teacher Community.
+					We also aim to provide all the resources needed to foster a collaborative and
+					growth-oriented professional environment.
 				</p>
 				<div class="text-xl leading-relaxed text-center">
 					<Button
 						text="Find out about our teacher training"
-						href="/learning-materials"
+						href="/resources#teachers"
 						color="ppyellow"
 					/>
 				</div>
@@ -189,14 +173,10 @@
 		{/if}
 	</div>
 	<div
-		class="px-5 py-3 border-black rounded-sm"
+		class="px-5 py-3 border-4 border-black rounded-sm"
 		on:mouseover={() => hoverEnterTextBox('EducationalLeaders')}
 		on:focus={() => hoverEnterTextBox('EducationalLeaders')}
 		on:mouseleave={() => hoverExitTextBox('EducationalLeaders')}
-		class:bg-white={activeElement === 'EducationalLeaders'}
-		class:border-4={activeElement === 'EducationalLeaders'}
-		class:bg-black={activeElement !== 'EducationalLeaders'}
-		class:text-white={activeElement !== 'EducationalLeaders'}
 		class:cursor-pointer={activeElement !== 'EducationalLeaders'}
 		on:click={() => {
 			setActiveGroup('EducationalLeaders');
@@ -219,10 +199,17 @@
 		{#if activeElement === 'EducationalLeaders'}
 			<div transition:slide class="mb-3 space-y-4">
 				<p class="text-xl leading-relaxed text-justify">
-					Our community for educational leaders is also good
+					The Engaging Educators Network is our initiative to connect education leaders worldwide,
+					offering an open platform for sharing innovative practices and fostering professional
+					growth.
+				</p>
+				<p class="text-xl leading-relaxed text-justify">
+					Within this network, leaders in education come together to discuss challenges, share
+					successes, and collaborate on projects that further our mission of engaging and effective
+					education.
 				</p>
 				<div class="text-xl leading-relaxed text-center">
-					<Button text="Join our leaders' community" href="/learning-materials" color="ppgreen" />
+					<Button text="Join our leaders' community" href="/resources#leaders" color="ppgreen" />
 				</div>
 			</div>
 		{/if}
@@ -234,14 +221,10 @@
 		{/if}
 	</div>
 	<div
-		class="px-5 py-3 border-black rounded-sm"
+		class="px-5 py-3 border-4 border-black rounded-sm"
 		on:mouseover={() => hoverEnterTextBox('GovernmentAndNGOs')}
 		on:focus={() => hoverEnterTextBox('GovernmentAndNGOs')}
 		on:mouseleave={() => hoverExitTextBox('GovernmentAndNGOs')}
-		class:bg-white={activeElement === 'GovernmentAndNGOs'}
-		class:border-4={activeElement === 'GovernmentAndNGOs'}
-		class:bg-black={activeElement !== 'GovernmentAndNGOs'}
-		class:text-white={activeElement !== 'GovernmentAndNGOs'}
 		class:cursor-pointer={activeElement !== 'GovernmentAndNGOs'}
 		on:click={() => {
 			setActiveGroup('GovernmentAndNGOs');
@@ -264,7 +247,13 @@
 		{#if activeElement === 'GovernmentAndNGOs'}
 			<div transition:slide class="mb-3 space-y-4">
 				<p class="text-xl leading-relaxed text-justify">
-					We collaborate at the highest levels of government to make stuff happen
+					We collaborate at the governmental level with organisations like UNESCO and the Ghanaian
+					Education Service (GES) to enhance the quality of maths teaching wherever we operate.
+				</p>
+				<p class="text-xl leading-relaxed text-justify">
+					Our advocacy focuses on shaping policies and initiatives that align with our vision of
+					engaging, creative, and practical education, ensuring long-term, sustainable impact in the
+					educational sector.
 				</p>
 				<div class="text-xl leading-relaxed text-center">
 					<Button

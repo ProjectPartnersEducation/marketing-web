@@ -2,6 +2,7 @@
 	// Import styles.
 	import 'vidstack/player/styles/default/theme.css';
 	import 'vidstack/player/styles/default/layouts/video.css';
+	import type { TextTrackInit } from 'vidstack';
 
 	// Register elements.
 	import 'vidstack/player';
@@ -15,7 +16,7 @@
 	import type { MediaPlayerElement } from 'vidstack/elements';
 
 	export let src: string;
-	export let textTracks: TextTrack[] = [];
+	export let textTracks: TextTrackInit[] = [];
 	export let onCanPlay: (event: MediaCanPlayEvent) => void = () => {};
 
 	let player: MediaPlayerElement;
@@ -38,7 +39,7 @@
 		<media-provider>
 			<media-poster
 				class="vds-poster"
-				src="{assets}/images/logo_spacious.png"
+				src="https://image.mux.com/A4yMUY477Z7NzmVEXJzUpuHtYd1H02Cw96kK9RlpsA00A/thumbnail.png?width=214&height=121&time=12"
 				alt="The Project Partners Education logo"
 			/>
 		</media-provider>

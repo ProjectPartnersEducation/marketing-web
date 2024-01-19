@@ -44,7 +44,7 @@
       }
 
       .thst-3 {
-        fill: #f4c773;
+        fill: #f3a061;
       }
 
       .thst-4 {
@@ -52,11 +52,11 @@
       }
 
       .thst-5 {
-        fill: #a0c8b0;
+        fill: #93b195;
       }
 
       .thst-6 {
-        fill: #f19c73;
+        fill: #cea0b5;
       }
     </style>
     <clipPath id="clippath">

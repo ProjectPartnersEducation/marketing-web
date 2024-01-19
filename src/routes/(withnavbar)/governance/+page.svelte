@@ -3,11 +3,13 @@
 </script>
 
 <StandardMargins addClass="mt-16">
-	<h1 class="text-6xl font-handwriting">Our Governance</h1>
+	<h1 class="text-5xl font-black font-handwriting">Our Governance</h1>
 	<div class="mt-12 space-y-8 text-2xl leading-loose md:text-justify">
 		<p>
 			Project Partners Education CIO, Registration Number 1189396, is a Charitable Incorporated
-			Organisation (CIO) established with the Charity Commission for England and Wales since 2020.
+			Organisation (CIO) established with the Charity Commission for England and Wales since 7<span
+				class="text-sm align-super">th</span
+			> May 2020.
 		</p>
 		<p>
 			You can find up-to-date information about our contact details (including registered address),
@@ -29,10 +31,8 @@
 			the Constitution can be ratified by democratic vote.
 		</p>
 		<p>
-			<a
-				href="https://storage.googleapis.com/pp-public-resources/governance/constitution/Project%20Partners%20Education%20Constitution%20-%2008-07-2023.pdf"
-				target="_blank"
-				class="underline decoration-ppyellow">Download our our Constitution</a
+			<a href="/constitution" target="_blank" class="underline decoration-ppyellow"
+				>Download our our Constitution</a
 			>
 		</p>
 	</div>

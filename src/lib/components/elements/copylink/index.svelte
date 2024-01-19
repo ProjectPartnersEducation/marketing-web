@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { fade } from 'svelte/transition';
+
 	export let additionalClasses: string = '';
 	export let text: string = '';
 	export let link: string = text;
@@ -6,7 +8,7 @@
 </script>
 
 <button
-	class="cursor-pointer underline decoration-ppyellow decoration-dashed {additionalClasses}"
+	class="cursor-pointer underline decoration-ppyellow decoration-1 decoration-dashed {additionalClasses}"
 	on:click={() => {
 		navigator.clipboard.writeText(link);
 		showCopyAlert = true;
@@ -20,7 +22,7 @@
 	{#if showCopyAlert}
 		<span
 			class="inline-flex items-center px-2 py-1 text-sm font-medium text-green-700 bg-green-100 rounded-full"
-			>Copied!</span
+			transition:fade={{ duration: 100 }}>Copied!</span
 		>
 	{/if}
 </slot>

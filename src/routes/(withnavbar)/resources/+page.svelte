@@ -73,7 +73,7 @@
 	<title>Our Resources | Project Partners Education</title>
 </svelte:head>
 
-<BigTopImage imgSrc={assets + '/images/class-with-hands-up.jpg'} text="Resources" />
+<BigTopImage imgSrc={assets + '/images/IMG_0114 2.png'} text="Resources" />
 
 <div class="px-6 mt-8 xl:px-48 lg:px-32 md:px-24 sm:px-12">
 	<div class="grid gap-8 md:grid-cols-3 place-items-center">
@@ -123,7 +123,7 @@
 	<div class="h-24 border-b border-l border-r shadow-sm"></div>
 </div>
 <div class="px-8 pt-48 xl:px-64 lg:px-48 md:px-24 sm:px-16" id="learners">
-	<h2 class="text-5xl font-handwriting">Learn with Project Partners</h2>
+	<h2 class="text-5xl font-black font-handwriting">Learn with Project Partners</h2>
 	<p class="mt-8 text-2xl leading-loose text-justify">
 		We want to build the world's best library of free learning resources for young people. Our
 		project packs will help you develop your skills and gain confidence applying your knowledge to
@@ -132,7 +132,7 @@
 </div>
 <div class="px-6 mt-16 border-black xl:px-48 lg:px-32 md:px-16 sm:px-12">
 	<div
-		class="grid grid-cols-1 md:grid-cols-[70%,30%] gap-x-8 border-4 border-black rounded-lg xl:px-32 lg:px-24 md:px-16 sm:px-12 px-6 py-16 shadow-xl bg-[#fffffc]"
+		class="grid grid-cols-1 md:grid-cols-[70%,30%] gap-x-8 border-4 border-black rounded-sm xl:px-32 lg:px-24 md:px-16 sm:px-12 px-6 py-16 shadow-xl bg-[#fffffc]"
 	>
 		<div class="w-full">
 			<div class="grid md:grid-cols-[75%,25%] grid-rows-3 gap-y-2 gap-x-8">
@@ -145,7 +145,7 @@
 				</div>
 				<div>
 					<span class="px-2 text-xl italic font-black text-white border border-black bg-ppblue">
-						Ages 13+
+						Ages 11+
 					</span>
 				</div>
 				<div>
@@ -168,8 +168,8 @@
 		<div class="mt-8 text-center md:col-span-2">
 			<Button
 				text="To the learning portal!"
-				href="https://learn.projectpartners.org"
-				color="ppred"
+				href="https://shop.projectpartners.org"
+				color="ppyellow"
 			/>
 		</div>
 	</div>
@@ -185,34 +185,34 @@
 </div>
 
 <div class="px-6 pt-48 xl:px-64 lg:px-32 md:px-24 sm:px-12" id="teachers">
-	<h2 class="text-5xl font-handwriting">Teach with Project Partners</h2>
+	<h2 class="text-5xl font-black font-handwriting">Teach with Project Partners</h2>
 	<p class="mt-8 text-2xl leading-loose md:text-justify">
 		Expand your teaching practice with our free resources and innovative professional development
-		workshops to develop your skills as an engaging educator. We are committed to supporting the
+		courses to develop your skills as an engaging educator. We are committed to supporting the
 		professional development of teachers and educators - because the future of education starts with
-		you.
+		excellent teachers.
 	</p>
 	<div class="mx-32 my-16 border-b"></div>
-	<div class="text-2xl font-black text-center">Teaching with our project packs?</div>
+	<div class="text-2xl font-black text-center">Want to teach with our project packs?</div>
 	<div class="mt-4 text-2xl leading-loose text-center">
 		Find all of our teaching resources (and more!) on our <a
-			href="https://learn.projectpartners.org/teachers"
+			href="https://shop.projectpartners.org/"
 			class="font-handwriting"
 			target="_blank">Learning Portal</a
 		><svg inline-src="open-in-new" class="inline-block h-8 ml-2 -translate-y-1" />
 	</div>
 	<div class="mx-32 my-16 border-b"></div>
-	<h3 class="mt-16 text-3xl font-black">Our Professional Certifications</h3>
+	<h3 class="mt-16 text-3xl font-black">Our Professional Courses</h3>
 	<p class="mt-4 text-2xl leading-loose md:text-justify">
 		We are currently working with the National Teaching Council of Ghana to develop a series of
-		professional certifications for teachers and educators. These certifications will count towards
-		your annual teaching license renewal and are designed to help you develop your skills as an
-		engaging educator.
+		professional courses for teachers and educators. For teachers in Ghana, these will count towards
+		the annual teaching license renewal requirements and are designed to help teachers develop the
+		skills to be an engaging educator.
 	</p>
 	<div class="grid gap-8 mt-8 md:grid-cols-2 place-items-center">
 		<div class="order-2 md:order-1">
 			<h4 class="text-2xl font-black">What are the benefits?</h4>
-			<ul class="mt-4 text-2xl leading-loose list-disc list-inside md:text-justify">
+			<ul class="mt-4 text-2xl leading-loose list-inside list-square md:text-justify">
 				<li>Develop your skills as an engaging educator</li>
 				<li>Gain recognition for your professional development</li>
 				<li>Count towards your annual teaching license renewal</li>
@@ -221,18 +221,24 @@
 				<li>Gain access to our global network of education leaders</li>
 			</ul>
 		</div>
-		<img
-			src="{assets}/images/teacher-with-students-happy.jpg"
-			class="order-1 border-4 border-black md:order-2"
-		/>
+		<img src="{assets}/images/IMG_0533.png" class="order-1 border-4 border-black md:order-2" />
 	</div>
 	<div class="mx-32 my-16 border-b"></div>
 	<p class="text-2xl leading-loose text-justify">
-		Our professional certifications for teachers are on our roadmap but are not available yet. If
-		you would like to be notified when they are ready, or involved in its design, please register
-		your interest below and we will be in touch.
+		Our professional courses for teachers are currently being reviewed by our expert advisors and
+		are not yet open for registration. If you would like to be notified when they are ready, or
+		involved in its design, please register your interest below and we will be in touch.
 	</p>
-	<form
+	<div class="w-full gap-4 mt-8 text-center">
+		<Button
+			text="Register your interest today"
+			href="https://projectpartners.thinkific.com/courses/creative-maths-ghana"
+			color="ppgreen"
+			target="_blank"
+		/>
+	</div>
+
+	<!-- <form
 		class="flex flex-wrap flex-1 w-full gap-4 mt-8 place-items-center"
 		on:submit|preventDefault={subscribe}
 	>
@@ -253,7 +259,7 @@
 		<button type="submit">
 			<Button text="Register interest" />
 		</button>
-	</form>
+	</form> 
 	<div class="col-span-2">
 		{#if status}
 			<div class="text-green-500">
@@ -272,32 +278,23 @@
 			href="#"
 			class="font-black">Privacy Policy</a
 		>.
-	</div>
+	</div> -->
 </div>
 
 <div class="px-6 pt-48 xl:px-64 lg:px-48 md:px-24 sm:px-12" id="leaders">
-	<h2 class="text-5xl font-handwriting">Lead with Project Partners</h2>
+	<h2 class="text-5xl font-black font-handwriting">Lead with Project Partners</h2>
 	<p class="mt-8 text-2xl leading-loose text-justify">
-		If you are a school or community leader, you are warmly invited to join our global Project
-		Partners Network. We are committed to supporting you in your work to transform your school or
-		community into a space where curiosity, creativity, and collaboration are the number one
-		priority.
+		If you are a school or community leader, we are committed to supporting you in your work to
+		transform your school or community into a space where curiosity, creativity, and collaboration
+		are the number one priority.
 	</p>
-	<p class="mt-8 text-2xl leading-loose text-justify text-slate-500">
-		If you are a non-profit organisation, NGO, or government agency, please visit our <a
-			href="/get-involved/institutions"
-			class="underline"
-		>
-			Institutional Supporters
-		</a> page to discover how we can work together.
-	</p>
-	<h3 class="mt-8 text-3xl font-black">Project Partners Network</h3>
+	<h3 class="mt-8 text-3xl font-black">The Engaging Educators Network</h3>
 	<p class="mt-4 text-2xl leading-loose text-justify">
 		Join a community of individuals dedicated to reshaping the educational landscape in line with
-		the Engaging Education Code. The Project Partners Network is a space for sharing ideas, learning
-		from others, and taking actionable steps towards a more engaging learning environment.
+		The Engaging Education Code. The Engaging Educators Network is a space for sharing ideas,
+		learning from others, and taking actionable steps towards a more engaging learning environment.
 	</p>
-	<h3 class="inline-block px-2 mt-8 text-3xl text-white bg-black font-handwriting">
+	<!-- <h3 class="inline-block px-2 mt-8 text-3xl text-white bg-black font-handwriting">
 		The Engaging Education Code
 	</h3>
 	<p class="mt-4 text-2xl leading-loose text-justify">
@@ -306,13 +303,18 @@
 		emphasise curiosity, creativity, and collaborative engagement in the learning process. While
 		adherence to the code symbolises a commitment to these principles, it's a flexible framework
 		that is continuously refined by the Project Partners Network community.
-		<!-- Through a democratic process, specifically during our Annual General Meetings, members have the
+		Through a democratic process, specifically during our Annual General Meetings, members have the
 		opportunity to alter and update the code, ensuring it remains relevant and effective in pursuing
-		our shared goals. -->
-	</p>
-	<a href="/resources/apply" class="inline-block mt-4">
-		<Button text="Apply to join" href="/resources/apply" />
-	</a>
+		our shared goals. 
+	</p> -->
+	<div class="w-full mt-8 text-center">
+		<Button
+			text="Join The Engaging Educators Network"
+			color="pppink"
+			href="https://projectpartners.thinkific.com/products/communities/engaging-educators-network"
+			target="_blank"
+		/>
+	</div>
 	<!-- <div>
 		<div data-canny></div>
 		<script>
@@ -371,7 +373,7 @@
 	link1={{
 		imgsrc: `${assets}/images/IMG_0459.jpg`,
 		imgalt: 'A smiling teacher with his arms crossed',
-		text: 'Read about our work',
+		text: 'Read about us',
 		href: '/about',
 		hoverColor: 'ppyellow'
 	}}

@@ -9,24 +9,30 @@
 	import Footer from '$lib/components/ui/footer/index.svelte';
 
 	let Player: any;
+
+	const showIncompleteElements = false;
 </script>
 
 <svelte:head>
 	<title>Project Partners Education</title>
 </svelte:head>
 
-<div class="h-full min-h-screen bg-black snap-start" id="videowindow">
-	{#await import('$lib/components/ui/fullpagevideo/index.svelte') then { default: Player }}
-		<svelte:component this={Player} />
-	{/await}
-</div>
+{#if showIncompleteElements}
+	<div class="h-full min-h-screen bg-black snap-start" id="videowindow">
+		{#await import('$lib/components/ui/fullpagevideo/index.svelte') then { default: Player }}
+			<svelte:component this={Player} />
+		{/await}
+	</div>
+{/if}
 
 <div class="max-w-screen snap-start">
 	<Navbar />
-	<div class="hidden w-full grid-cols-2 px-8 lg:px-36 md:px-24 sm:px-16 lg:grid">
-		<div></div>
-		<div class="h-24 border-b border-l rounded-bl-lg"></div>
-	</div>
+	{#if showIncompleteElements}
+		<div class="hidden w-full grid-cols-2 px-8 lg:px-36 md:px-24 sm:px-16 lg:grid">
+			<div></div>
+			<div class="h-24 border-b border-l rounded-bl-lg"></div>
+		</div>
+	{/if}
 	<div class="px-6 mb-12 lg:px-36 md:px-24 sm:px-16 snap-proximity">
 		<div class="grid items-center w-full grid-cols-1 gap-16 pt-24 lg:border-r lg:grid-cols-2">
 			<StrongImage
@@ -48,17 +54,19 @@
 				<div class="mt-8 text-center lg:text-left">
 					<Button text="Learn about what we do" href="/about" color="ppgreen" />
 				</div>
-				<div class="inline-block pt-8 mt-8 lg:border-t">
-					<span class="inline-block align-middle"
-						>[1]: <a
-							href="https://issuu.com/projectpartnersedu"
-							target="_blank"
-							class="underline hover:text-slate-500"
-							>"Project Partners: Towards Fully-Engaged Learning", 2023</a
-						></span
-					>
-					<svg inline-src="open-in-new" class="inline-block h-4 align-middle" />
-				</div>
+				{#if showIncompleteElements}
+					<div class="inline-block pt-8 mt-8 lg:border-t">
+						<span class="inline-block align-middle"
+							>[1]: <a
+								href="https://issuu.com/projectpartnersedu"
+								target="_blank"
+								class="underline hover:text-slate-500"
+								>"Project Partners: Towards Fully-Engaged Learning", 2023</a
+							></span
+						>
+						<svg inline-src="open-in-new" class="inline-block h-4 align-middle" />
+					</div>
+				{/if}
 			</div>
 		</div>
 		<div class="relative hidden w-full h-48 rounded-br-lg lg:border-b lg:border-r lg:block">
@@ -97,7 +105,7 @@
 		<div class="w-full h-48 lg:border-r snap-start" />
 		<div class="grid items-center w-full grid-cols-1 gap-16 lg:border-r lg:grid-cols-2">
 			<StrongImage
-				src="{assets}/images/IMG_0533.jpg"
+				src="{assets}/images/IMG_0290.png"
 				bgColor="ppblue"
 				alt="A teacher and a student looking at a Project Partners project pack"
 			/>
@@ -122,6 +130,26 @@
 			</div>
 		</div>
 		<div class="relative hidden w-1/2 h-48 border-b border-r rounded-br-lg left-1/2 lg:block" />
+		<div class="w-1/2 h-48 lg:border-r" />
+		<div class="w-full px-6 border-b lg:px-36 md:px-24 sm:px-16"></div>
+		<div class="lg:px-16 lg:py-24">
+			<h2 class="py-2 text-4xl font-black text-center underline font-handwriting">
+				We are proudly supported by
+			</h2>
+			<h3 class="mt-16 text-2xl font-black">Our Government Partners</h3>
+			<div class="grid grid-cols-2 gap-4 mt-6 md:grid-cols-4 place-items-center">
+				<img class=" max-h-24" src="{assets}/images/supporters/unesco-ghana-logo.png" />
+				<img class=" max-h-24" src="{assets}/images/supporters/ges-logo.png" />
+				<img class=" max-h-24" src="{assets}/images/supporters/nacca-logo.png" />
+				<img class=" max-h-24" src="{assets}/images/supporters/ntc-logo.jpg" />
+			</div>
+			<h3 class="mt-16 text-2xl font-black">Our NGO Partners</h3>
+			<div class="grid grid-cols-2 gap-4 mt-6 md:grid-cols-3 place-items-center">
+				<img class=" max-h-24" src="{assets}/images/supporters/brightside-logo.png" />
+				<img class=" max-h-24" src="{assets}/images/supporters/rotary-club-logo.png" />
+			</div>
+		</div>
+		<div class="w-full px-6 border-b lg:px-36 md:px-24 sm:px-16"></div>
 		<div class="w-1/2 h-48 lg:border-r snap-start" />
 		<StrongBox snap={false}>
 			<div class="grid items-center w-full grid-cols-1 gap-4 text-center">
@@ -148,7 +176,7 @@
 					to get involved and we'd love to hear from you.
 				</p>
 				<div class="mt-8">
-					<Button text="Get involved!" href="/get-involved" color="ppred" />
+					<Button text="Get involved!" href="/get-involved" color="ppred" big={true} />
 				</div>
 			</div>
 		</StrongBox>
@@ -165,8 +193,8 @@
 		link2={{
 			imgsrc: `${assets}/images/IMG_0034.jpg`,
 			imgalt: 'Two children looking at a book',
-			text: 'Case Study: Ghana',
-			href: '',
+			text: 'Read about us',
+			href: '/about',
 			hoverColor: 'ppgreen'
 		}}
 		bigLink={{

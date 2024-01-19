@@ -7,8 +7,9 @@ export default {
 			black: 800
 		},
 		fontFamily: {
-			sans: ['Nunito Sans', 'ui-sans-serif', 'system-ui'],
-			handwriting: ['Caveat Brush', 'ui-sans-serif', 'system-ui'],
+			sans: ['Nunito Sans Variable', 'ui-sans-serif', 'system-ui'],
+			handwriting: ['Libre Franklin Variable', 'Caveat Brush', 'ui-sans-serif', 'system-ui'],
+			// handwriting: ['Caveat Brush', 'ui-sans-serif', 'system-ui'],
 			pptext: ['Satisfy', 'ui-sans-serif', 'system-ui'],
 			mono: ['VT323', 'ui-monospace', 'SFMono-Regular'],
 		},
@@ -20,6 +21,9 @@ export default {
 				pporange: "#f3a061",
 				ppblue: "#1e87ab",
 				ppred: "#d01c1c",
+			},
+			listStyleType: {
+				square: 'square',
 			},
 		}
 	},

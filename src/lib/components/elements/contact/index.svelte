@@ -4,6 +4,7 @@
 	import { contactFormContent, resetContactForm } from './contactStore';
 	import TextInput from '$lib/components/elements/contact/TextInput.svelte';
 	import TextAreaInput from '$lib/components/elements/contact/TextAreaInput.svelte';
+	import CopyLink from '$lib/components/elements/copylink/index.svelte';
 
 	const accessKey = '3149ae28-80f8-4473-a6da-8677d4807356';
 
@@ -31,8 +32,8 @@
 		lastName: '',
 		email: '',
 		message: '',
-		agreement: false,
-		ageOrConsent: false
+		agreement: '',
+		ageOrConsent: ''
 	};
 
 	let formIsValid = false;
@@ -97,9 +98,7 @@
 
 		if (displayErrors && !$contactFormContent.email) {
 			errors.email = 'Please enter your email address';
-		}
-
-		if (displayErrors && !isValidEmail($contactFormContent.email)) {
+		} else if (displayErrors && !isValidEmail($contactFormContent.email)) {
 			errors.email = 'Please check your email address';
 		}
 
@@ -108,11 +107,12 @@
 		}
 
 		if (displayErrors && !formSwitches.agreement) {
-			errors.agreement = true;
+			errors.agreement = 'Please read and agree to our Privacy Policy';
 		}
 
 		if (displayErrors && !formSwitches.ageOrConsent) {
-			errors.ageOrConsent = true;
+			errors.ageOrConsent =
+				'Please confirm that you are over 18 or that you have parental consent to submit this form';
 		}
 
 		// Now loop through all form elements, check if they are required and if they are, check if they are valid
@@ -164,6 +164,8 @@
 			console.error(json.message);
 		}
 	};
+
+	$: thereAreErrors = !Object.values(errors).every((x) => x === '');
 </script>
 
 <form
@@ -252,7 +254,7 @@
 							return;
 						}
 						formSwitches.agreement = !formSwitches.agreement;
-						errors.agreement = false;
+						errors.agreement = '';
 						validateFormData();
 					}}
 				>
@@ -293,7 +295,7 @@
 							return;
 						}
 						formSwitches.ageOrConsent = !formSwitches.ageOrConsent;
-						errors.ageOrConsent = false;
+						errors.ageOrConsent = '';
 						validateFormData();
 					}}
 				>
@@ -343,14 +345,52 @@
 			</label>
 		</div>
 	</div>
+	{#if thereAreErrors}
+		<div class="p-4 mt-5 rounded-sm bg-red-50">
+			<div class="flex">
+				<div class="flex-shrink-0">
+					<svg
+						class="w-5 h-5 text-red-400"
+						viewBox="0 0 20 20"
+						fill="currentColor"
+						aria-hidden="true"
+					>
+						<path
+							fill-rule="evenodd"
+							d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z"
+							clip-rule="evenodd"
+						/>
+					</svg>
+				</div>
+				<div class="ml-3">
+					<h3 class="text-red-800">
+						Oops! Please check you've filled in all the information correctly.
+					</h3>
+					<div class="my-2 text-red-800">
+						<ul class="space-y-1 list-inside list-square">
+							{#each Object.values(errors) as error}
+								{#if error}
+									<li>
+										{error}
+									</li>
+								{/if}
+							{/each}
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	{/if}
 	<div class="mt-10">
 		<button
 			type="submit"
 			class="
-				block w-full rounded-sm px-3.5 py-2.5 text-center text-lg font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ppblue disabled:cursor-not-allowed"
-			class:bg-ppblue={formIsValid && formState !== 'loading' && formState !== 'success'}
-			class:hover:bg-indigo-500={formIsValid && formState !== 'loading' && formState !== 'success'}
-			class:bg-indigo-300={!formIsValid || formState === 'loading' || formState === 'success'}
+				block w-full rounded-sm px-3.5 py-2.5 text-center text-lg font-semibold opacity-100 bg-ppblue text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ppblue disabled:cursor-not-allowed"
+			class:hover:shadow-md={formIsValid && formState !== 'loading' && formState !== 'success'}
+			class:hover:shadow-[#27ACD9]={formIsValid &&
+				formState !== 'loading' &&
+				formState !== 'success'}
+			class:opacity-50={!formIsValid || formState === 'loading' || formState === 'success'}
 			disabled={formState === 'loading' || formState === 'success'}
 		>
 			{#if formState === 'loading'}
@@ -382,21 +422,6 @@
 				<div class="ml-3">
 					<p class="text-sm font-medium text-green-800">Thank you, we will get back to you soon!</p>
 				</div>
-				<div class="pl-3 ml-auto">
-					<div class="-mx-1.5 -my-1.5">
-						<button
-							type="button"
-							class="inline-flex rounded-md bg-green-50 p-1.5 text-green-500 hover:bg-green-100 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2 focus:ring-offset-green-50"
-						>
-							<span class="sr-only">Dismiss</span>
-							<svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-								<path
-									d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"
-								/>
-							</svg>
-						</button>
-					</div>
-				</div>
 			</div>
 		</div>
 	{:else if formState === 'error'}
@@ -421,7 +446,7 @@
 					<div class="mt-2 text-sm text-red-700">
 						<p>
 							We're sorry! Please check your internet connection or, if the error persists, please
-							email us instead at hello@projectpartners.org.
+							email us instead at <CopyLink text="hello@projectpartners.org" />.
 						</p>
 					</div>
 				</div>
