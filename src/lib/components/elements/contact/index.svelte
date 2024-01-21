@@ -5,6 +5,7 @@
 	import TextInput from '$lib/components/elements/contact/TextInput.svelte';
 	import TextAreaInput from '$lib/components/elements/contact/TextAreaInput.svelte';
 	import CopyLink from '$lib/components/elements/copylink/index.svelte';
+	import Button from '$lib/components/elements/button.svelte';
 
 	const accessKey = '3149ae28-80f8-4473-a6da-8677d4807356';
 

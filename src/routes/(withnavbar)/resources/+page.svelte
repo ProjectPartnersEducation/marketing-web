@@ -381,14 +381,14 @@
 		imgsrc: `${assets}/images/IMG_0034.jpg`,
 		imgalt: 'Two children looking at a book',
 		text: 'Case Study: Ghana',
-		href: '',
+		href: '/about/ghana-case-study',
 		hoverColor: 'ppgreen'
 	}}
 	bigLink={{
 		imgsrc: `${assets}/images/IMG_0034.jpg`,
 		imgalt: 'A smiling teacher with his arms crossed',
 		text: 'Get Involved',
-		href: '',
+		href: '/get-involved',
 		hoverColor: 'ppred'
 	}}
 />
