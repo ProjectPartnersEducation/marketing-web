@@ -19,6 +19,7 @@ export default {
 				ppgreen: "#93b195",
 				ppyellow: "#eeb019",
 				pporange: "#f3a061",
+				ppdarkorange: "#e75519",
 				ppblue: "#1e87ab",
 				ppred: "#d01c1c",
 			},

@@ -129,7 +129,7 @@
 						<div
 							class="z-10 flex items-center justify-center w-6 h-6 rounded-full bg-primary-200 ring-0 ring-white dark:bg-primary-900 sm:ring-8 dark:ring-gray-900 shrink-0"
 						>
-							<Icon icon="mdi-light:home" class="w-full h-full text-gray-600" />
+							<Icon icon="solar:rocket-bold-duotone" class="w-full h-full text-ppdarkorange" />
 						</div>
 						<div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700" />
 					</div>
@@ -147,7 +147,12 @@
 					<div class="flex items-center">
 						<div
 							class="z-10 flex items-center justify-center w-6 h-6 rounded-full bg-primary-200 ring-0 ring-white dark:bg-primary-900 sm:ring-8 dark:ring-gray-900 shrink-0"
-						></div>
+						>
+							<Icon
+								icon="solar:diploma-verified-bold-duotone"
+								class="w-full h-full text-ppyellow"
+							/>
+						</div>
 						<div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700" />
 					</div>
 				</svelte:fragment>
@@ -165,7 +170,9 @@
 					<div class="flex items-center">
 						<div
 							class="z-10 flex items-center justify-center w-6 h-6 rounded-full bg-primary-200 ring-0 ring-white dark:bg-primary-900 sm:ring-8 dark:ring-gray-900 shrink-0"
-						></div>
+						>
+							<Icon icon="solar:earth-bold-duotone" class="w-full h-full text-ppblue" />
+						</div>
 						<div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700" />
 					</div>
 				</svelte:fragment>
@@ -183,7 +190,9 @@
 					<div class="flex items-center">
 						<div
 							class="z-10 flex items-center justify-center w-6 h-6 rounded-full bg-primary-200 ring-0 ring-white dark:bg-primary-900 sm:ring-8 dark:ring-gray-900 shrink-0"
-						></div>
+						>
+							<Icon icon="solar:circle-top-up-bold-duotone" class="w-full h-full text-gray-600" />
+						</div>
 						<div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700" />
 					</div>
 				</svelte:fragment>
