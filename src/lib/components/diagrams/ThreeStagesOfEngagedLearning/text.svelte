@@ -7,9 +7,12 @@
 	const dispatch = createEventDispatcher();
 
 	export let stepIndex = 0;
+	export let showButtons = true;
+
 	const nSteps = 4;
 
 	const incrementSteps = () => {
+		if (!showButtons) return false;
 		stepIndex += 1;
 
 		if (stepIndex >= nSteps) {
@@ -20,6 +23,7 @@
 	};
 
 	const decrementSteps = () => {
+		if (!showButtons) return false;
 		if (stepIndex <= 0) return;
 		stepIndex -= 1;
 
@@ -132,14 +136,16 @@
 			{/if}
 		</p>
 	</div>
-	<div class="grid grid-cols-2 gap-2">
-		<div class="text-right">
-			{#if stepIndex > 0}
-				<Button text="Previous" direction="left" onClick={decrementSteps} />
-			{/if}
+	{#if showButtons}
+		<div class="grid grid-cols-2 gap-2">
+			<div class="text-right">
+				{#if stepIndex > 0}
+					<Button text="Previous" direction="left" onClick={decrementSteps} />
+				{/if}
+			</div>
+			<div>
+				<Button text="Next" onClick={incrementSteps} />
+			</div>
 		</div>
-		<div>
-			<Button text="Next" onClick={incrementSteps} />
-		</div>
-	</div>
+	{/if}
 </div>

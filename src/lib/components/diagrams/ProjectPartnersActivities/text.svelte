@@ -44,8 +44,9 @@
 			<ProgressBar {progress} {intervalPeriod} bgColor="bg-black" />
 		{/if}
 	</div>
-	<div
+	<button
 		class="w-full px-4 py-3 border-4 border-black rounded-sm"
+		aria-label="Engage at every level"
 		on:mouseover={() => hoverEnterTextBox('')}
 		on:focus={() => hoverEnterTextBox('')}
 		on:mouseleave={() => hoverExitTextBox('')}
@@ -56,6 +57,7 @@
 		on:keypress={() => {
 			setActiveGroup('');
 		}}
+		tabindex="0"
 	>
 		<h2 class="my-3 text-2xl font-black">We're engaged at every level</h2>
 		{#if activeElement === ''}
@@ -70,14 +72,14 @@
 				</p>
 			</div>
 		{/if}
-	</div>
+	</button>
 
 	<div>
 		{#if showProgressBar && activeElement === 'Learners'}
 			<ProgressBar {progress} {intervalPeriod} bgColor="bg-pporange" />
 		{/if}
 	</div>
-	<div
+	<button
 		class="px-5 py-3 border-4 border-black rounded-sm"
 		on:mouseover={() => hoverEnterTextBox('Learners')}
 		on:focus={() => hoverEnterTextBox('Learners')}
@@ -89,18 +91,9 @@
 		on:keypress={() => {
 			setActiveGroup('Learners');
 		}}
+		tabindex="0"
 	>
-		<h2
-			class="my-3 text-2xl font-black cursor-pointer"
-			on:click={() => {
-				setActiveGroup('Learners');
-			}}
-			on:keypress={() => {
-				setActiveGroup('Learners');
-			}}
-		>
-			We develop learning materials
-		</h2>
+		<h2 class="my-3 text-2xl font-black cursor-pointer">We develop learning materials</h2>
 		{#if activeElement === 'Learners'}
 			<div transition:slide class="mb-3 space-y-4">
 				<p class="text-xl leading-relaxed text-justify">
@@ -115,15 +108,16 @@
 				</div>
 			</div>
 		{/if}
-	</div>
+	</button>
 
 	<div>
 		{#if showProgressBar && activeElement === 'Teachers'}
 			<ProgressBar {progress} {intervalPeriod} bgColor="bg-ppyellow" />
 		{/if}
 	</div>
-	<div
+	<button
 		class="px-5 py-3 border-4 border-black rounded-sm"
+		aria-label="Support for teachers"
 		on:mouseover={() => hoverEnterTextBox('Teachers')}
 		on:focus={() => hoverEnterTextBox('Teachers')}
 		on:mouseleave={() => hoverExitTextBox('Teachers')}
@@ -134,18 +128,9 @@
 		on:keypress={() => {
 			setActiveGroup('Teachers');
 		}}
+		tabindex="0"
 	>
-		<h2
-			class="my-3 text-2xl font-black cursor-pointer"
-			on:click={() => {
-				setActiveGroup('Teachers');
-			}}
-			on:keypress={() => {
-				setActiveGroup('Teachers');
-			}}
-		>
-			We support teachers' development
-		</h2>
+		<h2 class="my-3 text-2xl font-black cursor-pointer">We support teachers' development</h2>
 		{#if activeElement === 'Teachers'}
 			<div transition:slide class="mb-3 space-y-4">
 				<p class="text-xl leading-relaxed text-justify">
@@ -165,15 +150,16 @@
 				</div>
 			</div>
 		{/if}
-	</div>
+	</button>
 
 	<div>
 		{#if showProgressBar && activeElement === 'EducationalLeaders'}
 			<ProgressBar {progress} {intervalPeriod} bgColor="bg-ppgreen" />
 		{/if}
 	</div>
-	<div
+	<button
 		class="px-5 py-3 border-4 border-black rounded-sm"
+		aria-label="Connecting education leaders"
 		on:mouseover={() => hoverEnterTextBox('EducationalLeaders')}
 		on:focus={() => hoverEnterTextBox('EducationalLeaders')}
 		on:mouseleave={() => hoverExitTextBox('EducationalLeaders')}
@@ -184,18 +170,9 @@
 		on:keypress={() => {
 			setActiveGroup('EducationalLeaders');
 		}}
+		tabindex="0"
 	>
-		<h2
-			class="my-3 text-2xl font-black cursor-pointer"
-			on:click={() => {
-				setActiveGroup('EducationalLeaders');
-			}}
-			on:keypress={() => {
-				setActiveGroup('EducationalLeaders');
-			}}
-		>
-			We connect education leaders globally
-		</h2>
+		<h2 class="my-3 text-2xl font-black cursor-pointer">We connect education leaders globally</h2>
 		{#if activeElement === 'EducationalLeaders'}
 			<div transition:slide class="mb-3 space-y-4">
 				<p class="text-xl leading-relaxed text-justify">
@@ -213,15 +190,16 @@
 				</div>
 			</div>
 		{/if}
-	</div>
+	</button>
 
 	<div>
 		{#if showProgressBar && activeElement === 'GovernmentAndNGOs'}
 			<ProgressBar {progress} {intervalPeriod} bgColor="bg-ppblue" />
 		{/if}
 	</div>
-	<div
+	<button
 		class="px-5 py-3 border-4 border-black rounded-sm"
+		aria-label="Advocacy for education policy"
 		on:mouseover={() => hoverEnterTextBox('GovernmentAndNGOs')}
 		on:focus={() => hoverEnterTextBox('GovernmentAndNGOs')}
 		on:mouseleave={() => hoverExitTextBox('GovernmentAndNGOs')}
@@ -232,18 +210,9 @@
 		on:keypress={() => {
 			setActiveGroup('GovernmentAndNGOs');
 		}}
+		tabindex="0"
 	>
-		<h2
-			class="my-3 text-2xl font-black cursor-pointer"
-			on:click={() => {
-				setActiveGroup('GovernmentAndNGOs');
-			}}
-			on:keypress={() => {
-				setActiveGroup('GovernmentAndNGOs');
-			}}
-		>
-			We advocate for better education policy
-		</h2>
+		<h2 class="my-3 text-2xl font-black cursor-pointer">We advocate for better education policy</h2>
 		{#if activeElement === 'GovernmentAndNGOs'}
 			<div transition:slide class="mb-3 space-y-4">
 				<p class="text-xl leading-relaxed text-justify">
@@ -264,5 +233,5 @@
 				</div>
 			</div>
 		{/if}
-	</div>
+	</button>
 </div>

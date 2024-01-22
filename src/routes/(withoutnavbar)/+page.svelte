@@ -10,6 +10,8 @@
 
 	let Player: any;
 
+	import { CldImage } from 'svelte-cloudinary';
+
 	const showIncompleteElements = false;
 </script>
 
@@ -27,6 +29,11 @@
 
 <div class="max-w-screen snap-start">
 	<Navbar />
+	<!-- <div class="grid grid-cols-2">
+		<img
+			src="https://res.cloudinary.com/dywyr2kco/image/upload/w_auto/dpr_auto/f_webp/q_auto:eco/v1705927413/img/IMG_0165_bxrqlm.png"
+		/>
+	</div> -->
 	{#if showIncompleteElements}
 		<div class="hidden w-full grid-cols-2 px-8 lg:px-36 md:px-24 sm:px-16 lg:grid">
 			<div></div>
@@ -117,13 +124,13 @@
 					Engaging global knowledge
 				</h2>
 				<p class="mt-8 text-xl leading-loose xl:text-justify sm:leading-loose sm:text-2xl">
-					<span class="font-black">Our network</span> of partners is leading the way in education reform
-					and is expanding worldwide in its work to ensure a sustainable impact for all.
+					<span class="font-black">Our work</span> with our network partners is leading the way in education
+					reform and is expanding worldwide in its work to ensure a sustainable impact for all.
 				</p>
 				<div class="mt-8 text-center lg:text-left">
 					<Button
 						text="Read about Project Partners in Ghana"
-						href="/get-involved/institutions"
+						href="/about/ghana-case-study"
 						color="ppblue"
 					/>
 				</div>
@@ -132,25 +139,51 @@
 		<div class="relative hidden w-1/2 h-48 border-b border-r rounded-br-lg left-1/2 lg:block" />
 		<div class="w-1/2 h-48 lg:border-r" />
 		<div class="w-full px-6 border-b lg:px-36 md:px-24 sm:px-16"></div>
-		<div class="lg:px-16 lg:py-24">
+		<div class="py-16 lg:px-16 lg:py-24">
 			<h2 class="py-2 text-4xl font-black text-center underline font-handwriting">
 				We are proudly supported by
 			</h2>
 			<h3 class="mt-16 text-2xl font-black">Our Government Partners</h3>
 			<div class="grid grid-cols-2 gap-4 mt-6 md:grid-cols-4 place-items-center">
-				<img class=" max-h-24" src="{assets}/images/supporters/unesco-ghana-logo.png" />
-				<img class=" max-h-24" src="{assets}/images/supporters/ges-logo.png" />
-				<img class=" max-h-24" src="{assets}/images/supporters/nacca-logo.png" />
-				<img class=" max-h-24" src="{assets}/images/supporters/ntc-logo.jpg" />
+				<img
+					class=" max-h-24"
+					src="{assets}/images/supporters/unesco-ghana-logo.png"
+					alt="The logo of the Ghana Commission for UNESCO"
+				/>
+				<img
+					class=" max-h-24"
+					src="{assets}/images/supporters/ges-logo.png"
+					alt="The logo of the Ghana Education Service"
+				/>
+				<img
+					class=" max-h-24"
+					src="{assets}/images/supporters/nacca-logo.png"
+					alt="The logo of the National Council for Curriculum and Assessment"
+				/>
+				<img
+					class=" max-h-24"
+					src="{assets}/images/supporters/ntc-logo.jpg"
+					alt="The logo of the National Teaching Council"
+				/>
 			</div>
 			<h3 class="mt-16 text-2xl font-black">Our NGO Partners</h3>
 			<div class="grid grid-cols-2 gap-4 mt-6 md:grid-cols-3 place-items-center">
-				<img class=" max-h-24" src="{assets}/images/supporters/brightside-logo.png" />
-				<img class=" max-h-24" src="{assets}/images/supporters/rotary-club-logo.png" />
+				<img
+					class=" max-h-24"
+					src="{assets}/images/supporters/brightside-logo.png"
+					alt="The logo of the Brightside Trust"
+				/>
+				<img
+					class=" max-h-24"
+					src="{assets}/images/supporters/rotary-club-logo.png"
+					alt="The logo of the Rotary Club"
+				/>
 			</div>
 		</div>
 		<div class="w-full px-6 border-b lg:px-36 md:px-24 sm:px-16"></div>
 		<div class="w-1/2 h-48 lg:border-r snap-start" />
+	</div>
+	<div class="lg:px-36 md:px-24 sm:px-16">
 		<StrongBox snap={false}>
 			<div class="grid items-center w-full grid-cols-1 gap-4 text-center">
 				<h3 class="text-xl sm:text-2xl text-slate-500">Get Involved</h3>

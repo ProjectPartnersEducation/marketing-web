@@ -34,11 +34,11 @@
 	<h3 class="mt-8 mb-2 text-xl text-left font-handwriting text-ppblue">What we say</h3>
 	<h2 class="mb-8 text-5xl font-black text-left font-handwriting">Our Principles</h2>
 	<p class="text-2xl leading-loose text-justify">
-		We believe that education allows young people to develop a fulfilled and resilient life. Our
-		work focuses on engaging school students with their learning so that they are ready for a
-		lifetime of curiosity and continuous development. In our view, learners showing interest and
-		engagement with the world around them is therefore the most important indicator of a successful
-		learning environment.
+		We believe that education allows people to develop a fulfilled and resilient life. Our work
+		focuses on engaging school students with their learning so that they are ready for a lifetime of
+		curiosity and continuous development. In our view, learners showing interest and engagement with
+		the world around them is therefore the most important indicator of a successful learning
+		environment.
 	</p>
 	<p class="mt-8 text-2xl leading-loose text-justify">
 		To make this happen, we focus on creating innovative learning materials that not only inspire
@@ -58,7 +58,7 @@
 	<div />
 	<div class="py-24 border-t border-l" />
 </div>
-<div class="mx-2 text-center lg:mx-32 md:mx-16 sm:mx-8 xl:mx-48">
+<div class="text-center lg:mx-32 md:mx-16 sm:mx-8 xl:mx-48">
 	<StrongBox>
 		<h3
 			class="inline-block px-4 py-2 mb-8 text-4xl font-black text-white bg-black rounded-sm font-handwriting"
@@ -106,6 +106,7 @@
 		<div class="mt-8">
 			<Button
 				href="https://projectpartners.thinkific.com/products/communities/engaging-educators-network"
+				target="_blank"
 				color="ppyellow"
 				text="Join our leaders' community"
 			/>
