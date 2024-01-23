@@ -7,12 +7,6 @@
 	import StrongLinks from '$lib/components/elements/stronglinks/index.svelte';
 	import Navbar from '$lib/components/ui/navbar/index.svelte';
 	import Footer from '$lib/components/ui/footer/index.svelte';
-
-	let Player: any;
-
-	import { CldImage } from 'svelte-cloudinary';
-
-	const showIncompleteElements = false;
 </script>
 
 <svelte:head>
@@ -25,31 +19,12 @@
 	</script>
 </svelte:head>
 
-{#if showIncompleteElements}
-	<div class="h-full min-h-screen bg-black snap-start" id="videowindow">
-		{#await import('$lib/components/ui/fullpagevideo/index.svelte') then { default: Player }}
-			<svelte:component this={Player} />
-		{/await}
-	</div>
-{/if}
-
 <div class="max-w-screen snap-start">
 	<Navbar />
-	<!-- <div class="grid grid-cols-2">
-		<img
-			src="https://res.cloudinary.com/dywyr2kco/image/upload/w_auto/dpr_auto/f_webp/q_auto:eco/v1705927413/img/IMG_0165_bxrqlm.png"
-		/>
-	</div> -->
-	{#if showIncompleteElements}
-		<div class="hidden w-full grid-cols-2 px-8 lg:px-36 md:px-24 sm:px-16 lg:grid">
-			<div></div>
-			<div class="h-24 border-b border-l rounded-bl-lg"></div>
-		</div>
-	{/if}
 	<div class="px-6 mb-12 lg:px-36 md:px-24 sm:px-16 snap-proximity">
 		<div class="grid items-center w-full grid-cols-1 gap-16 pt-24 lg:border-r lg:grid-cols-2">
 			<StrongImage
-				src="{assets}/images/IMG_0165.png"
+				src="cloudinary://v1705927413/img/IMG_0165_bxrqlm.png"
 				bgColor="ppgreen"
 				href="/about"
 				alt="A happy teacher looking straight at the camera with her arms crossed"
@@ -68,7 +43,7 @@
 				<div class="mt-8 text-center lg:text-left">
 					<Button text="Learn about what we do" href="/about" color="ppgreen" />
 				</div>
-				{#if showIncompleteElements}
+				{#if false}
 					<div class="inline-block pt-8 mt-8 lg:border-t">
 						<span class="inline-block align-middle"
 							>[1]: <a
@@ -109,8 +84,9 @@
 			</div>
 			<div class="order-1 lg:order-2">
 				<StrongImage
-					src="{assets}/images/three-students-looking-over-shoulder.jpg"
+					src="cloudinary://v1706041791/img/three-students-looking-over-shoulder_cdhfju.jpg"
 					bgColor="pporange"
+					href="/resources"
 					alt="Three students looking over each other's shoulders at a Project Partners project pack"
 				/>
 			</div>
@@ -119,8 +95,9 @@
 		<div class="w-full h-48 lg:border-r snap-start" />
 		<div class="grid items-center w-full grid-cols-1 gap-16 lg:border-r lg:grid-cols-2">
 			<StrongImage
-				src="{assets}/images/IMG_0290.png"
+				src="cloudinary://v1706041791/img/IMG_0290_ngcuci.png"
 				bgColor="ppblue"
+				href="/about/ghana-case-study"
 				alt="A teacher and a student looking at a Project Partners project pack"
 			/>
 			<div class="mx-auto lg:w-3/4">

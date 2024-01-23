@@ -53,7 +53,19 @@
 		</media-provider>
 		<media-video-layout />
 	</media-player> -->
-	<mux-player playback-id="seYkmmBQjHdQeP4h2bCJnOvcynMvrTu02ZUIZHTg7h7U"></mux-player>
+	<!-- <mux-player
+		playback-id="seYkmmBQjHdQeP4h2bCJnOvcynMvrTu02ZUIZHTg7h7U"
+		title="Project Partners in Ghana"
+		accent-color="var(--ppblue)"
+	></mux-player> -->
+	{#await player}
+		<div class="bg-slate-300 aspect-video w_full" />
+	{:then}
+		<mux-player
+			playback-id="seYkmmBQjHdQeP4h2bCJnOvcynMvrTu02ZUIZHTg7h7U"
+			stream-type="on-demand"
+		/>
+	{/await}
 </div>
 
 <style>
