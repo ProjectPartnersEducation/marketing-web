@@ -40,6 +40,8 @@ const config = {
 						'https://beta.projectpartners.org',
 						'https://res.cloudinary.com',
 						'https://stream.mux.com',
+						'https://cdn.weglot.com',
+						'https://cdn.jsdelivr.com',
 						'https://api.iconify.design',
 						'https://documentcloud.adobe.com',
 						'https://projectpartners.disqus.com',
