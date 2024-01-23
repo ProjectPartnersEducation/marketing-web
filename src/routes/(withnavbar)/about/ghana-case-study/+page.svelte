@@ -11,12 +11,6 @@
 
 <svelte:head>
 	<title>Project:Maths Ghana - Case Study | Project Partners Education</title>
-	<script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
-	<script>
-		Weglot.initialize({
-			api_key: 'wg_64c47c59a31aa6dfcc0b6505d462c91f0'
-		});
-	</script>
 </svelte:head>
 
 <section class="px-6 mt-16 xl:px-48 lg:px-32 md:px-24 sm:px-12">

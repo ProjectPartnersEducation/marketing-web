@@ -52,12 +52,6 @@
 
 <svelte:head>
 	<title>About Us | Project Partners Education</title>
-	<script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
-	<script>
-		Weglot.initialize({
-			api_key: 'wg_64c47c59a31aa6dfcc0b6505d462c91f0'
-		});
-	</script>
 </svelte:head>
 
 <BigTopImage imgSrc="cloudinary://v1706051653/img/class-with-hands-up_poj2u6.png" text="About" />
