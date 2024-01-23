@@ -227,7 +227,7 @@
 				<div class="text-xl leading-relaxed text-center">
 					<Button
 						text="Read about our collaboration with UNESCO"
-						href="/learning-materials"
+						href="/about/ghana-case-study"
 						color="ppblue"
 					/>
 				</div>

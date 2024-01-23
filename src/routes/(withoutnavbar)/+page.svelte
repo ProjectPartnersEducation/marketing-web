@@ -17,6 +17,12 @@
 
 <svelte:head>
 	<title>Project Partners Education</title>
+	<script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+	<script>
+		Weglot.initialize({
+			api_key: 'wg_64c47c59a31aa6dfcc0b6505d462c91f0'
+		});
+	</script>
 </svelte:head>
 
 {#if showIncompleteElements}
@@ -45,6 +51,7 @@
 			<StrongImage
 				src="{assets}/images/IMG_0165.png"
 				bgColor="ppgreen"
+				href="/about"
 				alt="A happy teacher looking straight at the camera with her arms crossed"
 			/>
 			<div class="mx-auto lg:w-3/4">

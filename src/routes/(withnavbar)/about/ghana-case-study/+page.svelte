@@ -9,7 +9,17 @@
 	import Button from '$lib/components/elements/button.svelte';
 </script>
 
-<section class="px-6 mt-8 xl:px-48 lg:px-32 md:px-24 sm:px-12">
+<svelte:head>
+	<title>Project:Maths Ghana - Case Study | Project Partners Education</title>
+	<script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+	<script>
+		Weglot.initialize({
+			api_key: 'wg_64c47c59a31aa6dfcc0b6505d462c91f0'
+		});
+	</script>
+</svelte:head>
+
+<section class="px-6 mt-16 xl:px-48 lg:px-32 md:px-24 sm:px-12">
 	<h2 class="mt-8 text-xl text-ppblue">Case Study</h2>
 	<h1 class="mb-12 text-5xl font-black font-handwriting">Project:Maths Ghana</h1>
 
@@ -54,7 +64,11 @@
 					Tom Shering, Co-founder & CEO
 				</div>
 			</div>
-			<img src="{assets}/images/team/ts.jpg" class="border-2 border-black rounded-sm shadow-lg" />
+			<img
+				src="{assets}/images/team/ts.jpg"
+				alt="Portrait of Tom"
+				class="border-2 border-black rounded-sm shadow-lg"
+			/>
 		</div>
 	</div>
 	<div class="mt-8">
@@ -171,7 +185,7 @@
 						<div
 							class="z-10 flex items-center justify-center w-6 h-6 rounded-full bg-primary-200 ring-0 ring-white dark:bg-primary-900 sm:ring-8 dark:ring-gray-900 shrink-0"
 						>
-							<Icon icon="solar:earth-bold-duotone" class="w-full h-full text-ppblue" />
+							<Icon icon="solar:earth-bold-duotone" class="w-full h-full text-ppgreen" />
 						</div>
 						<div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700" />
 					</div>
@@ -191,7 +205,7 @@
 						<div
 							class="z-10 flex items-center justify-center w-6 h-6 rounded-full bg-primary-200 ring-0 ring-white dark:bg-primary-900 sm:ring-8 dark:ring-gray-900 shrink-0"
 						>
-							<Icon icon="solar:circle-top-up-bold-duotone" class="w-full h-full text-gray-600" />
+							<Icon icon="solar:circle-top-up-bold-duotone" class="w-full h-full text-ppblue" />
 						</div>
 						<div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700" />
 					</div>

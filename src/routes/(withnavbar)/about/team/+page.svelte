@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { assets } from '$app/paths';
 
-	import BigTopImage from '$lib/components/elements/bigtopimage/index.svelte';
+	import StrongLinks from '$lib/components/elements/stronglinks/index.svelte';
 	import Button from '$lib/components/elements/button.svelte';
 	import StandardMargins from '$lib/components/elements/standardmargins/index.svelte';
 	import CopyLink from '$lib/components/elements/copylink/index.svelte';
 
 	const executiveTeam = [
-		{ src: 'ts.jpg', name: 'Tom Shering', role: 'CEO', bioUrl: 'tom-shering' }
+		{ src: 'ts.jpg', name: 'Tom Shering', role: 'Chief Executive', bioUrl: 'tom-shering' }
 	];
 
 	const trustees = [
@@ -32,6 +32,16 @@
 	const biosAreActive = false;
 </script>
 
+<svelte:head>
+	<title>Our Team | Project Partners Education</title>
+	<script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+	<script>
+		Weglot.initialize({
+			api_key: 'wg_64c47c59a31aa6dfcc0b6505d462c91f0'
+		});
+	</script>
+</svelte:head>
+
 <StandardMargins addClass="grid gap-8 pt-24">
 	<h1 class="text-5xl font-black font-handwriting">Our Team</h1>
 	<p class="text-2xl leading-loose text-justify">
@@ -44,7 +54,7 @@
 		<h2 class="mt-8 text-4xl font-black font-handwriting">{team.name}</h2>
 		<div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
 			{#each team.members as person}
-				<div class="flex flex-row w-full border-4 border-black">
+				<div class="flex flex-row w-full border-4 border-black rounded-sm">
 					<img
 						src="{assets}/images/team/{person.src}"
 						alt="A portrait of {person.name}"
@@ -66,7 +76,7 @@
 		</div>
 	{/each}
 </StandardMargins>
-<StandardMargins addClass="border-8 border-black mt-24 py-8 px-8">
+<StandardMargins addClass="border-8 border-black mt-24 py-8 px-8 rounded-sm">
 	<div class="flex flex-row w-full">
 		<img
 			src="{assets}/images/team/unknown-person.png"
@@ -100,3 +110,28 @@
 		/>
 	</div> -->
 </StandardMargins>
+
+<hr class="my-24 snap-start" />
+<StrongLinks
+	link1={{
+		imgsrc: `${assets}/images/IMG_0459.jpg`,
+		imgalt: 'A smiling teacher with his arms crossed',
+		text: 'See our resources',
+		href: '/resources',
+		hoverColor: 'ppyellow'
+	}}
+	link2={{
+		imgsrc: `${assets}/images/IMG_0034.jpg`,
+		imgalt: 'Two children looking at a book',
+		text: 'Read about us',
+		href: '/about',
+		hoverColor: 'ppgreen'
+	}}
+	bigLink={{
+		imgsrc: `${assets}/images/IMG_0034.jpg`,
+		imgalt: 'A smiling teacher with his arms crossed',
+		text: 'Get Involved',
+		href: '/get-involved',
+		hoverColor: 'ppred'
+	}}
+/>

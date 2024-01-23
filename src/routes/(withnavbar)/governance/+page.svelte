@@ -2,6 +2,16 @@
 	import StandardMargins from '$lib/components/elements/standardmargins/index.svelte';
 </script>
 
+<svelte:head>
+	<title>Our Governance| Project Partners Education</title>
+	<script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+	<script>
+		Weglot.initialize({
+			api_key: 'wg_64c47c59a31aa6dfcc0b6505d462c91f0'
+		});
+	</script>
+</svelte:head>
+
 <StandardMargins addClass="mt-16">
 	<h1 class="text-5xl font-black font-handwriting">Our Governance</h1>
 	<div class="mt-12 space-y-8 text-2xl leading-loose md:text-justify">
