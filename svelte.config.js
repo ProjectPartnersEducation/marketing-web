@@ -39,6 +39,7 @@ const config = {
 						'https://projectpartners.org',
 						'https://beta.projectpartners.org',
 						'https://res.cloudinary.com',
+						'https://stream.mux.com',
 						'https://api.iconify.design',
 						'https://documentcloud.adobe.com',
 						'https://projectpartners.disqus.com',
