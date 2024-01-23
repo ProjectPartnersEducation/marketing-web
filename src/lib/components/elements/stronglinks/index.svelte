@@ -36,7 +36,7 @@
 			</div>
 			<div class="flex items-center justify-center px-2">
 				<h3
-					class="xl:text-6xl md:text-5xl text-4xl text-center text-white transition-colors font-handwriting group-hover:text-[var(--tc)]"
+					class="xl:text-6xl md:text-5xl text-4xl text-center text-white transition-colors font-heading group-hover:text-[var(--tc)]"
 					style="--tc: {link1.hoverColor}"
 				>
 					{link1.text}
@@ -50,7 +50,7 @@
 		>
 			<div class="flex items-center justify-center px-2">
 				<h3
-					class="xl:text-6xl md:text-5xl text-4xl text-center text-white font-handwriting group-hover:text-[var(--tc)]"
+					class="xl:text-6xl md:text-5xl text-4xl text-center text-white font-heading group-hover:text-[var(--tc)]"
 					style="--tc: {link2.hoverColor}"
 				>
 					{link2.text}
@@ -64,7 +64,7 @@
 	</a>
 	<a
 		href={bigLink.href}
-		class="flex items-center py-8 justify-center col-span-2 text-white transition-transform bg-black font-handwriting font-black xl:text-6xl md:text-5xl text-4xl hover:scale-105 hover:text-[var(--tc)]"
+		class="flex items-center py-8 justify-center col-span-2 text-white transition-transform bg-black font-heading font-black xl:text-6xl md:text-5xl text-4xl hover:scale-105 hover:text-[var(--tc)]"
 		style="--tc: {bigLink.hoverColor}"
 	>
 		{bigLink.text}

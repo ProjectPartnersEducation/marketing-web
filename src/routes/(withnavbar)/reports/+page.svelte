@@ -32,7 +32,7 @@
 </svelte:head>
 
 <StandardMargins addClass="mt-16">
-	<h1 class="text-5xl font-black font-handwriting">Our Annual Reports</h1>
+	<h1 class="text-5xl font-black font-heading">Our Annual Reports</h1>
 	<p class="mt-16 text-2xl leading-loose">
 		Each year, the Board of Trustees publishes an Annual Report, which includes a summary of the
 		activities of the charity, its financial statements and a report from the Chair of Trustees. We

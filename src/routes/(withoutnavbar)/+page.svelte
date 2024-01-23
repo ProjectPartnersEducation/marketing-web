@@ -57,7 +57,7 @@
 			<div class="mx-auto lg:w-3/4">
 				<h3 class="text-xl sm:text-2xl text-slate-500">Our Mission</h3>
 				<h2
-					class="mt-1 text-4xl font-black leading-tight sm:text-5xl sm:leading-tight font-handwriting"
+					class="mt-1 text-4xl font-black leading-tight sm:text-5xl sm:leading-tight font-heading"
 				>
 					The new era of better education
 				</h2>
@@ -95,7 +95,7 @@
 			<div class="order-2 mx-auto lg:w-3/4 lg:order-1">
 				<h3 class="text-xl sm:text-2xl text-slate-500">Our Resources</h3>
 				<h2
-					class="mt-1 text-4xl font-black leading-tight sm:text-5xl sm:leading-tight font-handwriting"
+					class="mt-1 text-4xl font-black leading-tight sm:text-5xl sm:leading-tight font-heading"
 				>
 					Where life comes to learning
 				</h2>
@@ -126,7 +126,7 @@
 			<div class="mx-auto lg:w-3/4">
 				<h3 class="text-xl sm:text-2xl text-slate-500">Our Work</h3>
 				<h2
-					class="mt-1 text-4xl font-black leading-tight break-normal sm:text-5xl sm:leading-tight font-handwriting"
+					class="mt-1 text-4xl font-black leading-tight break-normal sm:text-5xl sm:leading-tight font-heading"
 				>
 					Engaging global knowledge
 				</h2>
@@ -147,7 +147,7 @@
 		<div class="w-1/2 h-48 lg:border-r" />
 		<div class="w-full px-6 border-b lg:px-36 md:px-24 sm:px-16"></div>
 		<div class="py-16 lg:px-16 lg:py-24">
-			<h2 class="py-2 text-4xl font-black text-center underline font-handwriting">
+			<h2 class="py-2 text-4xl font-black text-center underline font-heading">
 				We are proudly supported by
 			</h2>
 			<h3 class="mt-16 text-2xl font-black">Our Government Partners</h3>
@@ -196,7 +196,7 @@
 				<h3 class="text-xl sm:text-2xl text-slate-500">Get Involved</h3>
 				<div class="w-full">
 					<h2
-						class="inline-block px-2 py-3 mt-1 text-5xl font-black leading-tight text-white bg-black rounded-sm sm:leading-tight sm:text-6xl md:text-7xl font-handwriting"
+						class="inline-block px-2 py-3 mt-1 text-5xl font-black leading-tight text-white bg-black rounded-sm sm:leading-tight sm:text-6xl md:text-7xl font-heading"
 					>
 						Let's make this happen.
 					</h2>

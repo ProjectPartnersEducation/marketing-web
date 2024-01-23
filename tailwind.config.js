@@ -8,8 +8,7 @@ export default {
 		},
 		fontFamily: {
 			sans: ['Nunito Sans Variable', 'ui-sans-serif', 'system-ui'],
-			handwriting: ['Libre Franklin Variable', 'Caveat Brush', 'ui-sans-serif', 'system-ui'],
-			// handwriting: ['Caveat Brush', 'ui-sans-serif', 'system-ui'],
+			heading: ['Libre Franklin Variable', 'Caveat Brush', 'ui-sans-serif', 'system-ui'],
 			pptext: ['Satisfy', 'ui-sans-serif', 'system-ui'],
 			mono: ['VT323', 'ui-monospace', 'SFMono-Regular'],
 		},

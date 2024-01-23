@@ -37,8 +37,8 @@
 	class="px-6 py-24 lg:px-32 lg:mx-32 md:px-24 sm:px-12 lg:border-b lg:border-l rounded-bl-xl"
 	id="principles"
 >
-	<h3 class="mt-8 mb-2 text-xl text-left font-handwriting text-ppblue">What we say</h3>
-	<h2 class="mb-8 text-5xl font-black text-left font-handwriting">Our Principles</h2>
+	<h3 class="mt-8 mb-2 text-xl text-left font-heading text-ppblue">What we say</h3>
+	<h2 class="mb-8 text-5xl font-black text-left font-heading">Our Principles</h2>
 	<p class="text-2xl leading-loose text-justify">
 		We believe that education allows people to develop a fulfilled and resilient life. Our work
 		focuses on engaging school students with their learning so that they are ready for a lifetime of
@@ -67,7 +67,7 @@
 <div class="text-center lg:mx-32 md:mx-16 sm:mx-8 xl:mx-48">
 	<StrongBox>
 		<h3
-			class="inline-block px-4 py-2 mb-8 text-4xl font-black text-white bg-black rounded-sm font-handwriting"
+			class="inline-block px-4 py-2 mb-8 text-4xl font-black text-white bg-black rounded-sm font-heading"
 		>
 			The Engaging Education Code
 		</h3>
@@ -123,12 +123,12 @@
 	<div class="py-16 border-b border-r"></div>
 </div>
 <div class="px-2 py-32 lg:px-32 lg:mx-32 md:px-24 sm:px-12 lg:border-b lg:border-l rounded-bl-xl">
-	<h3 class="mt-8 mb-2 text-xl text-left font-handwriting text-ppred">What we do</h3>
-	<h2 class="mb-8 text-5xl font-black text-left font-handwriting" id="work">Our Activities</h2>
+	<h3 class="mt-8 mb-2 text-xl text-left font-heading text-ppred">What we do</h3>
+	<h2 class="mb-8 text-5xl font-black text-left font-heading" id="work">Our Activities</h2>
 	<ProjectPartnersActivitiesDiagram />
 </div>
 <!-- <div class="grid grid-cols-2 px-8 lg:px-36 md:px-24 sm:px-16 gap-x-16">
-	<h2 class="col-span-2 mb-8 text-4xl text-center underline font-handwriting decoration-pppink">
+	<h2 class="col-span-2 mb-8 text-4xl text-center underline font-heading decoration-pppink">
 		Project Partners for Learners
 	</h2>
 	<div class="col-span-2 mb-8 text-2xl text-center">
@@ -172,8 +172,8 @@
 	id="team"
 	class="px-6 py-24 lg:px-32 lg:mx-32 md:px-24 sm:px-12 lg:border-b lg:border-r rounded-br-xl"
 >
-	<h3 class="mt-8 mb-2 text-xl text-left font-handwriting text-ppyellow">Who we are</h3>
-	<h2 class="mb-8 text-5xl font-black text-left font-handwriting" id="work">Our Team</h2>
+	<h3 class="mt-8 mb-2 text-xl text-left font-heading text-ppyellow">Who we are</h3>
+	<h2 class="mb-8 text-5xl font-black text-left font-heading" id="work">Our Team</h2>
 	<div class="flex flex-wrap justify-around flex-none gap-16">
 		{#each teamMembers as person}
 			<div class="">

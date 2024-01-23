@@ -3,6 +3,7 @@
 	import 'vidstack/player/styles/default/theme.css';
 	import 'vidstack/player/styles/default/layouts/video.css';
 	import type { TextTrackInit } from 'vidstack';
+	import HLS from 'hls.js';
 
 	// Register elements.
 	import 'vidstack/player';
@@ -10,9 +11,12 @@
 	import 'vidstack/player/ui';
 
 	import { onMount } from 'svelte';
-	import { assets } from '$app/paths';
-
-	import type { MediaCanPlayEvent } from 'vidstack';
+	import {
+		isHLSProvider,
+		type MediaProviderAdapter,
+		type MediaProviderChangeEvent,
+		type MediaCanPlayEvent
+	} from 'vidstack';
 	import type { MediaPlayerElement } from 'vidstack/elements';
 
 	export let src: string;
@@ -21,7 +25,17 @@
 
 	let player: MediaPlayerElement;
 
-	onMount(() => {
+	function onProviderChange(
+		provider: MediaProviderAdapter | null,
+		nativeEvent: MediaProviderChangeEvent
+	) {
+		if (isHLSProvider(provider)) {
+			provider.library = HLS;
+		}
+	}
+
+	onMount(async () => {
+		// await import('@mux/mux-player');
 		for (const track of textTracks) player.textTracks.add(track);
 	});
 </script>
@@ -34,6 +48,7 @@
 		crossorigin
 		playsinline
 		on:can-play={onCanPlay}
+		on:provider-change={onProviderChange}
 		bind:this={player}
 	>
 		<media-provider>

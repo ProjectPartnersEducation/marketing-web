@@ -89,9 +89,9 @@
 			>
 				<img src="{assets}/images/one-child-thumbs-up.jpg" class="w-full border-4 border-black" />
 				<div
-					class="flex flex-col items-center justify-center py-2 text-4xl text-center text-white bg-black font-handwriting"
+					class="flex flex-col items-center justify-center py-2 text-4xl text-center text-white bg-black font-heading"
 				>
-					I want to <span class="text-ppyellow font-handwriting">learn</span>
+					I want to <span class="text-ppyellow font-heading">learn</span>
 				</div>
 			</div>
 		</a>
@@ -101,9 +101,9 @@
 			>
 				<img src="{assets}/images/teacher-amongst-class.jpg" class="w-full border-4 border-black" />
 				<div
-					class="flex flex-col items-center justify-center py-2 text-4xl text-center text-white bg-black font-handwriting"
+					class="flex flex-col items-center justify-center py-2 text-4xl text-center text-white bg-black font-heading"
 				>
-					I want to <span class="text-ppgreen font-handwriting">teach</span>
+					I want to <span class="text-ppgreen font-heading">teach</span>
 				</div>
 			</div>
 		</a>
@@ -116,9 +116,9 @@
 					class="w-full border-4 border-black"
 				/>
 				<div
-					class="flex flex-col items-center justify-center py-2 text-4xl text-center text-white bg-black font-handwriting"
+					class="flex flex-col items-center justify-center py-2 text-4xl text-center text-white bg-black font-heading"
 				>
-					I want to <span class="text-pppink font-handwriting">lead</span>
+					I want to <span class="text-pppink font-heading">lead</span>
 				</div>
 			</div>
 		</a>
@@ -129,7 +129,7 @@
 	<div class="h-24 border-b border-l border-r shadow-sm"></div>
 </div>
 <div class="px-8 pt-48 xl:px-64 lg:px-48 md:px-24 sm:px-16" id="learners">
-	<h2 class="text-5xl font-black font-handwriting">Learn with Project Partners</h2>
+	<h2 class="text-5xl font-black font-heading">Learn with Project Partners</h2>
 	<p class="mt-8 text-2xl leading-loose text-justify">
 		We want to build the world's best library of free learning resources for young people. Our
 		project packs will help you develop your skills and gain confidence applying your knowledge to
@@ -184,7 +184,7 @@
 <div class="px-6 xl:px-48 lg:px-32 md:px-24 sm:px-12">
 	<div class="max-w-sm mx-auto my-24 border-b"></div>
 	<div
-		class="flex flex-row flex-1 text-2xl place-content-center place-items-center font-handwriting text-slate-500"
+		class="flex flex-row flex-1 text-2xl place-content-center place-items-center font-heading text-slate-500"
 	>
 		<img src="{assets}/images/emmanuella.png" class="inline-block h-32 mr-3 justify-self-end" />
 		<div class="justify-self-start">Stay tuned... many more project packs coming soon!</div>
@@ -192,7 +192,7 @@
 </div>
 
 <div class="px-6 pt-48 xl:px-64 lg:px-32 md:px-24 sm:px-12" id="teachers">
-	<h2 class="text-5xl font-black font-handwriting">Teach with Project Partners</h2>
+	<h2 class="text-5xl font-black font-heading">Teach with Project Partners</h2>
 	<p class="mt-8 text-2xl leading-loose md:text-justify">
 		Expand your teaching practice with our free resources and innovative professional development
 		courses to develop your skills as an engaging educator. We are committed to supporting the
@@ -204,7 +204,7 @@
 	<div class="mt-4 text-2xl leading-loose text-center">
 		Find all of our teaching resources (and more!) on our <a
 			href="https://shop.projectpartners.org/"
-			class="font-handwriting"
+			class="font-heading"
 			target="_blank">Learning Portal</a
 		><svg inline-src="open-in-new" class="inline-block h-8 ml-2 -translate-y-1" />
 	</div>
@@ -289,7 +289,7 @@
 </div>
 
 <div class="px-6 pt-48 xl:px-64 lg:px-48 md:px-24 sm:px-12" id="leaders">
-	<h2 class="text-5xl font-black font-handwriting">Lead with Project Partners</h2>
+	<h2 class="text-5xl font-black font-heading">Lead with Project Partners</h2>
 	<p class="mt-8 text-2xl leading-loose text-justify">
 		If you are a school or community leader, we are committed to supporting you in your work to
 		transform your school or community into a space where curiosity, creativity, and collaboration
@@ -301,7 +301,7 @@
 		The Engaging Education Code. The Engaging Educators Network is a space for sharing ideas,
 		learning from others, and taking actionable steps towards a more engaging learning environment.
 	</p>
-	<!-- <h3 class="inline-block px-2 mt-8 text-3xl text-white bg-black font-handwriting">
+	<!-- <h3 class="inline-block px-2 mt-8 text-3xl text-white bg-black font-heading">
 		The Engaging Education Code
 	</h3>
 	<p class="mt-4 text-2xl leading-loose text-justify">

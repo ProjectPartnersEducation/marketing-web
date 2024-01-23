@@ -73,7 +73,7 @@
 	<div class="col-span-2 lg:col-span-1">
 		<img src={assets + '/logo.svg'} alt="logo" class="w-full max-h-16" />
 		<h4
-			class="px-2 mt-4 text-sm font-black text-center text-white bg-black rounded-sm font-handwriting"
+			class="px-2 mt-4 text-sm font-black text-center text-white bg-black rounded-sm font-heading"
 		>
 			The Engaging Education Charity
 		</h4>

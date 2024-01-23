@@ -41,7 +41,7 @@
 	<div id="donate">
 		<div class="relative lg:border-l">
 			<div class="mx-6 lg:mx-32 md:mx-24 sm:mx-12">
-				<h1 class="inline text-5xl font-black font-handwriting">Your donation</h1>
+				<h1 class="inline text-5xl font-black font-heading">Your donation</h1>
 				<p class="mt-8 text-2xl leading-loose text-justify">
 					The world needs a new model for school learning.
 				</p>
@@ -83,7 +83,7 @@
 				/>
 			</button>
 			<div class="flex flex-col max-w-full">
-				<h3 class="mt-8 text-4xl font-black font-handwriting">Your impact</h3>
+				<h3 class="mt-8 text-4xl font-black font-heading">Your impact</h3>
 				<p class="mt-4 text-xl leading-loose text-justify">
 					Watch the video below to hear about what your donation can help us to achieve.
 				</p>
@@ -117,7 +117,7 @@
 	</div>
 	<div class="relative xl:border-r pt-36" id="volunteer">
 		<div class=" lg:px-16">
-			<h1 class="inline text-5xl font-black font-handwriting">Work with us</h1>
+			<h1 class="inline text-5xl font-black font-heading">Work with us</h1>
 			<p class="mt-6 ml-auto text-2xl leading-loose">
 				We are always looking for talented people to work with. If you are interested in
 				contributing to our mission, please see our current open calls.
@@ -125,11 +125,11 @@
 		</div>
 		<div class="pb-16 lg:px-16">
 			<div class="grid lg:grid-cols-[66%,34%] gap-8 mt-8 place-items-center">
-				<h2 class="text-4xl font-black justify-self-start lg:col-span-2 font-handwriting">
+				<h2 class="text-4xl font-black justify-self-start lg:col-span-2 font-heading">
 					Why Project Partners?
 				</h2>
 				<div>
-					<h3 class="text-3xl font-black font-handwriting">Our Impact</h3>
+					<h3 class="text-3xl font-black font-heading">Our Impact</h3>
 					<ol class="grid grid-cols-1 gap-4 mt-4">
 						<li class="text-xl leading-loose text-justify">
 							In the modern world, it is vital that school leavers are armed with a balance of
@@ -153,7 +153,7 @@
 			<div class="grid lg:grid-cols-[34%,66%] gap-8 mt-8 place-items-center">
 				<img src="{assets}/images/corn-image.png" class="order-2 max-h-64 lg:order-1" />
 				<div class="order-1 lg:order-2">
-					<h3 class="text-3xl font-black font-handwriting">Our Values</h3>
+					<h3 class="text-3xl font-black font-heading">Our Values</h3>
 					<ol class="grid grid-cols-1 gap-2 mt-4">
 						<li class="text-xl leading-loose text-justify">
 							<span class="font-black">We are ambitious</span> - we won't stop until we have achieved
@@ -201,7 +201,7 @@
 	</div>
 	<div id="contact-us">
 		<StrongBox>
-			<h1 class="inline text-5xl font-black font-handwriting">Contact Us</h1>
+			<h1 class="inline text-5xl font-black font-heading">Contact Us</h1>
 			<p class="mt-6 text-2xl leading-loose">
 				If you have any questions, comments, or feedback, please get in touch with us using the form
 				below. You can also email us at <CopyLink text="hello@projectpartners.org" />

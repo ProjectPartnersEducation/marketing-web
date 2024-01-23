@@ -134,7 +134,7 @@
 			<a
 				href="/about"
 				on:click={hideFullscreenMenu}
-				class="col-span-2 px-8 py-4 text-4xl font-black text-right text-white transition-colors bg-black rounded-sm md:col-span-1 sm:text-5xl md:text-6xl hover:text-ppyellow font-handwriting"
+				class="col-span-2 px-8 py-4 text-4xl font-black text-right text-white transition-colors bg-black rounded-sm md:col-span-1 sm:text-5xl md:text-6xl hover:text-ppyellow font-heading"
 			>
 				About...
 			</a>
@@ -152,7 +152,7 @@
 			<div class="w-full col-span-2 border-4 border-b border-black"></div>
 			<a
 				href="/resources"
-				class="col-span-2 px-8 py-4 text-4xl font-black text-right text-white transition-colors bg-black rounded-sm md:col-span-1 sm:text-5xl md:text-6xl hover:text-pporange font-handwriting"
+				class="col-span-2 px-8 py-4 text-4xl font-black text-right text-white transition-colors bg-black rounded-sm md:col-span-1 sm:text-5xl md:text-6xl hover:text-pporange font-heading"
 				on:click={hideFullscreenMenu}
 			>
 				Resources...
@@ -174,7 +174,7 @@
 			<div class="w-full col-span-2 border-4 border-b border-black"></div>
 			<a
 				href="/get-involved"
-				class="col-span-2 px-8 py-4 text-4xl font-black text-right text-white transition-colors bg-black rounded-sm sm:text-5xl md:text-6xl md:col-span-1 hover:text-ppred font-handwriting"
+				class="col-span-2 px-8 py-4 text-4xl font-black text-right text-white transition-colors bg-black rounded-sm sm:text-5xl md:text-6xl md:col-span-1 hover:text-ppred font-heading"
 				on:click={hideFullscreenMenu}
 			>
 				Get Involved...

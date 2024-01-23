@@ -32,7 +32,7 @@
 </svelte:head>
 
 <StandardMargins addClass="mt-16">
-	<h1 class="text-5xl font-black font-handwriting">Our Policies</h1>
+	<h1 class="text-5xl font-black font-heading">Our Policies</h1>
 	<ul class="mt-16 space-y-8 text-2xl list-inside list-square">
 		{#each policies as policy}
 			<li id={policy.id}>

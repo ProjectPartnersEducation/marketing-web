@@ -21,7 +21,7 @@
 
 <section class="px-6 mt-16 xl:px-48 lg:px-32 md:px-24 sm:px-12">
 	<h2 class="mt-8 text-xl text-ppblue">Case Study</h2>
-	<h1 class="mb-12 text-5xl font-black font-handwriting">Project:Maths Ghana</h1>
+	<h1 class="mb-12 text-5xl font-black font-heading">Project:Maths Ghana</h1>
 
 	<div class="grid lg:grid-cols-[70%,30%] gap-8 my-16">
 		<img
@@ -60,7 +60,7 @@
 					feedback and research. Join us as we explore this story of educational transformation and
 					collaborative growth in Ghana."
 				</p>
-				<div class="text-2xl font-black text-right font-handwriting text-slate-800">
+				<div class="text-2xl font-black text-right font-heading text-slate-800">
 					Tom Shering, Co-founder & CEO
 				</div>
 			</div>
@@ -72,18 +72,18 @@
 		</div>
 	</div>
 	<div class="mt-8">
-		<h2 class="text-3xl font-black font-handwriting">Key statistics:</h2>
+		<h2 class="text-3xl font-black font-heading">Key statistics:</h2>
 		<div class="grid gap-4 mt-8 lg:grid-cols-3 place-items-center">
 			<div class="w-full h-full px-8 py-4 border-4 border-black">
-				<div class="text-5xl font-black font-handwriting">242</div>
+				<div class="text-5xl font-black font-heading">242</div>
 				<div class="text-xl">Students from 8 schools</div>
 			</div>
 			<div class="w-full h-full px-8 py-4 border-4 border-black">
-				<div class="text-5xl font-black font-handwriting">2.5 grades</div>
+				<div class="text-5xl font-black font-heading">2.5 grades</div>
 				<div class="text-xl">Average improvement after 9 weeks</div>
 			</div>
 			<div class="w-full h-full px-8 py-4 border-4 border-black">
-				<div class="text-5xl font-black font-handwriting">86%</div>
+				<div class="text-5xl font-black font-heading">86%</div>
 				<div class="text-xl">Say they are more maths-confident</div>
 			</div>
 		</div>
@@ -91,7 +91,7 @@
 	<hr class="w-1/2 mx-auto my-32 border-b border-black" />
 
 	<div class="mt-8">
-		<h2 class="text-3xl font-black font-handwriting">The Road to Ghana</h2>
+		<h2 class="text-3xl font-black font-heading">The Road to Ghana</h2>
 		<p class="mt-8 text-2xl leading-relaxed md:text-justify">
 			In 2019, Project Partners embarked to support the transformation of mathematics education in
 			Ghana. Recognising a key opportunity in engaging and effective maths instruction, we initiated
@@ -108,7 +108,7 @@
 			comprehensive training sessions, resources, and ongoing support to ensure the successful
 			implementation of the programme in diverse classroom settings.
 		</p>
-		<h2 class="mt-16 text-3xl font-black font-handwriting">High Impact at Low Cost</h2>
+		<h2 class="mt-16 text-3xl font-black font-heading">High Impact at Low Cost</h2>
 		<p class="mt-8 text-2xl leading-relaxed md:text-justify">
 			The programme's impact is both significant and wide-reaching. Participating students
 			demonstrate remarkable improvement in their maths scores (we use English GCSE standards to
@@ -129,14 +129,12 @@
 	</div>
 
 	<div class="my-32">
-		<h2 class="mb-8 text-3xl font-black font-handwriting">
-			Project:Maths Ghana in 2024 and beyond
-		</h2>
+		<h2 class="mb-8 text-3xl font-black font-heading">Project:Maths Ghana in 2024 and beyond</h2>
 		<Timeline order="horizontal" class="gap-4">
 			<TimelineItem
 				title="Project:Partners launches in Ghana"
 				date="April-July 2018"
-				classLi="font-handwriting font-black"
+				classLi="font-heading font-black"
 			>
 				<svelte:fragment slot="icon">
 					<div class="flex items-center">
@@ -155,7 +153,7 @@
 			<TimelineItem
 				title="Partnership with UNESCO"
 				date="July 2022"
-				classLi="font-handwriting font-black"
+				classLi="font-heading font-black"
 			>
 				<svelte:fragment slot="icon">
 					<div class="flex items-center">
@@ -178,7 +176,7 @@
 			<TimelineItem
 				title="Project:Maths Phase I"
 				date="February-August 2024"
-				classLi="font-handwriting font-black"
+				classLi="font-heading font-black"
 			>
 				<svelte:fragment slot="icon">
 					<div class="flex items-center">
@@ -198,7 +196,7 @@
 			<TimelineItem
 				title="Project:Maths scales up"
 				date="From September 2024"
-				classLi="font-handwriting font-black"
+				classLi="font-heading font-black"
 			>
 				<svelte:fragment slot="icon">
 					<div class="flex items-center">

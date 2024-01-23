@@ -13,7 +13,7 @@
 </svelte:head>
 
 <StandardMargins addClass="mt-16">
-	<h1 class="text-5xl font-black font-handwriting">Our Governance</h1>
+	<h1 class="text-5xl font-black font-heading">Our Governance</h1>
 	<div class="mt-12 space-y-8 text-2xl leading-loose md:text-justify">
 		<p>
 			Project Partners Education CIO, Registration Number 1189396, is a Charitable Incorporated
