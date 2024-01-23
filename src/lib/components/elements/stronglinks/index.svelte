@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Image from '$lib/components/elements/image/index.svelte';
+
 	type LinkInfo = {
 		imgsrc: string;
 		imgalt: string;
@@ -31,7 +33,7 @@
 			class="relative grid grid-cols-2 transition-transform bg-black border-4 border-black cursor-pointer group hover:scale-105"
 		>
 			<div>
-				<img src={link1.imgsrc} alt={link1.imgalt} class="w-full h-auto" />
+				<Image src={link1.imgsrc} alt={link1.imgalt} addClass="w-full h-auto" />
 				<div class="w-1/2 h-auto fade-right"></div>
 			</div>
 			<div class="flex items-center justify-center px-2">
@@ -57,7 +59,7 @@
 				</h3>
 			</div>
 			<div class="relative">
-				<img src={link2.imgsrc} alt={link2.imgalt} class="w-full h-auto" />
+				<Image src={link2.imgsrc} alt={link2.imgalt} addClass="w-full h-auto" />
 				<div class="w-1/2 h-auto fade-left"></div>
 			</div>
 		</div>

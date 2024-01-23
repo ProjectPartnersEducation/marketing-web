@@ -201,14 +201,14 @@
 	<hr class="my-24 snap-start" />
 	<StrongLinks
 		link1={{
-			imgsrc: `${assets}/images/IMG_0459.jpg`,
+			imgsrc: `cloudinary://v1706050229/img/IMG_0459_bkjyzw.jpg`,
 			imgalt: 'A smiling teacher with his arms crossed',
 			text: 'See our resources',
 			href: '/resources',
 			hoverColor: 'ppyellow'
 		}}
 		link2={{
-			imgsrc: `${assets}/images/IMG_0034.jpg`,
+			imgsrc: `cloudinary://v1706050214/img/IMG_0034_bwy8cq.jpg`,
 			imgalt: 'Two children looking at a book',
 			text: 'Read about us',
 			href: '/about',
