@@ -21,21 +21,21 @@
 	let player: MediaPlayerElement;
 
 	onMount(async () => {
-		// await import('@mux/mux-player');
-		player.addEventListener('provider-change', (event) => {
-			const provider = event.detail;
-			if (provider?.type === 'hls') {
-				// Static import
-				provider.library = HLS;
-			}
-		});
+		await import('@mux/mux-player');
+		// player.addEventListener('provider-change', (event) => {
+		// 	const provider = event.detail;
+		// 	if (provider?.type === 'hls') {
+		// 		// Static import
+		// 		provider.library = HLS;
+		// 	}
+		// });
 
 		for (const track of textTracks) player.textTracks.add(track);
 	});
 </script>
 
 <div class="relative max-w-full">
-	<media-player
+	<!-- <media-player
 		class="player"
 		title="Introducing Project Partners"
 		{src}
@@ -52,7 +52,8 @@
 			/>
 		</media-provider>
 		<media-video-layout />
-	</media-player>
+	</media-player> -->
+	<mux-player playback-id="seYkmmBQjHdQeP4h2bCJnOvcynMvrTu02ZUIZHTg7h7U"></mux-player>
 </div>
 
 <style>
