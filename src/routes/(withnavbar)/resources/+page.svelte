@@ -378,21 +378,21 @@
 <hr class="my-24" />
 <StrongLinks
 	link1={{
-		imgsrc: `${assets}/images/IMG_0459.jpg`,
+		imgsrc: `cloudinary://v1706050229/img/IMG_0459_bkjyzw.jpg`,
 		imgalt: 'A smiling teacher with his arms crossed',
 		text: 'Read about us',
 		href: '/about',
 		hoverColor: 'ppyellow'
 	}}
 	link2={{
-		imgsrc: `${assets}/images/IMG_0034.jpg`,
+		imgsrc: `cloudinary://v1706050214/img/IMG_0034_bwy8cq.jpg`,
 		imgalt: 'Two children looking at a book',
 		text: 'Case Study: Ghana',
 		href: '/about/ghana-case-study',
 		hoverColor: 'ppgreen'
 	}}
 	bigLink={{
-		imgsrc: `${assets}/images/IMG_0034.jpg`,
+		imgsrc: `cloudinary://v1706050214/img/IMG_0034_bwy8cq.jpg`,
 		imgalt: 'A smiling teacher with his arms crossed',
 		text: 'Get Involved',
 		href: '/get-involved',

@@ -215,7 +215,7 @@
 			hoverColor: 'ppgreen'
 		}}
 		bigLink={{
-			imgsrc: `${assets}/images/IMG_0034.jpg`,
+			imgsrc: `cloudinary://v1706050214/img/IMG_0034_bwy8cq.jpg`,
 			imgalt: 'A smiling teacher with his arms crossed',
 			text: 'Get Involved',
 			href: '/get-involved',

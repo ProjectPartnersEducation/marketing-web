@@ -4,20 +4,49 @@
 	import StrongLinks from '$lib/components/elements/stronglinks/index.svelte';
 	import StrongBox from '$lib/components/elements/strongbox/index.svelte';
 	import BigTopImage from '$lib/components/elements/bigtopimage/index.svelte';
+	import Image from '$lib/components/elements/image/index.svelte';
 
 	import ProjectPartnersActivitiesDiagram from '$lib/components/diagrams/ProjectPartnersActivities/index.svelte';
 	import ThreeStagesOfEngagedLearningDiagram from '$lib/components/diagrams/ThreeStagesOfEngagedLearning/index.svelte';
 	import Button from '$lib/components/elements/button.svelte';
 
 	const teamMembers = [
-		{ src: 'ts.jpg', name: 'Tom Shering', role: 'CEO' },
-		{ src: 'jj.jpg', name: 'Jonny Jackson', role: 'Chair, Trustee' },
-		{ src: 'su.jpg', name: 'Saiyara Uddin', role: 'Treasurer, Trustee' },
-		{ src: 'sm.jpg', name: 'Sophie Martin', role: 'Secretary, Trustee' },
-		{ src: 'rm.jpg', name: 'Renette Mbroh', role: 'Trustee' },
-		{ src: 'sd.jpg', name: 'Suhaida D', role: 'Advisor, Operations' },
-		{ src: 'nw.jpg', name: 'Nicola Whelan', role: 'Advisor, Community' },
-		{ src: 'tb.png', name: 'Tim B', role: 'Advisor, Creative' }
+		{ src: 'cloudinary://v1706051830/img/team/ts_szuqzp.jpg', name: 'Tom Shering', role: 'CEO' },
+		{
+			src: 'cloudinary://v1706051767/img/team/jj_yddjwa.jpg',
+			name: 'Jonny Jackson',
+			role: 'Chair, Trustee'
+		},
+		{
+			src: 'cloudinary://v1706051828/img/team/su_oncdiv.jpg',
+			name: 'Saiyara Uddin',
+			role: 'Treasurer, Trustee'
+		},
+		{
+			src: 'cloudinary://v1706051827/img/team/sm_pqanth.jpg',
+			name: 'Sophie Martin',
+			role: 'Secretary, Trustee'
+		},
+		{
+			src: 'cloudinary://v1706051768/img/team/rm_fnncwy.jpg',
+			name: 'Renette Mbroh',
+			role: 'Trustee'
+		},
+		{
+			src: 'cloudinary://v1706051799/img/team/sd_zpchq9.jpg',
+			name: 'Suhaida D',
+			role: 'Advisor, Operations'
+		},
+		{
+			src: 'cloudinary://v1706051768/img/team/nw_azopt2.jpg',
+			name: 'Nicola Whelan',
+			role: 'Advisor, Community'
+		},
+		{
+			src: 'cloudinary://v1706051831/img/team/tb_vrgt7x.png',
+			name: 'Tim B',
+			role: 'Advisor, Creative'
+		}
 	];
 </script>
 
@@ -31,7 +60,7 @@
 	</script>
 </svelte:head>
 
-<BigTopImage imgSrc={assets + '/images/class-with-hands-up.png'} text="About" />
+<BigTopImage imgSrc="cloudinary://v1706051653/img/class-with-hands-up_poj2u6.png" text="About" />
 <div class="hidden pt-32 ml-32 border-b border-r mr-80 rounded-br-xl lg:block"></div>
 <div
 	class="px-6 py-24 lg:px-32 lg:mx-32 md:px-24 sm:px-12 lg:border-b lg:border-l rounded-bl-xl"
@@ -127,47 +156,6 @@
 	<h2 class="mb-8 text-5xl font-black text-left font-heading" id="work">Our Activities</h2>
 	<ProjectPartnersActivitiesDiagram />
 </div>
-<!-- <div class="grid grid-cols-2 px-8 lg:px-36 md:px-24 sm:px-16 gap-x-16">
-	<h2 class="col-span-2 mb-8 text-4xl text-center underline font-heading decoration-pppink">
-		Project Partners for Learners
-	</h2>
-	<div class="col-span-2 mb-8 text-2xl text-center">
-		<div class="inline-block px-8 pt-8 bg-slate-200">
-			<h3 class="mb-8 text-center">Developed In Partnership With:</h3>
-			<div class="flex flex-row justify-center col-span-2 mb-16">
-				<img src={assets + '/images/supporters/unesco-ghana-logo.png'} class="px-4 max-h-16" />
-				<img src={assets + '/images/supporters/nacca-logo.png'} class="px-4 max-h-16" />
-			</div>
-		</div>
-	</div>
-	<div>
-		<h3 class="text-2xl font-black text-center">Where we are today</h3>
-		<ul class="py-4 space-y-2 text-xl leading-relaxed text-justify list-disc">
-			<li>The third version of our Maths Project Pack is available for free online</li>
-			<li>
-				Our managed programmes have been completed by more than 300 students in Ghana and the UK
-			</li>
-			<li>
-				Pupils on our managed programmes demonstrated an average of 3 grades of improvement within a
-				single school term and increased interest in and enjoyment of school mathematics
-			</li>
-		</ul>
-	</div>
-	<div>
-		<h3 class="text-2xl font-black text-center">What we're doing next</h3>
-		<ul class="py-4 space-y-2 text-xl leading-relaxed text-justify list-disc">
-			<li>
-				We have partnered with the National Council for Curriculum and Assessment (NaCCA), Ghana to
-				achieve accredited status for our Maths Project Packs, which will qualify them for official
-				use throughout Ghana.
-			</li>
-			<li>
-				We are developing our next-generation Digital Learning Experience to further support
-				self-guided learning, even in low-internet environments
-			</li>
-		</ul>
-	</div>
-</div> -->
 <div
 	id="team"
 	class="px-6 py-24 lg:px-32 lg:mx-32 md:px-24 sm:px-12 lg:border-b lg:border-r rounded-br-xl"
@@ -177,10 +165,10 @@
 	<div class="flex flex-wrap justify-around flex-none gap-16">
 		{#each teamMembers as person}
 			<div class="">
-				<img
-					src="{assets}/images/team/{person.src}"
-					alt=""
-					class="object-cover object-center w-32 h-32 rounded-full sm:w-48 sm:h-48"
+				<Image
+					src={person.src}
+					alt="A small portrait of {person.name}"
+					addClass="object-cover object-center w-32 h-32 rounded-full sm:w-48 sm:h-48"
 				/>
 				<h3 class="w-full mt-2 text-lg font-black text-center">{person.name}</h3>
 				<h4 class="w-full text-center">{person.role}</h4>
@@ -194,21 +182,21 @@
 <hr class="my-24" />
 <StrongLinks
 	link1={{
-		imgsrc: `${assets}/images/IMG_0459.jpg`,
+		imgsrc: `cloudinary://v1706050229/img/IMG_0459_bkjyzw.jpg`,
 		imgalt: 'A smiling teacher with his arms crossed',
 		text: 'See our resources',
 		href: '/resources',
 		hoverColor: 'ppyellow'
 	}}
 	link2={{
-		imgsrc: `${assets}/images/IMG_0034.jpg`,
+		imgsrc: `cloudinary://v1706050214/img/IMG_0034_bwy8cq.jpg`,
 		imgalt: 'Two children looking at a book',
 		text: 'Case Study: Ghana',
 		href: '/about/ghana-case-study',
 		hoverColor: 'ppgreen'
 	}}
 	bigLink={{
-		imgsrc: `${assets}/images/IMG_0034.jpg`,
+		imgsrc: `cloudinary://v1706050214/img/IMG_0034_bwy8cq.jpg`,
 		imgalt: 'A smiling teacher with his arms crossed',
 		text: 'Get Involved',
 		href: '/get-involved',
