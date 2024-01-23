@@ -11,12 +11,7 @@
 	import 'vidstack/player/ui';
 
 	import { onMount } from 'svelte';
-	import {
-		isHLSProvider,
-		type MediaProviderAdapter,
-		type MediaProviderChangeEvent,
-		type MediaCanPlayEvent
-	} from 'vidstack';
+	import type { MediaCanPlayEvent } from 'vidstack';
 	import type { MediaPlayerElement } from 'vidstack/elements';
 
 	export let src: string;
@@ -25,17 +20,16 @@
 
 	let player: MediaPlayerElement;
 
-	function onProviderChange(
-		provider: MediaProviderAdapter | null,
-		nativeEvent: MediaProviderChangeEvent
-	) {
-		if (isHLSProvider(provider)) {
-			provider.library = HLS;
-		}
-	}
-
 	onMount(async () => {
 		// await import('@mux/mux-player');
+		player.addEventListener('provider-change', (event) => {
+			const provider = event.detail;
+			if (provider?.type === 'hls') {
+				// Static import
+				provider.library = HLS;
+			}
+		});
+
 		for (const track of textTracks) player.textTracks.add(track);
 	});
 </script>
@@ -48,7 +42,6 @@
 		crossorigin
 		playsinline
 		on:can-play={onCanPlay}
-		on:provider-change={onProviderChange}
 		bind:this={player}
 	>
 		<media-provider>
