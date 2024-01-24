@@ -4,6 +4,7 @@
 	import Button from '$lib/components/elements/button.svelte';
 	import StrongLinks from '$lib/components/elements/stronglinks/index.svelte';
 	import BigTopImage from '$lib/components/elements/bigtopimage/index.svelte';
+	import Image from '$lib/components/elements/image/index.svelte';
 
 	let firstName = '';
 	let email = '';
@@ -73,7 +74,11 @@
 	<title>Our Resources | Project Partners Education</title>
 </svelte:head>
 
-<BigTopImage imgSrc={assets + '/images/IMG_0114 2.png'} text="Resources" />
+<BigTopImage
+	imgSrc="cloudinary://v1706103733/img/IMG_0114_2_daf365.png"
+	alt="A happy child standing amongst their classmates holding a book with their hand up"
+	text="Resources"
+/>
 
 <div class="px-6 mt-8 xl:px-48 lg:px-32 md:px-24 sm:px-12">
 	<div class="grid gap-8 md:grid-cols-3 place-items-center">
@@ -81,7 +86,11 @@
 			<div
 				class="grid grid-cols-2 transition-all scale-95 cursor-pointer md:grid-cols-1 hover:scale-100"
 			>
-				<img src="{assets}/images/one-child-thumbs-up.jpg" class="w-full border-4 border-black" />
+				<Image
+					src="cloudinary://v1706103297/img/one-child-thumbs-up_o5w3i7.jpg"
+					alt="A young person holding a book with her thumbs up"
+					addClass="w-full border-4 border-black"
+				/>
 				<div
 					class="flex flex-col items-center justify-center py-2 text-4xl text-center text-white bg-black font-heading"
 				>
@@ -93,7 +102,11 @@
 			<div
 				class="grid grid-cols-2 transition-all scale-95 cursor-pointer md:grid-cols-1 hover:scale-100"
 			>
-				<img src="{assets}/images/teacher-amongst-class.jpg" class="w-full border-4 border-black" />
+				<Image
+					src="cloudinary://v1706103307/img/teacher-amongst-class_tziwln.jpg"
+					alt="A teacher in front of his class"
+					addClass="w-full border-4 border-black"
+				/>
 				<div
 					class="flex flex-col items-center justify-center py-2 text-4xl text-center text-white bg-black font-heading"
 				>
@@ -105,9 +118,10 @@
 			<div
 				class="grid grid-cols-2 transition-all scale-95 cursor-pointer md:grid-cols-1 hover:scale-100"
 			>
-				<img
-					src="{assets}/images/one-teacher-holding-book.jpg"
-					class="w-full border-4 border-black"
+				<Image
+					src="cloudinary://v1706103314/img/one-teacher-holding-book_blkyaf.jpg"
+					alt="A teacher holding a book"
+					addClass="w-full border-4 border-black"
 				/>
 				<div
 					class="flex flex-col items-center justify-center py-2 text-4xl text-center text-white bg-black font-heading"
@@ -160,9 +174,10 @@
 			</p>
 		</div>
 		<div class="w-full mt-6 md:mt-0">
-			<img
-				src="{assets}/images/three-standing-children-discussing.jpg"
-				class="w-full border-2 border-black"
+			<Image
+				src="cloudinary://v1706103499/img/three-standing-children-discussing_jnnedf.jpg"
+				alt="Three children standing discussing an open book"
+				addClass="w-full border-2 border-black"
 			/>
 		</div>
 		<div class="mt-8 text-center md:col-span-2">
@@ -180,7 +195,11 @@
 	<div
 		class="flex flex-row flex-1 text-2xl place-content-center place-items-center font-heading text-slate-500"
 	>
-		<img src="{assets}/images/emmanuella.png" class="inline-block h-32 mr-3 justify-self-end" />
+		<Image
+			src="cloudinary://v1706103843/img/emmanuella_nc5ami.png"
+			alt="A cartoon drawing of Emmanualla, a Ghanaian woman"
+			addClass="inline-block h-32 mr-3 justify-self-end"
+		/>
 		<div class="justify-self-start">Stay tuned... many more project packs coming soon!</div>
 	</div>
 </div>
@@ -222,7 +241,11 @@
 				<li>Gain access to our global network of education leaders</li>
 			</ul>
 		</div>
-		<img src="{assets}/images/IMG_0533.png" class="order-1 border-4 border-black md:order-2" />
+		<Image
+			src="cloudinary://v1706103629/img/IMG_0533_a3y3s8.png"
+			alt="A teacher explaining a concept in a book to a student"
+			addClass="order-1 border-4 border-black md:order-2"
+		/>
 	</div>
 	<div class="mx-32 my-16 border-b"></div>
 	<p class="text-2xl leading-loose text-justify">

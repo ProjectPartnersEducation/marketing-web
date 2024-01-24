@@ -7,7 +7,7 @@
 	import StrongLinks from '$lib/components/elements/stronglinks/index.svelte';
 	import StrongBox from '$lib/components/elements/strongbox/index.svelte';
 	import BigTopImage from '$lib/components/elements/bigtopimage/index.svelte';
-	import StandardMargins from '$lib/components/elements/standardmargins/index.svelte';
+	import Image from '$lib/components/elements/image/index.svelte';
 	import CopyLink from '$lib/components/elements/copylink/index.svelte';
 
 	let showOutlineOnDonorbox = false;
@@ -28,7 +28,11 @@
 		}}
 	/>
 {/if}
-<BigTopImage imgSrc={assets + '/images/four-students-looking-down.png'} text="Get Involved" />
+<BigTopImage
+	imgSrc="cloudinary://v1706103985/img/four-students-looking-down_j609rp.png"
+	alt="Four students in a huddle looking down at the camera"
+	text="Get Involved"
+/>
 <div class="px-6 xl:px-48 lg:px-32 md:px-24 sm:px-12">
 	<div class="hidden w-3/4 border-b border-r pb-36 rounded-br-xl lg:block" />
 	<div class="hidden w-3/4 pb-32 border-l lg:block" />
@@ -37,16 +41,14 @@
 			<div class="mx-6 lg:mx-32 md:mx-24 sm:mx-12">
 				<h1 class="inline text-5xl font-black font-heading">Your donation</h1>
 				<p class="mt-8 text-2xl leading-loose text-justify">
-					The world needs a new model for school learning.
-				</p>
-				<p class="mt-4 text-2xl leading-loose text-justify">
-					Together with our global partners, <span class="font-black">we are building it</span>.
+					The world needs a new model for school learning. Together with our partners around the
+					world, <span class="font-black">we are building it</span>.
 				</p>
 				<p class="mt-4 text-2xl leading-loose text-justify">
 					Supporting Project Partners means supporting our work to develop and deliver innovative
 					learning resources to students and educators around the world. Our resources are always
-					free to use and open-source wherever possible, and we are committed to ensuring that they
-					are accessible to all.
+					free and open wherever possible, and we are committed to ensuring that they are accessible
+					to all.
 				</p>
 			</div>
 		</div>
@@ -91,7 +93,7 @@
 				</div>
 				<p class="mb-4 text-xl leading-loose text-justify">
 					Your generosity will directly fund our global mission and we thank you for considering to
-					make your donation recur every month.
+					make a monthly regular donation.
 				</p>
 				<div class="mb-4 border-b"></div>
 				<div class="flex flex-wrap justify-center gap-4 pb-6 mt-4 flex-0">
@@ -141,7 +143,11 @@
 						</li>
 					</ol>
 				</div>
-				<img src="{assets}/images/two-children-reading.jpg" class="border-4 border-black" />
+				<Image
+					src="cloudinary://v1706104224/img/two-children-reading_jxyhgk.jpg"
+					alt="Two children reading a book together"
+					addClass="border-4 border-black"
+				/>
 			</div>
 			<div class="hidden mx-64 my-16 border-b lg:block"></div>
 			<div class="grid lg:grid-cols-[34%,66%] gap-8 mt-8 place-items-center">

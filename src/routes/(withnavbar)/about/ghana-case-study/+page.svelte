@@ -7,6 +7,7 @@
 	import StrongBox from '$lib/components/elements/strongbox/index.svelte';
 	import StrongLinks from '$lib/components/elements/stronglinks/index.svelte';
 	import Button from '$lib/components/elements/button.svelte';
+	import Image from '$lib/components/elements/image/index.svelte';
 </script>
 
 <svelte:head>
@@ -18,9 +19,9 @@
 	<h1 class="mb-12 text-5xl font-black font-heading">Project:Maths Ghana</h1>
 
 	<div class="grid lg:grid-cols-[70%,30%] gap-8 my-16">
-		<img
-			src="{assets}/images/IMG_0034.jpg"
-			class="border-8 border-black"
+		<Image
+			src="cloudinary://v1706050214/img/IMG_0034_bwy8cq.jpg"
+			addClass="border-8 border-black"
 			alt="Two children reviewing a Project:Maths project together"
 		/>
 		<div class="grid grid-cols-1 gap-8">
@@ -58,10 +59,10 @@
 					Tom Shering, Co-founder & CEO
 				</div>
 			</div>
-			<img
-				src="{assets}/images/team/ts.jpg"
+			<Image
+				src="cloudinary://v1706051830/img/team/ts_szuqzp.jpg"
 				alt="Portrait of Tom"
-				class="border-2 border-black rounded-sm shadow-lg"
+				addClass="border-2 border-black rounded-sm shadow-lg"
 			/>
 		</div>
 	</div>

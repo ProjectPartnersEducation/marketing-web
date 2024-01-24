@@ -5,22 +5,63 @@
 	import Button from '$lib/components/elements/button.svelte';
 	import StandardMargins from '$lib/components/elements/standardmargins/index.svelte';
 	import CopyLink from '$lib/components/elements/copylink/index.svelte';
+	import Image from '$lib/components/elements/image/index.svelte';
 
 	const executiveTeam = [
-		{ src: 'ts.jpg', name: 'Tom Shering', role: 'Chief Executive', bioUrl: 'tom-shering' }
+		{
+			src: 'cloudinary://v1706051830/img/team/ts_szuqzp.jpg',
+			name: 'Tom Shering',
+			role: 'Chief Executive',
+			bioUrl: 'tom-shering'
+		}
 	];
 
 	const trustees = [
-		{ src: 'jj.jpg', name: 'Jonny Jackson', role: 'Chair, Trustee', bioUrl: 'jonny-jackson' },
-		{ src: 'su.jpg', name: 'Saiyara Uddin', role: 'Treasurer, Trustee', bioUrl: 'saiyara-uddin' },
-		{ src: 'sm.jpg', name: 'Sophie Martin', role: 'Secretary, Trustee', bioUrl: 'sophie-martin' },
-		{ src: 'rm.jpg', name: 'Renette Mbroh', role: 'Trustee', bioUrl: 'renette-mbroh' }
+		{
+			src: 'cloudinary://v1706051767/img/team/jj_yddjwa.jpg',
+			name: 'Jonny Jackson',
+			role: 'Chair, Trustee',
+			bioUrl: 'jonny-jackson'
+		},
+		{
+			src: 'cloudinary://v1706051828/img/team/su_oncdiv.jpg',
+			name: 'Saiyara Uddin',
+			role: 'Treasurer, Trustee',
+			bioUrl: 'saiyara-uddin'
+		},
+		{
+			src: 'cloudinary://v1706051827/img/team/sm_pqanth.jpg',
+			name: 'Sophie Martin',
+			role: 'Secretary, Trustee',
+			bioUrl: 'sophie-martin'
+		},
+		{
+			src: 'cloudinary://v1706051768/img/team/rm_fnncwy.jpg',
+			name: 'Renette Mbroh',
+			role: 'Trustee',
+			bioUrl: 'renette-mbroh'
+		}
 	];
 
 	const advisors = [
-		{ src: 'sd.jpg', name: 'Suhaida D', role: 'Advisor, Operations', bioUrl: false },
-		{ src: 'nw.jpg', name: 'Nicola Whelan', role: 'Advisor, Community', bioUrl: false },
-		{ src: 'tb.png', name: 'Tim B', role: 'Advisor, Creative', bioUrl: false }
+		{
+			src: 'cloudinary://v1706051799/img/team/sd_zpchq9.jpg',
+			name: 'Suhaida D',
+			role: 'Advisor, Operations',
+			bioUrl: false
+		},
+		{
+			src: 'cloudinary://v1706051768/img/team/nw_azopt2.jpg',
+			name: 'Nicola Whelan',
+			role: 'Advisor, Community',
+			bioUrl: false
+		},
+		{
+			src: 'cloudinary://v1706051831/img/team/tb_vrgt7x.png',
+			name: 'Tim B',
+			role: 'Advisor, Creative',
+			bioUrl: false
+		}
 	];
 
 	const teams = [
@@ -49,10 +90,10 @@
 		<div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
 			{#each team.members as person}
 				<div class="flex flex-row w-full border-4 border-black rounded-sm">
-					<img
-						src="{assets}/images/team/{person.src}"
+					<Image
+						src={person.src}
 						alt="A portrait of {person.name}"
-						class="object-cover object-center w-32 h-32 sm:w-48 sm:h-48"
+						addClass="object-cover object-center w-32 h-32 sm:w-48 sm:h-48"
 					/>
 					<div class="flex flex-col w-full mx-8 text-left place-content-center gap-y-2">
 						<div>
@@ -105,7 +146,7 @@
 	</div> -->
 </StandardMargins>
 
-<hr class="my-24 snap-start" />
+<hr class="my-24" />
 <StrongLinks
 	link1={{
 		imgsrc: `cloudinary://v1706050229/img/IMG_0459_bkjyzw.jpg`,
