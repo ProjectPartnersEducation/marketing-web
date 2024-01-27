@@ -9,6 +9,11 @@
 			href: '/policies/privacy'
 		},
 		{
+			id: 'cookies',
+			text: 'Cookies Policy',
+			href: '/policies/cookies'
+		},
+		{
 			id: 'safeguarding',
 			text: 'Child Safeguarding Policy',
 			href: '/policies/safeguarding'
