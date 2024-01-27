@@ -5,7 +5,6 @@
 	import TextInput from '$lib/components/elements/contact/TextInput.svelte';
 	import TextAreaInput from '$lib/components/elements/contact/TextAreaInput.svelte';
 	import CopyLink from '$lib/components/elements/copylink/index.svelte';
-	import Button from '$lib/components/elements/button.svelte';
 
 	const accessKey = '3149ae28-80f8-4473-a6da-8677d4807356';
 
@@ -133,6 +132,61 @@
 		return allValid;
 	};
 
+	const subscribe = async (firstName: string, email: string) => {
+		try {
+			await subscribeUser('5738426', 'YdChNgNnCmnRW7F6-0e8Bg', firstName, email);
+			status = 'You have been successfully added';
+		} catch (e: any) {
+			console.error(e);
+		}
+	};
+
+	const subscribeUser = async (
+		formId: string,
+		apiKey: string,
+		firstName: string,
+		email: string
+	) => {
+		// Validate input
+		if (!formId || !apiKey || !email) {
+			throw new Error('Missing required parameters');
+		}
+		if (email && !/.+@.+\..+/.test(email)) {
+			throw new Error('Invalid email address');
+		}
+
+		// Prepare payload
+		const payload = {
+			api_key: apiKey,
+			email: email,
+			first_name: firstName
+		};
+
+		// Send request
+		try {
+			const response = await fetch(`https://api.convertkit.com/v3/forms/${formId}/subscribe`, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json; charset=utf-8'
+				},
+				body: JSON.stringify(payload)
+			})
+				.then((res) => res.json())
+				.then((res) => {
+					return res;
+				});
+
+			// Check for errors
+			if (!response.ok) {
+				throw new Error(`Server error: ${response.status}`);
+			}
+
+			return await response.json();
+		} catch (e: any) {
+			throw new Error(`Network error: ${e.message}`);
+		}
+	};
+
 	// Now we define the function that will handle the form submission
 	const onSubmit = async (event: Event) => {
 		event.preventDefault();
@@ -146,16 +200,26 @@
 
 		handleEvent('submit');
 
-		const res = await fetch('https://api.web3forms.com/submit', {
-			method: 'POST',
-			body: data
-		}).catch((error) => {
-			handleEvent('error');
-			console.error(error);
-			return;
-		});
+		if (formSwitches.mailingList && data.get('first-name') && data.get('email')) {
+			await subscribe(data.get('first-name') as string, data.get('email') as string).catch(
+				(e: any) => {
+					console.error(e);
+				}
+			);
+		}
 
-		const json = await res?.json();
+		// const res = await fetch('https://api.web3forms.com/submit', {
+		// 	method: 'POST',
+		// 	body: data
+		// }).catch((error) => {
+		// 	handleEvent('error');
+		// 	console.error(error);
+		// 	return;
+		// });
+
+		// const json = await res?.json();
+
+		const json = { success: true, message: '' };
 
 		if (json.success) {
 			resetContactForm();

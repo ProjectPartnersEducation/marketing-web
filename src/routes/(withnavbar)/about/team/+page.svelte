@@ -134,16 +134,6 @@
 			</div>
 		</div>
 	</div>
-	<!-- <div class="pb-8 text-6xl font-black text-center font-heading">
-		Can you picture yourself here?
-	</div>
-	<div class="text-center">
-		<Button
-			text="See our available roles"
-			href="https://projectpartners.jobspage.co/"
-			target="_blank"
-		/>
-	</div> -->
 </StandardMargins>
 
 <hr class="my-24" />
