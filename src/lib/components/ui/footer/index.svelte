@@ -88,8 +88,12 @@
 		class="grid grid-cols-4 col-span-2 pt-16 mt-16 text-center border-t lg:col-span-5 place-items-center"
 	>
 		<div></div>
-		<img src="{assets}/images/ncvo.png" class="max-h-16 md:max-h-32" />
-		<img src="{assets}/images/fraud-pledge.svg" class="max-h-16 md:max-h-32" />
+		<img src="{assets}/images/ncvo.png" alt="The logo of NCVO" class="max-h-16 md:max-h-32" />
+		<img
+			src="{assets}/images/fraud-pledge.svg"
+			alt="A logo showing a pledge to tackle fraud"
+			class="max-h-16 md:max-h-32"
+		/>
 		<div></div>
 	</div>
 	<div class="col-span-2 pt-8 mt-8 text-center lg:col-span-5">
