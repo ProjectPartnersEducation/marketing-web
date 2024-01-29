@@ -29,34 +29,7 @@ const config = {
 		adapter: adapter(),
 		paths: {
 			base: dev ? '' : process.env.BASE_PATH
-		},
-		csp: dev
-			? {}
-			: {
-				directives: {
-					'script-src': [
-						"'self'",
-						'https://projectpartners.org',
-						'https://res.cloudinary.com',
-						'https://stream.mux.com',
-						'https://mux.com',
-						'https://cdn.jsdelivr.com',
-						'https://api.iconify.design',
-						'https://donorbox.org',
-						'https://www.googletagmanager.com'
-					],
-					'object-src': ["'none'"],
-					'style-src': [
-						"'self'",
-						"'unsafe-inline'",
-						'https://fonts.googleapis.com',
-						'https://c.disquscdn.com'
-					],
-					'base-uri': ["'self'"],
-					'child-src': ["'self'", 'https://donorbox.org'],
-					'frame-src': ["'self'", 'https://donorbox.org']
-				}
-			}
+		}
 	}
 };
 
