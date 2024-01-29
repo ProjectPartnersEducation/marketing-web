@@ -46,6 +46,7 @@ const config = {
 						'https://weglot.com',
 						'https://dashboard.weglot.com',
 						'https://termly.io',
+						'https://app.termly.io',
 						'https://cdn.jsdelivr.com',
 						'https://api.iconify.design',
 						'https://documentcloud.adobe.com',

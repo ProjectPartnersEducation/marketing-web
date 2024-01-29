@@ -1,35 +1,10 @@
 <script lang="ts">
 	import { assets } from '$app/paths';
-	import Icon from '@iconify/svelte';
-	import { onMount } from 'svelte';
 	import { fly, fade, slide } from 'svelte/transition';
 
-	enum OnlineDetectorState {
-		NONE,
-		OFFLINE,
-		ONLINE
-	}
-
-	let scrollY: number;
-	let windowHeight: number;
-	let documentHeight: number;
-
 	let fullscreenMenuVisible = false;
-	let onlineDetectorState: OnlineDetectorState = OnlineDetectorState.NONE;
 
 	let svg: SVGElement;
-
-	const calculateScrollValue = (y: number) => {
-		if (documentHeight === undefined || windowHeight === undefined || y === undefined) {
-			return 0;
-		}
-
-		const scrollValue = y / (documentHeight - windowHeight);
-
-		return scrollValue > 1 ? 1 : scrollValue;
-	};
-
-	$: scrollValue = calculateScrollValue(scrollY);
 
 	const showFullscreenMenu = () => {
 		fullscreenMenuVisible = true;
@@ -38,21 +13,15 @@
 	const hideFullscreenMenu = () => {
 		fullscreenMenuVisible = false;
 	};
-
-	onMount(() => {
-		documentHeight = document.body.scrollHeight;
-	});
 </script>
-
-<svelte:window bind:scrollY bind:innerHeight={windowHeight} />
 
 <nav class="sticky top-0 z-40">
 	<div class="bg-white">
 		<div
-			class="flex flex-row items-center justify-between flex-auto grid-cols-3 p-4 align-middle border-b-8 border-l-2 border-r-2 border-gray-800 lg:mx-32 xl:mx-64"
+			class="flex flex-row items-center justify-between flex-auto grid-cols-3 p-4 align-middle border-b-8 border-l-2 border-r-2 border-black lg:mx-32 xl:mx-64"
 		>
 			<div class="order-3 w-12 h-12 ml-4 mr-6 md:order-1">
-				<div
+				<button
 					on:click={showFullscreenMenu}
 					on:keypress={showFullscreenMenu}
 					class="toggle grayscale hover:grayscale-0"
@@ -61,7 +30,7 @@
 					<div class="bars" id="bar1"></div>
 					<div class="bars" id="bar2"></div>
 					<div class="bars" id="bar3"></div>
-				</div>
+				</button>
 			</div>
 			<a href="/" class="order-2 md:order-2">
 				<svg inline-src="logo" class="w-full h-16 transition-transform hover:scale-105" />
@@ -75,28 +44,8 @@
 				</a>
 			</div>
 		</div>
-		<div class="w-auto h-1 border-b border-gray-200 xl:mx-64 lg:mx-32">
-			<div
-				class="w-full h-full bg-ppyellow"
-				style="transform: scaleX({scrollValue}); transform-origin: 0 0;"
-			/>
-		</div>
+		<div class="w-auto h-1 border-b border-gray-200 xl:mx-64 lg:mx-32"></div>
 	</div>
-	{#if !fullscreenMenuVisible && onlineDetectorState === OnlineDetectorState.OFFLINE}
-		<div class="text-center xl:mx-64 lg:mx-32">
-			<div class="inline-block px-6 py-3 text-xl text-white bg-red-600 rounded-sm">
-				You're offline! This website may not function properly until you're back online.
-				<Icon icon="mdi-light:warning" class="inline" />
-			</div>
-		</div>
-	{:else if !fullscreenMenuVisible && onlineDetectorState === OnlineDetectorState.ONLINE}
-		<div class="text-center xl:mx-64 lg:mx-32">
-			<div class="inline-block px-6 py-3 text-xl text-white bg-green-600 rounded-sm">
-				You're back online!
-				<Icon icon="mdi-light:warning" class="inline" />
-			</div>
-		</div>
-	{/if}
 </nav>
 {#if fullscreenMenuVisible}
 	<div
@@ -121,6 +70,8 @@
 							svg.style.fill = '#000';
 						}}
 						bind:this={svg}
+						role="button"
+						tabindex="0"
 					/>
 				</div>
 				<a href="/" on:click={hideFullscreenMenu} class="order-1 md:order-2">
