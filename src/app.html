@@ -8,12 +8,20 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="%sveltekit.assets%/favicon-16x16.png" />
 	<link rel="manifest" href="%sveltekit.assets%/site.webmanifest" />
 	<meta name="viewport" content="width=device-width" />
-	<script type="text/javascript" src="https://app.termly.io/resource-blocker/55c30b9a-eadb-4ea2-a770-229fc429b956"
-		async></script>
+	<script>(function (w, d, s, l, i) {
+			w[l] = w[l] || []; w[l].push({
+				'gtm.start':
+					new Date().getTime(), event: 'gtm.js'
+			}); var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-NNWHKGJZ');</script>
 	%sveltekit.head%
 </head>
 
 <body data-sveltekit-preload-data="hover">
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NNWHKGJZ" height="0" width="0"
+			style="display:none;visibility:hidden"></iframe></noscript>
 	<div style="display: contents">%sveltekit.body%</div>
 </body>
 
