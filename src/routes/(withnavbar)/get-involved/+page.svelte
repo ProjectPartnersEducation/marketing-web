@@ -66,9 +66,10 @@
 				<script src="https://donorbox.org/widget.js"></script>
 				<iframe
 					title="Donation Form"
-					src="https://donorbox.org/embed/project-partners-giving"
+					data-src="https://donorbox.org/embed/project-partners-giving"
 					name="donorbox"
 					allow="payment"
+					data-categories="essential"
 					seamless
 					frameborder="0"
 					scrolling="no"
