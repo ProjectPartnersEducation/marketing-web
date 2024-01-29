@@ -37,22 +37,13 @@ const config = {
 					'script-src': [
 						"'self'",
 						'https://projectpartners.org',
-						'https://beta.projectpartners.org',
 						'https://res.cloudinary.com',
 						'https://stream.mux.com',
 						'https://mux.com',
-						'https://cdn.weglot.com',
-						'https://api.weglot.com',
-						'https://weglot.com',
-						'https://dashboard.weglot.com',
-						'https://termly.io',
-						'https://app.termly.io',
 						'https://cdn.jsdelivr.com',
 						'https://api.iconify.design',
-						'https://documentcloud.adobe.com',
-						'https://projectpartners.disqus.com',
 						'https://donorbox.org',
-						'localhost:*'
+						'https://www.googletagmanager.com'
 					],
 					'object-src': ["'none'"],
 					'style-src': [
@@ -62,14 +53,8 @@ const config = {
 						'https://c.disquscdn.com'
 					],
 					'base-uri': ["'self'"],
-					'child-src': ["'self'", 'https://koalendar.com', 'https://donorbox.org'],
-					'frame-src': [
-						"'self'",
-						'https://donorbox.org',
-						'https://koalendar.com',
-						'https://disqus.com',
-						'https://documentcloud.adobe.com'
-					]
+					'child-src': ["'self'", 'https://donorbox.org'],
+					'frame-src': ["'self'", 'https://donorbox.org']
 				}
 			}
 	}
