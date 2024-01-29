@@ -32,7 +32,7 @@
 					<div class="bars" id="bar3"></div>
 				</button>
 			</div>
-			<a href="/" class="order-2 md:order-2">
+			<a href="/home" class="order-2 md:order-2">
 				<svg inline-src="logo" class="w-full h-16 transition-transform hover:scale-105" />
 			</a>
 			<div class="order-1 md:order-3">
@@ -74,7 +74,7 @@
 						tabindex="0"
 					/>
 				</div>
-				<a href="/" on:click={hideFullscreenMenu} class="order-1 md:order-2">
+				<a href="/home" on:click={hideFullscreenMenu} class="order-1 md:order-2">
 					<img
 						src={assets + '/logo.svg'}
 						alt="logo"
