@@ -204,7 +204,11 @@
 			<h1 class="inline text-5xl font-black font-heading">Contact Us</h1>
 			<p class="mt-6 text-2xl leading-loose">
 				If you have any questions, comments, or feedback, please get in touch with us using the form
-				below. You can also email us at <CopyLink text="hello@projectpartners.org" />
+				below. You can also email us at <CopyLink text="hello@projectpartners.org" /> You can also talk
+				to us on
+				<a href="https://wa.me/447488892235" target="_blank" class="ml-2"
+					><img src="{assets}/whatsapp.png" alt="WhatsApp logo" class="inline h-8" /></a
+				>.
 			</p>
 			<div class="flex flex-col">
 				<ContactForm />

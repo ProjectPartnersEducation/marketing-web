@@ -1,12 +1,13 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 
+	import subscribeUserToMailingList from '$lib/scripts/subscribeToMailingList';
 	import { contactFormContent, resetContactForm } from './contactStore';
 	import TextInput from '$lib/components/elements/contact/TextInput.svelte';
 	import TextAreaInput from '$lib/components/elements/contact/TextAreaInput.svelte';
 	import CopyLink from '$lib/components/elements/copylink/index.svelte';
 
-	const accessKey = '3149ae28-80f8-4473-a6da-8677d4807356';
+	const accessKey = '109e9b32-79a4-4b32-bac5-5d4c40e6bc65';
 
 	let formSwitches = {
 		agreement: false,
@@ -132,58 +133,12 @@
 		return allValid;
 	};
 
-	const subscribe = async (firstName: string, email: string) => {
+	const subscribe = async (firstName: string, lastName: string | null, email: string) => {
 		try {
-			await subscribeUser('5738426', 'YdChNgNnCmnRW7F6-0e8Bg', firstName, email);
+			await subscribeUserToMailingList(firstName, lastName, email);
 			status = 'You have been successfully added';
 		} catch (e: any) {
 			console.error(e);
-		}
-	};
-
-	const subscribeUser = async (
-		formId: string,
-		apiKey: string,
-		firstName: string,
-		email: string
-	) => {
-		// Validate input
-		if (!formId || !apiKey || !email) {
-			throw new Error('Missing required parameters');
-		}
-		if (email && !/.+@.+\..+/.test(email)) {
-			throw new Error('Invalid email address');
-		}
-
-		// Prepare payload
-		const payload = {
-			api_key: apiKey,
-			email: email,
-			first_name: firstName
-		};
-
-		// Send request
-		try {
-			const response = await fetch(`https://api.convertkit.com/v3/forms/${formId}/subscribe`, {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json; charset=utf-8'
-				},
-				body: JSON.stringify(payload)
-			})
-				.then((res) => res.json())
-				.then((res) => {
-					return res;
-				});
-
-			// Check for errors
-			if (!response.ok) {
-				throw new Error(`Server error: ${response.status}`);
-			}
-
-			return await response.json();
-		} catch (e: any) {
-			throw new Error(`Network error: ${e.message}`);
 		}
 	};
 
@@ -200,26 +155,16 @@
 
 		handleEvent('submit');
 
-		if (formSwitches.mailingList && data.get('first-name') && data.get('email')) {
-			await subscribe(data.get('first-name') as string, data.get('email') as string).catch(
-				(e: any) => {
-					console.error(e);
-				}
-			);
-		}
+		const res = await fetch('https://api.web3forms.com/submit', {
+			method: 'POST',
+			body: data
+		}).catch((error) => {
+			handleEvent('error');
+			console.error(error);
+			return;
+		});
 
-		// const res = await fetch('https://api.web3forms.com/submit', {
-		// 	method: 'POST',
-		// 	body: data
-		// }).catch((error) => {
-		// 	handleEvent('error');
-		// 	console.error(error);
-		// 	return;
-		// });
-
-		// const json = await res?.json();
-
-		const json = { success: true, message: '' };
+		const json = await res?.json();
 
 		if (json.success) {
 			resetContactForm();
@@ -227,6 +172,18 @@
 		} else {
 			handleEvent('error');
 			console.error(json.message);
+		}
+
+		if (formSwitches.mailingList && data.get('first-name') && data.get('email')) {
+			const { firstName, lastName, email } = {
+				firstName: data.get('first-name') as string,
+				lastName: data.get('last-name') as string,
+				email: data.get('email') as string
+			};
+
+			await subscribe(firstName, lastName, email).catch((e: any) => {
+				console.error(e);
+			});
 		}
 	};
 
@@ -334,7 +291,7 @@
 			</div>
 			<label class="text-lg leading-6 text-gray-600" id="switch-1-label" for="agreement">
 				By selecting this, you agree to our
-				<a href="{base}/policies#privacy" target="_blank" class="font-semibold text-ppblue"
+				<a href="{base}/policies/privacy" target="_blank" class="font-semibold text-ppblue"
 					>privacy&nbsp;policy</a
 				>.
 			</label>
@@ -428,7 +385,7 @@
 					</svg>
 				</div>
 				<div class="ml-3">
-					<h3 class="text-red-800">
+					<h3 class="text-xl text-red-800">
 						Oops! Please check you've filled in all the information correctly.
 					</h3>
 					<div class="my-2 text-red-800">
@@ -450,7 +407,7 @@
 		<button
 			type="submit"
 			class="
-				block w-full rounded-sm px-3.5 py-2.5 text-center text-lg font-semibold opacity-100 bg-ppblue text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ppblue disabled:cursor-not-allowed"
+				block w-full rounded-sm px-3.5 py-2.5 text-center text-xl font-semibold opacity-100 bg-ppblue text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ppblue disabled:cursor-not-allowed"
 			class:hover:shadow-md={formIsValid && formState !== 'loading' && formState !== 'success'}
 			class:hover:shadow-[#27ACD9]={formIsValid &&
 				formState !== 'loading' &&
@@ -485,7 +442,7 @@
 					</svg>
 				</div>
 				<div class="ml-3">
-					<p class="text-sm font-medium text-green-800">Thank you, we will get back to you soon!</p>
+					<p class="text-xl font-medium text-green-800">Thank you, we will get back to you soon!</p>
 				</div>
 			</div>
 		</div>
@@ -507,11 +464,11 @@
 					</svg>
 				</div>
 				<div class="ml-3">
-					<h3 class="text-sm font-medium text-red-800">Your message was not sent</h3>
-					<div class="mt-2 text-sm text-red-700">
+					<h3 class="text-xl font-medium text-red-800">Your message was not sent</h3>
+					<div class="mt-2 text-xl text-red-700">
 						<p>
 							We're sorry! Please check your internet connection or, if the error persists, please
-							email us instead at <CopyLink text="hello@projectpartners.org" />.
+							email us instead at <CopyLink text="hello@projectpartners.org" />
 						</p>
 					</div>
 				</div>
