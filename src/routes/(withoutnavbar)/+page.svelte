@@ -7,15 +7,18 @@
 	import StrongLinks from '$lib/components/elements/stronglinks/index.svelte';
 	import Navbar from '$lib/components/ui/navbar/index.svelte';
 	import Footer from '$lib/components/ui/footer/index.svelte';
+	import GhanaBanner from '$lib/components/ui/banner/ghanaannouncement.svelte';
 </script>
 
 <svelte:head>
 	<title>Project Partners Education</title>
 </svelte:head>
 
-<div class="max-w-screen snap-start">
+<GhanaBanner />
+
+<div class="max-w-screen">
 	<Navbar />
-	<div class="px-6 mb-12 lg:px-36 md:px-24 sm:px-16 snap-proximity">
+	<div class="px-6 mb-12 lg:px-36 md:px-24 sm:px-16">
 		<div class="grid items-center w-full grid-cols-1 gap-16 pt-24 lg:border-r lg:grid-cols-2">
 			<StrongImage
 				src="cloudinary://v1705927413/img/IMG_0165_bxrqlm.png"
@@ -59,7 +62,7 @@
 				class="absolute bottom-6 right-12 h-36"
 			/>
 		</div>
-		<div class="w-full h-48 lg:border-l snap-start" />
+		<div class="w-full h-48 lg:border-l" />
 		<div class="grid items-center w-full grid-cols-1 gap-16 lg:border-l lg:grid-cols-2">
 			<div class="order-2 mx-auto lg:w-3/4 lg:order-1">
 				<h3 class="text-xl sm:text-2xl text-slate-500">Our Resources</h3>
@@ -86,7 +89,7 @@
 			</div>
 		</div>
 		<div class="hidden w-full h-48 border-b border-l rounded-bl-lg lg:block" />
-		<div class="w-full h-48 lg:border-r snap-start" />
+		<div class="w-full h-48 lg:border-r" />
 		<div class="grid items-center w-full grid-cols-1 gap-16 lg:border-r lg:grid-cols-2">
 			<StrongImage
 				src="cloudinary://v1706041791/img/IMG_0290_ngcuci.png"
@@ -159,10 +162,10 @@
 			</div>
 		</div>
 		<div class="w-full px-6 border-b lg:px-36 md:px-24 sm:px-16"></div>
-		<div class="w-1/2 h-48 lg:border-r snap-start" />
+		<div class="w-1/2 h-48 lg:border-r" />
 	</div>
 	<div class="lg:px-36 md:px-24 sm:px-16">
-		<StrongBox snap={false}>
+		<StrongBox>
 			<div class="grid items-center w-full grid-cols-1 gap-4 text-center">
 				<h3 class="text-xl sm:text-2xl text-slate-500">Get Involved</h3>
 				<div class="w-full">
@@ -192,7 +195,7 @@
 			</div>
 		</StrongBox>
 	</div>
-	<hr class="my-24 snap-start" />
+	<hr class="my-24" />
 	<StrongLinks
 		link1={{
 			imgsrc: `cloudinary://v1706050229/img/IMG_0459_bkjyzw.jpg`,
@@ -216,5 +219,5 @@
 			hoverColor: 'ppred'
 		}}
 	/>
-	<Footer snap={true} />
+	<Footer />
 </div>

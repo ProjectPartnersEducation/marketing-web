@@ -1,12 +1,9 @@
 <script>
 	import { assets } from '$app/paths';
-
-	export let snap = false;
 </script>
 
 <div
 	class="grid justify-around grid-cols-2 px-8 pt-24 pb-20 space-y-12 gap-x-4 md:px-16 lg:px-32 xl:px-48 lg:grid-cols-5 lg:justify-normal"
-	class:snap-end={snap}
 >
 	<div class="col-span-2 mb-12 border-b lg:col-span-5"></div>
 	<div class="grid grid-cols-1">

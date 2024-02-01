@@ -16,10 +16,12 @@
 
 <svelte:head>
 	<title>Get Involved | Project Partners Education</title>
+
+	<script src="https://donorbox.org/widget.js" async></script>
 </svelte:head>
 
 {#if showFadeOut}
-	<div
+	<button
 		class="fixed z-10 w-full h-full bg-black opacity-50"
 		transition:fade={{ duration: 150 }}
 		on:click={() => {
@@ -63,7 +65,6 @@
 					showFadeOut = false;
 				}}
 			>
-				<script src="https://donorbox.org/widget.js"></script>
 				<iframe
 					title="Donation Form"
 					src="https://donorbox.org/embed/project-partners-giving"
@@ -204,11 +205,7 @@
 			<h1 class="inline text-5xl font-black font-heading">Contact Us</h1>
 			<p class="mt-6 text-2xl leading-loose">
 				If you have any questions, comments, or feedback, please get in touch with us using the form
-				below. You can also email us at <CopyLink text="hello@projectpartners.org" /> You can also talk
-				to us on
-				<a href="https://wa.me/447488892235" target="_blank" class="ml-2"
-					><img src="{assets}/whatsapp.png" alt="WhatsApp logo" class="inline h-8" /></a
-				>.
+				below. You can also email us at <CopyLink text="hello@projectpartners.org" />
 			</p>
 			<div class="flex flex-col">
 				<ContactForm />
