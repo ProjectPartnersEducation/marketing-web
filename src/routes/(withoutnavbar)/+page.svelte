@@ -105,8 +105,9 @@
 					Engaging global knowledge
 				</h2>
 				<p class="mt-8 text-xl leading-loose xl:text-justify sm:leading-loose sm:text-2xl">
-					<span class="font-black">Our work</span> with our network partners is leading the way in education
-					reform and is expanding worldwide in its work to ensure a sustainable impact for all.
+					<span class="font-black">Our work</span> with our network of partners is leading the way in
+					education reform and is expanding worldwide in its work to ensure a sustainable impact for
+					all.
 				</p>
 				<div class="mt-8 text-center lg:text-left">
 					<Button
