@@ -1,5 +1,5 @@
 import adapter from '@sveltejs/adapter-cloudflare';
-import { vitePreprocess } from '@sveltejs/kit/vite';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import inlineSvg from '@svelte-put/preprocess-inline-svg';
 
 const dev = process.argv.includes('dev');
