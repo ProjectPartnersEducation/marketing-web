@@ -82,15 +82,29 @@
 		</ul>
 	</div>
 	<div
-		class="grid grid-cols-4 col-span-2 pt-16 mt-16 text-center border-t lg:col-span-5 place-items-center"
+		class="grid grid-cols-5 col-span-2 pt-16 mt-16 text-center border-t lg:col-span-5 place-items-center"
 	>
 		<div></div>
-		<img src="{assets}/images/ncvo.png" alt="The logo of NCVO" class="max-h-16 md:max-h-32" />
-		<img
-			src="{assets}/images/fraud-pledge.svg"
-			alt="A logo showing a pledge to tackle fraud"
-			class="max-h-16 md:max-h-32"
-		/>
+		<a href="https://www.ncvo.org.uk" target="_blank">
+			<img src="{assets}/images/ncvo.png" alt="The logo of NCVO" class="max-h-16 md:max-h-32" />
+		</a>
+		<a href="https://preventcharityfraud.org.uk/fraud-pledge/" target="_blank">
+			<img
+				src="{assets}/images/fraud-pledge.svg"
+				alt="A logo showing a pledge to tackle fraud"
+				class="max-h-16 md:max-h-32"
+			/>
+		</a>
+		<a
+			href="https://www.fundraisingregulator.org.uk/directory/project-partners-education-cio"
+			target="_blank"
+		>
+			<img
+				src="{assets}/images/fundraising-badge.png"
+				alt="A logo showing our registration with the Fundraising Regulator"
+				class="max-h-16 md:max-h-32"
+			/>
+		</a>
 		<div></div>
 	</div>
 	<div class="col-span-2 pt-8 mt-8 text-center lg:col-span-5">
