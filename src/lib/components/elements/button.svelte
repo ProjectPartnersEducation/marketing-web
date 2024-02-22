@@ -2,13 +2,35 @@
 	export let text: string;
 	export let href: string = '#';
 	export let target: string = '';
-	export let color: string = '#1e87ab';
+	export let color: PPColors | string = '#1e87ab';
 	export let textColor: string = '#ffffff';
+	export let big = false;
 	export let action: () => void = () => {};
+
+	enum PPColors {
+		pppink = '#cea0b5',
+		ppgreen = '#93b195',
+		ppyellow = '#eeb019',
+		pporange = '#f3a061',
+		ppblue = '#1e87ab',
+		ppred = '#d01c1c'
+	}
+
+	color = PPColors[color as keyof typeof PPColors] || color;
 </script>
 
-<a style="--clr: {color}; --textclr: {textColor}" class="button" {href} {target} on:click={action}>
-	<span class="button__icon-wrapper">
+<a
+	style="--clr: {color}; --textclr: {textColor}"
+	class="inline-flex items-center max-w-full gap-3 py-3 pl-5 pr-6 overflow-hidden font-black tracking-wide break-words transition-colors duration-300 bg-black border-8 rounded-sm decoration-0 button"
+	class:text-xl={!big}
+	class:text-3xl={big}
+	{href}
+	{target}
+	on:click={action}
+>
+	<span
+		class="relative grid w-6 h-6 overflow-hidden bg-white rounded-full button__icon-wrapper shrink-0 place-items-center"
+	>
 		<svg
 			width="10"
 			class="button__icon-svg"
@@ -40,42 +62,21 @@
 
 <style>
 	.button {
-		line-height: 1;
-		text-decoration: none;
-		display: inline-flex;
-		align-items: center;
-		gap: 0.75rem;
-		background-color: var(--clr);
 		color: var(--textclr);
-		border-radius: 0.625rem;
-		font-size: 1.25rem;
-		padding: 0.75rem 1.5rem;
-		padding-left: 20px;
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		transition: background-color 0.3s;
+		border-color: var(--clr);
+		box-sizing: border-box;
 	}
 
 	.button__icon-wrapper {
-		flex-shrink: 0;
-		width: 25px;
-		height: 25px;
-		position: relative;
 		color: var(--clr);
-		background-color: #fff;
-		border-radius: 50%;
-		display: grid;
-		place-items: center;
-		overflow: hidden;
 	}
 
 	.button:hover {
-		background-color: #000;
+		background-color: var(--clr);
 	}
 
 	.button:hover .button__icon-wrapper {
-		color: #000;
+		color: var(--clr);
 	}
 
 	.button__icon-svg--copy {

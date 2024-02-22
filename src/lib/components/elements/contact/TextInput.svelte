@@ -20,7 +20,7 @@
 
 <div class={additionalClasses}>
 	<label for={id} class="block text-xl leading-6 text-gray-900">{label}</label>
-	<div class="relative mt-2 rounded-md shadow-sm">
+	<div class="relative mt-2 rounded-sm shadow-sm">
 		<input
 			use:typeAction
 			{name}
@@ -28,7 +28,7 @@
 			{placeholder}
 			{required}
 			{autocomplete}
-			class="w-full rounded-md border-0 px-3.5 py-2 pr-10 ring-1 ring-inset focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6 placeholder:text-gray-400 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 disabled:ring-gray-200"
+			class="w-full rounded-sm border-0 px-3.5 py-2.5 pr-10 ring-1 ring-inset focus:ring-2 focus:ring-inset sm:text-lg sm:leading-6 placeholder:text-gray-400 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 disabled:ring-gray-200"
 			class:pr-10={error}
 			class:text-red-900={error}
 			class:text-gray-900={!error}
@@ -37,7 +37,7 @@
 			class:placeholder:text-red-300={error}
 			class:placeholder:text-gray-300={!error}
 			class:focus:ring-red-500={error}
-			class:focus:ring-indigo-500={!error}
+			class:focus:ring-ppblue={!error}
 			bind:value
 			{disabled}
 			on:blur

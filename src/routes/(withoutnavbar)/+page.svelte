@@ -1,171 +1,224 @@
 <script lang="ts">
 	import { assets } from '$app/paths';
 
-	import VideoPlayer from '$lib/components/elements/video/index.svelte';
 	import Button from '$lib/components/elements/button.svelte';
+	import StrongImage from '$lib/components/elements/strongimage/index.svelte';
+	import StrongBox from '$lib/components/elements/strongbox/index.svelte';
+	import StrongLinks from '$lib/components/elements/stronglinks/index.svelte';
 	import Navbar from '$lib/components/ui/navbar/index.svelte';
 	import Footer from '$lib/components/ui/footer/index.svelte';
+	import GhanaBanner from '$lib/components/ui/banner/ghanaannouncement.svelte';
 </script>
 
-<div class="h-screen bg-black snap-start" id="videowindow">
-	<VideoPlayer
-		videoSrc="https://storage.googleapis.com/pp-marketing-web-public/videos/Project%20Partners_Doc_temp.mp4"
-		plyrOptions={{ autoplay: true, mute: true, controls: false }}
-	/>
-	<div class="absolute z-10 w-full text-center -translate-x-1/2 left-1/2 bottom-32 top-32">
-		<img src={assets + '/logo.svg'} alt="logo" class="inline-block max-h-40" />
-		<div class="mt-24">
-			<Button text="Watch the whole video (3:47)" href="" color="#d01c1c" />
-		</div>
-	</div>
-</div>
+<svelte:head>
+	<title>Project Partners Education</title>
+</svelte:head>
 
-<div class="snap-start">
+<GhanaBanner />
+
+<div class="max-w-screen">
 	<Navbar />
-
-	<div class="mt-48 mb-12 px-36 snap-proximity">
-		<div class="w-full text-center">
-			<h3 class="text-2xl text-slate-500">Introducing...</h3>
-			<div class="w-full mt-8 max-h-40">
-				<img src={assets + '/logo.svg'} alt="logo" class="mx-auto max-h-40" />
-			</div>
-			<div class="w-full mt-4 text-center">
-				Project Partners Education CIO is a charity registered in England & Wales, 1189396
-			</div>
-			<div class="w-1/2 mx-auto my-48 border-b" />
-			<div class="grid w-full grid-cols-[80%,20%] items-center px-10">
-				<div class="w-full px-20 text-center">
-					<h1 class="pb-2 leading-tight text-white bg-black rounded-md text-7xl font-handwriting">
-						We are the engaging education charity.
-					</h1>
-					<aside class="mt-8 text-2xl">
-						Proudly partnered with the Ghana Commission for UNESCO since 2022
-						<img
-							src={assets + '/images/unesco_ghana_logo.png'}
-							alt="Logo of UNESCO Ghana"
-							class="h-24 mx-auto mt-4"
-						/>
-					</aside>
+	<div class="px-6 mb-12 lg:px-36 md:px-24 sm:px-16">
+		<div class="grid items-center w-full grid-cols-1 gap-16 pt-24 lg:border-r lg:grid-cols-2">
+			<StrongImage
+				src="cloudinary://v1705927413/img/IMG_0165_bxrqlm.png"
+				bgColor="ppgreen"
+				href="/about"
+				alt="A happy teacher looking straight at the camera with her arms crossed"
+			/>
+			<div class="mx-auto lg:w-3/4">
+				<h3 class="text-xl sm:text-2xl text-slate-500">Our Mission</h3>
+				<h2
+					class="mt-1 text-4xl font-black leading-tight sm:text-5xl sm:leading-tight font-heading"
+				>
+					The new era of better education
+				</h2>
+				<p class="mt-8 text-xl leading-loose xl:text-justify sm:leading-loose sm:text-2xl">
+					<span class="font-black">Our mission</span> is to transform the school learning environment
+					into a space where curiosity, creativity, and collaboration come first.
+				</p>
+				<div class="mt-8 text-center lg:text-left">
+					<Button text="Learn about what we do" href="/about" color="ppgreen" />
 				</div>
-				<div>
-					<img
-						src={assets + '/images/emmanuella.png'}
-						alt="An illustration of Emmanuella"
-						class="mx-auto"
+				{#if false}
+					<div class="inline-block pt-8 mt-8 lg:border-t">
+						<span class="inline-block align-middle"
+							>[1]: <a
+								href="https://issuu.com/projectpartnersedu"
+								target="_blank"
+								class="underline hover:text-slate-500"
+								>"Project Partners: Towards Fully-Engaged Learning", 2023</a
+							></span
+						>
+						<svg inline-src="open-in-new" class="inline-block h-4 align-middle" />
+					</div>
+				{/if}
+			</div>
+		</div>
+		<div class="relative hidden w-full h-48 rounded-br-lg lg:border-b lg:border-r lg:block">
+			<img
+				src={assets + '/images/corn-image.png'}
+				alt="Illustration of growing corn"
+				class="absolute bottom-6 right-12 h-36"
+			/>
+		</div>
+		<div class="w-full h-48 lg:border-l" />
+		<div class="grid items-center w-full grid-cols-1 gap-16 lg:border-l lg:grid-cols-2">
+			<div class="order-2 mx-auto lg:w-3/4 lg:order-1">
+				<h3 class="text-xl sm:text-2xl text-slate-500">Our Resources</h3>
+				<h2
+					class="mt-1 text-4xl font-black leading-tight sm:text-5xl sm:leading-tight font-heading"
+				>
+					Where life comes to learning
+				</h2>
+				<p class="mt-8 text-xl leading-loose xl:text-justify sm:leading-loose sm:text-2xl">
+					<span class="font-black">Our resources</span> are used by learners, teachers, and education
+					leaders, freely available digitally or through in-person activities
+				</p>
+				<div class="mt-8 text-center lg:text-left">
+					<Button text="Browse our resources" href="/resources" color="pporange" />
+				</div>
+			</div>
+			<div class="order-1 lg:order-2">
+				<StrongImage
+					src="cloudinary://v1706041791/img/three-students-looking-over-shoulder_cdhfju.jpg"
+					bgColor="pporange"
+					href="/resources"
+					alt="Three students looking over each other's shoulders at a Project Partners project pack"
+				/>
+			</div>
+		</div>
+		<div class="hidden w-full h-48 border-b border-l rounded-bl-lg lg:block" />
+		<div class="w-full h-48 lg:border-r" />
+		<div class="grid items-center w-full grid-cols-1 gap-16 lg:border-r lg:grid-cols-2">
+			<StrongImage
+				src="cloudinary://v1706041791/img/IMG_0290_ngcuci.png"
+				bgColor="ppblue"
+				href="/about/ghana-case-study"
+				alt="A teacher and a student looking at a Project Partners project pack"
+			/>
+			<div class="mx-auto lg:w-3/4">
+				<h3 class="text-xl sm:text-2xl text-slate-500">Our Work</h3>
+				<h2
+					class="mt-1 text-4xl font-black leading-tight break-normal sm:text-5xl sm:leading-tight font-heading"
+				>
+					Engaging global knowledge
+				</h2>
+				<p class="mt-8 text-xl leading-loose xl:text-justify sm:leading-loose sm:text-2xl">
+					<span class="font-black">Our work</span> with our network of partners is leading the way in
+					education reform and is expanding worldwide in its work to ensure a sustainable impact for
+					all.
+				</p>
+				<div class="mt-8 text-center lg:text-left">
+					<Button
+						text="Read about Project Partners in Ghana"
+						href="/about/ghana-case-study"
+						color="ppblue"
 					/>
 				</div>
 			</div>
 		</div>
-		<div class="w-full h-48 mt-48 border-t border-r rounded-tr-lg" />
-		<div class="grid items-center w-full grid-cols-2 gap-16 border-r">
-			<div>
+		<div class="relative hidden w-1/2 h-48 border-b border-r rounded-br-lg left-1/2 lg:block" />
+		<div class="w-1/2 h-48 lg:border-r" />
+		<div class="w-full px-6 border-b lg:px-36 md:px-24 sm:px-16"></div>
+		<div class="py-16 lg:px-16 lg:py-24">
+			<h2 class="py-2 text-4xl font-black text-center underline font-heading">
+				We are proudly supported by
+			</h2>
+			<h3 class="mt-16 text-2xl font-black">Our Government Partners</h3>
+			<div class="grid grid-cols-2 gap-4 mt-6 md:grid-cols-4 place-items-center">
 				<img
-					src="{assets}/images/IMG_0165.png"
-					class="transition-all border-8 border-black cursor-pointer hover:scale-105"
+					class=" max-h-24"
+					src="{assets}/images/supporters/unesco-ghana-logo.png"
+					alt="The logo of the Ghana Commission for UNESCO"
+				/>
+				<img
+					class=" max-h-24"
+					src="{assets}/images/supporters/ges-logo.png"
+					alt="The logo of the Ghana Education Service"
+				/>
+				<img
+					class=" max-h-24"
+					src="{assets}/images/supporters/nacca-logo.png"
+					alt="The logo of the National Council for Curriculum and Assessment"
+				/>
+				<img
+					class=" max-h-24"
+					src="{assets}/images/supporters/ntc-logo.jpg"
+					alt="The logo of the National Teaching Council"
 				/>
 			</div>
-			<div class="w-3/4 mx-auto">
-				<h3 class="text-2xl text-slate-500">Our Mission</h3>
-				<h2 class="mt-1 text-5xl font-black leading-tight font-handwriting">
-					The new era of better education
-				</h2>
-				<p class="mt-8 text-2xl leading-9 text-justify">
-					We all learn best when we are active, engaged, and working together.
-				</p>
-				<p class="mt-4 text-2xl leading-9 text-justify">
-					<span class="font-black">Our mission</span> is to transform the school learning environment
-					into a space where curiosity, creativity, and collaboration are the number one priority.
-				</p>
-				<div class="mt-8">
-					<Button text="What is engaged learning?" href="/about" color="#93b195" />
-				</div>
-			</div>
-		</div>
-		<div class="relative w-full h-48 border-b border-r rounded-br-lg">
-			<img
-				src={assets + '/images/corn-image.png'}
-				alt="Logo of UNESCO Ghana"
-				class="absolute bottom-6 right-12 h-36"
-			/>
-		</div>
-		<div class="w-full h-48 border-l" />
-		<div class="grid items-center w-full grid-cols-2 gap-16 border-l">
-			<div class="w-3/4 mx-auto">
-				<h3 class="text-2xl text-slate-500">Our Resources</h3>
-				<h2 class="mt-1 text-5xl font-black leading-tight font-handwriting">
-					Where life comes to learning
-				</h2>
-				<p class="mt-8 text-2xl leading-9 text-justify">
-					Our learning philosophy is embedded within our growing library of free learning resources,
-					which are available to everyone.
-				</p>
-				<p class="mt-4 text-2xl leading-9 text-justify">
-					<span class="font-black">Our resources</span> are designed to be used by learners, teachers,
-					and leaders, and are available on our learning portal.
-				</p>
-				<div class="mt-8">
-					<Button text="Visit our learning portal" href="/resources" color="#eeb019" />
-				</div>
-			</div>
-			<div>
+			<h3 class="mt-16 text-2xl font-black">Our NGO Partners</h3>
+			<div class="grid grid-cols-2 gap-4 mt-6 md:grid-cols-3 place-items-center">
 				<img
-					src="{assets}/images/two-student-holding-books.jpg"
-					class="transition-all border-8 border-black cursor-pointer hover:scale-105"
+					class=" max-h-24"
+					src="{assets}/images/supporters/brightside-logo.png"
+					alt="The logo of the Brightside Trust"
+				/>
+				<img
+					class=" max-h-24"
+					src="{assets}/images/supporters/rotary-club-logo.png"
+					alt="The logo of the Rotary Club"
 				/>
 			</div>
 		</div>
-		<div class="w-full h-48 border-b border-l rounded-bl-lg" />
-		<div class="w-full h-48 border-r" />
-		<div class="grid items-center w-full grid-cols-2 gap-16 border-r">
-			<div>
-				<img
-					src="{assets}/images/IMG_0533.jpg"
-					class="transition-all border-8 border-black cursor-pointer hover:scale-105"
-				/>
-			</div>
-			<div class="w-3/4 mx-auto">
-				<h3 class="text-2xl text-slate-500">Our Partners</h3>
-				<h2 class="mt-1 text-5xl font-black leading-tight font-handwriting">
-					Engaging indigenous knowledge
-				</h2>
-				<p class="mt-8 text-2xl leading-9 text-justify">
-					We work with people who are already leading the way in education, and who are passionate
-					about making a difference.
-				</p>
-				<p class="mt-4 text-2xl leading-9 text-justify">
-					<span class="font-black">Our partners</span> help us ensure that our work is sustainable and
-					impactful for all.
-				</p>
-				<div class="mt-8">
-					<Button text="Read about our partnerships" href="/about#partners" color="#1e87ab" />
-				</div>
-			</div>
-		</div>
-		<div class="relative w-1/2 h-48 border-b border-r rounded-br-lg left-1/2" />
-		<div class="w-1/2 h-48 border-r" />
-		<div
-			class="grid items-center w-full grid-cols-1 gap-16 py-32 border-2 rounded-lg shadow-2xl border-slate-600 bg-[#fcfcff] snap-center"
-		>
-			<div class="w-3/4 mx-auto text-center">
-				<h3 class="text-2xl text-slate-500">Get Involved</h3>
-				<h2 class="mt-1 text-6xl font-black leading-tight font-handwriting">
-					Let's make this happen
-				</h2>
-				<p class="mt-8 text-2xl leading-9 text-justify">
-					We're proud to work with people who are passionate about making a difference. Our work is
-					only just beginning, and we need your help to bring the new era of education to life.
-				</p>
-				<p class="mt-4 text-2xl leading-9 text-justify">
-					<span class="font-black">Your support</span> will help us to continue to develop our resources,
-					and to reach more people. There are many ways you can support us, and we'd love to hear from
-					you.
-				</p>
-				<div class="mt-8">
-					<Button text="Find out how you can get involved" href="/get-involved" color="#d01c1c" />
-				</div>
-			</div>
-		</div>
+		<div class="w-full px-6 border-b lg:px-36 md:px-24 sm:px-16"></div>
+		<div class="w-1/2 h-48 lg:border-r" />
 	</div>
+	<div class="lg:px-36 md:px-24 sm:px-16">
+		<StrongBox>
+			<div class="grid items-center w-full grid-cols-1 gap-4 text-center">
+				<h3 class="text-xl sm:text-2xl text-slate-500">Get Involved</h3>
+				<div class="w-full">
+					<h2
+						class="inline-block px-2 py-3 mt-1 text-5xl font-black leading-tight text-white bg-black rounded-sm sm:leading-tight sm:text-6xl md:text-7xl font-heading"
+					>
+						Let's make this happen.
+					</h2>
+				</div>
+				<p
+					class="mt-8 text-xl leading-loose text-left xl:text-justify sm:leading-loose sm:text-2xl"
+				>
+					We are proud to work with people who are passionate about education reform. Our work is
+					only just beginning, and we need your help to bring the new era of school learning to
+					life.
+				</p>
+				<p
+					class="mt-8 text-xl leading-loose text-left xl:text-justify sm:leading-loose sm:text-2xl"
+				>
+					Whether you're an individual or already part of a wider team, your support will help us to
+					continue to develop our resources, and to reach more people. There are many ways for you
+					to get involved and we'd love to hear from you.
+				</p>
+				<div class="mt-8">
+					<Button text="Get involved!" href="/get-involved" color="ppred" big={true} />
+				</div>
+			</div>
+		</StrongBox>
+	</div>
+	<hr class="my-24" />
+	<StrongLinks
+		link1={{
+			imgsrc: `cloudinary://v1706050229/img/IMG_0459_bkjyzw.jpg`,
+			imgalt: 'A smiling teacher with his arms crossed',
+			text: 'See our resources',
+			href: '/resources',
+			hoverColor: 'ppyellow'
+		}}
+		link2={{
+			imgsrc: `cloudinary://v1706050214/img/IMG_0034_bwy8cq.jpg`,
+			imgalt: 'Two children looking at a book',
+			text: 'Read about us',
+			href: '/about',
+			hoverColor: 'ppgreen'
+		}}
+		bigLink={{
+			imgsrc: `cloudinary://v1706050214/img/IMG_0034_bwy8cq.jpg`,
+			imgalt: 'A smiling teacher with his arms crossed',
+			text: 'Get Involved',
+			href: '/get-involved',
+			hoverColor: 'ppred'
+		}}
+	/>
+	<Footer />
 </div>
-
-<Footer snap={true} />

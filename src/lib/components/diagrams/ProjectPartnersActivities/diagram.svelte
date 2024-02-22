@@ -5,6 +5,7 @@
 
 	let svg: SVGElement;
 	let topLevelGroups: Map<string, SVGElement>;
+	let screenWidth: number;
 
 	const inactiveStyle = 'opacity: 0.2; cursor: pointer; transition: opacity 0.5s ease-in-out;';
 	const activeStyle = 'opacity: 1; cursor: default; transition: opacity 0.5s ease-in-out;';
@@ -45,7 +46,7 @@
 		});
 	};
 
-	$: setActiveGroup(activeElement);
+	$: screenWidth >= 1280 ? setActiveGroup(activeElement) : setActiveGroup();
 
 	onMount(() => {
 		topLevelGroups = new Map(
@@ -55,5 +56,7 @@
 		setActiveGroup(activeElement);
 	});
 </script>
+
+<svelte:window bind:innerWidth={screenWidth} />
 
 <svg inline-src="ProjectPartnersActivities" bind:this={svg} />

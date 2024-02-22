@@ -1,25 +1,10 @@
 <script lang="ts">
 	import { assets } from '$app/paths';
-	import { onMount, tick } from 'svelte';
 	import { fly, fade, slide } from 'svelte/transition';
-
-	let scrollY: number;
-	let windowHeight: number;
-	let documentHeight: number;
 
 	let fullscreenMenuVisible = false;
 
-	const calculateScrollValue = (y: number) => {
-		if (documentHeight === undefined || windowHeight === undefined || y === undefined) {
-			return 0;
-		}
-
-		const scrollValue = y / (documentHeight - windowHeight);
-
-		return scrollValue > 1 ? 1 : scrollValue;
-	};
-
-	$: scrollValue = calculateScrollValue(scrollY);
+	let svg: SVGElement;
 
 	const showFullscreenMenu = () => {
 		fullscreenMenuVisible = true;
@@ -28,48 +13,38 @@
 	const hideFullscreenMenu = () => {
 		fullscreenMenuVisible = false;
 	};
-
-	onMount(() => {
-		documentHeight = document.body.scrollHeight;
-	});
 </script>
 
-<svelte:window bind:scrollY bind:innerHeight={windowHeight} />
-
-<nav class="sticky top-0 z-40 bg-white">
-	<div
-		class="flex items-center justify-between p-4 mx-64 align-middle border-b-8 border-l-2 border-r-2 border-gray-800"
-	>
-		<div class="flex items-center">
-			<div class="w-12 h-12 ml-4 mr-6">
-				<div
+<nav class="sticky top-0 z-40">
+	<div class="bg-white">
+		<div
+			class="flex flex-row items-center justify-between flex-auto grid-cols-3 p-4 align-middle border-b-8 border-l-2 border-r-2 border-black lg:mx-32 xl:mx-64"
+		>
+			<div class="order-3 w-12 h-12 ml-4 mr-6 md:order-1">
+				<button
 					on:click={showFullscreenMenu}
-					class="transition-all duration-100 toggle grayscale hover:grayscale-0"
+					on:keypress={showFullscreenMenu}
+					class="toggle grayscale hover:grayscale-0"
 					id="checkbox"
 				>
 					<div class="bars" id="bar1"></div>
 					<div class="bars" id="bar2"></div>
 					<div class="bars" id="bar3"></div>
-				</div>
+				</button>
 			</div>
-			<a href="/">
-				<img src={assets + '/logo.svg'} alt="logo" class="w-full h-16" />
+			<a href="/home" class="order-2 md:order-2">
+				<svg inline-src="logo" class="w-full h-16 transition-transform hover:scale-105" />
 			</a>
+			<div class="order-1 md:order-3">
+				<a class="hidden text-lg md:inline-block md:text-xl fancy" href="/get-involved">
+					<span class="top-key" />
+					<span class="font-black text">Get Involved</span>
+					<span class="bottom-key-1" />
+					<span class="bottom-key-2" />
+				</a>
+			</div>
 		</div>
-		<div>
-			<a class="text-xl fancy" href="/get-involved">
-				<span class="top-key" />
-				<span class="font-black text">Get Involved</span>
-				<span class="bottom-key-1" />
-				<span class="bottom-key-2" />
-			</a>
-		</div>
-	</div>
-	<div class="w-auto h-1 mx-64 border-b border-gray-200">
-		<div
-			class="w-full h-full bg-[#f3a061]"
-			style="transform: scaleX({scrollValue}); transform-origin: 0 0;"
-		/>
+		<div class="w-auto h-1 border-b border-gray-200 xl:mx-64 lg:mx-32"></div>
 	</div>
 </nav>
 {#if fullscreenMenuVisible}
@@ -77,73 +52,95 @@
 		transition:fade={{ duration: 200 }}
 		class="fixed top-0 bottom-0 left-0 right-0 z-50 w-screen h-screen overflow-y-scroll bg-white inset-4 overscroll-contain"
 	>
-		<div out:slide class="grid items-center max-w-5xl grid-cols-2 py-24 mx-auto gap-x-16 gap-y-8">
-			<div class="">
-				<!-- <img
-						src="{assets}/images/cross.svg"
-						class="w-24 h-24 text-black transition-all duration-100 cursor-pointer fill-black"
-						on:click={() => {
-							fullscreenMenuVisible = false;
+		<div
+			out:slide
+			class="grid items-center max-w-5xl grid-cols-2 px-8 py-12 mx-auto md:py-24 gap-x-8 md:gap-x-16 gap-y-8"
+		>
+			<div class="flex flex-row justify-between col-span-2 gap-x-4 place-items-center">
+				<div class="order-2 md:order-1">
+					<svg
+						inline-src="cross"
+						class="w-16 h-16 transition-all cursor-pointer sm:w-20 sm:h-20 md:w-24 md:h-24"
+						on:click={hideFullscreenMenu}
+						on:keypress={hideFullscreenMenu}
+						on:mouseenter={() => {
+							svg.style.fill = 'var(--ppred)';
 						}}
-					/> -->
-				<svg inline-src="cross" class="w-16 h-16 cursor-pointer" on:click={hideFullscreenMenu} />
+						on:mouseleave={() => {
+							svg.style.fill = '#000';
+						}}
+						bind:this={svg}
+						role="button"
+						tabindex="0"
+					/>
+				</div>
+				<a href="/home" on:click={hideFullscreenMenu} class="order-1 md:order-2">
+					<img
+						src={assets + '/logo.svg'}
+						alt="logo"
+						class="w-full h-16 transition-all sm:h-20 hover:scale-105"
+					/>
+				</a>
 			</div>
-			<a href="/" on:click={hideFullscreenMenu}>
-				<img src={assets + '/logo.svg'} alt="logo" class="w-full h-24" />
-			</a>
 			<a
 				href="/about"
 				on:click={hideFullscreenMenu}
-				class="text-6xl font-black hover:text-[#eeb019] font-handwriting bg-black text-white text-right px-8 py-4"
+				class="col-span-2 px-8 py-4 text-4xl font-black text-right text-white transition-colors bg-black rounded-sm md:col-span-1 sm:text-5xl md:text-6xl hover:text-ppyellow font-heading"
 			>
-				About
+				About...
 			</a>
-			<div class="grid grid-cols-1 gap-8">
-				<div class="text-3xl link-text" in:fly={{ duration: 200, y: -10 }}>
-					<a href="/about#pedagogy" on:click={hideFullscreenMenu}> What is engaged learning? </a>
+			<div class="grid grid-cols-1 col-span-2 gap-8 text-right md:col-span-1 md:text-left">
+				<div class="text-3xl link-text" in:fly={{ duration: 400, y: -10 }}>
+					<a href="/about#principles" on:click={hideFullscreenMenu}> Our principles </a>
 				</div>
-				<div class="text-3xl link-text" in:fly={{ duration: 200, y: -10, delay: 30 }}>
-					<a href="/about#work" on:click={hideFullscreenMenu}> What we do </a>
+				<div class="text-3xl link-text" in:fly={{ duration: 400, y: -10, delay: 30 }}>
+					<a href="/about#work" on:click={hideFullscreenMenu}> Our activities </a>
 				</div>
-				<div class="text-3xl link-text" in:fly={{ duration: 200, y: -10, delay: 60 }}>
-					<a href="/about/team" on:click={hideFullscreenMenu}> Meet the team </a>
+				<div class="text-3xl link-text" in:fly={{ duration: 400, y: -10, delay: 60 }}>
+					<a href="/about#team" on:click={hideFullscreenMenu}> Our team </a>
 				</div>
 			</div>
 			<div class="w-full col-span-2 border-4 border-b border-black"></div>
 			<a
 				href="/resources"
-				class="text-6xl font-black hover:text-[#f3a061] font-handwriting bg-black text-white text-right px-8 py-4"
+				class="col-span-2 px-8 py-4 text-4xl font-black text-right text-white transition-colors bg-black rounded-sm md:col-span-1 sm:text-5xl md:text-6xl hover:text-pporange font-heading"
 				on:click={hideFullscreenMenu}
 			>
-				Resources
+				Resources...
 			</a>
-			<div transition:fly class="grid grid-cols-1 gap-8">
-				<div class="text-3xl link-text" transition:fly={{ duration: 200, y: -10, delay: 90 }}>
+			<div
+				transition:fly
+				class="grid grid-cols-1 col-span-2 gap-8 text-right md:col-span-1 md:text-left"
+			>
+				<div class="text-3xl link-text" transition:fly={{ duration: 400, y: -10, delay: 90 }}>
 					<a href="/resources#learners" on:click={hideFullscreenMenu}> For learners </a>
 				</div>
-				<div class="text-3xl link-text" transition:fly={{ duration: 200, y: -10, delay: 120 }}>
+				<div class="text-3xl link-text" transition:fly={{ duration: 400, y: -10, delay: 120 }}>
 					<a href="/resources#teachers" on:click={hideFullscreenMenu}> For teachers </a>
 				</div>
-				<div class="text-3xl link-text" transition:fly={{ duration: 200, y: -10, delay: 150 }}>
+				<div class="text-3xl link-text" transition:fly={{ duration: 400, y: -10, delay: 150 }}>
 					<a href="/resources#leaders" on:click={hideFullscreenMenu}> For leaders </a>
 				</div>
 			</div>
 			<div class="w-full col-span-2 border-4 border-b border-black"></div>
 			<a
 				href="/get-involved"
-				class="text-6xl font-black hover:text-[#d01c1c] font-handwriting bg-black text-white text-right px-8 py-4"
+				class="col-span-2 px-8 py-4 text-4xl font-black text-right text-white transition-colors bg-black rounded-sm sm:text-5xl md:text-6xl md:col-span-1 hover:text-ppred font-heading"
 				on:click={hideFullscreenMenu}
 			>
-				Get Involved
+				Get Involved...
 			</a>
-			<div transition:fly class="grid grid-cols-1 gap-8">
-				<div class="text-3xl link-text" transition:fly={{ duration: 200, y: -10, delay: 180 }}>
-					<a href="/get-involved#donate" on:click={hideFullscreenMenu}> Donate to us </a>
+			<div
+				transition:fly
+				class="grid grid-cols-1 col-span-2 gap-8 text-right md:col-span-1 md:text-left"
+			>
+				<div class="text-3xl link-text" transition:fly={{ duration: 400, y: -10, delay: 180 }}>
+					<a href="/get-involved#donate" on:click={hideFullscreenMenu}> Donate </a>
 				</div>
-				<div class="text-3xl link-text" transition:fly={{ duration: 200, y: -10, delay: 210 }}>
-					<a href="/get-involved#volunteer" on:click={hideFullscreenMenu}> Volunteer with us </a>
+				<div class="text-3xl link-text" transition:fly={{ duration: 400, y: -10, delay: 210 }}>
+					<a href="/get-involved#volunteer" on:click={hideFullscreenMenu}> Volunteer </a>
 				</div>
-				<div class="text-3xl link-text" transition:fly={{ duration: 200, y: -10, delay: 240 }}>
+				<div class="text-3xl link-text" transition:fly={{ duration: 400, y: -10, delay: 240 }}>
 					<a href="/get-involved#contact-us" on:click={hideFullscreenMenu}> Contact us </a>
 				</div>
 			</div>
@@ -159,7 +156,6 @@
 		box-sizing: border-box;
 		color: #fff;
 		cursor: pointer;
-		display: inline-block;
 		float: right;
 		margin: 0;
 		outline: none;
@@ -236,7 +232,7 @@
 
 	.fancy:hover {
 		color: white;
-		background: #d01c1c;
+		background: ppred;
 	}
 
 	.fancy:hover::before {
@@ -276,13 +272,21 @@
 	.bars {
 		width: 100%;
 		height: 4px;
-		background-color: #d01c1c;
+		background-color: var(--ppred);
 		border-radius: 4px;
+		transition: all 0.2s ease-in-out;
 	}
 
-	#bar1,
-	#bar3 {
-		width: 70%;
+	.toggle:hover #bar1 {
+		width: 110%;
+	}
+
+	.toggle:hover #bar2 {
+		width: 60%;
+	}
+
+	.toggle:hover #bar3 {
+		width: 30%;
 	}
 
 	/* Link styles */

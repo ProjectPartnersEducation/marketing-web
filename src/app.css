@@ -1,12 +1,20 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Nunito&family=Archivo+Black&family=Ultra&family=Gabarito:wght@400;900&family=Assistant&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Nunito+Sans:opsz,wght@6..12,200;6..12,800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 * {
-	font-family: 'Nunito Sans', sans-serif;
 	font-weight: 200;
+	--pppink: #cea0b5;
+	--ppgreen: #93b195;
+	--ppyellow: #eeb019;
+	--pporange: #f3a061;
+	--ppdarkorange: #e75519;
+	--ppblue: #1e87ab;
+	--ppred: #d01c1c;
+}
+
+html {
+	scroll-behavior: smooth;
 }
 
 body {
@@ -14,14 +22,11 @@ body {
 }
 
 @layer base {
-	html {
-		scroll-snap-type: y mandatory;
-		scroll-snap-type: x none;
-	}
-
 	body {
 		overflow: scroll;
-		scroll-snap-type: y mandatory;
-		scroll-snap-type: x none;
 	}
+}
+
+*:not(:defined) {
+	opacity: 0;
 }

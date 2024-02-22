@@ -13,6 +13,7 @@
 		| 'Teachers'
 		| 'EducationalLeaders'
 		| 'GovernmentAndNGOs' = '';
+	export let isDynamic: boolean = true;
 
 	let el: HTMLElement;
 
@@ -25,12 +26,18 @@
 	];
 
 	let currentElementIdx = 0;
-	let msPerSegment = 20000;
+	let msPerSegment = 40000;
 	let msInCurrentSegment = 0;
 
 	let intervalPeriod = 300;
 
-	let showProgressBar = true;
+	let showProgressBar = false;
+	let progressBarIsActive = false;
+
+	let windowWidth: number;
+
+	$: progressBarIsActive = windowWidth >= 1280 && isDynamic;
+	$: showProgressBar = windowWidth >= 1280;
 
 	$: activeElement = elements[currentElementIdx];
 	$: progressBarWidth = (msPerSegment - msInCurrentSegment) / msPerSegment;
@@ -38,6 +45,10 @@
 	let intervalId: number;
 
 	const updateProgressBar = () => {
+		if (!progressBarIsActive) {
+			return;
+		}
+
 		msInCurrentSegment += intervalPeriod;
 		if (msInCurrentSegment > msPerSegment) {
 			msInCurrentSegment = 0;
@@ -51,18 +62,21 @@
 	};
 
 	const startProgressBar = () => {
-		return;
+		if (!progressBarIsActive) {
+			return;
+		}
+
 		msInCurrentSegment += intervalPeriod;
 		clearInterval(intervalId);
 		intervalId = setInterval(updateProgressBar, intervalPeriod);
 	};
 
 	const onEnterHover = () => {
-		// clearInterval(intervalId);
+		clearInterval(intervalId);
 	};
 
 	const onExitHover = () => {
-		// startProgressBar();
+		startProgressBar();
 	};
 
 	const handleSetActiveElement = (e: CustomEvent<{ id: string }>) => {
@@ -74,16 +88,15 @@
 	};
 
 	onMount(() => {
-		// return () => clearInterval(intervalId);
+		return () => clearInterval(intervalId);
 	});
 </script>
 
+<svelte:window bind:innerWidth={windowWidth} />
+
 <IntersectionObserver element={el} on:intersect={startProgressBar}>
 	<div class="flex flex-wrap" bind:this={el}>
-		<div class="w-full p-4 md:w-1/2">
-			<Diagram {activeElement} on:setactivegroup={handleSetActiveElement} />
-		</div>
-		<div class="w-full p-4 md:w-1/2">
+		<div class="order-2 w-full xl:pr-4 xl:w-1/2 xl:order-1">
 			<Text
 				{activeElement}
 				progress={progressBarWidth}
@@ -93,6 +106,9 @@
 				on:hoverexittextbox={onExitHover}
 				on:setactivegroup={handleSetActiveElement}
 			/>
+		</div>
+		<div class="order-1 w-full mb-8 xl:pl-4 xl:w-1/2 xl:order-2">
+			<Diagram {activeElement} on:setactivegroup={handleSetActiveElement} />
 		</div>
 	</div>
 </IntersectionObserver>
